@@ -35,7 +35,7 @@ public class X3dInterpolatorsTest {
     @BeforeEach
     public void setUp() throws IOException {
         
-        File file = new File("./pduLog");
+        File file = new File("./pduLogs");
         
         for (File subFile : file.listFiles()) {
             
@@ -61,7 +61,7 @@ public class X3dInterpolatorsTest {
         System.out.println("testInterpolators");
         
         mutex.acquire();
-        Path path = Path.of("./pduLog");
+        Path path = Path.of("./pduLogs");
         
         // Note: the player will playback all log files in the given path
         PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, true);

@@ -117,7 +117,7 @@ public class SignalPdusTest
 
     @BeforeEach
     public void setUp() throws IOException, InterruptedException {
-//        new File("./pduLog/Pdusave.dislog").delete();
+//        new File("./pduLogs/Pdusave.dislog").delete();
     }
 
     @AfterEach
@@ -161,7 +161,7 @@ public class SignalPdusTest
     public void testRoundTripLog() throws IOException, InterruptedException {   
         System.out.println("*** testRoundTripLog()");
         
-        Path path = Path.of("./pduLog");
+        Path path = Path.of("./pduLogs");
         
         // Note: the player will playback all log files in the given path
         PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, false);

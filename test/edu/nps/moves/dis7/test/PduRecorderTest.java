@@ -105,7 +105,7 @@ public class PduRecorderTest
             System.out.println("*** PduRecorderTest testDefaultEncoding()");
 
         PduRecorder recorder = new PduRecorder("./testOutput", "239.1.2.3", 3000);
-        assertEquals(PduRecorder.ENCODING_PLAINTEXT, recorder.getEncodingPduLog(), "mismatched default encoding");
+        assertEquals(PduRecorder.ENCODING_PLAINTEXT, recorder.getEncodingPduLogs(), "mismatched default encoding");
     }
 
     @Test
@@ -115,8 +115,8 @@ public class PduRecorderTest
             System.out.println("*** PduRecorderTest testSetEncodingBase64()");
 
         PduRecorder recorder = new PduRecorder("./testOutput", "239.1.2.3", 3000);
-        recorder.setEncodingPduLog(PduRecorder.ENCODING_BASE64);
-        assertEquals(PduRecorder.ENCODING_BASE64, recorder.getEncodingPduLog(), "mismatched encoding after set to BASE64");
+        recorder.setEncodingPduLogs(PduRecorder.ENCODING_BASE64);
+        assertEquals(PduRecorder.ENCODING_BASE64, recorder.getEncodingPduLogs(), "mismatched encoding after set to BASE64");
     }
 
     @Test
@@ -126,8 +126,8 @@ public class PduRecorderTest
             System.out.println("*** PduRecorderTest testSetEncodingBinary()");
 
         PduRecorder recorder = new PduRecorder("./testOutput", "239.1.2.3", 3000);
-        recorder.setEncodingPduLog(PduRecorder.ENCODING_BINARY);
-        assertEquals(PduRecorder.ENCODING_BINARY, recorder.getEncodingPduLog(), "mismatched encoding after set to BINARY");
+        recorder.setEncodingPduLogs(PduRecorder.ENCODING_BINARY);
+        assertEquals(PduRecorder.ENCODING_BINARY, recorder.getEncodingPduLogs(), "mismatched encoding after set to BINARY");
     }
 
     @Test
@@ -137,9 +137,9 @@ public class PduRecorderTest
             System.out.println("*** PduRecorderTest testUnsupportedEncodingIgnored()");
 
         PduRecorder recorder = new PduRecorder("./testOutput", "239.1.2.3", 3000);
-        String originalEncoding = recorder.getEncodingPduLog();
-        recorder.setEncodingPduLog(PduRecorder.ENCODING_XML); // TODO encoding, not yet supported
-        assertEquals(originalEncoding, recorder.getEncodingPduLog(), "encoding should be unchanged for unsupported type");
+        String originalEncoding = recorder.getEncodingPduLogs();
+        recorder.setEncodingPduLogs(PduRecorder.ENCODING_XML); // TODO encoding, not yet supported
+        assertEquals(originalEncoding, recorder.getEncodingPduLogs(), "encoding should be unchanged for unsupported type");
     }
 
     @Test

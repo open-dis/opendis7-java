@@ -53,7 +53,7 @@ public class AllPduRoundTripTest
   public static void beforeAllTests()
   {
     System.out.println("AllPduRoundTripTest");
-    File file = new File("./pduLog");
+    File file = new File("./pduLogs");
 
     for (File subFile : file.listFiles()) {
         
@@ -226,7 +226,7 @@ public class AllPduRoundTripTest
   /** comparison test */
   private void testForEquals() throws Exception
   {
-//    System.out.println("*** Warning: ensure no prior dislog files are present in pduLog directory or assertion count of replay will fail.");
+//    System.out.println("*** Warning: ensure no prior dislog files are present in pduLogs directory or assertion count of replay will fail.");
     
     assertEquals(pdusSent.size(), pdusReceived.size(), "Different number of pdus received than sent");
     System.out.println("... testForEquals() assertEquals() passed");
@@ -258,7 +258,7 @@ public class AllPduRoundTripTest
    @Deprecated
     private void testRecorderForEquals() throws Exception 
     {
-        // TODO this may fail if prior dislog files are present in pduLog directory, ignore them to make it less brittle
+        // TODO this may fail if prior dislog files are present in pduLogs directory, ignore them to make it less brittle
         
         
         System.out.println("pdusSent.size()=" + pdusSent.size() + ", pdusRead.size()=" + pdusRead.size() + 
