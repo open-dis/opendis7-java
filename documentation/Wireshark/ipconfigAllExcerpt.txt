@@ -1,0 +1,16 @@
+Here is "ipconfig /all" excerpt, which did not appear before:
+
+Ethernet adapter Ethernet 7:
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : PANGP Virtual Ethernet Adapter #5
+   Physical Address. . . . . . . . . : 02-50-41-00-00-01
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 172.20.223.70(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.255
+   Default Gateway . . . . . . . . . : 0.0.0.0
+   DHCPv6 IAID . . . . . . . . . . . : 553799745
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-20-AF-7B-22-D4-81-D7-C4-72-74
+   DNS Servers . . . . . . . . . . . : 172.20.20.11
+                                       172.20.20.12
+   NetBIOS over Tcpip. . . . . . . . : Enabled 

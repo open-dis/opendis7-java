@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Download IEEE and SISO Specifications" default="download.all" basedir=".">
+		
+	<target name="download.all" depends="download.clean.specifications,download.IeeeDisStandards.instructions"/>
+    <!-- download.SISO, -->
+        <property name="DIS.1.document" value="6387564"/>
+        <property name="DIS.1.rename"   value="IEEE1278.1-2012.DistributedInteractiveSimulation.ApplicationProtocols.${DIS.1.document}.pdf"/>
+        <property name="DIS.1.title"    value="1278.1-2012 - IEEE Standard for Distributed Interactive Simulation (DIS) -- Application Protocols"/>
+
+        <property name="DIS.2.document" value="7459689"/>
+        <property name="DIS.2.rename"   value="IEEE1278.2-2015.DistributedInteractiveSimulation.CommunicationsServices.${DIS.2.document}.pdf.SAVEME"/>
+        <property name="DIS.2.title"    value="1278.2-2015 - IEEE Standard for Distributed Interactive Simulation (DIS) -- Communication Services and Profiles"/>
+
+        <property name="DIS.3.document" value="587529"/>
+        <property name="DIS.3.rename"   value="IEEE1278.3-2003.DistributedInteractiveSimulation.ExerciseManagementFeedback.${DIS.3.document}.pdf.SAVEME"/>
+        <property name="DIS.3.title"    value="1278.3-1996 - IEEE Recommended Practice for Distributed Interactive Simulation (DIS) -- Exercise Management and Feedback"/>
+
+        <property name="DIS.4.document" value="8685803"/>
+        <property name="DIS.4.rename"   value="IEEE1278.4-1997.DistributedInteractiveSimulation.VV+A.${DIS.4.document}.pdf.SAVEME"/>
+        <property name="DIS.4.title"    value="1278.4-1997 - IEEE Recommended Practice for Distributed Interactive Simulation (DIS) -- Verification, Validation, and Accreditation (VV+A)"/>
+
+        <target name="download.clean.specifications">
+            <echo message="ensure all files are closed before deleting..."/>
+            <delete verbose="true" failonerror="false">
+                <fileset dir="." includes="**/*.pdf"/>
+                <fileset dir="." includes="**/*.pdf"/>
+                <fileset dir="." includes="**/*.doc"/>
+                <fileset dir="." includes="**/*.htm"/>
+                <fileset dir="." includes="**/*.xml">
+                    <exclude name="**/build.xml"/>
+                </fileset>
+                <fileset dir="." includes="**/*.xsd"/>
+                <fileset dir="." includes="**/*.xsl"/>
+                <fileset dir="." includes="**/Makefile"/>
+                <fileset dir="." includes="**/README.txt"/>
+            <!--<fileset dir="." includes="**/SISO-REF-010-v28/*"/>
+                <fileset dir="." includes="**/SISO-REF-010-v29*"/> -->
+            </delete>
+        <!--<delete verbose="true" failonerror="false" dir="SISO-REF-010-v29"/> -->
+        </target>
+	
+	<!-- =============================================== -->
+		
+	<target name="download.IeeeDisStandards.rename" description="rename saved DIS specification files to readable filenames">
+        <!-- move files to subdirectory if needed -->
+        <move  file="12781-2012.pdf" todir="downloads/" failonerror="false"/>
+        <move  file="12782-2015.pdf" todir="downloads/" failonerror="false"/>
+        <move  file="00587529.pdf"   todir="downloads/" failonerror="false"/>
+        <move  file="12784-1997.pdf" todir="downloads/" failonerror="false"/>
+		<!-- part 1 6387564.pdf -->
+        <move  file="downloads/12781-2012.pdf" tofile="downloads/IEEE1278.1-2012.DistributedInteractiveSimulation.ApplicationProtocols.12781-2012.pdf"   verbose="true" quiet="true" failonerror="false"/>
+		<!-- part 2 7459689.pdf -->
+        <move  file="downloads/12782-2015.pdf" tofile="downloads/IEEE1278.2-2015.DistributedInteractiveSimulation.CommunicationsServices.12782-2015.pdf" verbose="true" quiet="true" failonerror="false"/>
+		<!-- part 3 00587529.pdf -->
+        <move  file= "downloads/00587529.pdf" tofile="downloads/IEEE1278.3-2015.DistributedInteractiveSimulation.ExcerciseManagementFeedback.12783-2003.pdf"    verbose="true" quiet="true" failonerror="false"/>
+		<!-- part 4 6595010.pdf -->
+        <move  file="downloads/12784-1997.pdf" tofile="downloads/IEEE1278.4-2013.DistributedInteractiveSimulation.VV+A.12784-1997.pdf"                   verbose="true" quiet="true" failonerror="false"/>
+        <!--
+		<copy todir="downloads"          file="IEEE1278.1-2012.DistributedInteractiveSimulation.ApplicationProtocols.12781-2012.pdf"   verbose="true" quiet="true" failonerror="false"/>
+		<copy todir="downloads"          file="IEEE1278.2-2015.DistributedInteractiveSimulation.CommunicationsServices.12782-2015.pdf" verbose="true" quiet="true" failonerror="false"/>
+		<copy todir="downloads"          file="IEEE1278.3-2015.DistributedInteractiveSimulation.ExcerciseManagementFeedback.12783-2003.pdf"   verbose="true" quiet="true" failonerror="false"/>
+		<copy todir="downloads"          file="IEEE1278.4-2013.DistributedInteractiveSimulation.VV+A.12784-1997.pdf"                   verbose="true" quiet="true" failonerror="false"/>
+        -->
+	
+		<echo message="check *.pdf directory contents..."/>
+		<!-- https://stackoverflow.com/questions/10528032/listing-all-files-and-subdirectories-using-ant -->
+		<fileset          id="dist.contents" dir="." includes="*.pdf"/> 
+		<property  name="prop.dist.contents" refid="dist.contents"/>
+		<!-- https://stackoverflow.com/questions/7102793/how-to-put-a-newline-in-ant-property -->
+		<echo message="specifications directory:"/>
+		<echo message="${prop.dist.contents}"/>
+		<fileset     id="downloads.contents" dir="downloads" includes="*.pdf"/> 
+		<property  name="prop.downloads.contents" refid="downloads.contents"/>
+		<!-- https://stackoverflow.com/questions/7102793/how-to-put-a-newline-in-ant-property -->
+		<echo message="specifications/downloads directory:"/>
+		<echo message="${prop.downloads.contents}"/>
+	</target>
+
+	<!-- =============================================== -->
+		
+        <target name="download.IeeeDisStandards.instructions">
+	
+            <property name="ieeeExploreUrl"  value="https://ieeexplore.ieee.org" description="home page for users"/>
+            <property name="ieeeBasePageUrl" value="https://ieeexplore.ieee.org/document/"/>
+            <property name="ieeeBaseLinkUrl" value="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber="/>
+		
+            <echo message="Warning: due to cookie and scripting restrictions, you must download IEEE specifications manually via links found in README.md"/>
+            <echo message="TODO: university students/faculty can first login with permissions to the IEEE Explore page, then use target download.IeeeDisStandards.retrieve"/>
+            <echo message="IEEE Explore: ${ieeeExploreUrl}"/>
+            <echo/>
+        
+            <!-- ======================== -->
+            <echo message="${DIS.1.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.1.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.1.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.1.rename}"/>
+            <!-- 
+            <get     src="${ieeeBaseLinkUrl}${DIS.1.document}"
+            dest="downloads/${DIS.1.rename}" verbose="true"/> -->
+            <property name="warningMessage" value="Restriction: cookie restrictions prevent automated download.&#10;&#10;You must manually download this file while within NPS campus or firewall.&#10;&#10;For "/>
+            <echo message="${warningMessage}IEEE1278.1 retrieval to this location, use your browser to save&#10;&#10;   ${ieeeBaseLinkUrl}${DIS.1.document}"
+                  file="${DIS.1.rename}.SAVEME"/>
+            <echo/>
+		
+            <!-- ======================== -->
+            <echo message="${DIS.2.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.2.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.2.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.2.rename}"/>
+            <!-- 
+    <get     src="${ieeeBaseLinkUrl}${DIS.2.document}"
+            dest="downloads/${DIS.2.rename}" verbose="true"/> -->
+            <echo message="${warningMessage}IEEE1278.2 retrieval to this location, use your browser to save&#10;&#10;   ${ieeeBaseLinkUrl}${DIS.2.document}"
+                  file="${DIS.2.rename}"/>
+            <echo/>
+		
+            <!-- ======================== -->
+            <echo message="${DIS.3.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.3.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.3.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.3.rename}"/>
+            <!-- 
+    <get     src="${ieeeBaseLinkUrl}${DIS.3.document}"
+            dest="downloads/${DIS.3.rename}" verbose="true"/> -->
+            <echo message="${warningMessage}IEEE1278.3 retrieval to this location, use your browser to save&#10;&#10;   ${ieeeBaseLinkUrl}${DIS.3.document}"
+                  file="${DIS.3.rename}"/>
+            <echo/>
+		
+            <!-- ======================== -->
+            <echo message="${DIS.4.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.4.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.4.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.4.rename}"/>
+            <!-- 
+    <get     src="${ieeeBaseLinkUrl}${DIS.4.document}"
+            dest="downloads/${DIS.4.rename}" verbose="true"/> -->
+            <echo message="${warningMessage}IEEE1278.4 retrieval to this location, use your browser to save&#10;&#10;   ${ieeeBaseLinkUrl}${DIS.4.document}"
+                  file="${DIS.4.rename}"/>
+            <echo/>
+        </target>
+    
+        <target name="download.IeeeDisStandards.retrieve">
+            <!-- TODO does this work inside NPS firewall? -->
+	
+            <property name="ieeeExploreUrl"  value="https://ieeexplore.ieee.org" description="home page for users"/>
+            <property name="ieeeBasePageUrl" value="https://ieeexplore.ieee.org/document/"/>
+            <property name="ieeeBaseLinkUrl" value="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber="/>
+		
+            <echo message="Warning: due to cookie restrictions, you must download IEEE specifications manually via links found in README.md"/>
+            <echo message="University students/faculty can first login with permissions to the IEEE Explore page, then use target download.IeeeDisStandards"/>
+            <echo message="IEEE Explore: ${ieeeExploreUrl}"/>
+        
+            <!-- ======================== -->
+            <echo message="${DIS.1.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.1.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.1.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.1.rename}"/>
+            <get     src="${ieeeBaseLinkUrl}${DIS.1.document}"
+                         dest="downloads/${DIS.1.rename}" verbose="true"/>
+        
+            <!-- ======================== -->
+            <echo message="${DIS.2.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.2.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.2.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.2.rename}"/>
+            <get     src="${ieeeBaseLinkUrl}${DIS.2.document}"
+                 dest="downloads/${DIS.2.rename}" verbose="true"/>
+		
+            <!-- ======================== -->
+            <echo message="${DIS.3.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.3.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.3.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.3.rename}"/>
+            <get     src="${ieeeBaseLinkUrl}${DIS.3.document}"
+                 dest="downloads/${DIS.3.rename}" verbose="true"/> 
+		
+            <!-- ======================== -->
+            <echo message="${DIS.4.title}"/>
+            <echo message="see ${ieeeBasePageUrl}${DIS.4.document}"/>
+            <echo message="get ${ieeeBaseLinkUrl}${DIS.4.document}"/>
+            <echo message="to  downloads/ subdirectory"/>
+            <echo message="as  ${DIS.4.rename}"/>
+            <get  src="${ieeeBaseLinkUrl}${DIS.4.document}"
+                 dest="downloads/${DIS.4.rename}" verbose="true"/>
+        </target>
+	
+	<!-- =============================================== -->
+	
+    <property name="sisoBaseUrl" value="https://www.sisostandards.org/resource/resmgr/reference_documents_/"/>
+    
+    <property name="opendis7-java.relative" value="../../x3d-github/opendis7-java/opendis7-source-generator"/>
+    
+    <property name="SISO-REF-010"       value="SISO-REF-010-2023-v31"/>
+    <property name="SISO-REF-010.zipID" value="siso-ref-010-2023-v31.zip"/>
+    <property name="SISO-REF-010.1" value="SISO-REF-010.1-2019 Operations Manual for EWG V08.pdf"/>
+    
+    <target name="download.SISO">
+        <!-- danger will robinson -->
+        <echo message="*** Note ${SISO-REF-010} is found at hardwired url address ${SISO-REF-010.zipID}!  Be sure to check latest ID at"/>
+        <echo message="*** Also note that SISO sometimes rolls updates without change version numbers!"/>
+        <echo message=" computed url: ${sisoBaseUrl}${SISO-REF-010.zipID}"/>
+        <echo message="  website url: https://www.sisostandards.org/resource/resmgr/reference_documents_/siso-ref-010-2023-v31.zip"/>
+                    
+        <delete dir="${SISO-REF-010}" failonerror="false"/>
+        <mkdir  dir="${SISO-REF-010}"/>
+        <echo message="get ${SISO-REF-010}.zip from"/>
+        <echo message="    ${sisoBaseUrl}${SISO-REF-010.zipID}"/>
+        <get     src="${sisoBaseUrl}${SISO-REF-010.zipID}" 
+                 dest="${SISO-REF-010}.zip" verbose="true"/>
+        <unzip   src="${SISO-REF-010}.zip"
+                 dest="${SISO-REF-010}.hold" overwrite="true"/>
+        <delete file="${SISO-REF-010}.zip"/><!-- no longer needed -->
+        
+        <!-- ensure not duplicative and already contained in preceding zip -->
+        <echo message="get  ${SISO-REF-010.1}"/>
+        <echo message="from ${sisoBaseUrl}47284"/>
+        <echo message="as   ${SISO-REF-010}/${SISO-REF-010.1}"/>
+        <get     src="${sisoBaseUrl}47284"
+                 dest="${SISO-REF-010}.hold" verbose="true"/>
+        <echo message="fix download filename"/>
+        <move file="${SISO-REF-010}.hold/DigitalLibrary.aspx" tofile="${SISO-REF-010}.hold/${SISO-REF-010.1}" overwrite="true" verbose="true"/>
+    </target>
+    
+    <target name="push.SISO.opendis7-java" description="view gitlab MV3500 examples in web browser (via Netbeans only)">
+
+        <echo message="*** copying latest unzipped version of XML to opendis7-source-generator (hopefully not breaking anything!)"/>
+        <echo message='copy from ${SISO-REF-010}.hold/  to ${opendis7-java.relative}/xml/SISO '/>
+        <copy todir="${opendis7-java.relative}/xml/SISO" overwrite="true" verbose="true">
+            <fileset dir="${SISO-REF-010}.hold">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="view.gitlab.specifications.README" description="view gitlab MV3500 examples in web browser (via Netbeans only)">
+        <echo message="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/tree/master/specifications/README.md"/>
+        <nbbrowse url="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/tree/master/specifications/README.md"/>
+    </target>
+
+</project>
