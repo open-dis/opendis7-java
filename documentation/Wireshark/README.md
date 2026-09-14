@@ -55,7 +55,7 @@ Always use the latest version so that operating-system security and feature sets
 
 ## References
 
-1. [Wireshark home page](https://www.wireshark.org) and [Learning Wireshark](https://www.wireshark.org/#learnWS)
+1. [Wireshark home page](https://www.wireshark.org) and [Learning Wireshark](https://www.wireshark.org/learn)
 2. [Wireshark User’s Guide](https://www.wireshark.org/docs/wsug_html_chunked)
 3. [Wireshark Frequently Asked Questions (FAQ)](https://www.wireshark.org/faq.html) and [Ask Wireshark](https://ask.wireshark.org/questions)
 4. Tobias Brennenstuhl, [REPEATABLE UNIT TESTING OF DISTRIBUTED INTERACTIVE SIMULATION (DIS) PROTOCOL BEHAVIOR STREAMS USING WEB STANDARDS](https://calhoun.nps.edu/handle/10945/65436), MOVES Masters Thesis, Naval Postgraduate School (NPS), Monterey California USA, June 2020.
