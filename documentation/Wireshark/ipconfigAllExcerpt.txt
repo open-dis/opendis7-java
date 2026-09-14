@@ -1,16 +1,75 @@
-Here is "ipconfig /all" excerpt, which did not appear before:
+Here is "ipconfig /all" excerpt, showing some additional information which did not appear before:
 
-Ethernet adapter Ethernet 7:
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : AlienwareLaptop
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : csat.com
+   Description . . . . . . . . . . . : Killer E5000 5 Gigabit Ethernet Controller
+   Physical Address. . . . . . . . . : E8-CF-83-13-3C-2A
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi 4:
+
+   Media State . . . . . . . . . . . : Media disconnected
    Connection-specific DNS Suffix  . :
-   Description . . . . . . . . . . . : PANGP Virtual Ethernet Adapter #5
-   Physical Address. . . . . . . . . : 02-50-41-00-00-01
+   Description . . . . . . . . . . . : Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW) #4
+   Physical Address. . . . . . . . . : 44-A3-BB-CE-78-2D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi 5:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW) #5
+   Physical Address. . . . . . . . . : 46-A3-BB-CE-78-2C
    DHCP Enabled. . . . . . . . . . . : No
    Autoconfiguration Enabled . . . . : Yes
-   IPv4 Address. . . . . . . . . . . : 172.20.223.70(Preferred)
-   Subnet Mask . . . . . . . . . . . : 255.255.255.255
-   Default Gateway . . . . . . . . . : 0.0.0.0
-   DHCPv6 IAID . . . . . . . . . . . : 553799745
-   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-20-AF-7B-22-D4-81-D7-C4-72-74
-   DNS Servers . . . . . . . . . . . : 172.20.20.11
-                                       172.20.20.12
-   NetBIOS over Tcpip. . . . . . . . : Enabled 
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
+   Physical Address. . . . . . . . . : 44-A3-BB-CE-78-2C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2601:647:c200:f080::1667(Preferred)
+   Lease Obtained. . . . . . . . . . : Sunday, September 13, 2026 3:35:50 AM
+   Lease Expires . . . . . . . . . . : Monday, September 14, 2026 11:34:16 AM
+   IPv6 Address. . . . . . . . . . . : 2601:647:c200:f080:641c:d75e:d1d8:4c72(Preferred)
+   Temporary IPv6 Address. . . . . . : 2601:647:c200:f080:606c:6205:304f:9d2b(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::13fa:8f2:7bf4:458d%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.0.0.196(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Sunday, September 13, 2026 3:35:53 AM
+   Lease Expires . . . . . . . . . . : Wednesday, September 16, 2026 3:35:57 AM
+   Default Gateway . . . . . . . . . : fe80::ae4c:a5ff:feaa:bcc3%4
+                                       10.0.0.1
+   DHCP Server . . . . . . . . . . . : 10.0.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 54830011
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2F-59-5C-E3-E8-CF-83-13-3C-2A
+   DNS Servers . . . . . . . . . . . : 2001:558:feed::1
+                                       2001:558:feed::2
+                                       75.75.75.75
+                                       75.75.76.76
+                                       2001:558:feed::1
+                                       2001:558:feed::2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : 44-A3-BB-CE-78-30
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
