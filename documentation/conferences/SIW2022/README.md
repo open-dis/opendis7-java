@@ -13,5 +13,5 @@ by Don Brutzman, Rick Lentz, Terry D. Norbraten, Christian Fitzpatrick, and Curt
   [video](https://savage.nps.edu/videos/opendis7CodebasePaperTutorialSisoSiwFebruary2022.mp4)
 
 Example programs and library documentation are found at
-* [src/edu/nps/moves/dis7/examples/README.md](../../../../blob/master/src/edu/nps/moves/dis7/examples/README.md)
+* [src/edu/nps/moves/dis7/examples/README.md](https://github.com/open-dis/opendis7-java/blob/master/src/edu/nps/moves/dis7/examples/README.md)
 * [opendis7 Javadoc](https://savage.nps.edu/opendis7-java/javadoc)
