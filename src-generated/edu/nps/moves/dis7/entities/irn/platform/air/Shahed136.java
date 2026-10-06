@@ -23,7 +23,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Shahed  = <code>8</code>; </li>
  *     <li> Specific: Shahed136  = <code>7</code>; </li>
  *     <li> Entity type uid: 36290; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
+ *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
  * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48f5bde6. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN

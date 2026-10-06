@@ -23,7 +23,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: BeechcraftSuperKingAIR200B200  = <code>8</code>; </li>
  *     <li> Specific: RC12G  = <code>8</code>; </li>
  *     <li> Entity type uid: 36233; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
+ *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
  * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21516c88. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA

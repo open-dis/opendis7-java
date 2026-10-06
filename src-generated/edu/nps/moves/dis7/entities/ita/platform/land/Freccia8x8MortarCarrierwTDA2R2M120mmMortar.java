@@ -23,7 +23,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Freccia8x8  = <code>5</code>; </li>
  *     <li> Specific: Freccia8x8MortarCarrierwTDA2R2M120mmMortar  = <code>3</code>; </li>
  *     <li> Entity type uid: 36184; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
+ *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
  * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54336c81. </p>
  * @see Country#ITALY_ITA

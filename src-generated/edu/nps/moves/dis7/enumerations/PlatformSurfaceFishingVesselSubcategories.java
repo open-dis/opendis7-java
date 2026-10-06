@@ -100,7 +100,7 @@ public enum PlatformSurfaceFishingVesselSubcategories implements SubCategory
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum PlatformSurfaceFishingVesselSubcategories");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum PlatformSurfaceFishingVesselSubcategories");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }

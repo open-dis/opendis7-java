@@ -23,7 +23,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HoubeiClassType022PTG  = <code>15</code>; </li>
  *     <li> Specific: _2207  = <code>7</code>; </li>
  *     <li> Entity type uid: 34706; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
+ *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
  * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6200f9cb. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN

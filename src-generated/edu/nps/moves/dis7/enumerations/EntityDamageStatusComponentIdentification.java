@@ -124,7 +124,7 @@ public enum EntityDamageStatusComponentIdentification
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum EntityDamageStatusComponentIdentification");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum EntityDamageStatusComponentIdentification");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }

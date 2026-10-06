@@ -23,7 +23,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Leopard1MBT  = <code>1</code>; </li>
  *     <li> Specific: Leopard1A3  = <code>3</code>; </li>
  *     <li> Entity type uid: 16244; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
+ *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
  * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59252cb6. </p>
  * @see Country#GERMANY_DEU

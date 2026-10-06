@@ -99,7 +99,7 @@ public enum SubcategoriesforSubsurfaceCategory203Crustacean implements SubCatego
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum SubcategoriesforSubsurfaceCategory203Crustacean");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum SubcategoriesforSubsurfaceCategory203Crustacean");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }
