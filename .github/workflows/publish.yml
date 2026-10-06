@@ -9,7 +9,7 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
     container:
-      image: eclipse-temurin:17-jdk
+      image: eclipse-temurin:21-jdk
 
     permissions:
       contents: write
