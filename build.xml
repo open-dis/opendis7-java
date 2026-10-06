@@ -55,8 +55,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="Implementation-Version" value="${timestamp}"/>
     <property name="Implementation-Vendor"  value="Relative Motion Consulting (RMC)"/>
     
-    <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
-    <property name="java.release"                value="17"/>
+    <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 21+ -->
+    <property name="java.release"                value="21"/>
     <!-- LTS support also available for JDK 25: https://www.oracle.com/java/technologies/downloads -->
 
     <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
@@ -195,8 +195,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.javadoc.local" description="view local package javadoc in web browser (NetBeans only)">
         <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
         <!-- nbbrowse requires NetBeans IDE; commented out for headless/CI compatibility -->
-        <nbbrowse file="${dist.javadoc.dir}/index.html" />
-        <!-- nbbrowse file="${dist.javadoc.dir}/index.html" -->
+        <!-- <nbbrowse file="${dist.javadoc.dir}/index.html" /> -->
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
