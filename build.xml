@@ -263,7 +263,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="test/**/*.java"/>
             </fileset>
         </javadoc>
-        <antcall target="view.javadoc.local"/>
+    <!-- <antcall target="view.javadoc.local"/> DO NOT include this invocation as part of build since it breaks headless execution by GitHub actions -->
     </target>
     
     <!--
