@@ -55,8 +55,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="Implementation-Version" value="${timestamp}"/>
     <property name="Implementation-Vendor"  value="Relative Motion Consulting (RMC)"/>
     
-    <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
-    <property name="java.release"                value="17"/>
+    <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 21+ -->
+    <property name="java.release"                value="21"/>
     <!-- LTS support also available for JDK 25: https://www.oracle.com/java/technologies/downloads -->
 
     <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
