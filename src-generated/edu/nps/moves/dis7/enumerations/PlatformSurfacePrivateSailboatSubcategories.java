@@ -95,7 +95,7 @@ public enum PlatformSurfacePrivateSailboatSubcategories implements SubCategory
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum PlatformSurfacePrivateSailboatSubcategories");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum PlatformSurfacePrivateSailboatSubcategories");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }

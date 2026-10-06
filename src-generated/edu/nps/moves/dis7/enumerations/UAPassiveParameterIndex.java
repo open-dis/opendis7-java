@@ -79,7 +79,7 @@ public enum UAPassiveParameterIndex
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum UAPassiveParameterIndex");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum UAPassiveParameterIndex");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }

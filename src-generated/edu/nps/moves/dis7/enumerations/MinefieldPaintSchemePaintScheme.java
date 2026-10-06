@@ -169,7 +169,7 @@ public enum MinefieldPaintSchemePaintScheme
               return nextEnum;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No corresponding enumeration found for value " + value + " of enum MinefieldPaintSchemePaintScheme");
+       System.err.println("[warning] No corresponding enumeration found for value " + value + " of enum MinefieldPaintSchemePaintScheme");
        System.err.flush(); // ensure contiguous console outputs
        return null;
     }
