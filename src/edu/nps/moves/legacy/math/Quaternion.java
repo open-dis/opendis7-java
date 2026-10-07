@@ -282,7 +282,7 @@ public class Quaternion {
         r[0] = hpr[2];
     }
 
-    public void setMat3(float mat[][]) // Chrenshaw, pg 16 (he transposes m!)
+    public void setMat3(float mat[][]) // Chrenshaw, pg 16 (corrected for transpose convention)
     {
         float tr, s;
 
@@ -292,9 +292,9 @@ public class Quaternion {
             q[3] = s * 0.5f;
             s = 0.5f / s;
 
-            q[0] = (mat[1][2] - mat[2][1]) * s;
-            q[1] = (mat[2][0] - mat[0][2]) * s;
-            q[2] = (mat[0][1] - mat[1][0]) * s;
+            q[0] = (mat[2][1] - mat[1][2]) * s;
+            q[1] = (mat[0][2] - mat[2][0]) * s;
+            q[2] = (mat[1][0] - mat[0][1]) * s;
             return;
         }
 
@@ -304,9 +304,9 @@ public class Quaternion {
             q[2] = s * 0.5f;
             s = 0.5f / s;
 
-            q[0] = (mat[2][0] - mat[0][2]) * s;
-            q[1] = (mat[2][1] + mat[1][2]) * s;
-            q[3] = (mat[0][1] - mat[1][0]) * s;
+            q[0] = (mat[0][2] + mat[2][0]) * s;
+            q[1] = (mat[1][2] + mat[2][1]) * s;
+            q[3] = (mat[1][0] - mat[0][1]) * s;
             return;
         }
 
@@ -316,9 +316,9 @@ public class Quaternion {
             q[1] = s * 0.5f;
             s = 0.5f / s;
 
-            q[0] = (mat[1][0] + mat[0][1]) * s;
-            q[2] = (mat[2][1] + mat[1][2]) * s;
-            q[3] = (mat[2][0] - mat[0][2]) * s;
+            q[0] = (mat[0][1] + mat[1][0]) * s;
+            q[2] = (mat[1][2] + mat[2][1]) * s;
+            q[3] = (mat[0][2] - mat[2][0]) * s;
             return;
         }
 
@@ -328,9 +328,9 @@ public class Quaternion {
             q[0] = s * 0.5f;
             s = 0.5f / s;
 
-            q[1] = (mat[1][0] + mat[0][1]) * s;
-            q[2] = (mat[2][0] - mat[0][2]) * s;
-            q[3] = (mat[1][2] - mat[2][1]) * s;
+            q[1] = (mat[0][1] + mat[1][0]) * s;
+            q[2] = (mat[0][2] + mat[2][0]) * s;
+            q[3] = (mat[2][1] - mat[1][2]) * s;
             return;
         }
     }
