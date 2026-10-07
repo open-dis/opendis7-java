@@ -206,7 +206,7 @@ public class Matrix3f
         {
         cosh = m[2][2] / cosp;
         sinh = m[0][2] / cosp;
-        cosr = m[2][1] / cosp;
+        cosr = m[1][1] / cosp;
         sinr = m[1][0] / cosp;
         } 
     else 
@@ -251,10 +251,10 @@ public class Matrix3f
     m[0][1] = - cosh * sinr + sinh * sinp * cosr;
     m[0][2] = + sinh * cosp;
     m[1][0] = + cosp * sinr;
-    m[1][1] = + sinh * sinr + cosh * sinp * cosr;
+    m[1][1] = + cosp * cosr;
     m[1][2] = - sinp;
     m[2][0] = - sinh * cosr + cosh * sinp * sinr;
-    m[2][1] = + cosp * cosr;
+    m[2][1] = + sinh * sinr + cosh * sinp * cosr;
     m[2][2] = + cosh * cosp;
     }
 

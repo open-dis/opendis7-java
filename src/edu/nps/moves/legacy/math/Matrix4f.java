@@ -186,19 +186,19 @@ public class Matrix4f
     cosr = (float)Math.cos(r);
     sinr = (float)Math.sin(r);
 
-    m[0][0] = cosh * cosp;
-    m[0][1] = cosh * sinp * sinr - sinh * cosr;
-    m[0][2] = cosh * sinp * cosr + sinh * sinr;
+    m[0][0] = + cosh * cosr + sinh * sinp * sinr;
+    m[0][1] = - cosh * sinr + sinh * sinp * cosr;
+    m[0][2] = + sinh * cosp;
     m[0][3] = 0.0f;
 
-    m[1][0] = sinh * cosp;
-    m[1][1] = cosh * cosr + sinh * sinp * sinr;
-    m[1][2] = sinh * sinp * cosr - cosh * sinr;
+    m[1][0] = + cosp * sinr;
+    m[1][1] = + cosp * cosr;
+    m[1][2] = - sinp;
     m[1][3] = 0.0f;
 
-    m[2][0] = -sinp;
-    m[2][1] = cosp * sinr;
-    m[2][2] = cosp * cosr;
+    m[2][0] = - sinh * cosr + cosh * sinp * sinr;
+    m[2][1] = + sinh * sinr + cosh * sinp * cosr;
+    m[2][2] = + cosh * cosp;
     m[2][3] = 0.0f;
 
     m[3][0] = 0.0f;
