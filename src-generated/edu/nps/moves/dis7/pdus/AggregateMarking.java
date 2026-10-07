@@ -69,7 +69,7 @@ public EntityMarkingCharacterSet getCharacterSet()
   * @return same object to permit progressive setters */
 public synchronized AggregateMarking setCharacters(byte[] pCharacters)
 {
-    characters = pCharacters;
+    characters = Arrays.copyOf(pCharacters, characters.length);
     return this;
 }
 /** Getter for {@link AggregateMarking#characters}
