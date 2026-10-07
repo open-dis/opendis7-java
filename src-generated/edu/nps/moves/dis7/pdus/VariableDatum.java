@@ -63,7 +63,7 @@ public class VariableDatum extends Object implements Serializable {
         marshalSize += variableDatumID.getMarshalledSize();
         marshalSize += 4;  // variableDatumLength
         marshalSize += variableDatumValue.length;
-        marshalSize += (8 - marshalSize % 8) % 8; // pad to 64-bit boundary
+        marshalSize += padding.length;
 
         return marshalSize;
     }

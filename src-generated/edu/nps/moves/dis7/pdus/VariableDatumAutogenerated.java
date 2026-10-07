@@ -51,8 +51,7 @@ public int getMarshalledSize()
    marshalSize += 4;  // variableDatumLength
    if (variableDatumValue != null)
        marshalSize += variableDatumValue.length * 1;
-   if (padding != null)
-       marshalSize += padding.length;
+   marshalSize += (8 - marshalSize % 8) % 8; // pad to 64-bit boundary
 
    return marshalSize;
 }
