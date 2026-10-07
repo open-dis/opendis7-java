@@ -76,7 +76,7 @@ jobs:
           path: test-results
 
       - name: Publish test report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v3
         with:
           name: JUnit Test Results
           path: test-results/TEST-*.xml
