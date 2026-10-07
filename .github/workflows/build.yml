@@ -34,6 +34,13 @@ jobs:
       - name: Build and test
         run: ant all
 
+      - name: Publish test report
+        if: always()
+        uses: mikepenz/action-junit-report@v5
+        with:
+          report_paths: build/test/results/TEST-*.xml
+          check_name: JUnit Test Results
+
       - name: Upload jars
         uses: actions/upload-artifact@v4
         with:
@@ -55,29 +62,3 @@ jobs:
           name: test-results
           path: build/test/results/
           retention-days: 14
-
-  test-report:
-    needs: build
-    if: always()
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      checks: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download test results
-        uses: actions/download-artifact@v4
-        with:
-          name: test-results
-          path: test-results
-
-      - name: Publish test report
-        uses: dorny/test-reporter@v3
-        with:
-          name: JUnit Test Results
-          path: test-results/TEST-*.xml
-          reporter: java-junit
