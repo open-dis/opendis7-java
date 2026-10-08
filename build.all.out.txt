@@ -1,21 +1,26 @@
 ant -f C:\\x3d-github\\opendis7-java -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 all
 init:
 clean:
+Deleting C:\x3d-github\opendis7-java\dist\opendis7-full.jar
+Deleting C:\x3d-github\opendis7-java\dist\opendis7-pdus-classes.jar
+Deleting C:\x3d-github\opendis7-java\dist\opendis7-pdus-javadoc.jar
+Deleting C:\x3d-github\opendis7-java\dist\opendis7-pdus-source.jar
+Deleting directory C:\x3d-github\opendis7-java\dist\javadoc
 all:
-timestamp 13 September 2026 21:20:32
+timestamp 7 October 2026 17:42:06
 versions:
 ant -version
 Apache Ant(TM) version 1.10.17 compiled on April 6 2026
 java -version
-openjdk version "26.0.2.1" 2026-08-18
-OpenJDK Runtime Environment (build 26.0.2.1+1-7)
-OpenJDK 64-Bit Server VM (build 26.0.2.1+1-7, mixed mode, sharing)
+openjdk version "27" 2026-09-15
+OpenJDK Runtime Environment (build 27+35-2325)
+OpenJDK 64-Bit Server VM (build 27+35-2325, mixed mode, sharing)
 
   ANT_HOME=C:\apache-ant-1.10.17
- JAVA_HOME=C:\Program Files\Java\OpenJDK\jdk-26.0.2.1
+ JAVA_HOME=C:\Program Files\Java\OpenJDK\jdk-27
  CLASSPATH=C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.4.0.full.jar;
-Java/JVM version    $ant.java.version=26
-Java/JVM detail version $java.version=26.0.2.1
+Java/JVM version    $ant.java.version=27
+Java/JVM detail version $java.version=27
 Ant version              $ant.version=Apache Ant(TM) version 1.10.15 compiled on August 25 2024
 Configuration settings:  https://www.web3d.org/x3d/content/examples/X3dDevelopersGuide.html
 ===========================================
@@ -26,7 +31,7 @@ init:
 Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
-Compiling 27279 source files to C:\x3d-github\opendis7-java\build\classes
+Compiling 27281 source files to C:\x3d-github\opendis7-java\build\classes
 Ignoring source, target and bootclasspath as release has been set
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\entities\ser\platform\surface\package-info.class
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\entities\prk\platform\subsurface\package-info.class
@@ -692,7 +697,7 @@ Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\enti
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\entities\ita\munition\antiair\package-info.class
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\objectTypes\PointObject\Culturalfeature\Tent\package-info.class
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\objectTypes\PointObject\Culturalfeature\package-info.class
-Copying 40 files to C:\x3d-github\opendis7-java\build\classes
+Copying 47 files to C:\x3d-github\opendis7-java\build\classes
 compile:
 ================
 init:
@@ -713,26 +718,63 @@ Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog01.dislog
 Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog02.dislog
 Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog03.dislog
 Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog04.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog05.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog06.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog07.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog08.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog09.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog10.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog11.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog12.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog13.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog14.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog15.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog16.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog17.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog18.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog19.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog20.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog21.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog22.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog23.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog24.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog25.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog26.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog27.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog28.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog29.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog30.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog31.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog32.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog33.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog34.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog35.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog36.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog37.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog38.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog39.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog40.dislog
+Deleting C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog41.dislog
 test:
 *** DisTime.main() self test started...
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-45-18 08:45:58 = 1529158681 = 1529158681 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1970-46-18 08:46:05 = 1529165839 = 1529165839 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-46-18 08:46:05 = 1529165839
-DisTime.getCurrentDisRelativeTimestamp()          = 1970-46-18 08:46:07 = 1529167030
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-23-09 12:23:04 = 764584112
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-05-17 18:05:11 = 3092878725 = -1202088571 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-05-17 18:05:18 = 3092885883 = -1202081413 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-05-17 18:05:18 = 3092885883
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-05-17 18:05:20 = 3092888268
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-34-18 13:34:04 = 1546444134
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:21.745288200, 2026-09-14T04:21:21.746301800Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:21.747302400, 2026-09-14T04:21:21.747302400Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:21.747302400, 2026-09-14T04:21:21.747302400Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.503967500, 2026-10-08T00:43:12.505944500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.505944500, 2026-10-08T00:43:12.505944500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.505944500, 2026-10-08T00:43:12.505944500Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:22.748071500, 2026-09-14T04:21:22.748071500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:22.748071500, 2026-09-14T04:21:22.748071500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-13T21:21:22.748071500, 2026-09-14T04:21:22.748071500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -740,9 +782,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-14T04:21:22.749123Z, 2026-09-14T04:21:22.749123Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-08T00:43:13.508483Z, 2026-10-08T00:43:13.508483Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-14T04:21:22.749123Z, 2026-09-14T04:21:23.751675300Z, 1002 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-08T00:43:13.508483Z, 2026-10-08T00:43:14.511261Z, 1002 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -1174,12 +1216,8 @@ PduRecorder.stop() closing recorder log file:
 *** AggregateStatePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
-String mismatch:
-================================================================
-     newEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49] dimensions:Vector3Float x:100.0 y:200.0 z:50.0 orientation:Vector3Float x:0.0 y:0.0 z:0.0 centerOfMass:Vector3Double x:1000.0 y:2000.0 z:3000.0 velocity:Vector3Float x:10.0 y:5.0 z:0.0 padTo32:(unused) aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
-================================================================
-receivedEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49, 66, -56, 0, 0, 67, 72, 0, 0, 66, 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] dimensions:Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39 orientation:Vector3Float x:0.0 y:5.937537E-39 z:0.0 centerOfMass:Vector3Double x:1.90521949302079E-307 y:0.0 z:0.0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 padTo32:(unused) aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2029,7 +2067,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1822469154
+Timestamp: -907330932
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -2050,7 +2088,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1822469154
+Timestamp: -907330932
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -2231,7 +2269,7 @@ Writing X3D LineSet
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -3040,16 +3078,16 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass(), test starting...
 [DisThreadedNetworkInterface] [receipt  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  2] DisPduType 22 COMMENT, size 56 bytes)
-[DisThreadedNetworkInterface] [sending  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
+[DisThreadedNetworkInterface] [sending  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  4] DisPduType 22 COMMENT, size 128 bytes)
-[DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
-[DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
+[DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
-[DisThreadedNetworkInterface] [receipt  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
+[DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
+[DisThreadedNetworkInterface] [receipt  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
 [DisThreadedNetworkInterface] [sending  8] DisPduType 62 COMMENT_RELIABLE, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  8] DisPduType 62 COMMENT_RELIABLE, size 128 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -3181,7 +3219,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 44 LINEAR_OBJECT_STATE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 44 LINEAR_OBJECT_STATE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 44 LINEAR_OBJECT_STATE, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -3407,7 +3445,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testEquality() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? AggregateStatePduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched Dimensions ==> expected: <Vector3Float x:100.0 y:200.0 z:50.0> but was: <Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? DeadReckoningParametersTest ?
 ?  ?  ?? testMarshalUnmarshalDataStream() ?
 ?  ?  ?? testSetAlgorithm() ?
@@ -3432,7 +3470,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testMarshalUnmarshalDataStream() ?
 ?  ?  ?? testEmptyDatum() ?
 ?  ?  ?? testSetVariableDatumValue() ?
-?  ?  ?? testMarshalUnmarshalByteBuffer() ? java.nio.BufferOverflowException
+?  ?  ?? testMarshalUnmarshalByteBuffer() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? ResupplyReceivedPduTest ?
 ?  ?  ?? testMultiplePdus() ?
@@ -3499,7 +3537,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? GriddedDataPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 16676 ms ?
+?  ?  ?? testRoundTripAllPdus() 16685 ms ?
 ?  ?? StartResumeReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? RecordQueryReliablePduTest ?
@@ -3514,21 +3552,21 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testCopyConstructor() ?
 ?  ?  ?? testMultiplyIdentity() ?
 ?  ?  ?? testXformIdentity() ?
-?  ?  ?? testEulersRoundTrip() ? roll round-trip ==> expected: <0.1> but was: <0.30222204>
+?  ?  ?? testEulersRoundTrip() ?
 ?  ?  ?? testInvertUnitQuaternion() ?
 ?  ?  ?? testSlerpMidpoint() ?
 ?  ?  ?? testZeroEulersGiveIdentity() ?
 ?  ?  ?? testConjugate() ?
 ?  ?  ?? testSlerpEndpoints() ?
 ?  ?  ?? testMakeFromVecsParallel() ?
-?  ?  ?? testMatrix4fRoundTrip() ? matrix4f round-trip [0][1] ==> expected: <-0.21807882> but was: <0.38165596>
+?  ?  ?? testMatrix4fRoundTrip() ?
 ?  ?  ?? testNormalize() ?
 ?  ?  ?? testAddSub() ?
 ?  ?  ?? testSetGetQuatValue() ?
 ?  ?  ?? testMakeFromVecsOrthogonal() ?
 ?  ?  ?? testAxisAngleRoundTrip() ?
 ?  ?  ?? testXformArrayForm() ?
-?  ?  ?? testMatrix3fRoundTrip() ? matrix3f round-trip [0][0] ==> expected: <0.88734275> but was: <0.85683876>
+?  ?  ?? testMatrix3fRoundTrip() ?
 ?  ?? Vec4fTest ?
 ?  ?  ?? testBoundsCheck() ?
 ?  ?  ?? testCopyConstructor() ?
@@ -3794,79 +3832,7 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Failures (5):
-  JUnit Jupiter:AggregateStatePduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.AggregateStatePduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched Dimensions ==> expected: <Vector3Float x:100.0 y:200.0 z:50.0> but was: <Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.AggregateStatePduTest.testOnePdu(AggregateStatePduTest.java:114)
-       edu.nps.moves.dis7.test.AggregateStatePduTest.testMultiplePdus(AggregateStatePduTest.java:92)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:VariableDatumTest:testMarshalUnmarshalByteBuffer()
-    MethodSource [className = 'edu.nps.moves.dis7.test.VariableDatumTest', methodName = 'testMarshalUnmarshalByteBuffer', methodParameterTypes = '']
-    => java.nio.BufferOverflowException
-       java.base/java.nio.Buffer.nextPutIndex(Buffer.java:735)
-       java.base/java.nio.HeapByteBuffer.put(HeapByteBuffer.java:220)
-       edu.nps.moves.dis7.pdus.Align.lambda$to64bits$0(Align.java:77)
-       java.base/java.util.Spliterators$IntArraySpliterator.forEachRemaining(Spliterators.java:1124)
-       java.base/java.util.stream.IntPipeline$Head.forEach(IntPipeline.java:619)
-       edu.nps.moves.dis7.pdus.Align.to64bits(Align.java:77)
-       edu.nps.moves.dis7.pdus.VariableDatum.marshal(VariableDatum.java:251)
-       edu.nps.moves.dis7.test.VariableDatumTest.testMarshalUnmarshalByteBuffer(VariableDatumTest.java:100)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       [...]
-  JUnit Jupiter:QuaternionTest:testEulersRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.test.QuaternionTest', methodName = 'testEulersRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: roll round-trip ==> expected: <0.1> but was: <0.30222204>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:118)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:849)
-       edu.nps.moves.dis7.test.QuaternionTest.testEulersRoundTrip(QuaternionTest.java:121)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:QuaternionTest:testMatrix4fRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.test.QuaternionTest', methodName = 'testMatrix4fRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: matrix4f round-trip [0][1] ==> expected: <-0.21807882> but was: <0.38165596>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:118)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:849)
-       edu.nps.moves.dis7.test.QuaternionTest.testMatrix4fRoundTrip(QuaternionTest.java:168)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:QuaternionTest:testMatrix3fRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.test.QuaternionTest', methodName = 'testMatrix3fRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: matrix3f round-trip [0][0] ==> expected: <0.88734275> but was: <0.85683876>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:118)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:849)
-       edu.nps.moves.dis7.test.QuaternionTest.testMatrix3fRoundTrip(QuaternionTest.java:151)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-
-Test run finished after 464684 ms
+Test run finished after 465372 ms
 [       117 containers found      ]
 [         0 containers skipped    ]
 [       117 containers started    ]
@@ -3877,15 +3843,14 @@ Test run finished after 464684 ms
 [         0 tests skipped         ]
 [       366 tests started         ]
 [         0 tests aborted         ]
-[       361 tests successful      ]
-[         5 tests failed          ]
+[       366 tests successful      ]
+[         0 tests failed          ]
 
-Java Result: 1
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null677279300
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null1103368148
 Loading stylesheet ile:/C:/apache-ant-1.10.15/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 142ms
-Deleting: C:\Users\donbr\AppData\Local\Temp\null677279300
+Transform time: 140ms
+Deleting: C:\Users\donbr\AppData\Local\Temp\null1103368148
 TODO: more test suite additions, meanwhile individual programs are runnable OK
 ================
 javadoc.custom:
@@ -31136,12 +31101,14 @@ Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\EspduReceiver.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\EspduSender.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\ExampleSimulationProgram.java...
+Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\ExampleTrackInterpolation.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduListenerSaver.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduReaderPlayer.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduReceiver.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduReceiverNIO.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduSender.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduSenderNIO.java...
+Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\PduTrack.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\ThreadedNetExample.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\examples\package-info.java...
 Loading source file C:\x3d-github\opendis7-java\src\edu\nps\moves\dis7\package-info.java...
@@ -31292,7 +31259,7 @@ Loading source file C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\X3d
 Loading source file C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\package-info.java...
 Constructing Javadoc information...
 Building index for all the packages and classes...
-Standard Doclet version 26.0.2.1+1-7
+Standard Doclet version 27+35-2325
 Building tree for all the packages and classes...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\swe\platform\surface\_001Poseidon.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\plw\platform\surface\_001RemeliikII.html...
@@ -35081,8 +35048,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\oth\culturalfeature\land\Antenna.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\AntennaLocation.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\AntennaLocationTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\AntennaLocationTest.java:148: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\AntennaLocationTest.java:147: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\AntennaLocationTest.java:30: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\AntennaLocationTest.java:37: warning: no comment
@@ -38042,8 +38009,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\jammers\Noise\BarrageNoise\Click\Click.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\ClockTime.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\ClockTimeTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\ClockTimeTest.java:143: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\ClockTimeTest.java:142: warning: no description for @throws
+     * @throws Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\ClockTimeTest.java:26: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\ClockTimeTest.java:33: warning: no comment
@@ -39278,8 +39245,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\enumerations\DeadReckoningAlgorithm.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\DeadReckoningParameters.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\DeadReckoningParametersTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\DeadReckoningParametersTest.java:156: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\DeadReckoningParametersTest.java:155: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\DeadReckoningParametersTest.java:29: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\DeadReckoningParametersTest.java:36: warning: no comment
@@ -40087,8 +40054,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\Enti
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EntityID.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EntityIdentifier.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\EntityIDTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityIDTest.java:157: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityIDTest.java:156: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityIDTest.java:26: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityIDTest.java:33: warning: no comment
@@ -40113,8 +40080,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\Enti
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EntityMarking.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\enumerations\EntityMarkingCharacterSet.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\EntityMarkingTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityMarkingTest.java:169: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityMarkingTest.java:168: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityMarkingTest.java:27: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityMarkingTest.java:34: warning: no comment
@@ -40141,8 +40108,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\Enti
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\EntityTypeFactory.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EntityTypeRaw.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\EntityTypeTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityTypeTest.java:165: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityTypeTest.java:164: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityTypeTest.java:28: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EntityTypeTest.java:35: warning: no comment
@@ -40226,8 +40193,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\usa\platform\air\EUH60QUICKFIX.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EulerAngles.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\EulerAnglesTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EulerAnglesTest.java:154: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EulerAnglesTest.java:153: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EulerAnglesTest.java:27: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EulerAnglesTest.java:34: warning: no comment
@@ -40296,8 +40263,8 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EventIdentifier.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\EventIdentifierLiveEntity.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\EventIdentifierTest.html...
-C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EventIdentifierTest.java:158: warning: no @throws for java.lang.Exception
-    public static void main(String[] args) throws Exception
+C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EventIdentifierTest.java:157: warning: no description for @throws
+     * @throws java.lang.Exception
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EventIdentifierTest.java:27: warning: no comment
     public static void setUpClass()
 C:\x3d-github\opendis7-java\test\edu\nps\moves\dis7\test\EventIdentifierTest.java:34: warning: no comment
@@ -40327,6 +40294,7 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\fra\platform\surface\ExailDriXH9.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\fra\platform\surface\ExailDriXO16.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\ExampleSimulationProgram.html...
+Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\ExampleTrackInterpolation.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\bra\platform\surface\ExBroadswordclass.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\fra\munition\battlefieldsupport\ExcaliburMP22bomb.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\objectTypes\LinearObject\Tacticalsmoke\ExhaustSmoke\ExhaustSmoke.html...
@@ -50718,6 +50686,7 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\PduSenderNIO.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\PduStatus.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\PduTest.html...
+Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\PduTrack.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\grc\platform\surface\PeaceventureL.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\gbr\platform\surface\Peacockclasslargepatrolcraft.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\usa\platform\surface\PeaIslandWPB1347.html...
@@ -86273,6 +86242,7 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\EspduSender.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\EspduSender.NetworkMode.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\ExampleSimulationProgram.html...
+Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\ExampleTrackInterpolation.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduListenerSaver.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduReaderPlayer.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduReceiver.html...
@@ -86280,6 +86250,7 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduSender.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduSender.NetworkMode.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduSenderNIO.html...
+Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\PduTrack.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\examples\class-use\ThreadedNetExample.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\utilities\class-use\CoordinateConversions.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\utilities\class-use\DisChannel.html...
@@ -87130,9 +87101,6 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\search.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\overview-summary.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\help-doc.html...
 100 warnings
-view.javadoc.local:
-view local javadoc in dist/javadoc subdirectory
-Browsing: file:/C:/x3d-github/opendis7-java/dist/javadoc/index.html
 ================
 init:
 Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
@@ -87148,7 +87116,7 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7.0.37
 Specification-Vendor   = Simulation Interoperability Standards Organization (SISO)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 13 September 2026 21:20:32
+Implementation-Version = 7 October 2026 17:42:06
 Implementation-Vendor  = Relative Motion Consulting (RMC)
 init:
 deps-jar:
@@ -87195,4 +87163,4 @@ Deployment steps:
    * Corresponding Altova XMLSpy autogenerated documentation to xml/SchemaDocumentation
 ================
 opendis7-java build all complete
-BUILD SUCCESSFUL (total time: 14 minutes 7 seconds)
+BUILD SUCCESSFUL (total time: 14 minutes 30 seconds)
