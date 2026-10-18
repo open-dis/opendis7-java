@@ -1,3 +1,5 @@
+## README
+
 These projects were originally developed for the NPS MV3500 Networked Graphics Simulation course
 by Don McGregor.  
 
