@@ -1,0 +1,9 @@
+07 AUG 2020
+
+Running Servlets in NetBeans issue here:
+https://stackoverflow.com/questions/57127247/webservlet-fails-in-netbeans-11-0-with-java-lang-runtimeexception-com-example
+
+Scroll to the bottom if you are running Apache NetBeans 12.0 and do not have the
+nb-javac plugin installed. This plugin shouldn't be required for NB v12, but in
+the servlet case, it is required else the RuntimeException mentioned in the SO 
+article above.

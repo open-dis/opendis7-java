@@ -1,0 +1,135 @@
+ant -f C:\\x-nps-gitlab\\NetworkedGraphicsMV3500\\examples\\DisShooting -Dnb.internal.action.name=run run
+init:
+deps-jar:
+compile:
+run:
+DisShooting.SimulationRunner started...
+Announcing EntityID siteID:17 applicationID:42 entityID:104
+Announcing EntityID siteID:17 applicationID:42 entityID:208
+Going to sleep for 10 seconds to build a list of entities in the world
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Number of entities in the world: 10
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:29233 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:1 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:4458 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:2 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:29058 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:3 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:25771 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:4 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:13208 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:5 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Going to sleep for 10 seconds to build a list of entities in the world
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:12700 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:6 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Number of entities in the world: 10
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Going to sleep for 10 seconds to build a list of entities in the world
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:3520 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:1 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:16297 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:2 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:14251 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:3 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:26938 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:4 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Adding entity (SiteID, AppID, ID): 17, 42, 208
+Adding entity (SiteID, AppID, ID): 17, 42, 104
+Number of entities in the world: 10
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:27653 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:1 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:28501 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:2 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:6052 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:3 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 208
+Target location (x, y, z): 3813763.74593518, 3870225.455713479, 3329070.647929305
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:10888 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:4 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Target entity (ID, AppID, SiteID): 17, 42, 104
+Target location (x, y, z): 3836082.550043152, 3866599.947492387, 3307716.3439103756
+don't shoot, it's me!
+Got FirePdu firingEntityID:EntityID siteID:17 applicationID:42 entityID:104 targetEntityID:EntityID siteID:17 applicationID:42 entityID:208 munitionExpendibleID:EntityID siteID:17 applicationID:42 entityID:2646 eventID:EventIdentifier simulationAddress:SimulationAddress site:17 application:42 eventNumber:5 fireMissionIndex:0 locationInWorldCoordinates:Vector3Double x:3836082.550043152 y:3866599.947492387 z:3307716.3439103756 descriptor:MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 range:0.0
+BUILD SUCCESSFUL (total time: 30 seconds)

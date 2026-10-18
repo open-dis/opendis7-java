@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 
+Note that if you want to use this web page from clients other than the
+one running on the same host as the web browser, you MUST change the
+url the websocket connects to.
+
+A demo that uses google map's Javascript api and web sockets. We receive
+updates in IEEE 1278 DIS binary format, and place icons on the map for each
+entity's location. The icons are clickable for more info. Typically the server
+will be forwarding information, including from the server-local network, for such
+information as may be being put out by VBS2 or the like.
+
+Does the conversion from DIS global (geocentric/earth-centered, earth-fixed)
+to lat/lon/alt.
+-->
+<html>
+    <head>
+        <title>DIS Demo Featuring Google Maps</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+
+        <style type="text/css">
+            html {height:100%}
+            body { height:100%; margin:0; padding:0 }
+            #map-canvas{height:100% }
+        </style>
+
+        <!-- Note: this is using a Google Maps API key linked to me, DMcG. For serious use, go to -->
+        <!-- https://code.google.com/apis/console and get your own api key. Using this key is fine for demo purposes. -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZihiWY3ho8hHfkhu9_6mcMSkxSvpjbTI&amp;sensor=true"></script>
+        
+        <!-- Binary DIS implementation, also coordinate system conversion utilities -->
+        <script src="scripts/dis.js"></script>
+        <script src="scripts/DisAppearance.js"></script>
+
+        <script src="scripts/app/index.js"></script>
+    </head>
+    <body>
+        <div id="map-canvas"></div>
+    </body>
+</html>

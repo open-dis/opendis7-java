@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="xmlrpc-demo-IDE">
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/articles/freeform-config.html#runsingle) -->
+
+    <path id="cp">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement location="build/WEB-INF/classes"/>
+    </path>
+
+    <target name="run-selected-file-in-src">
+        <ant antfile="build.xml" target="compile"/>
+        <fail unless="run.class">Must set property 'run.class'</fail>
+        <java classname="${run.class}"
+              classpathref="cp"
+              failonerror="true"
+              fork="true"/>
+    </target>
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/articles/freeform-config.html#runsingle) -->
+    <target name="debug-selected-file-in-src">
+        <fail unless="debug.class">Must set property 'debug.class'</fail>
+        <ant antfile="build.xml" target="compile"/>
+        <nbjpdastart addressproperty="jpda.address" name="xmlrpc" transport="dt_socket">
+            <classpath refid="cp"/>
+        </nbjpdastart>
+        <java classname="${debug.class}"
+              classpathref="cp"
+              failonerror="true"
+              fork="true">
+            <jvmarg value="-agentlib:jdwp=transport=dt_socket,address=${jpda.address}"/>
+        </java>
+    </target>
+</project>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="xmlrpc-demo" default="dist" basedir=".">
+    <property environment="env"/>
+
+    <property name="app.name" value="SavageSearch"/>
+
+    <property name="build" value="build"/>
+    <property name="dist" value="dist"/>
+    <property name="lib" value="lib"/>
+    <property name="src" value="src"/>
+    <property name="web" value="web"/>
+    <property name="logs" value="logs"/>
+
+    <property name="debug" value="yes"/>
+    <property name="deprecations" value="yes"/>
+
+    <property file="nbproject/private/private.properties"/>
+    <property file="build.properties"/>
+
+    <import file="nbproject/ide-file-targets.xml"/>
+
+    <!--
+    ========
+    TASKDEFs
+    ========
+    -->
+
+    <import file="${catalina.base}/bin/catalina-tasks.xml"/>
+
+    <path id="compile.classpath">
+        <fileset id="cp" dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="run.classpath">
+        <path refid="cp"/>
+        <pathelement location="${build}/WEB-INF/classes"/>
+    </path>
+
+    <target name="env">
+        <echo message="catalina.home=${catalina.home}"/>
+    </target>
+
+    <target name="prepare" depends="env">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${build}/WEB-INF"/>
+        <mkdir dir="${build}/WEB-INF/classes"/>
+        <!-- Copy static content of this web application -->
+        <copy todir="${build}" overwrite="yes">
+            <fileset dir="${web}">
+                <include name="*.css"/>
+                <include name="*.html"/>
+                <include name="*.jsp"/>
+            </fileset>
+        </copy>
+        <copy todir="${build}/WEB-INF" overwrite="yes">
+            <fileset dir="${web}/WEB-INF">
+                <include name="classes/**"/>
+                <include name="web.xml"/>
+            </fileset>
+        </copy>
+        <!-- supporting jars -->
+        <copy todir="${build}/WEB-INF/lib" overwrite="yes">
+            <fileset refid="cp"/>
+        </copy>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <target name="compile" depends="prepare" description="Compile Java sources">
+        <javac release="11"
+               srcdir="${src}"
+               destdir="${build}/WEB-INF/classes"
+               listfiles="yes"
+               debug="${debug}"
+               deprecation="${deprecations}"
+               includeantruntime="false"
+               classpathref="compile.classpath">
+            <compilerarg value="-Xlint:-options"/>
+        </javac>
+        <!-- Copy application resources -->
+        <copy todir="${build}/WEB-INF/classes">
+            <fileset dir="${src}">
+                <exclude name="*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="dist" depends="compile" description="Create binary distribution">
+        <war destfile="${dist.war}" basedir="${build}"/>
+    </target>
+
+    <target name="runLocalDemo"
+            depends="clean,compile"
+            description="Run both the Server and Client locally">
+        <parallel>
+            <sequential>
+                <antcall target="runServer"/>
+            </sequential>
+            <sequential>
+                <sleep seconds="5"/>
+                <antcall target="runClient"/>
+            </sequential>
+        </parallel>
+    </target>
+
+    <target name="runServer">
+        <java classname="RpcServer" classpathref="run.classpath"/>
+    </target>
+    <target name="runClient">
+        <java classname="RpcClient" classpathref="run.classpath"/>
+    </target>
+
+    <target name="deployRunDemo"
+            depends="undeployRpcDemo,clean,dist"
+            description="Builds the web application starts, a local Tomcat server and runs XML RPC demo">
+        <sequential>
+            <antcall target="start.tomcat"/>
+            <!-- Allow Tomcat to startup -->
+            <sleep seconds="2"/>
+            <deploy url="${mgr}"
+                    username="${username}"
+                    password="${password}"
+                    path="${context}"
+                    war="${basedir}/${dist.war}"/>
+            <!-- Allow deployment -->
+            <sleep seconds="2"/>
+            <antcall target="runClient"/>
+        </sequential>
+    </target>
+    <target name="start.tomcat">
+        <exec executable="${catalina.home}/bin/${startup}">
+            <env key="CATALINA_HOME" value="${catalina.home}"/>
+        </exec>
+    </target>
+
+    <target name="undeployRpcDemo"
+            description="Removes the web application and stops the local Tomcat server">
+        <sequential>
+            <undeploy url="${mgr}"
+                      username="${username}"
+                      password="${password}"
+                      path="${context}"/>
+            <antcall target="stop.tomcat"/>
+        </sequential>
+    </target>
+    <target name="stop.tomcat">
+        <exec executable="${catalina.home}/bin/${shutdown}">
+            <env key="CATALINA_HOME" value="${catalina.home}"/>
+        </exec>
+    </target>
+
+    <target name="clean" description="Delete old build and dist directories">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+        <delete dir="${logs}"/>
+    </target>
+
+</project>

@@ -1,0 +1,50 @@
+ant -f C:\\x-nps-gitlab\\NetworkedGraphicsMV3500\\examples\\DisDemo -Dnb.internal.action.name=run run
+init:
+Deleting: C:\x-nps-gitlab\NetworkedGraphicsMV3500\examples\DisDemo\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x-nps-gitlab\NetworkedGraphicsMV3500\examples\DisDemo\build\built-jar.properties
+compile:
+run:
+DisDemo.DisDemonstration: sending 20 ESPDU packets at 1000 msec (1.0 second) intervals on
+  broadcast address=[/172.20.210.244, /172.16.0.255] port 3000
+Current position: 0.0, 1.0, 0.0
+... sent DIS ESPDU 1 of 20
+Current position: 0.0, 2.0, 0.0
+... sent DIS ESPDU 2 of 20
+Current position: 0.0, 3.0, 0.0
+... sent DIS ESPDU 3 of 20
+Current position: 0.0, 4.0, 0.0
+... sent DIS ESPDU 4 of 20
+Current position: 0.0, 5.0, 0.0
+... sent DIS ESPDU 5 of 20
+Current position: 0.0, 6.0, 0.0
+... sent DIS ESPDU 6 of 20
+Current position: 0.0, 7.0, 0.0
+... sent DIS ESPDU 7 of 20
+Current position: 0.0, 8.0, 0.0
+... sent DIS ESPDU 8 of 20
+Current position: 0.0, 9.0, 0.0
+... sent DIS ESPDU 9 of 20
+Current position: 0.0, 10.0, 0.0
+... sent DIS ESPDU 10 of 20
+Current position: 0.0, 11.0, 0.0
+... sent DIS ESPDU 11 of 20
+Current position: 0.0, 12.0, 0.0
+... sent DIS ESPDU 12 of 20
+Current position: 0.0, 13.0, 0.0
+... sent DIS ESPDU 13 of 20
+Current position: 0.0, 14.0, 0.0
+... sent DIS ESPDU 14 of 20
+Current position: 0.0, 15.0, 0.0
+... sent DIS ESPDU 15 of 20
+Current position: 0.0, 16.0, 0.0
+... sent DIS ESPDU 16 of 20
+Current position: 0.0, 17.0, 0.0
+... sent DIS ESPDU 17 of 20
+Current position: 0.0, 18.0, 0.0
+... sent DIS ESPDU 18 of 20
+Current position: 0.0, 19.0, 0.0
+... sent DIS ESPDU 19 of 20
+Current position: 0.0, 20.0, 0.0
+... sent DIS ESPDU 20 of 20
+BUILD SUCCESSFUL (total time: 20 seconds)

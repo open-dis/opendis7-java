@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_PATTERN">[%-5level] %d{yyyy MMM dd HH:mm:ss 'GMT'Z} [%t] %C:%L - %m%n</Property>
+        <Property name="CONSOLE_PATTERN">%highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green} %style{%d{yyyy MMM dd HH:mm:ss 'GMT'Z}}{blue} [%t] %C:%L - %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_ERR">
+            <PatternLayout pattern="${CONSOLE_PATTERN}"/>
+        </Console>
+        <RollingFile name="RollingLogFile" fileName="logs/error.log.0" filePattern="logs/error.log.%i" >
+            <LevelRangeFilter minLevel="FATAL" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <RollingFile name="InfoLog" fileName="logs/xmlrcp.log.0" filePattern="logs/xmldemo.log.%i">
+            <LevelRangeFilter minLevel="WARN" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="20" fileIndex="min"/>
+        </RollingFile>
+        <RollingFile name="DebugLog" fileName="logs/debug.log.0" filePattern="logs/debug.log.%i">
+            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingLogFile"/>
+            <AppenderRef ref="InfoLog" />
+            <AppenderRef ref="DebugLog"/>
+        </Root>
+    </Loggers>
+</Configuration>
