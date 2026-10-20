@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="xmlrpc-demo" default="dist" basedir=".">
+<!-- Warning: this project depends on Tomcat 9, and is not forward compatible to later versions of Tomcat.
+     See README.md in parent directory for project configuration details. -->
+
+<!-- Warning: this project does not depend on external Tomcat 9 running, rather it handles starting/stopping.
+     Note that you must have private properties set, see comments in build.properties file. -->
+
+<project name="SavageWebServlet xmlrpc-demo" default="dist" basedir=".">
     <property environment="env"/>
 
     <property name="app.name" value="SavageSearch"/>
@@ -16,6 +22,8 @@
     <property name="deprecations" value="yes"/>
 
     <property file="nbproject/private/private.properties"/>
+    <!-- example entry:  catalina.base=C:\\apache-tomcat-9.0.123 -->
+    
     <property file="build.properties"/>
 
     <import file="nbproject/ide-file-targets.xml"/>
@@ -35,8 +43,8 @@
     </path>
 
     <path id="run.classpath">
-        <path refid="cp"/>
-        <pathelement location="${build}/WEB-INF/classes"/>
+        <path refid="compile.classpath"/>
+            <pathelement location="${build}/WEB-INF/classes"/>
     </path>
 
     <target name="env">
@@ -92,8 +100,10 @@
     </target>
 
     <target name="runLocalDemo"
-            depends="clean,compile"
+            depends="clean,compile,platformInitialize"
             description="Run both the Server and Client locally">
+        <!-- <echo message="Classpath is: ${ant.refid:my.classpath}"/> 
+        <echo message="$run.classpath=${ant.refid:run.classpath}"/>-->
         <parallel>
             <sequential>
                 <antcall target="runServer"/>
@@ -114,7 +124,8 @@
 
     <target name="deployRunDemo"
             depends="undeployRpcDemo,clean,dist"
-            description="Builds the web application starts, a local Tomcat server and runs XML RPC demo">
+            description="Builds the web application, starts a local Tomcat server, and runs XML RPC demo">
+        <echo message="TODO flaky startup... ensure tomcat not already running, might need to start/stop tomcat."/>
         <sequential>
             <antcall target="start.tomcat"/>
             <!-- Allow Tomcat to startup -->
@@ -129,7 +140,48 @@
             <antcall target="runClient"/>
         </sequential>
     </target>
-    <target name="start.tomcat">
+
+    <target name="platformInitialize" depends="platformType,initializeMac,initializeWindows,initializeUnix"/>
+    <target name="platformType">
+        <condition property="isWindows">
+            <os family="windows"/>
+        </condition>
+        <condition property="isMac">
+            <os family="mac"/>
+        </condition>
+        <!-- Based on Apache Ant user-manual example -->
+        <condition property="isUnixNotMac">
+            <and>
+                <os family="unix"/>
+
+                <not>
+                    <equals arg1="${os.name}" arg2="Mac OS X"/>
+                </not>
+
+            </and>
+        </condition>
+    </target>
+
+    <target name="initializeMac" if="isMac" depends="platformType">
+        <!-- operating system-specific commands here -->
+        <property name="startup"  value="startup.sh"/>
+        <property name="shutdown" value="shutdown.sh"/>
+        <echo message="$startup=${startup},$shutdown=${shutdown} (Mac)"/>
+    </target>
+    <target name="initializeWindows" if="isWindows" depends="platformType">
+        <!-- operating system-specific commands here -->
+        <property name="startup"  value="startup.bat"/>
+        <property name="shutdown" value="shutdown.bat"/>
+        <echo message="$startup=${startup},$shutdown=${shutdown} (Windows)"/>
+    </target>
+    <target name="initializeUnix" if="isUnixNotMac" depends="platformType">
+        <!-- operating system-specific commands here -->
+        <property name="startup"  value="startup.sh"/>
+        <property name="shutdown" value="shutdown.sh"/>
+        <echo message="$startup=${startup},$shutdown=${shutdown} (UnixNotMac)"/>
+    </target>
+    
+    <target name="start.tomcat" depends="platformInitialize">
         <exec executable="${catalina.home}/bin/${startup}">
             <env key="CATALINA_HOME" value="${catalina.home}"/>
         </exec>
@@ -138,6 +190,7 @@
     <target name="undeployRpcDemo"
             description="Removes the web application and stops the local Tomcat server">
         <sequential>
+            <!-- TODO: undeploy not failing gracefully if tomcat not already started -->
             <undeploy url="${mgr}"
                       username="${username}"
                       password="${password}"
@@ -145,7 +198,8 @@
             <antcall target="stop.tomcat"/>
         </sequential>
     </target>
-    <target name="stop.tomcat">
+    
+    <target name="stop.tomcat" depends="platformInitialize">
         <exec executable="${catalina.home}/bin/${shutdown}">
             <env key="CATALINA_HOME" value="${catalina.home}"/>
         </exec>

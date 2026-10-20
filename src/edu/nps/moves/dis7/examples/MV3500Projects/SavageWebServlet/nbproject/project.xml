@@ -8,7 +8,7 @@
     <configuration>
         <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
             <!-- Do not use Project Properties customizer when editing this file manually. -->
-            <name>xmlrpc-demo</name>
+            <name>SavageWebServlet xmlrpc-demo</name>
             <properties/>
             <folders>
                 <source-folder>
