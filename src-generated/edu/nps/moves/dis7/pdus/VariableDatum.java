@@ -63,7 +63,7 @@ public class VariableDatum extends Object implements Serializable {
         marshalSize += variableDatumID.getMarshalledSize();
         marshalSize += 4;  // variableDatumLength
         marshalSize += variableDatumValue.length;
-        marshalSize += (8 - marshalSize % 8) % 8;
+        marshalSize += (8 - marshalSize % 8) % 8; // pad to 64-bit boundary (preserve bugfix by ricklentz 7cc9a79)
 
         return marshalSize;
     }
@@ -163,7 +163,7 @@ public class VariableDatum extends Object implements Serializable {
     /* *************************** */
     /* Marshal / unmarshal methods */
     /* *************************** */
-    
+
     /**
      * Serializes an object to a DataOutputStream.
      *
@@ -186,7 +186,7 @@ public class VariableDatum extends Object implements Serializable {
 
             padding = new byte[Align.to64bits(dos)];
             Arrays.fill(padding, (byte) 0); // make sure
-            
+
         } catch (IOException e) {
             System.err.flush(); // ensure contiguous console outputs
             System.err.println(e);
