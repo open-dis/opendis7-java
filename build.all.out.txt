@@ -7,7 +7,7 @@ Deleting C:\x3d-github\opendis7-java\dist\opendis7-pdus-javadoc.jar
 Deleting C:\x3d-github\opendis7-java\dist\opendis7-pdus-source.jar
 Deleting directory C:\x3d-github\opendis7-java\dist\javadoc
 all:
-timestamp 7 October 2026 17:42:06
+timestamp 25 October 2026 16:56:08
 versions:
 ant -version
 Apache Ant(TM) version 1.10.17 compiled on April 6 2026
@@ -31,7 +31,7 @@ init:
 Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
-Compiling 27281 source files to C:\x3d-github\opendis7-java\build\classes
+Compiling 27280 source files to C:\x3d-github\opendis7-java\build\classes
 Ignoring source, target and bootclasspath as release has been set
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\entities\ser\platform\surface\package-info.class
 Creating empty C:\x3d-github\opendis7-java\build\classes\edu\nps\moves\dis7\entities\prk\platform\subsurface\package-info.class
@@ -760,21 +760,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-05-17 18:05:11 = 3092878725 = -1202088571 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1969-05-17 18:05:18 = 3092885883 = -1202081413 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-05-17 18:05:18 = 3092885883
-DisTime.getCurrentDisRelativeTimestamp()          = 1969-05-17 18:05:20 = 3092888268
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-34-18 13:34:04 = 1546444134
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-46-29 09:46:39 = 4099766995 = -195200301 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-46-29 09:46:44 = 4099772961 = -195194335 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-46-29 09:46:45 = 4099772961
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-46-29 09:46:48 = 4099775346
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-24-24 09:24:47 = 2049887673
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.503967500, 2026-10-08T00:43:12.505944500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.505944500, 2026-10-08T00:43:12.505944500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:12.505944500, 2026-10-08T00:43:12.505944500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:16.461857700, 2026-10-25T23:57:16.462889500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:16.462889500, 2026-10-25T23:57:16.462889500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:16.462889500, 2026-10-25T23:57:16.462889500Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-10-07T17:43:13.507450100, 2026-10-08T00:43:13.507450100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:17.464744900, 2026-10-25T23:57:17.464744900Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:17.464744900, 2026-10-25T23:57:17.464744900Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-10-25T16:57:17.464744900, 2026-10-25T23:57:17.464744900Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -782,9 +782,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-08T00:43:13.508483Z, 2026-10-08T00:43:13.508483Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-25T23:57:17.465737700Z, 2026-10-25T23:57:17.465737700Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-08T00:43:13.508483Z, 2026-10-08T00:43:14.511261Z, 1002 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-10-25T23:57:17.465737700Z, 2026-10-25T23:57:18.469975200Z, 1004 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -1018,7 +1018,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 16 ACTION_REQUEST, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1813,8 +1813,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog01.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 57] DisPduType 06 RESUPPLY_OFFER, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 58] DisPduType 07 RESUPPLY_RECEIVED, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 58] DisPduType 07 RESUPPLY_RECEIVED, size 28 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 59] DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 59] DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE, size 28 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 59] DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 60] DisPduType 05 SERVICE_REQUEST, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 60] DisPduType 05 SERVICE_REQUEST, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 61] DisPduType 19 SET_DATA, size 40 bytes)
@@ -2067,7 +2067,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -907330932
+Timestamp: 99469056
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -2088,7 +2088,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -907330932
+Timestamp: 99469056
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -2269,7 +2269,7 @@ Writing X3D LineSet
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -3078,8 +3078,8 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass(), test starting...
 [DisThreadedNetworkInterface] [receipt  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  2] DisPduType 22 COMMENT, size 56 bytes)
-[DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  3] DisPduType 22 COMMENT, size 72 bytes)
+[DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
@@ -3088,8 +3088,8 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass(), test starting...
 [DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
 [DisThreadedNetworkInterface] [receipt  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
-[DisThreadedNetworkInterface] [sending  8] DisPduType 62 COMMENT_RELIABLE, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  8] DisPduType 62 COMMENT_RELIABLE, size 128 bytes)
+[DisThreadedNetworkInterface] [sending  8] DisPduType 62 COMMENT_RELIABLE, size 128 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -3537,7 +3537,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? GriddedDataPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 16685 ms ?
+?  ?  ?? testRoundTripAllPdus() 16670 ms ?
 ?  ?? StartResumeReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? RecordQueryReliablePduTest ?
@@ -3832,7 +3832,7 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Test run finished after 465372 ms
+Test run finished after 465331 ms
 [       117 containers found      ]
 [         0 containers skipped    ]
 [       117 containers started    ]
@@ -3847,10 +3847,10 @@ Test run finished after 465372 ms
 [         0 tests failed          ]
 
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null1103368148
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null1560231121
 Loading stylesheet ile:/C:/apache-ant-1.10.15/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 140ms
-Deleting: C:\Users\donbr\AppData\Local\Temp\null1103368148
+Transform time: 249ms
+Deleting: C:\Users\donbr\AppData\Local\Temp\null1560231121
 TODO: more test suite additions, meanwhile individual programs are runnable OK
 ================
 javadoc.custom:
@@ -31083,7 +31083,6 @@ Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\UnderwaterAcousticPdu.java...
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\UnsignedDISInteger.java...
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\VariableDatum.java...
-Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\VariableDatumAutogenerated.java...
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\VariableParameter.java...
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\VariableTransmitterParameters.java...
 Loading source file C:\x3d-github\opendis7-java\src-generated\edu\nps\moves\dis7\pdus\Vector2Float.java...
@@ -56952,7 +56951,6 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\rus\platform\surface\VanyaIclass.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\entities\rus\platform\surface\VanyaIIclass.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\VariableDatum.html...
-Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\VariableDatumAutogenerated.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\test\VariableDatumTest.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\VariableParameter.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\enumerations\VariableParameterRecordType.html...
@@ -86225,7 +86223,6 @@ Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\clas
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\UnderwaterAcousticPdu.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\UnsignedDISInteger.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\VariableDatum.html...
-Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\VariableDatumAutogenerated.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\VariableParameter.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\VariableTransmitterParameters.html...
 Generating C:\x3d-github\opendis7-java\dist\javadoc\edu\nps\moves\dis7\pdus\class-use\Vector2Float.html...
@@ -87116,7 +87113,7 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7.0.37
 Specification-Vendor   = Simulation Interoperability Standards Organization (SISO)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 7 October 2026 17:42:06
+Implementation-Version = 25 October 2026 16:56:08
 Implementation-Vendor  = Relative Motion Consulting (RMC)
 init:
 deps-jar:
@@ -87150,7 +87147,7 @@ Deployment steps:
    * build all
    * commit and push all changed source files in both projects
 3. MV3500 Distributed Simulation Fundamentals
-   * run update.opendis7.jar.from.local to for new copy in lib/opendis7-full.jar
+   * run update.opendis7.jar.from.local for new copy in lib/opendis7-full.jar
    * build all to test course examples and student assignments, generate javadoc
    * commit and push opendis7-full.jar
 4. scp savage.nps.edu/data/html/opendis7-java
@@ -87163,4 +87160,4 @@ Deployment steps:
    * Corresponding Altova XMLSpy autogenerated documentation to xml/SchemaDocumentation
 ================
 opendis7-java build all complete
-BUILD SUCCESSFUL (total time: 14 minutes 30 seconds)
+BUILD SUCCESSFUL (total time: 14 minutes 43 seconds)
