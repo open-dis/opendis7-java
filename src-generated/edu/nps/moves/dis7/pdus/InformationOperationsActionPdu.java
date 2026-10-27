@@ -214,7 +214,7 @@ public IOActionIOWarfareType getIOWarfareType()
 {
     if (IOWarfareType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration IOActionIOWarfareType.values()[0]=" + IOActionIOWarfareType.values()[0]);
         return IOActionIOWarfareType.values()[0];
     }
     return IOWarfareType; 
@@ -234,7 +234,7 @@ public IOActionIOSimulationSource getIOSimulationSource()
 {
     if (IOSimulationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         return IOActionIOSimulationSource.values()[0];
     }
     return IOSimulationSource; 
@@ -254,7 +254,7 @@ public IOActionIOActionType getIOActionType()
 {
     if (IOActionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration IOActionIOActionType.values()[0]=" + IOActionIOActionType.values()[0]);
         return IOActionIOActionType.values()[0];
     }
     return IOActionType; 
@@ -274,7 +274,7 @@ public IOActionIOActionPhase getIOActionPhase()
 {
     if (IOActionPhase == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration IOActionIOActionPhase.values()[0]=" + IOActionIOActionPhase.values()[0]);
         return IOActionIOActionPhase.values()[0];
     }
     return IOActionPhase; 

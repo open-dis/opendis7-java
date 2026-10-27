@@ -84,7 +84,7 @@ public EntityKind getEntityKind()
 {
     if (entityKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration EntityKind.values()[0]=" + EntityKind.values()[0]);
         return EntityKind.values()[0];
     }
     return entityKind; 
@@ -120,7 +120,7 @@ public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
         return Country.values()[0];
     }
     return country; 

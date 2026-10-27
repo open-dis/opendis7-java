@@ -86,7 +86,7 @@ public AggregateStateAggregateKind getAggregateKind()
 {
     if (aggregateKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateAggregateKind aggregateKind == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateAggregateKind aggregateKind == null, ignored by returning default enumeration AggregateStateAggregateKind.values()[0]=" + AggregateStateAggregateKind.values()[0]);
         return AggregateStateAggregateKind.values()[0];
     }
     return aggregateKind; 
@@ -106,7 +106,7 @@ public PlatformDomain getDomain()
 {
     if (domain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
         return PlatformDomain.values()[0];
     }
     return domain; 
@@ -126,7 +126,7 @@ public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
         return Country.values()[0];
     }
     return country; 
@@ -168,7 +168,7 @@ public AggregateStateSubcategory getSubcategory()
 {
     if (subcategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateSubcategory subcategory == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateSubcategory subcategory == null, ignored by returning default enumeration AggregateStateSubcategory.values()[0]=" + AggregateStateSubcategory.values()[0]);
         return AggregateStateSubcategory.values()[0];
     }
     return subcategory; 
@@ -188,7 +188,7 @@ public AggregateStateSpecific getSpecificInfo()
 {
     if (specificInfo == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateSpecific specificInfo == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateSpecific specificInfo == null, ignored by returning default enumeration AggregateStateSpecific.values()[0]=" + AggregateStateSpecific.values()[0]);
         return AggregateStateSpecific.values()[0];
     }
     return specificInfo; 

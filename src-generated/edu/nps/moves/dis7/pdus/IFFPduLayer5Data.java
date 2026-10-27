@@ -201,7 +201,7 @@ public DataCategory getDataCategory()
 {
     if (dataCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration DataCategory.values()[0]=" + DataCategory.values()[0]);
         return DataCategory.values()[0];
     }
     return dataCategory; 

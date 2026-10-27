@@ -63,7 +63,7 @@ public GriddedDataSampleType getSampleType()
 {
     if (sampleType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration GriddedDataSampleType.values()[0]=" + GriddedDataSampleType.values()[0]);
         return GriddedDataSampleType.values()[0];
     }
     return sampleType; 
@@ -83,7 +83,7 @@ public GriddedDataDataRepresentation getDataRepresentation()
 {
     if (dataRepresentation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration GriddedDataDataRepresentation.values()[0]=" + GriddedDataDataRepresentation.values()[0]);
         return GriddedDataDataRepresentation.values()[0];
     }
     return dataRepresentation; 

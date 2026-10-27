@@ -174,7 +174,7 @@ public RepairCompleteRepair getRepair()
 {
     if (repair == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairCompleteRepair repair == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RepairCompleteRepair repair == null, ignored by returning default enumeration RepairCompleteRepair.values()[0]=" + RepairCompleteRepair.values()[0]);
         return RepairCompleteRepair.values()[0];
     }
     return repair; 

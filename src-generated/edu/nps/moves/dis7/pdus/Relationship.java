@@ -63,7 +63,7 @@ public IsPartOfNature getNature()
 {
     if (nature == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration IsPartOfNature.values()[0]=" + IsPartOfNature.values()[0]);
         return IsPartOfNature.values()[0];
     }
     return nature; 
@@ -83,7 +83,7 @@ public IsPartOfPosition getPosition()
 {
     if (position == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration IsPartOfPosition.values()[0]=" + IsPartOfPosition.values()[0]);
         return IsPartOfPosition.values()[0];
     }
     return position; 

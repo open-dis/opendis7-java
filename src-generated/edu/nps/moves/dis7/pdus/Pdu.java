@@ -472,7 +472,7 @@ public DISProtocolVersion getProtocolVersion()
 {
     if (protocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration DISProtocolVersion.values()[0]=" + DISProtocolVersion.values()[0]);
         return DISProtocolVersion.values()[0];
     }
     return protocolVersion; 
@@ -514,7 +514,7 @@ public DisPduType getPduType()
 {
     if (pduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         return DisPduType.values()[0];
     }
     return pduType; 
@@ -534,7 +534,7 @@ public DISProtocolFamily getProtocolFamily()
 {
     if (protocolFamily == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         return DISProtocolFamily.values()[0];
     }
     return protocolFamily; 

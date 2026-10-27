@@ -166,7 +166,7 @@ public ReceiverReceiverState getReceiverState()
 {
     if (receiverState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ReceiverReceiverState receiverState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ReceiverReceiverState receiverState == null, ignored by returning default enumeration ReceiverReceiverState.values()[0]=" + ReceiverReceiverState.values()[0]);
         return ReceiverReceiverState.values()[0];
     }
     return receiverState; 

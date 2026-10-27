@@ -377,7 +377,7 @@ public DEFireFlags getFlags()
 {
     if (flags == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype DEFireFlags flags == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype DEFireFlags flags == null, ignored by returning default bitfieldtype new DEFireFlags()=" + new DEFireFlags());
         return new DEFireFlags();
     }
     return flags; 
@@ -397,7 +397,7 @@ public DEFirePulseShape getPulseShape()
 {
     if (pulseShape == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration DEFirePulseShape.values()[0]=" + DEFirePulseShape.values()[0]);
         return DEFirePulseShape.values()[0];
     }
     return pulseShape; 

@@ -123,7 +123,7 @@ public ObjectStateModificationLinearObject getSegmentModification()
 {
     if (segmentModification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateModificationLinearObject segmentModification == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype ObjectStateModificationLinearObject segmentModification == null, ignored by returning default bitfieldtype new ObjectStateModificationLinearObject()=" + new ObjectStateModificationLinearObject());
         return new ObjectStateModificationLinearObject();
     }
     return segmentModification; 
@@ -143,7 +143,7 @@ public ObjectStateAppearanceGeneral getGeneralSegmentAppearance()
 {
     if (generalSegmentAppearance == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generalSegmentAppearance == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generalSegmentAppearance == null, ignored by returning default bitfieldtype new ObjectStateAppearanceGeneral()=" + new ObjectStateAppearanceGeneral());
         return new ObjectStateAppearanceGeneral();
     }
     return generalSegmentAppearance; 

@@ -81,7 +81,7 @@ public EnvironmentalProcessRecordType getEnvironmentType()
 {
     if (environmentType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration EnvironmentalProcessRecordType.values()[0]=" + EnvironmentalProcessRecordType.values()[0]);
         return EnvironmentalProcessRecordType.values()[0];
     }
     return environmentType; 

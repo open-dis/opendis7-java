@@ -83,7 +83,7 @@ public OwnershipStatus getOwnershipStatus()
 {
     if (ownershipStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration OwnershipStatus.values()[0]=" + OwnershipStatus.values()[0]);
         return OwnershipStatus.values()[0];
     }
     return ownershipStatus; 

@@ -148,7 +148,7 @@ public GridAxisDescriptorAxisType getAxisType()
 {
     if (axisType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration GridAxisDescriptorAxisType.values()[0]=" + GridAxisDescriptorAxisType.values()[0]);
         return GridAxisDescriptorAxisType.values()[0];
     }
     return axisType; 

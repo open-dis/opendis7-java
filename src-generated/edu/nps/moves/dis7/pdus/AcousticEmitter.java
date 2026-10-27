@@ -67,7 +67,7 @@ public UAAcousticSystemName getAcousticSystemName()
 {
     if (acousticSystemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration UAAcousticSystemName.values()[0]=" + UAAcousticSystemName.values()[0]);
         return UAAcousticSystemName.values()[0];
     }
     return acousticSystemName; 
@@ -87,7 +87,7 @@ public UAAcousticEmitterSystemFunction getAcousticFunction()
 {
     if (acousticFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration UAAcousticEmitterSystemFunction.values()[0]=" + UAAcousticEmitterSystemFunction.values()[0]);
         return UAAcousticEmitterSystemFunction.values()[0];
     }
     return acousticFunction; 

@@ -73,7 +73,7 @@ public IntercomControlRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration IntercomControlRecordType.values()[0]=" + IntercomControlRecordType.values()[0]);
         return IntercomControlRecordType.values()[0];
     }
     return recordType; 

@@ -195,7 +195,7 @@ public DesignatorSystemName getCodeName()
 {
     if (codeName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration DesignatorSystemName.values()[0]=" + DesignatorSystemName.values()[0]);
         return DesignatorSystemName.values()[0];
     }
     return codeName; 
@@ -231,7 +231,7 @@ public DesignatorDesignatorCode getDesignatorCode()
 {
     if (designatorCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration DesignatorDesignatorCode.values()[0]=" + DesignatorDesignatorCode.values()[0]);
         return DesignatorDesignatorCode.values()[0];
     }
     return designatorCode; 
@@ -313,7 +313,7 @@ public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
         return DeadReckoningAlgorithm.values()[0];
     }
     return deadReckoningAlgorithm; 

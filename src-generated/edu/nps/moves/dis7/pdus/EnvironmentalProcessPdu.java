@@ -192,7 +192,7 @@ public EnvironmentalProcessModelType getModelType()
 {
     if (modelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration EnvironmentalProcessModelType.values()[0]=" + EnvironmentalProcessModelType.values()[0]);
         return EnvironmentalProcessModelType.values()[0];
     }
     return modelType; 
@@ -212,7 +212,7 @@ public EnvironmentalProcessEnvironmentStatus getEnvironmentStatus()
 {
     if (environmentStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype EnvironmentalProcessEnvironmentStatus environmentStatus == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype EnvironmentalProcessEnvironmentStatus environmentStatus == null, ignored by returning default bitfieldtype new EnvironmentalProcessEnvironmentStatus()=" + new EnvironmentalProcessEnvironmentStatus());
         return new EnvironmentalProcessEnvironmentStatus();
     }
     return environmentStatus; 

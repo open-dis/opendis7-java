@@ -226,7 +226,7 @@ public DisPduType getAttributeRecordPduType()
 {
     if (attributeRecordPduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         return DisPduType.values()[0];
     }
     return attributeRecordPduType; 
@@ -246,7 +246,7 @@ public DISProtocolFamily getAttributeRecordProtocolVersion()
 {
     if (attributeRecordProtocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         return DISProtocolFamily.values()[0];
     }
     return attributeRecordProtocolVersion; 
@@ -266,7 +266,7 @@ public VariableRecordType getMasterAttributeRecordType()
 {
     if (masterAttributeRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         return VariableRecordType.values()[0];
     }
     return masterAttributeRecordType; 
@@ -286,7 +286,7 @@ public DISAttributeActionCode getActionCode()
 {
     if (actionCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration DISAttributeActionCode.values()[0]=" + DISAttributeActionCode.values()[0]);
         return DISAttributeActionCode.values()[0];
     }
     return actionCode; 

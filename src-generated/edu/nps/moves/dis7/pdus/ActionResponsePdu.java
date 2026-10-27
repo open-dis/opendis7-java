@@ -173,7 +173,7 @@ public ActionResponseRequestStatus getRequestStatus()
 {
     if (requestStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ActionResponseRequestStatus requestStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ActionResponseRequestStatus requestStatus == null, ignored by returning default enumeration ActionResponseRequestStatus.values()[0]=" + ActionResponseRequestStatus.values()[0]);
         return ActionResponseRequestStatus.values()[0];
     }
     return requestStatus; 

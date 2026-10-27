@@ -206,7 +206,7 @@ public ElectromagneticEmissionBeamFunction getBeamFunction()
 {
     if (beamFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration ElectromagneticEmissionBeamFunction.values()[0]=" + ElectromagneticEmissionBeamFunction.values()[0]);
         return ElectromagneticEmissionBeamFunction.values()[0];
     }
     return beamFunction; 
@@ -226,7 +226,7 @@ public HighDensityTrackJam getHighDensityTrackJam()
 {
     if (highDensityTrackJam == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration HighDensityTrackJam.values()[0]=" + HighDensityTrackJam.values()[0]);
         return HighDensityTrackJam.values()[0];
     }
     return highDensityTrackJam; 

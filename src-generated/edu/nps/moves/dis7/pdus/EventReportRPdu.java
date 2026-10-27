@@ -158,7 +158,7 @@ public EventReportEventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration EventReportEventType.values()[0]=" + EventReportEventType.values()[0]);
         return EventReportEventType.values()[0];
     }
     return eventType; 

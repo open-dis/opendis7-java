@@ -173,7 +173,7 @@ public ActionRequestActionID getActionID()
 {
     if (actionID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ActionRequestActionID actionID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ActionRequestActionID actionID == null, ignored by returning default enumeration ActionRequestActionID.values()[0]=" + ActionRequestActionID.values()[0]);
         return ActionRequestActionID.values()[0];
     }
     return actionID; 

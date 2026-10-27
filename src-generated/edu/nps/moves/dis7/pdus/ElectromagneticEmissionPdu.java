@@ -188,7 +188,7 @@ public ElectromagneticEmissionStateUpdateIndicator getStateUpdateIndicator()
 {
     if (stateUpdateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator stateUpdateIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator stateUpdateIndicator == null, ignored by returning default enumeration ElectromagneticEmissionStateUpdateIndicator.values()[0]=" + ElectromagneticEmissionStateUpdateIndicator.values()[0]);
         return ElectromagneticEmissionStateUpdateIndicator.values()[0];
     }
     return stateUpdateIndicator; 

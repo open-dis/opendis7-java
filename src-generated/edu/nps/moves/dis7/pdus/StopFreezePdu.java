@@ -162,7 +162,7 @@ public StopFreezeReason getReason()
 {
     if (reason == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration StopFreezeReason.values()[0]=" + StopFreezeReason.values()[0]);
         return StopFreezeReason.values()[0];
     }
     return reason; 
@@ -182,7 +182,7 @@ public StopFreezeFrozenBehavior getFrozenBehavior()
 {
     if (frozenBehavior == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype new StopFreezeFrozenBehavior()=" + new StopFreezeFrozenBehavior());
         return new StopFreezeFrozenBehavior();
     }
     return frozenBehavior; 

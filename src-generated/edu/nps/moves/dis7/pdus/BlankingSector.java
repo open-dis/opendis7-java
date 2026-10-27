@@ -209,7 +209,7 @@ public EEAttributeStateIndicator getStateIndicator()
 {
     if (stateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration EEAttributeStateIndicator.values()[0]=" + EEAttributeStateIndicator.values()[0]);
         return EEAttributeStateIndicator.values()[0];
     }
     return stateIndicator; 

@@ -97,7 +97,7 @@ public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
         return VariableParameterRecordType.values()[0];
     }
     return recordType; 
@@ -117,7 +117,7 @@ public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     if (changeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration EntityVPRecordChangeIndicator.values()[0]=" + EntityVPRecordChangeIndicator.values()[0]);
         return EntityVPRecordChangeIndicator.values()[0];
     }
     return changeIndicator; 
@@ -137,7 +137,7 @@ public EntityAssociationAssociationType getAssociationStatus()
 {
     if (associationStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationAssociationType associationStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationStatus == null, ignored by returning default enumeration EntityAssociationAssociationType.values()[0]=" + EntityAssociationAssociationType.values()[0]);
         return EntityAssociationAssociationType.values()[0];
     }
     return associationStatus; 
@@ -157,7 +157,7 @@ public EntityAssociationPhysicalAssociationType getAssociationType()
 {
     if (associationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType associationType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType associationType == null, ignored by returning default enumeration EntityAssociationPhysicalAssociationType.values()[0]=" + EntityAssociationPhysicalAssociationType.values()[0]);
         return EntityAssociationPhysicalAssociationType.values()[0];
     }
     return associationType; 
@@ -193,7 +193,7 @@ public IsPartOfStationName getOwnStationLocation()
 {
     if (ownStationLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfStationName ownStationLocation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfStationName ownStationLocation == null, ignored by returning default enumeration IsPartOfStationName.values()[0]=" + IsPartOfStationName.values()[0]);
         return IsPartOfStationName.values()[0];
     }
     return ownStationLocation; 
@@ -213,7 +213,7 @@ public EntityAssociationPhysicalConnectionType getPhysicalConnectionType()
 {
     if (physicalConnectionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType physicalConnectionType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType physicalConnectionType == null, ignored by returning default enumeration EntityAssociationPhysicalConnectionType.values()[0]=" + EntityAssociationPhysicalConnectionType.values()[0]);
         return EntityAssociationPhysicalConnectionType.values()[0];
     }
     return physicalConnectionType; 
@@ -233,7 +233,7 @@ public EntityAssociationGroupMemberType getGroupMemberType()
 {
     if (groupMemberType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationGroupMemberType groupMemberType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityAssociationGroupMemberType groupMemberType == null, ignored by returning default enumeration EntityAssociationGroupMemberType.values()[0]=" + EntityAssociationGroupMemberType.values()[0]);
         return EntityAssociationGroupMemberType.values()[0];
     }
     return groupMemberType; 

@@ -178,7 +178,7 @@ public RepairResponseRepairResult getRepairResult()
 {
     if (repairResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration RepairResponseRepairResult.values()[0]=" + RepairResponseRepairResult.values()[0]);
         return RepairResponseRepairResult.values()[0];
     }
     return repairResult; 

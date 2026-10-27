@@ -95,7 +95,7 @@ public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         return VariableRecordType.values()[0];
     }
     return recordType; 
@@ -137,7 +137,7 @@ public IOEffectsRecordIOStatus getIoStatus()
 {
     if (ioStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOStatus ioStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOEffectsRecordIOStatus ioStatus == null, ignored by returning default enumeration IOEffectsRecordIOStatus.values()[0]=" + IOEffectsRecordIOStatus.values()[0]);
         return IOEffectsRecordIOStatus.values()[0];
     }
     return ioStatus; 
@@ -157,7 +157,7 @@ public IOEffectsRecordIOLinkType getIoLinkType()
 {
     if (ioLinkType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOLinkType ioLinkType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOEffectsRecordIOLinkType ioLinkType == null, ignored by returning default enumeration IOEffectsRecordIOLinkType.values()[0]=" + IOEffectsRecordIOLinkType.values()[0]);
         return IOEffectsRecordIOLinkType.values()[0];
     }
     return ioLinkType; 
@@ -177,7 +177,7 @@ public IOEffectsRecordIOEffect getIoEffect()
 {
     if (ioEffect == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOEffect ioEffect == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOEffectsRecordIOEffect ioEffect == null, ignored by returning default enumeration IOEffectsRecordIOEffect.values()[0]=" + IOEffectsRecordIOEffect.values()[0]);
         return IOEffectsRecordIOEffect.values()[0];
     }
     return ioEffect; 
@@ -241,7 +241,7 @@ public IOEffectsRecordIOProcess getIoProcess()
 {
     if (ioProcess == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOProcess ioProcess == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOEffectsRecordIOProcess ioProcess == null, ignored by returning default enumeration IOEffectsRecordIOProcess.values()[0]=" + IOEffectsRecordIOProcess.values()[0]);
         return IOEffectsRecordIOProcess.values()[0];
     }
     return ioProcess; 

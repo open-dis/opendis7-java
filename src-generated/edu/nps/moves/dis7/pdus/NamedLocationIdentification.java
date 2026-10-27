@@ -62,7 +62,7 @@ public IsPartOfStationName getStationName()
 {
     if (stationName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfStationName stationName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfStationName stationName == null, ignored by returning default enumeration IsPartOfStationName.values()[0]=" + IsPartOfStationName.values()[0]);
         return IsPartOfStationName.values()[0];
     }
     return stationName; 

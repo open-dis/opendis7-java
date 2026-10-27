@@ -212,7 +212,7 @@ public EntityDamageStatusComponentIdentification getComponentIdentification()
 {
     if (componentIdentification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration EntityDamageStatusComponentIdentification.values()[0]=" + EntityDamageStatusComponentIdentification.values()[0]);
         return EntityDamageStatusComponentIdentification.values()[0];
     }
     return componentIdentification; 
@@ -232,7 +232,7 @@ public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 {
     if (componentDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration DEDamageDescriptionComponentDamageStatus.values()[0]=" + DEDamageDescriptionComponentDamageStatus.values()[0]);
         return DEDamageDescriptionComponentDamageStatus.values()[0];
     }
     return componentDamageStatus; 
@@ -252,7 +252,7 @@ public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageSt
 {
     if (componentVisualDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype DEDamageDescriptionComponentVisualDamageStatus componentVisualDamageStatus == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype DEDamageDescriptionComponentVisualDamageStatus componentVisualDamageStatus == null, ignored by returning default bitfieldtype new DEDamageDescriptionComponentVisualDamageStatus()=" + new DEDamageDescriptionComponentVisualDamageStatus());
         return new DEDamageDescriptionComponentVisualDamageStatus();
     }
     return componentVisualDamageStatus; 
@@ -272,7 +272,7 @@ public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor
 {
     if (componentVisualSmokeColor == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration DEDamageDescriptionComponentVisualSmokeColor.values()[0]=" + DEDamageDescriptionComponentVisualSmokeColor.values()[0]);
         return DEDamageDescriptionComponentVisualSmokeColor.values()[0];
     }
     return componentVisualSmokeColor; 

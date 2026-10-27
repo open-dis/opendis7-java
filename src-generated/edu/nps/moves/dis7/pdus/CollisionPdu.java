@@ -209,7 +209,7 @@ public CollisionType getCollisionType()
 {
     if (collisionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration CollisionType.values()[0]=" + CollisionType.values()[0]);
         return CollisionType.values()[0];
     }
     return collisionType; 

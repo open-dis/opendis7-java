@@ -137,7 +137,7 @@ public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
     if (acknowledgeFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration AcknowledgeAcknowledgeFlag.values()[0]=" + AcknowledgeAcknowledgeFlag.values()[0]);
         return AcknowledgeAcknowledgeFlag.values()[0];
     }
     return acknowledgeFlag; 
@@ -157,7 +157,7 @@ public AcknowledgeResponseFlag getResponseFlag()
 {
     if (responseFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration AcknowledgeResponseFlag.values()[0]=" + AcknowledgeResponseFlag.values()[0]);
         return AcknowledgeResponseFlag.values()[0];
     }
     return responseFlag; 

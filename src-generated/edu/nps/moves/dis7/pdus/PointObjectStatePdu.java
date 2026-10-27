@@ -236,7 +236,7 @@ public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         return ForceID.values()[0];
     }
     return forceID; 
@@ -256,7 +256,7 @@ public ObjectStateModificationPointObject getModifications()
 {
     if (modifications == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateModificationPointObject modifications == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype ObjectStateModificationPointObject modifications == null, ignored by returning default bitfieldtype new ObjectStateModificationPointObject()=" + new ObjectStateModificationPointObject());
         return new ObjectStateModificationPointObject();
     }
     return modifications; 
@@ -339,7 +339,7 @@ public ObjectStateAppearanceGeneral getGenerObjectAppearance()
 {
     if (generObjectAppearance == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generObjectAppearance == null, ignored by returning default bitfieldtype...");
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generObjectAppearance == null, ignored by returning default bitfieldtype new ObjectStateAppearanceGeneral()=" + new ObjectStateAppearanceGeneral());
         return new ObjectStateAppearanceGeneral();
     }
     return generObjectAppearance; 

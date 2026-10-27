@@ -93,7 +93,7 @@ public TransmitterMajorModulation getMajorModulation()
 {
     if (majorModulation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterMajorModulation majorModulation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterMajorModulation majorModulation == null, ignored by returning default enumeration TransmitterMajorModulation.values()[0]=" + TransmitterMajorModulation.values()[0]);
         return TransmitterMajorModulation.values()[0];
     }
     return majorModulation; 
@@ -135,7 +135,7 @@ public TransmitterModulationTypeSystem getRadioSystem()
 {
     if (radioSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterModulationTypeSystem radioSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterModulationTypeSystem radioSystem == null, ignored by returning default enumeration TransmitterModulationTypeSystem.values()[0]=" + TransmitterModulationTypeSystem.values()[0]);
         return TransmitterModulationTypeSystem.values()[0];
     }
     return radioSystem; 

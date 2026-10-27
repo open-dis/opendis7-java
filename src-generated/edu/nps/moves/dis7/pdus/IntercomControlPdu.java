@@ -185,7 +185,7 @@ public IntercomControlControlType getControlType()
 {
     if (controlType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlControlType controlType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IntercomControlControlType controlType == null, ignored by returning default enumeration IntercomControlControlType.values()[0]=" + IntercomControlControlType.values()[0]);
         return IntercomControlControlType.values()[0];
     }
     return controlType; 
@@ -309,7 +309,7 @@ public IntercomControlTransmitLineState getTransmitLineState()
 {
     if (transmitLineState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlTransmitLineState transmitLineState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IntercomControlTransmitLineState transmitLineState == null, ignored by returning default enumeration IntercomControlTransmitLineState.values()[0]=" + IntercomControlTransmitLineState.values()[0]);
         return IntercomControlTransmitLineState.values()[0];
     }
     return transmitLineState; 
@@ -329,7 +329,7 @@ public IntercomControlCommand getCommand()
 {
     if (command == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlCommand command == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IntercomControlCommand command == null, ignored by returning default enumeration IntercomControlCommand.values()[0]=" + IntercomControlCommand.values()[0]);
         return IntercomControlCommand.values()[0];
     }
     return command; 

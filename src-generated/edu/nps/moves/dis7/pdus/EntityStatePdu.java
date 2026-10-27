@@ -206,7 +206,7 @@ public ForceID getForceId()
 {
     if (forceId == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         return ForceID.values()[0];
     }
     return forceId; 

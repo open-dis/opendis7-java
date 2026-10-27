@@ -71,7 +71,7 @@ public PlatformDomain getDomain()
 {
     if (domain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
         return PlatformDomain.values()[0];
     }
     return domain; 
@@ -91,7 +91,7 @@ public ObjectKind getObjectKind()
 {
     if (objectKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration ObjectKind.values()[0]=" + ObjectKind.values()[0]);
         return ObjectKind.values()[0];
     }
     return objectKind; 

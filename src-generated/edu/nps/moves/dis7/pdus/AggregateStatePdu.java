@@ -260,7 +260,7 @@ public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         return ForceID.values()[0];
     }
     return forceID; 
@@ -280,7 +280,7 @@ public AggregateStateAggregateState getAggregateState()
 {
     if (aggregateState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateAggregateState aggregateState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateAggregateState aggregateState == null, ignored by returning default enumeration AggregateStateAggregateState.values()[0]=" + AggregateStateAggregateState.values()[0]);
         return AggregateStateAggregateState.values()[0];
     }
     return aggregateState; 
@@ -316,7 +316,7 @@ public AggregateStateFormation getFormation()
 {
     if (formation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateFormation formation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateFormation formation == null, ignored by returning default enumeration AggregateStateFormation.values()[0]=" + AggregateStateFormation.values()[0]);
         return AggregateStateFormation.values()[0];
     }
     return formation; 

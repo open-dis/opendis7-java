@@ -128,7 +128,7 @@ public MunitionExpendableStatus getExpendableStatus()
 {
     if (expendableStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionExpendableStatus expendableStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype MunitionExpendableStatus expendableStatus == null, ignored by returning default enumeration MunitionExpendableStatus.values()[0]=" + MunitionExpendableStatus.values()[0]);
         return MunitionExpendableStatus.values()[0];
     }
     return expendableStatus; 

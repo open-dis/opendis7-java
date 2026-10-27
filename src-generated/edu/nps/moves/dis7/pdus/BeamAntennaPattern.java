@@ -141,7 +141,7 @@ public TransmitterAntennaPatternReferenceSystem getReferenceSystem()
 {
     if (referenceSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem referenceSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem referenceSystem == null, ignored by returning default enumeration TransmitterAntennaPatternReferenceSystem.values()[0]=" + TransmitterAntennaPatternReferenceSystem.values()[0]);
         return TransmitterAntennaPatternReferenceSystem.values()[0];
     }
     return referenceSystem; 

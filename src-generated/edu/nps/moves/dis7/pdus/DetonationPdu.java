@@ -313,7 +313,7 @@ public DetonationResult getDetonationResult()
 {
     if (detonationResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration DetonationResult.values()[0]=" + DetonationResult.values()[0]);
         return DetonationResult.values()[0];
     }
     return detonationResult; 

@@ -280,7 +280,7 @@ public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 {
     if (beamSpotType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration DEPrecisionAimpointBeamSpotType.values()[0]=" + DEPrecisionAimpointBeamSpotType.values()[0]);
         return DEPrecisionAimpointBeamSpotType.values()[0];
     }
     return beamSpotType; 

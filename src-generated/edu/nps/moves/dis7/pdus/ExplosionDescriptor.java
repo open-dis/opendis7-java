@@ -87,7 +87,7 @@ public ExplosiveMaterialCategories getExplosiveMaterial()
 {
     if (explosiveMaterial == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ExplosiveMaterialCategories explosiveMaterial == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ExplosiveMaterialCategories explosiveMaterial == null, ignored by returning default enumeration ExplosiveMaterialCategories.values()[0]=" + ExplosiveMaterialCategories.values()[0]);
         return ExplosiveMaterialCategories.values()[0];
     }
     return explosiveMaterial; 

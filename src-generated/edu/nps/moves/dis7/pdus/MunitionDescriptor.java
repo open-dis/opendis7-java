@@ -92,7 +92,7 @@ public MunitionDescriptorWarhead getWarhead()
 {
     if (warhead == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration MunitionDescriptorWarhead.values()[0]=" + MunitionDescriptorWarhead.values()[0]);
         return MunitionDescriptorWarhead.values()[0];
     }
     return warhead; 
@@ -112,7 +112,7 @@ public MunitionDescriptorFuse getFuse()
 {
     if (fuse == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration MunitionDescriptorFuse.values()[0]=" + MunitionDescriptorFuse.values()[0]);
         return MunitionDescriptorFuse.values()[0];
     }
     return fuse; 

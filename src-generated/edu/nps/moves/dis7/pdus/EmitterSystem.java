@@ -67,7 +67,7 @@ public EmitterName getEmitterName()
 {
     if (emitterName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration EmitterName.values()[0]=" + EmitterName.values()[0]);
         return EmitterName.values()[0];
     }
     return emitterName; 
@@ -87,7 +87,7 @@ public EmitterSystemFunction getEmitterFunction()
 {
     if (emitterFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration EmitterSystemFunction.values()[0]=" + EmitterSystemFunction.values()[0]);
         return EmitterSystemFunction.values()[0];
     }
     return emitterFunction; 

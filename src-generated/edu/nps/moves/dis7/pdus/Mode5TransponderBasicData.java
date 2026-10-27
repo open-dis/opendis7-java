@@ -215,7 +215,7 @@ public NavigationSource getNavigationSource()
 {
     if (navigationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration NavigationSource.values()[0]=" + NavigationSource.values()[0]);
         return NavigationSource.values()[0];
     }
     return navigationSource; 

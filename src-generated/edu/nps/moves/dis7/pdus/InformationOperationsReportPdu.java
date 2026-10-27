@@ -168,7 +168,7 @@ public IOActionIOSimulationSource getIoSimSource()
 {
     if (ioSimSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         return IOActionIOSimulationSource.values()[0];
     }
     return ioSimSource; 
@@ -188,7 +188,7 @@ public IOReportIOReportType getIoReportType()
 {
     if (ioReportType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration IOReportIOReportType.values()[0]=" + IOReportIOReportType.values()[0]);
         return IOReportIOReportType.values()[0];
     }
     return ioReportType; 

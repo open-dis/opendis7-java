@@ -58,7 +58,7 @@ public BeamStatusBeamState getBeamState()
 {
     if (beamState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration BeamStatusBeamState.values()[0]=" + BeamStatusBeamState.values()[0]);
         return BeamStatusBeamState.values()[0];
     }
     return beamState; 

@@ -84,7 +84,7 @@ public VariableRecordType getRecordID()
 {
     if (recordID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         return VariableRecordType.values()[0];
     }
     return recordID; 

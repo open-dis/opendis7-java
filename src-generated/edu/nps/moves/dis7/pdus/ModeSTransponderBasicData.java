@@ -144,7 +144,7 @@ public AircraftPresentDomain getAircraftPresentDomain()
 {
     if (aircraftPresentDomain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration AircraftPresentDomain.values()[0]=" + AircraftPresentDomain.values()[0]);
         return AircraftPresentDomain.values()[0];
     }
     return aircraftPresentDomain; 
@@ -201,7 +201,7 @@ public AircraftIdentificationType getAircraftIdentificationType()
 {
     if (aircraftIdentificationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration AircraftIdentificationType.values()[0]=" + AircraftIdentificationType.values()[0]);
         return AircraftIdentificationType.values()[0];
     }
     return aircraftIdentificationType; 
@@ -265,7 +265,7 @@ public CapabilityReport getCapabilityReport()
 {
     if (capabilityReport == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration CapabilityReport.values()[0]=" + CapabilityReport.values()[0]);
         return CapabilityReport.values()[0];
     }
     return capabilityReport; 

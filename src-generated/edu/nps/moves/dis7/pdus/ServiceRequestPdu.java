@@ -187,7 +187,7 @@ public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 {
     if (serviceTypeRequested == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration ServiceRequestServiceTypeRequested.values()[0]=" + ServiceRequestServiceTypeRequested.values()[0]);
         return ServiceRequestServiceTypeRequested.values()[0];
     }
     return serviceTypeRequested; 

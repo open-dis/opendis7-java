@@ -86,7 +86,7 @@ public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
         return VariableParameterRecordType.values()[0];
     }
     return recordType; 
@@ -106,7 +106,7 @@ public SeparationVPReasonforSeparation getReasonForSeparation()
 {
     if (reasonForSeparation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SeparationVPReasonforSeparation reasonForSeparation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype SeparationVPReasonforSeparation reasonForSeparation == null, ignored by returning default enumeration SeparationVPReasonforSeparation.values()[0]=" + SeparationVPReasonforSeparation.values()[0]);
         return SeparationVPReasonforSeparation.values()[0];
     }
     return reasonForSeparation; 
@@ -126,7 +126,7 @@ public SeparationVPPreEntityIndicator getPreEntityIndicator()
 {
     if (preEntityIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SeparationVPPreEntityIndicator preEntityIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype SeparationVPPreEntityIndicator preEntityIndicator == null, ignored by returning default enumeration SeparationVPPreEntityIndicator.values()[0]=" + SeparationVPPreEntityIndicator.values()[0]);
         return SeparationVPPreEntityIndicator.values()[0];
     }
     return preEntityIndicator; 

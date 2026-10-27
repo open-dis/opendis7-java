@@ -72,7 +72,7 @@ public EntityAssociationAssociationType getAssociationType()
 {
     if (associationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationAssociationType associationType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationType == null, ignored by returning default enumeration EntityAssociationAssociationType.values()[0]=" + EntityAssociationAssociationType.values()[0]);
         return EntityAssociationAssociationType.values()[0];
     }
     return associationType; 

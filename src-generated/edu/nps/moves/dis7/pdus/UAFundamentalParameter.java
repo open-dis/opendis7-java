@@ -79,7 +79,7 @@ public UAActiveEmissionParameterIndex getActiveEmissionParameterIndex()
 {
     if (activeEmissionParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration UAActiveEmissionParameterIndex.values()[0]=" + UAActiveEmissionParameterIndex.values()[0]);
         return UAActiveEmissionParameterIndex.values()[0];
     }
     return activeEmissionParameterIndex; 
@@ -99,7 +99,7 @@ public UAScanPattern getScanPattern()
 {
     if (scanPattern == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration UAScanPattern.values()[0]=" + UAScanPattern.values()[0]);
         return UAScanPattern.values()[0];
     }
     return scanPattern; 

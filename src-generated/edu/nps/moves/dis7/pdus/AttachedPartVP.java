@@ -77,7 +77,7 @@ public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
         return VariableParameterRecordType.values()[0];
     }
     return recordType; 
@@ -97,7 +97,7 @@ public AttachedPartDetachedIndicator getDetachedIndicator()
 {
     if (detachedIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AttachedPartDetachedIndicator detachedIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AttachedPartDetachedIndicator detachedIndicator == null, ignored by returning default enumeration AttachedPartDetachedIndicator.values()[0]=" + AttachedPartDetachedIndicator.values()[0]);
         return AttachedPartDetachedIndicator.values()[0];
     }
     return detachedIndicator; 
@@ -139,7 +139,7 @@ public AttachedParts getParameterType()
 {
     if (parameterType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AttachedParts parameterType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AttachedParts parameterType == null, ignored by returning default enumeration AttachedParts.values()[0]=" + AttachedParts.values()[0]);
         return AttachedParts.values()[0];
     }
     return parameterType; 

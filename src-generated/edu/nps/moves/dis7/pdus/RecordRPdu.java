@@ -169,7 +169,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         return RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
@@ -211,7 +211,7 @@ public RecordREventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RecordREventType eventType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RecordREventType eventType == null, ignored by returning default enumeration RecordREventType.values()[0]=" + RecordREventType.values()[0]);
         return RecordREventType.values()[0];
     }
     return eventType; 

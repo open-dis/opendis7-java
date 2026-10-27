@@ -222,7 +222,7 @@ public UAStateChangeUpdateIndicator getStateChangeIndicator()
 {
     if (stateChangeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration UAStateChangeUpdateIndicator.values()[0]=" + UAStateChangeUpdateIndicator.values()[0]);
         return UAStateChangeUpdateIndicator.values()[0];
     }
     return stateChangeIndicator; 
@@ -264,7 +264,7 @@ public UAPassiveParameterIndex getPassiveParameterIndex()
 {
     if (passiveParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration UAPassiveParameterIndex.values()[0]=" + UAPassiveParameterIndex.values()[0]);
         return UAPassiveParameterIndex.values()[0];
     }
     return passiveParameterIndex; 

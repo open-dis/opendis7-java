@@ -158,7 +158,7 @@ public IFFApplicableModes getApplicableModes()
 {
     if (applicableModes == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration IFFApplicableModes.values()[0]=" + IFFApplicableModes.values()[0]);
         return IFFApplicableModes.values()[0];
     }
     return applicableModes; 
