@@ -80,10 +80,10 @@ public synchronized ExpendableDescriptor setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link ExpendableDescriptor#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public long getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

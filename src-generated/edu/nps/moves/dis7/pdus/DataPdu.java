@@ -152,10 +152,10 @@ public synchronized DataPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link DataPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link DataPdu#padding1}
@@ -167,10 +167,10 @@ public synchronized DataPdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link DataPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link DataPdu#fixedDatums}
@@ -182,7 +182,7 @@ public synchronized DataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
     return this;
 }
 /** Getter for {@link DataPdu#fixedDatums}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
@@ -197,7 +197,7 @@ public synchronized DataPdu setVariableDatums(List<VariableDatum> pVariableDatum
     return this;
 }
 /** Getter for {@link DataPdu#variableDatums}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

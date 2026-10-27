@@ -73,9 +73,14 @@ public synchronized ArticulatedPartVP setRecordType(VariableParameterRecordType 
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -95,10 +100,10 @@ public synchronized ArticulatedPartVP setChangeIndicator(int pChangeIndicator){
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#changeIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getChangeIndicator()
 {
-    return changeIndicator; 
+       return changeIndicator;
 }
 
 /** Setter for {@link ArticulatedPartVP#partAttachedTo}
@@ -117,10 +122,10 @@ public synchronized ArticulatedPartVP setPartAttachedTo(int pPartAttachedTo){
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#partAttachedTo}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPartAttachedTo()
 {
-    return partAttachedTo; 
+       return partAttachedTo;
 }
 
 /** Setter for {@link ArticulatedPartVP#parameterType}
@@ -132,10 +137,10 @@ public synchronized ArticulatedPartVP setParameterType(int pParameterType)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#parameterType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getParameterType()
 {
-    return parameterType; 
+       return parameterType;
 }
 
 /** Setter for {@link ArticulatedPartVP#parameterValue}
@@ -147,10 +152,10 @@ public synchronized ArticulatedPartVP setParameterValue(float pParameterValue)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#parameterValue}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getParameterValue()
 {
-    return parameterValue; 
+       return parameterValue;
 }
 
 /** Setter for {@link ArticulatedPartVP#padding}
@@ -162,10 +167,10 @@ public synchronized ArticulatedPartVP setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

@@ -71,9 +71,14 @@ public synchronized EntityTypeVP setRecordType(VariableParameterRecordType pReco
     return this;
 }
 /** Getter for {@link EntityTypeVP#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -86,9 +91,14 @@ public synchronized EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicato
     return this;
 }
 /** Getter for {@link EntityTypeVP#changeIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
+    if (changeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        return EntityVPRecordChangeIndicator.values()[0];
+    }
     return changeIndicator; 
 }
 
@@ -124,10 +134,10 @@ public synchronized EntityTypeVP setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link EntityTypeVP#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link EntityTypeVP#padding1}
@@ -139,10 +149,10 @@ public synchronized EntityTypeVP setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link EntityTypeVP#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /**

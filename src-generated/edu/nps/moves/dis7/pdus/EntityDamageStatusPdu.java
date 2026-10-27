@@ -167,10 +167,10 @@ public synchronized EntityDamageStatusPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link EntityDamageStatusPdu#padding2}
@@ -189,10 +189,10 @@ public synchronized EntityDamageStatusPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link EntityDamageStatusPdu#damageDescriptionRecords}
@@ -204,7 +204,7 @@ public synchronized EntityDamageStatusPdu setDamageDescriptionRecords(List<Direc
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#damageDescriptionRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<DirectedEnergyDamage> getDamageDescriptionRecords()
 {
     return damageDescriptionRecords; 

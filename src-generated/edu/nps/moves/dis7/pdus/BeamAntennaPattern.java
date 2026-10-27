@@ -106,10 +106,10 @@ public synchronized BeamAntennaPattern setAzimuthBeamwidth(float pAzimuthBeamwid
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#azimuthBeamwidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getAzimuthBeamwidth()
 {
-    return azimuthBeamwidth; 
+       return azimuthBeamwidth;
 }
 
 /** Setter for {@link BeamAntennaPattern#elevationBeamwidth}
@@ -121,10 +121,10 @@ public synchronized BeamAntennaPattern setElevationBeamwidth(float pElevationBea
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#elevationBeamwidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getElevationBeamwidth()
 {
-    return elevationBeamwidth; 
+       return elevationBeamwidth;
 }
 
 /** Setter for {@link BeamAntennaPattern#referenceSystem}
@@ -136,9 +136,14 @@ public synchronized BeamAntennaPattern setReferenceSystem(TransmitterAntennaPatt
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#referenceSystem}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterAntennaPatternReferenceSystem getReferenceSystem()
 {
+    if (referenceSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem referenceSystem == null, ignored by returning default enumeration...");
+        return TransmitterAntennaPatternReferenceSystem.values()[0];
+    }
     return referenceSystem; 
 }
 
@@ -158,10 +163,10 @@ public synchronized BeamAntennaPattern setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link BeamAntennaPattern#padding2}
@@ -180,10 +185,10 @@ public synchronized BeamAntennaPattern setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link BeamAntennaPattern#ez}
@@ -195,10 +200,10 @@ public synchronized BeamAntennaPattern setEz(float pEz)
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#ez}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getEz()
 {
-    return ez; 
+       return ez;
 }
 
 /** Setter for {@link BeamAntennaPattern#ex}
@@ -210,10 +215,10 @@ public synchronized BeamAntennaPattern setEx(float pEx)
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#ex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getEx()
 {
-    return ex; 
+       return ex;
 }
 
 /** Setter for {@link BeamAntennaPattern#phase}
@@ -225,10 +230,10 @@ public synchronized BeamAntennaPattern setPhase(float pPhase)
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#phase}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPhase()
 {
-    return phase; 
+       return phase;
 }
 
 /** Setter for {@link BeamAntennaPattern#padding3}
@@ -240,10 +245,10 @@ public synchronized BeamAntennaPattern setPadding3(int pPadding3)
     return this;
 }
 /** Getter for {@link BeamAntennaPattern#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /**

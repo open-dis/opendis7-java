@@ -190,9 +190,14 @@ public synchronized DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
     return this;
 }
 /** Getter for {@link DesignatorPdu#codeName}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DesignatorSystemName getCodeName()
 {
+    if (codeName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration...");
+        return DesignatorSystemName.values()[0];
+    }
     return codeName; 
 }
 
@@ -221,9 +226,14 @@ public synchronized DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDe
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorCode}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DesignatorDesignatorCode getDesignatorCode()
 {
+    if (designatorCode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration...");
+        return DesignatorDesignatorCode.values()[0];
+    }
     return designatorCode; 
 }
 
@@ -236,10 +246,10 @@ public synchronized DesignatorPdu setDesignatorPower(float pDesignatorPower)
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorPower}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getDesignatorPower()
 {
-    return designatorPower; 
+       return designatorPower;
 }
 
 /** Setter for {@link DesignatorPdu#designatorWavelength}
@@ -251,10 +261,10 @@ public synchronized DesignatorPdu setDesignatorWavelength(float pDesignatorWavel
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorWavelength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getDesignatorWavelength()
 {
-    return designatorWavelength; 
+       return designatorWavelength;
 }
 
 /** Setter for {@link DesignatorPdu#designatorSpotWrtDesignated}
@@ -298,9 +308,14 @@ public synchronized DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorit
     return this;
 }
 /** Getter for {@link DesignatorPdu#deadReckoningAlgorithm}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
+    if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        return DeadReckoningAlgorithm.values()[0];
+    }
     return deadReckoningAlgorithm; 
 }
 
@@ -320,10 +335,10 @@ public synchronized DesignatorPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link DesignatorPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link DesignatorPdu#padding2}
@@ -342,10 +357,10 @@ public synchronized DesignatorPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link DesignatorPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link DesignatorPdu#entityLinearAcceleration}

@@ -165,9 +165,14 @@ public synchronized DataQueryRPdu setRequiredReliabilityService(RequiredReliabil
     return this;
 }
 /** Getter for {@link DataQueryRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -187,10 +192,10 @@ public synchronized DataQueryRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link DataQueryRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link DataQueryRPdu#pad2}
@@ -209,10 +214,10 @@ public synchronized DataQueryRPdu setPad2(int pPad2){
     return this;
 }
 /** Getter for {@link DataQueryRPdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /** Setter for {@link DataQueryRPdu#requestID}
@@ -224,10 +229,10 @@ public synchronized DataQueryRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link DataQueryRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link DataQueryRPdu#timeInterval}
@@ -239,10 +244,10 @@ public synchronized DataQueryRPdu setTimeInterval(int pTimeInterval)
     return this;
 }
 /** Getter for {@link DataQueryRPdu#timeInterval}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTimeInterval()
 {
-    return timeInterval; 
+       return timeInterval;
 }
 
 /** Setter for {@link DataQueryRPdu#fixedDatumRecords}
@@ -254,7 +259,7 @@ public synchronized DataQueryRPdu setFixedDatumRecords(List<FixedDatum> pFixedDa
     return this;
 }
 /** Getter for {@link DataQueryRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -269,7 +274,7 @@ public synchronized DataQueryRPdu setVariableDatumRecords(List<VariableDatum> pV
     return this;
 }
 /** Getter for {@link DataQueryRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

@@ -80,7 +80,7 @@ public synchronized StandardVariableSpecification setStandardVariables(List<Stan
     return this;
 }
 /** Getter for {@link StandardVariableSpecification#standardVariables}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<StandardVariableRecord> getStandardVariables()
 {
     return standardVariables; 

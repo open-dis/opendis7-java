@@ -102,10 +102,10 @@ public synchronized DirectedEnergyDamage setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordType()
 {
-    return recordType; 
+       return recordType;
 }
 
 /** Setter for {@link DirectedEnergyDamage#recordLength}
@@ -124,10 +124,10 @@ public synchronized DirectedEnergyDamage setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link DirectedEnergyDamage#padding}
@@ -146,10 +146,10 @@ public synchronized DirectedEnergyDamage setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link DirectedEnergyDamage#damageLocation}
@@ -177,10 +177,10 @@ public synchronized DirectedEnergyDamage setDamageDiameter(float pDamageDiameter
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#damageDiameter}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getDamageDiameter()
 {
-    return damageDiameter; 
+       return damageDiameter;
 }
 
 /** Setter for {@link DirectedEnergyDamage#temperature}
@@ -192,10 +192,10 @@ public synchronized DirectedEnergyDamage setTemperature(float pTemperature)
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#temperature}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getTemperature()
 {
-    return temperature; 
+       return temperature;
 }
 
 /** Setter for {@link DirectedEnergyDamage#componentIdentification}
@@ -207,9 +207,14 @@ public synchronized DirectedEnergyDamage setComponentIdentification(EntityDamage
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentIdentification}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityDamageStatusComponentIdentification getComponentIdentification()
 {
+    if (componentIdentification == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration...");
+        return EntityDamageStatusComponentIdentification.values()[0];
+    }
     return componentIdentification; 
 }
 
@@ -222,9 +227,14 @@ public synchronized DirectedEnergyDamage setComponentDamageStatus(DEDamageDescri
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentDamageStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 {
+    if (componentDamageStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration...");
+        return DEDamageDescriptionComponentDamageStatus.values()[0];
+    }
     return componentDamageStatus; 
 }
 
@@ -237,9 +247,14 @@ public synchronized DirectedEnergyDamage setComponentVisualDamageStatus(DEDamage
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentVisualDamageStatus}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageStatus()
 {
+    if (componentVisualDamageStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype DEDamageDescriptionComponentVisualDamageStatus componentVisualDamageStatus == null, ignored by returning default bitfieldtype...");
+        return new DEDamageDescriptionComponentVisualDamageStatus();
+    }
     return componentVisualDamageStatus; 
 }
 
@@ -252,9 +267,14 @@ public synchronized DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDe
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentVisualSmokeColor}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor()
 {
+    if (componentVisualSmokeColor == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration...");
+        return DEDamageDescriptionComponentVisualSmokeColor.values()[0];
+    }
     return componentVisualSmokeColor; 
 }
 
@@ -290,10 +310,10 @@ public synchronized DirectedEnergyDamage setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /**

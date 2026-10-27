@@ -184,10 +184,10 @@ public synchronized SEESPdu setInfraredSignatureRepresentationIndex(int pInfrare
     return this;
 }
 /** Getter for {@link SEESPdu#infraredSignatureRepresentationIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getInfraredSignatureRepresentationIndex()
 {
-    return infraredSignatureRepresentationIndex; 
+       return infraredSignatureRepresentationIndex;
 }
 
 /** Setter for {@link SEESPdu#acousticSignatureRepresentationIndex}
@@ -206,10 +206,10 @@ public synchronized SEESPdu setAcousticSignatureRepresentationIndex(int pAcousti
     return this;
 }
 /** Getter for {@link SEESPdu#acousticSignatureRepresentationIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getAcousticSignatureRepresentationIndex()
 {
-    return acousticSignatureRepresentationIndex; 
+       return acousticSignatureRepresentationIndex;
 }
 
 /** Setter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
@@ -228,10 +228,10 @@ public synchronized SEESPdu setRadarCrossSectionSignatureRepresentationIndex(int
     return this;
 }
 /** Getter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRadarCrossSectionSignatureRepresentationIndex()
 {
-    return radarCrossSectionSignatureRepresentationIndex; 
+       return radarCrossSectionSignatureRepresentationIndex;
 }
 
 /** Setter for {@link SEESPdu#propulsionSystemData}
@@ -243,7 +243,7 @@ public synchronized SEESPdu setPropulsionSystemData(List<PropulsionSystemData> p
     return this;
 }
 /** Getter for {@link SEESPdu#propulsionSystemData}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<PropulsionSystemData> getPropulsionSystemData()
 {
     return propulsionSystemData; 
@@ -258,7 +258,7 @@ public synchronized SEESPdu setVectoringSystemData(List<VectoringNozzleSystem> p
     return this;
 }
 /** Getter for {@link SEESPdu#vectoringSystemData}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VectoringNozzleSystem> getVectoringSystemData()
 {
     return vectoringSystemData; 

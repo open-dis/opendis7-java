@@ -71,10 +71,10 @@ public synchronized LiveEntityRelativeWorldCoordinates setReferencePoint(int pRe
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getReferencePoint()
 {
-    return referencePoint; 
+       return referencePoint;
 }
 
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
@@ -93,10 +93,10 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaX(int pDeltaX){
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getDeltaX()
 {
-    return deltaX; 
+       return deltaX;
 }
 
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
@@ -115,10 +115,10 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaY(int pDeltaY){
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getDeltaY()
 {
-    return deltaY; 
+       return deltaY;
 }
 
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
@@ -137,10 +137,10 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaZ(int pDeltaZ){
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getDeltaZ()
 {
-    return deltaZ; 
+       return deltaZ;
 }
 
 /**

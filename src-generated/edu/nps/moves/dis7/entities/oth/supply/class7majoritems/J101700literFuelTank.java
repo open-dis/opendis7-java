@@ -25,7 +25,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity type uid: 36854; </li>
  *     <li> Online document reference: <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1aef7428. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@59d0fac9. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain

@@ -59,10 +59,10 @@ public synchronized ChangeOptions setValue(int pValue){
     return this;
 }
 /** Getter for {@link ChangeOptions#value}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getValue()
 {
-    return value; 
+       return value;
 }
 
 /**

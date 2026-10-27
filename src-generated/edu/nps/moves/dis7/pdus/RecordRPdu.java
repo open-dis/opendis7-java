@@ -149,10 +149,10 @@ public synchronized RecordRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link RecordRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link RecordRPdu#requiredReliabilityService}
@@ -164,9 +164,14 @@ public synchronized RecordRPdu setRequiredReliabilityService(RequiredReliability
     return this;
 }
 /** Getter for {@link RecordRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -186,10 +191,10 @@ public synchronized RecordRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link RecordRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link RecordRPdu#eventType}
@@ -201,9 +206,14 @@ public synchronized RecordRPdu setEventType(RecordREventType pEventType)
     return this;
 }
 /** Getter for {@link RecordRPdu#eventType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RecordREventType getEventType()
 {
+    if (eventType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RecordREventType eventType == null, ignored by returning default enumeration...");
+        return RecordREventType.values()[0];
+    }
     return eventType; 
 }
 
@@ -216,7 +226,7 @@ public synchronized RecordRPdu setRecordSets(List<RecordSpecification> pRecordSe
     return this;
 }
 /** Getter for {@link RecordRPdu#recordSets}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<RecordSpecification> getRecordSets()
 {
     return recordSets; 

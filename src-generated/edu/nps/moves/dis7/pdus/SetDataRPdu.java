@@ -161,9 +161,14 @@ public synchronized SetDataRPdu setRequiredReliabilityService(RequiredReliabilit
     return this;
 }
 /** Getter for {@link SetDataRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -183,10 +188,10 @@ public synchronized SetDataRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link SetDataRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link SetDataRPdu#pad2}
@@ -205,10 +210,10 @@ public synchronized SetDataRPdu setPad2(int pPad2){
     return this;
 }
 /** Getter for {@link SetDataRPdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /** Setter for {@link SetDataRPdu#requestID}
@@ -220,10 +225,10 @@ public synchronized SetDataRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link SetDataRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link SetDataRPdu#fixedDatumRecords}
@@ -235,7 +240,7 @@ public synchronized SetDataRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatu
     return this;
 }
 /** Getter for {@link SetDataRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -250,7 +255,7 @@ public synchronized SetDataRPdu setVariableDatumRecords(List<VariableDatum> pVar
     return this;
 }
 /** Getter for {@link SetDataRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

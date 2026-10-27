@@ -132,9 +132,14 @@ public synchronized AcknowledgeRPdu setAcknowledgeFlag(AcknowledgeAcknowledgeFla
     return this;
 }
 /** Getter for {@link AcknowledgeRPdu#acknowledgeFlag}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
+    if (acknowledgeFlag == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration...");
+        return AcknowledgeAcknowledgeFlag.values()[0];
+    }
     return acknowledgeFlag; 
 }
 
@@ -147,9 +152,14 @@ public synchronized AcknowledgeRPdu setResponseFlag(AcknowledgeResponseFlag pRes
     return this;
 }
 /** Getter for {@link AcknowledgeRPdu#responseFlag}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AcknowledgeResponseFlag getResponseFlag()
 {
+    if (responseFlag == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration...");
+        return AcknowledgeResponseFlag.values()[0];
+    }
     return responseFlag; 
 }
 
@@ -162,10 +172,10 @@ public synchronized AcknowledgeRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link AcknowledgeRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /**

@@ -73,10 +73,10 @@ public synchronized ModulationType setSpreadSpectrum(int pSpreadSpectrum){
     return this;
 }
 /** Getter for {@link ModulationType#spreadSpectrum}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSpreadSpectrum()
 {
-    return spreadSpectrum; 
+       return spreadSpectrum;
 }
 
 /** Setter for {@link ModulationType#majorModulation}
@@ -88,9 +88,14 @@ public synchronized ModulationType setMajorModulation(TransmitterMajorModulation
     return this;
 }
 /** Getter for {@link ModulationType#majorModulation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterMajorModulation getMajorModulation()
 {
+    if (majorModulation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterMajorModulation majorModulation == null, ignored by returning default enumeration...");
+        return TransmitterMajorModulation.values()[0];
+    }
     return majorModulation; 
 }
 
@@ -110,10 +115,10 @@ public synchronized ModulationType setDetail(int pDetail){
     return this;
 }
 /** Getter for {@link ModulationType#detail}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getDetail()
 {
-    return detail; 
+       return detail;
 }
 
 /** Setter for {@link ModulationType#radioSystem}
@@ -125,9 +130,14 @@ public synchronized ModulationType setRadioSystem(TransmitterModulationTypeSyste
     return this;
 }
 /** Getter for {@link ModulationType#radioSystem}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterModulationTypeSystem getRadioSystem()
 {
+    if (radioSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterModulationTypeSystem radioSystem == null, ignored by returning default enumeration...");
+        return TransmitterModulationTypeSystem.values()[0];
+    }
     return radioSystem; 
 }
 

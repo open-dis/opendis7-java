@@ -180,10 +180,10 @@ public synchronized MinefieldResponseNACKPdu setRequestID(int pRequestID){
     return this;
 }
 /** Getter for {@link MinefieldResponseNACKPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}
@@ -195,7 +195,7 @@ public synchronized MinefieldResponseNACKPdu setMissingPduSequenceNumbers(byte[]
     return this;
 }
 /** Getter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getMissingPduSequenceNumbers()
 {
     return missingPduSequenceNumbers; 

@@ -204,10 +204,10 @@ public synchronized LinearObjectStatePdu setUpdateNumber(int pUpdateNumber){
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#updateNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getUpdateNumber()
 {
-    return updateNumber; 
+       return updateNumber;
 }
 
 /** Setter for {@link LinearObjectStatePdu#forceID}
@@ -219,9 +219,14 @@ public synchronized LinearObjectStatePdu setForceID(ForceID pForceID)
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#forceID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceID()
 {
+    if (forceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceID; 
 }
 
@@ -282,7 +287,7 @@ public synchronized LinearObjectStatePdu setLinearSegmentParameters(List<LinearS
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#linearSegmentParameters}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<LinearSegmentParameter> getLinearSegmentParameters()
 {
     return linearSegmentParameters; 

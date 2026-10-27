@@ -239,10 +239,10 @@ public synchronized CollisionElasticPdu setPad(int pPad){
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#pad}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad()
 {
-    return pad; 
+       return pad;
 }
 
 /** Setter for {@link CollisionElasticPdu#contactVelocity}
@@ -270,10 +270,10 @@ public synchronized CollisionElasticPdu setMass(float pMass)
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#mass}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getMass()
 {
-    return mass; 
+       return mass;
 }
 
 /** Setter for {@link CollisionElasticPdu#locationOfImpact}
@@ -301,10 +301,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXX(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXX}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultXX()
 {
-    return collisionIntermediateResultXX; 
+       return collisionIntermediateResultXX;
 }
 
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXY}
@@ -316,10 +316,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXY(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXY}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultXY()
 {
-    return collisionIntermediateResultXY; 
+       return collisionIntermediateResultXY;
 }
 
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}
@@ -331,10 +331,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultXZ()
 {
-    return collisionIntermediateResultXZ; 
+       return collisionIntermediateResultXZ;
 }
 
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYY}
@@ -346,10 +346,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultYY(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYY}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultYY()
 {
-    return collisionIntermediateResultYY; 
+       return collisionIntermediateResultYY;
 }
 
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}
@@ -361,10 +361,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultYZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultYZ()
 {
-    return collisionIntermediateResultYZ; 
+       return collisionIntermediateResultYZ;
 }
 
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}
@@ -376,10 +376,10 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultZZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCollisionIntermediateResultZZ()
 {
-    return collisionIntermediateResultZZ; 
+       return collisionIntermediateResultZZ;
 }
 
 /** Setter for {@link CollisionElasticPdu#unitSurfaceNormal}
@@ -407,10 +407,10 @@ public synchronized CollisionElasticPdu setCoefficientOfRestitution(float pCoeff
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#coefficientOfRestitution}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getCoefficientOfRestitution()
 {
-    return coefficientOfRestitution; 
+       return coefficientOfRestitution;
 }
 
 /**

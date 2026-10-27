@@ -81,9 +81,14 @@ public synchronized SeparationVP setRecordType(VariableParameterRecordType pReco
     return this;
 }
 /** Getter for {@link SeparationVP#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -96,9 +101,14 @@ public synchronized SeparationVP setReasonForSeparation(SeparationVPReasonforSep
     return this;
 }
 /** Getter for {@link SeparationVP#reasonForSeparation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SeparationVPReasonforSeparation getReasonForSeparation()
 {
+    if (reasonForSeparation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SeparationVPReasonforSeparation reasonForSeparation == null, ignored by returning default enumeration...");
+        return SeparationVPReasonforSeparation.values()[0];
+    }
     return reasonForSeparation; 
 }
 
@@ -111,9 +121,14 @@ public synchronized SeparationVP setPreEntityIndicator(SeparationVPPreEntityIndi
     return this;
 }
 /** Getter for {@link SeparationVP#preEntityIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SeparationVPPreEntityIndicator getPreEntityIndicator()
 {
+    if (preEntityIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SeparationVPPreEntityIndicator preEntityIndicator == null, ignored by returning default enumeration...");
+        return SeparationVPPreEntityIndicator.values()[0];
+    }
     return preEntityIndicator; 
 }
 
@@ -133,10 +148,10 @@ public synchronized SeparationVP setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link SeparationVP#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link SeparationVP#parentEntityID}
@@ -171,10 +186,10 @@ public synchronized SeparationVP setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link SeparationVP#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link SeparationVP#stationLocation}

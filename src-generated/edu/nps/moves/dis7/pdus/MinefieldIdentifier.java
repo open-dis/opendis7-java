@@ -80,10 +80,10 @@ public synchronized MinefieldIdentifier setMinefieldNumber(int pMinefieldNumber)
     return this;
 }
 /** Getter for {@link MinefieldIdentifier#minefieldNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMinefieldNumber()
 {
-    return minefieldNumber; 
+       return minefieldNumber;
 }
 
 /**

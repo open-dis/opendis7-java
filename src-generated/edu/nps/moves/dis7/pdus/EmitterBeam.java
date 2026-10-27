@@ -110,10 +110,10 @@ public synchronized EmitterBeam setBeamDataLength(int pBeamDataLength){
     return this;
 }
 /** Getter for {@link EmitterBeam#beamDataLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamDataLength()
 {
-    return beamDataLength; 
+       return beamDataLength;
 }
 
 /** Setter for {@link EmitterBeam#beamNumber}
@@ -132,10 +132,10 @@ public synchronized EmitterBeam setBeamNumber(int pBeamNumber){
     return this;
 }
 /** Getter for {@link EmitterBeam#beamNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamNumber()
 {
-    return beamNumber; 
+       return beamNumber;
 }
 
 /** Setter for {@link EmitterBeam#beamParameterIndex}
@@ -154,10 +154,10 @@ public synchronized EmitterBeam setBeamParameterIndex(int pBeamParameterIndex){
     return this;
 }
 /** Getter for {@link EmitterBeam#beamParameterIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getBeamParameterIndex()
 {
-    return beamParameterIndex; 
+       return beamParameterIndex;
 }
 
 /** Setter for {@link EmitterBeam#fundamentalParameterData}
@@ -201,9 +201,14 @@ public synchronized EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunct
     return this;
 }
 /** Getter for {@link EmitterBeam#beamFunction}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ElectromagneticEmissionBeamFunction getBeamFunction()
 {
+    if (beamFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration...");
+        return ElectromagneticEmissionBeamFunction.values()[0];
+    }
     return beamFunction; 
 }
 
@@ -216,9 +221,14 @@ public synchronized EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHigh
     return this;
 }
 /** Getter for {@link EmitterBeam#highDensityTrackJam}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public HighDensityTrackJam getHighDensityTrackJam()
 {
+    if (highDensityTrackJam == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration...");
+        return HighDensityTrackJam.values()[0];
+    }
     return highDensityTrackJam; 
 }
 
@@ -263,7 +273,7 @@ public synchronized EmitterBeam setTrackJamData(List<TrackJamData> pTrackJamData
     return this;
 }
 /** Getter for {@link EmitterBeam#trackJamData}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<TrackJamData> getTrackJamData()
 {
     return trackJamData; 

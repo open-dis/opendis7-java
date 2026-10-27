@@ -166,9 +166,14 @@ public synchronized ActionRequestRPdu setRequiredReliabilityService(RequiredReli
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -188,10 +193,10 @@ public synchronized ActionRequestRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link ActionRequestRPdu#pad2}
@@ -210,10 +215,10 @@ public synchronized ActionRequestRPdu setPad2(int pPad2){
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /** Setter for {@link ActionRequestRPdu#requestID}
@@ -225,10 +230,10 @@ public synchronized ActionRequestRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link ActionRequestRPdu#actionID}
@@ -240,9 +245,14 @@ public synchronized ActionRequestRPdu setActionID(ActionRequestActionID pActionI
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#actionID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ActionRequestActionID getActionID()
 {
+    if (actionID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ActionRequestActionID actionID == null, ignored by returning default enumeration...");
+        return ActionRequestActionID.values()[0];
+    }
     return actionID; 
 }
 
@@ -255,7 +265,7 @@ public synchronized ActionRequestRPdu setFixedDatumRecords(List<FixedDatum> pFix
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -270,7 +280,7 @@ public synchronized ActionRequestRPdu setVariableDatumRecords(List<VariableDatum
     return this;
 }
 /** Getter for {@link ActionRequestRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

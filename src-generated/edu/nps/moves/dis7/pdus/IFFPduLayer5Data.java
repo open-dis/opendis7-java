@@ -115,10 +115,10 @@ public synchronized IFFPduLayer5Data setSiteNumber(int pSiteNumber){
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link IFFPduLayer5Data#applicationNumber}
@@ -137,10 +137,10 @@ public synchronized IFFPduLayer5Data setApplicationNumber(int pApplicationNumber
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link IFFPduLayer5Data#padding}
@@ -159,10 +159,10 @@ public synchronized IFFPduLayer5Data setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link IFFPduLayer5Data#applicableLayers}
@@ -181,10 +181,10 @@ public synchronized IFFPduLayer5Data setApplicableLayers(int pApplicableLayers){
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#applicableLayers}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getApplicableLayers()
 {
-    return applicableLayers; 
+       return applicableLayers;
 }
 
 /** Setter for {@link IFFPduLayer5Data#dataCategory}
@@ -196,9 +196,14 @@ public synchronized IFFPduLayer5Data setDataCategory(DataCategory pDataCategory)
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#dataCategory}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DataCategory getDataCategory()
 {
+    if (dataCategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration...");
+        return DataCategory.values()[0];
+    }
     return dataCategory; 
 }
 
@@ -218,10 +223,10 @@ public synchronized IFFPduLayer5Data setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Utility method to get size of field
@@ -252,7 +257,7 @@ public synchronized IFFPduLayer5Data setIFFFundamentalParameterDataRecord(List<I
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#IFFFundamentalParameterDataRecord}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IFFDataSpecification> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

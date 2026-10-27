@@ -162,9 +162,14 @@ public synchronized StopFreezeRPdu setReason(StopFreezeReason pReason)
     return this;
 }
 /** Getter for {@link StopFreezeRPdu#reason}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public StopFreezeReason getReason()
 {
+    if (reason == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration...");
+        return StopFreezeReason.values()[0];
+    }
     return reason; 
 }
 
@@ -177,9 +182,14 @@ public synchronized StopFreezeRPdu setFrozenBehavior(StopFreezeFrozenBehavior pF
     return this;
 }
 /** Getter for {@link StopFreezeRPdu#frozenBehavior}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public StopFreezeFrozenBehavior getFrozenBehavior()
 {
+    if (frozenBehavior == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype...");
+        return new StopFreezeFrozenBehavior();
+    }
     return frozenBehavior; 
 }
 
@@ -192,9 +202,14 @@ public synchronized StopFreezeRPdu setRequiredReliabilityService(RequiredReliabi
     return this;
 }
 /** Getter for {@link StopFreezeRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -214,10 +229,10 @@ public synchronized StopFreezeRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link StopFreezeRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link StopFreezeRPdu#requestID}
@@ -229,10 +244,10 @@ public synchronized StopFreezeRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link StopFreezeRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /**

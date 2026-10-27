@@ -204,9 +204,14 @@ public synchronized CollisionPdu setCollisionType(CollisionType pCollisionType)
     return this;
 }
 /** Getter for {@link CollisionPdu#collisionType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public CollisionType getCollisionType()
 {
+    if (collisionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration...");
+        return CollisionType.values()[0];
+    }
     return collisionType; 
 }
 
@@ -226,10 +231,10 @@ public synchronized CollisionPdu setPad(int pPad){
     return this;
 }
 /** Getter for {@link CollisionPdu#pad}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad()
 {
-    return pad; 
+       return pad;
 }
 
 /** Setter for {@link CollisionPdu#velocity}
@@ -257,10 +262,10 @@ public synchronized CollisionPdu setMass(float pMass)
     return this;
 }
 /** Getter for {@link CollisionPdu#mass}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getMass()
 {
-    return mass; 
+       return mass;
 }
 
 /** Setter for {@link CollisionPdu#location}

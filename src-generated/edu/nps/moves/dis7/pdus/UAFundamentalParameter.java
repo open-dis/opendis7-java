@@ -74,9 +74,14 @@ public synchronized UAFundamentalParameter setActiveEmissionParameterIndex(UAAct
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#activeEmissionParameterIndex}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAActiveEmissionParameterIndex getActiveEmissionParameterIndex()
 {
+    if (activeEmissionParameterIndex == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration...");
+        return UAActiveEmissionParameterIndex.values()[0];
+    }
     return activeEmissionParameterIndex; 
 }
 
@@ -89,9 +94,14 @@ public synchronized UAFundamentalParameter setScanPattern(UAScanPattern pScanPat
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#scanPattern}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAScanPattern getScanPattern()
 {
+    if (scanPattern == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration...");
+        return UAScanPattern.values()[0];
+    }
     return scanPattern; 
 }
 
@@ -104,10 +114,10 @@ public synchronized UAFundamentalParameter setBeamCenterAzimuthHorizontal(float 
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#beamCenterAzimuthHorizontal}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamCenterAzimuthHorizontal()
 {
-    return beamCenterAzimuthHorizontal; 
+       return beamCenterAzimuthHorizontal;
 }
 
 /** Setter for {@link UAFundamentalParameter#azimuthalBeamwidthHorizontal}
@@ -119,10 +129,10 @@ public synchronized UAFundamentalParameter setAzimuthalBeamwidthHorizontal(float
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#azimuthalBeamwidthHorizontal}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getAzimuthalBeamwidthHorizontal()
 {
-    return azimuthalBeamwidthHorizontal; 
+       return azimuthalBeamwidthHorizontal;
 }
 
 /** Setter for {@link UAFundamentalParameter#beamCenterDepressionElevation}
@@ -134,10 +144,10 @@ public synchronized UAFundamentalParameter setBeamCenterDepressionElevation(floa
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#beamCenterDepressionElevation}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamCenterDepressionElevation()
 {
-    return beamCenterDepressionElevation; 
+       return beamCenterDepressionElevation;
 }
 
 /** Setter for {@link UAFundamentalParameter#depressionElevationBeamWidth}
@@ -149,10 +159,10 @@ public synchronized UAFundamentalParameter setDepressionElevationBeamWidth(float
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#depressionElevationBeamWidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getDepressionElevationBeamWidth()
 {
-    return depressionElevationBeamWidth; 
+       return depressionElevationBeamWidth;
 }
 
 /**

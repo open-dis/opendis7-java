@@ -206,10 +206,10 @@ public synchronized MinefieldStatePdu setMinefieldSequence(int pMinefieldSequenc
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#minefieldSequence}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMinefieldSequence()
 {
-    return minefieldSequence; 
+       return minefieldSequence;
 }
 
 /** Setter for {@link MinefieldStatePdu#forceID}
@@ -221,9 +221,14 @@ public synchronized MinefieldStatePdu setForceID(ForceID pForceID)
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#forceID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceID()
 {
+    if (forceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceID; 
 }
 
@@ -284,9 +289,14 @@ public synchronized MinefieldStatePdu setAppearance(MinefieldStateAppearanceBitM
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#appearance}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public MinefieldStateAppearanceBitMap getAppearance()
 {
+    if (appearance == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype MinefieldStateAppearanceBitMap appearance == null, ignored by returning default bitfieldtype...");
+        return new MinefieldStateAppearanceBitMap();
+    }
     return appearance; 
 }
 
@@ -315,7 +325,7 @@ public synchronized MinefieldStatePdu setPerimeterPoints(List<Vector2Float> pPer
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#perimeterPoints}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Vector2Float> getPerimeterPoints()
 {
     return perimeterPoints; 
@@ -330,7 +340,7 @@ public synchronized MinefieldStatePdu setMineType(List<EntityType> pMineType)
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#mineType}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EntityType> getMineType()
 {
     return mineType; 

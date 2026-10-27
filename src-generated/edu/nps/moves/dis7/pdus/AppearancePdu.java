@@ -180,10 +180,10 @@ public synchronized AppearancePdu setAppearanceFlags(int pAppearanceFlags){
     return this;
 }
 /** Getter for {@link AppearancePdu#appearanceFlags}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getAppearanceFlags()
 {
-    return appearanceFlags; 
+       return appearanceFlags;
 }
 
 /** Setter for {@link AppearancePdu#forceId}
@@ -195,9 +195,14 @@ public synchronized AppearancePdu setForceId(ForceID pForceId)
     return this;
 }
 /** Getter for {@link AppearancePdu#forceId}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceId()
 {
+    if (forceId == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceId; 
 }
 
@@ -258,7 +263,7 @@ public synchronized AppearancePdu setCapabilities(EntityCapabilities pCapabiliti
     return this;
 }
 /** Getter for {@link AppearancePdu#capabilities}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public EntityCapabilities getCapabilities()
 {
     return capabilities; 

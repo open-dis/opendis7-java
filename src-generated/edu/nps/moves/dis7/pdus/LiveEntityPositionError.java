@@ -63,10 +63,10 @@ public synchronized LiveEntityPositionError setHorizontalError(int pHorizontalEr
     return this;
 }
 /** Getter for {@link LiveEntityPositionError#horizontalError}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getHorizontalError()
 {
-    return horizontalError; 
+       return horizontalError;
 }
 
 /** Setter for {@link LiveEntityPositionError#verticalError}
@@ -85,10 +85,10 @@ public synchronized LiveEntityPositionError setVerticalError(int pVerticalError)
     return this;
 }
 /** Getter for {@link LiveEntityPositionError#verticalError}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getVerticalError()
 {
-    return verticalError; 
+       return verticalError;
 }
 
 /**

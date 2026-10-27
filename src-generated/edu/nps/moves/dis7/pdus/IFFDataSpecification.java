@@ -61,7 +61,7 @@ public synchronized IFFDataSpecification setIffDataRecords(List<IFFData> pIffDat
     return this;
 }
 /** Getter for {@link IFFDataSpecification#iffDataRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IFFData> getIffDataRecords()
 {
     return iffDataRecords; 

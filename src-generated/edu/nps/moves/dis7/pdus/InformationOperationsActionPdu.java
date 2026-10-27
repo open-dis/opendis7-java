@@ -194,10 +194,10 @@ public synchronized InformationOperationsActionPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link InformationOperationsActionPdu#IOWarfareType}
@@ -209,9 +209,14 @@ public synchronized InformationOperationsActionPdu setIOWarfareType(IOActionIOWa
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOWarfareType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOActionIOWarfareType getIOWarfareType()
 {
+    if (IOWarfareType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration...");
+        return IOActionIOWarfareType.values()[0];
+    }
     return IOWarfareType; 
 }
 
@@ -224,9 +229,14 @@ public synchronized InformationOperationsActionPdu setIOSimulationSource(IOActio
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOSimulationSource}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOActionIOSimulationSource getIOSimulationSource()
 {
+    if (IOSimulationSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration...");
+        return IOActionIOSimulationSource.values()[0];
+    }
     return IOSimulationSource; 
 }
 
@@ -239,9 +249,14 @@ public synchronized InformationOperationsActionPdu setIOActionType(IOActionIOAct
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOActionType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOActionIOActionType getIOActionType()
 {
+    if (IOActionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration...");
+        return IOActionIOActionType.values()[0];
+    }
     return IOActionType; 
 }
 
@@ -254,9 +269,14 @@ public synchronized InformationOperationsActionPdu setIOActionPhase(IOActionIOAc
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOActionPhase}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOActionIOActionPhase getIOActionPhase()
 {
+    if (IOActionPhase == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration...");
+        return IOActionIOActionPhase.values()[0];
+    }
     return IOActionPhase; 
 }
 
@@ -269,10 +289,10 @@ public synchronized InformationOperationsActionPdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link InformationOperationsActionPdu#ioAttackerID}
@@ -323,10 +343,10 @@ public synchronized InformationOperationsActionPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link InformationOperationsActionPdu#ioRecords}
@@ -338,7 +358,7 @@ public synchronized InformationOperationsActionPdu setIoRecords(List<IORecord> p
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#ioRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

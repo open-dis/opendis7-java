@@ -67,10 +67,10 @@ public synchronized LayerHeader setLayerNumber(int pLayerNumber){
     return this;
 }
 /** Getter for {@link LayerHeader#layerNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getLayerNumber()
 {
-    return layerNumber; 
+       return layerNumber;
 }
 
 /** Setter for {@link LayerHeader#layerSpecificInformation}
@@ -89,10 +89,10 @@ public synchronized LayerHeader setLayerSpecificInformation(int pLayerSpecificIn
     return this;
 }
 /** Getter for {@link LayerHeader#layerSpecificInformation}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getLayerSpecificInformation()
 {
-    return layerSpecificInformation; 
+       return layerSpecificInformation;
 }
 
 /** Setter for {@link LayerHeader#length}
@@ -111,10 +111,10 @@ public synchronized LayerHeader setLength(int pLength){
     return this;
 }
 /** Getter for {@link LayerHeader#length}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getLength()
 {
-    return length; 
+       return length;
 }
 
 /**

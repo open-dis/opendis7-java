@@ -74,7 +74,7 @@ public synchronized DatumSpecification setFixedDatumIDList(List<FixedDatum> pFix
     return this;
 }
 /** Getter for {@link DatumSpecification#fixedDatumIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
@@ -89,7 +89,7 @@ public synchronized DatumSpecification setVariableDatumIDList(List<VariableDatum
     return this;
 }
 /** Getter for {@link DatumSpecification#variableDatumIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumIDList()
 {
     return variableDatumIDList; 

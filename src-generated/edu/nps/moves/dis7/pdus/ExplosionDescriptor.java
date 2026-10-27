@@ -82,9 +82,14 @@ public synchronized ExplosionDescriptor setExplosiveMaterial(ExplosiveMaterialCa
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#explosiveMaterial}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ExplosiveMaterialCategories getExplosiveMaterial()
 {
+    if (explosiveMaterial == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ExplosiveMaterialCategories explosiveMaterial == null, ignored by returning default enumeration...");
+        return ExplosiveMaterialCategories.values()[0];
+    }
     return explosiveMaterial; 
 }
 
@@ -104,10 +109,10 @@ public synchronized ExplosionDescriptor setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link ExplosionDescriptor#explosiveForce}
@@ -119,10 +124,10 @@ public synchronized ExplosionDescriptor setExplosiveForce(float pExplosiveForce)
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#explosiveForce}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getExplosiveForce()
 {
-    return explosiveForce; 
+       return explosiveForce;
 }
 
 /**

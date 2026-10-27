@@ -152,7 +152,7 @@ public synchronized ArticulatedPartsPdu setVariableParameters(List<VariableParam
     return this;
 }
 /** Getter for {@link ArticulatedPartsPdu#variableParameters}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

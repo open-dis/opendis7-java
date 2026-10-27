@@ -80,10 +80,10 @@ public synchronized RadioCommsHeader setRadioNumber(int pRadioNumber){
     return this;
 }
 /** Getter for {@link RadioCommsHeader#radioNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRadioNumber()
 {
-    return radioNumber; 
+       return radioNumber;
 }
 
 /**

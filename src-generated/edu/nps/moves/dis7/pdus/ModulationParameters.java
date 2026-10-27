@@ -59,7 +59,7 @@ public synchronized ModulationParameters setRecordSpecificFields(byte[] pRecordS
     return this;
 }
 /** Getter for {@link ModulationParameters#recordSpecificFields}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

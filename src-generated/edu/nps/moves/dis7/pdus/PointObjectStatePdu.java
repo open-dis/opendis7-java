@@ -216,10 +216,10 @@ public synchronized PointObjectStatePdu setUpdateNumber(int pUpdateNumber)
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#updateNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getUpdateNumber()
 {
-    return updateNumber; 
+       return updateNumber;
 }
 
 /** Setter for {@link PointObjectStatePdu#forceID}
@@ -231,9 +231,14 @@ public synchronized PointObjectStatePdu setForceID(ForceID pForceID)
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#forceID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceID()
 {
+    if (forceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceID; 
 }
 
@@ -246,9 +251,14 @@ public synchronized PointObjectStatePdu setModifications(ObjectStateModification
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#modifications}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public ObjectStateModificationPointObject getModifications()
 {
+    if (modifications == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype ObjectStateModificationPointObject modifications == null, ignored by returning default bitfieldtype...");
+        return new ObjectStateModificationPointObject();
+    }
     return modifications; 
 }
 
@@ -309,10 +319,10 @@ public synchronized PointObjectStatePdu setSpecificObjectAppearance(int pSpecifi
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#specificObjectAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getSpecificObjectAppearance()
 {
-    return specificObjectAppearance; 
+       return specificObjectAppearance;
 }
 
 /** Setter for {@link PointObjectStatePdu#generObjectAppearance}
@@ -324,9 +334,14 @@ public synchronized PointObjectStatePdu setGenerObjectAppearance(ObjectStateAppe
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#generObjectAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public ObjectStateAppearanceGeneral getGenerObjectAppearance()
 {
+    if (generObjectAppearance == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generObjectAppearance == null, ignored by returning default bitfieldtype...");
+        return new ObjectStateAppearanceGeneral();
+    }
     return generObjectAppearance; 
 }
 
@@ -346,10 +361,10 @@ public synchronized PointObjectStatePdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link PointObjectStatePdu#requesterID}
@@ -393,10 +408,10 @@ public synchronized PointObjectStatePdu setPad2(int pPad2)
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /**

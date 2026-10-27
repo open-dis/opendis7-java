@@ -188,10 +188,10 @@ public synchronized ResupplyReceivedPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link ResupplyReceivedPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link ResupplyReceivedPdu#padding2}
@@ -210,10 +210,10 @@ public synchronized ResupplyReceivedPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link ResupplyReceivedPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link ResupplyReceivedPdu#supplies}
@@ -225,7 +225,7 @@ public synchronized ResupplyReceivedPdu setSupplies(List<SupplyQuantity> pSuppli
     return this;
 }
 /** Getter for {@link ResupplyReceivedPdu#supplies}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

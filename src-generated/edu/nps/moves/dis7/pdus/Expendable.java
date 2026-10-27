@@ -86,10 +86,10 @@ public synchronized Expendable setStation(int pStation)
     return this;
 }
 /** Getter for {@link Expendable#station}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStation()
 {
-    return station; 
+       return station;
 }
 
 /** Setter for {@link Expendable#quantity}
@@ -108,10 +108,10 @@ public synchronized Expendable setQuantity(int pQuantity){
     return this;
 }
 /** Getter for {@link Expendable#quantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getQuantity()
 {
-    return quantity; 
+       return quantity;
 }
 
 /** Setter for {@link Expendable#expendableStatus}
@@ -123,9 +123,14 @@ public synchronized Expendable setExpendableStatus(MunitionExpendableStatus pExp
     return this;
 }
 /** Getter for {@link Expendable#expendableStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public MunitionExpendableStatus getExpendableStatus()
 {
+    if (expendableStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionExpendableStatus expendableStatus == null, ignored by returning default enumeration...");
+        return MunitionExpendableStatus.values()[0];
+    }
     return expendableStatus; 
 }
 
@@ -145,10 +150,10 @@ public synchronized Expendable setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link Expendable#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

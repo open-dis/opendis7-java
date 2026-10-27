@@ -119,10 +119,10 @@ public synchronized IFFPduLayer2Data setSecondaryOpParameter1(int pSecondaryOpPa
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#secondaryOpParameter1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSecondaryOpParameter1()
 {
-    return secondaryOpParameter1; 
+       return secondaryOpParameter1;
 }
 
 /** Setter for {@link IFFPduLayer2Data#secondaryOpParameter2}
@@ -141,10 +141,10 @@ public synchronized IFFPduLayer2Data setSecondaryOpParameter2(int pSecondaryOpPa
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#secondaryOpParameter2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSecondaryOpParameter2()
 {
-    return secondaryOpParameter2; 
+       return secondaryOpParameter2;
 }
 
 /** Utility method to get size of field
@@ -175,7 +175,7 @@ public synchronized IFFPduLayer2Data setIFFFundamentalParameterDataRecord(List<I
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#IFFFundamentalParameterDataRecord}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IFFFundamentalParameterData> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

@@ -69,10 +69,10 @@ public synchronized GridDataType2 setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link GridDataType2#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link GridDataType2#dataValues}
@@ -84,7 +84,7 @@ public synchronized GridDataType2 setDataValues(float[] pDataValues)
     return this;
 }
 /** Getter for {@link GridDataType2#dataValues}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getDataValues()
 {
     return dataValues; 

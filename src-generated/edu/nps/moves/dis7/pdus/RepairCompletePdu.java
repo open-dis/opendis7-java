@@ -169,9 +169,14 @@ public synchronized RepairCompletePdu setRepair(RepairCompleteRepair pRepair)
     return this;
 }
 /** Getter for {@link RepairCompletePdu#repair}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RepairCompleteRepair getRepair()
 {
+    if (repair == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RepairCompleteRepair repair == null, ignored by returning default enumeration...");
+        return RepairCompleteRepair.values()[0];
+    }
     return repair; 
 }
 
@@ -191,10 +196,10 @@ public synchronized RepairCompletePdu setPadding4(int pPadding4){
     return this;
 }
 /** Getter for {@link RepairCompletePdu#padding4}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding4()
 {
-    return padding4; 
+       return padding4;
 }
 
 /**

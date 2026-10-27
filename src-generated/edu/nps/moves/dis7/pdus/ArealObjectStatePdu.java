@@ -217,10 +217,10 @@ public synchronized ArealObjectStatePdu setUpdateNumber(int pUpdateNumber){
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#updateNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getUpdateNumber()
 {
-    return updateNumber; 
+       return updateNumber;
 }
 
 /** Setter for {@link ArealObjectStatePdu#forceID}
@@ -232,9 +232,14 @@ public synchronized ArealObjectStatePdu setForceID(ForceID pForceID)
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#forceID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceID()
 {
+    if (forceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceID; 
 }
 
@@ -247,9 +252,14 @@ public synchronized ArealObjectStatePdu setModifications(ObjectStateModification
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#modifications}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public ObjectStateModificationArealObject getModifications()
 {
+    if (modifications == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype ObjectStateModificationArealObject modifications == null, ignored by returning default bitfieldtype...");
+        return new ObjectStateModificationArealObject();
+    }
     return modifications; 
 }
 
@@ -278,10 +288,10 @@ public synchronized ArealObjectStatePdu setSpecificObjectAppearance(int pSpecifi
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#specificObjectAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getSpecificObjectAppearance()
 {
-    return specificObjectAppearance; 
+       return specificObjectAppearance;
 }
 
 /** Setter for {@link ArealObjectStatePdu#generalObjectAppearance}
@@ -300,10 +310,10 @@ public synchronized ArealObjectStatePdu setGeneralObjectAppearance(int pGeneralO
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#generalObjectAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getGeneralObjectAppearance()
 {
-    return generalObjectAppearance; 
+       return generalObjectAppearance;
 }
 
 /** Setter for {@link ArealObjectStatePdu#requesterID}
@@ -347,7 +357,7 @@ public synchronized ArealObjectStatePdu setObjectLocation(List<Vector3Double> pO
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#objectLocation}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Vector3Double> getObjectLocation()
 {
     return objectLocation; 

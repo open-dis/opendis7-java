@@ -152,10 +152,10 @@ public synchronized SetRecordRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link SetRecordRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link SetRecordRPdu#requiredReliabilityService}
@@ -167,9 +167,14 @@ public synchronized SetRecordRPdu setRequiredReliabilityService(RequiredReliabil
     return this;
 }
 /** Getter for {@link SetRecordRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -189,10 +194,10 @@ public synchronized SetRecordRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link SetRecordRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link SetRecordRPdu#pad2}
@@ -211,10 +216,10 @@ public synchronized SetRecordRPdu setPad2(int pPad2){
     return this;
 }
 /** Getter for {@link SetRecordRPdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /** Setter for {@link SetRecordRPdu#pad3}
@@ -226,10 +231,10 @@ public synchronized SetRecordRPdu setPad3(int pPad3)
     return this;
 }
 /** Getter for {@link SetRecordRPdu#pad3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPad3()
 {
-    return pad3; 
+       return pad3;
 }
 
 /** Setter for {@link SetRecordRPdu#recordSets}
@@ -241,7 +246,7 @@ public synchronized SetRecordRPdu setRecordSets(List<RecordSpecification> pRecor
     return this;
 }
 /** Getter for {@link SetRecordRPdu#recordSets}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<RecordSpecification> getRecordSets()
 {
     return recordSets; 

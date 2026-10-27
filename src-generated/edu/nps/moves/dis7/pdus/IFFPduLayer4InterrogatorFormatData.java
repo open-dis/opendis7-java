@@ -107,10 +107,10 @@ public synchronized IFFPduLayer4InterrogatorFormatData setSiteNumber(int pSiteNu
     return this;
 }
 /** Getter for {@link IFFPduLayer4InterrogatorFormatData#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link IFFPduLayer4InterrogatorFormatData#applicationNumber}
@@ -129,10 +129,10 @@ public synchronized IFFPduLayer4InterrogatorFormatData setApplicationNumber(int 
     return this;
 }
 /** Getter for {@link IFFPduLayer4InterrogatorFormatData#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link IFFPduLayer4InterrogatorFormatData#modeSInterrogatorBasicData}
@@ -167,10 +167,10 @@ public synchronized IFFPduLayer4InterrogatorFormatData setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link IFFPduLayer4InterrogatorFormatData#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Utility method to get size of field
@@ -201,7 +201,7 @@ public synchronized IFFPduLayer4InterrogatorFormatData setIFFFundamentalParamete
     return this;
 }
 /** Getter for {@link IFFPduLayer4InterrogatorFormatData#IFFFundamentalParameterDataRecord}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IFFDataSpecification> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

@@ -153,10 +153,10 @@ public synchronized ActionResponseRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link ActionResponseRPdu#responseStatus}
@@ -168,9 +168,14 @@ public synchronized ActionResponseRPdu setResponseStatus(ActionResponseRequestSt
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#responseStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ActionResponseRequestStatus getResponseStatus()
 {
+    if (responseStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ActionResponseRequestStatus responseStatus == null, ignored by returning default enumeration...");
+        return ActionResponseRequestStatus.values()[0];
+    }
     return responseStatus; 
 }
 
@@ -183,7 +188,7 @@ public synchronized ActionResponseRPdu setFixedDatumRecords(List<FixedDatum> pFi
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -198,7 +203,7 @@ public synchronized ActionResponseRPdu setVariableDatumRecords(List<VariableDatu
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

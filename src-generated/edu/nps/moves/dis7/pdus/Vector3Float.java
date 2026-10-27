@@ -60,10 +60,10 @@ public synchronized Vector3Float setX(float pX)
     return this;
 }
 /** Getter for {@link Vector3Float#x}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getX()
 {
-    return x; 
+       return x;
 }
 
 /** Setter for {@link Vector3Float#y}
@@ -75,10 +75,10 @@ public synchronized Vector3Float setY(float pY)
     return this;
 }
 /** Getter for {@link Vector3Float#y}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getY()
 {
-    return y; 
+       return y;
 }
 
 /** Setter for {@link Vector3Float#z}
@@ -90,10 +90,10 @@ public synchronized Vector3Float setZ(float pZ)
     return this;
 }
 /** Getter for {@link Vector3Float#z}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getZ()
 {
-    return z; 
+       return z;
 }
 
 /**

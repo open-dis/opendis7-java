@@ -80,10 +80,10 @@ public synchronized SimulationIdentifier setReferenceNumber(int pReferenceNumber
     return this;
 }
 /** Getter for {@link SimulationIdentifier#referenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getReferenceNumber()
 {
-    return referenceNumber; 
+       return referenceNumber;
 }
 
 /**

@@ -255,9 +255,14 @@ public synchronized AggregateStatePdu setForceID(ForceID pForceID)
     return this;
 }
 /** Getter for {@link AggregateStatePdu#forceID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceID()
 {
+    if (forceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceID; 
 }
 
@@ -270,9 +275,14 @@ public synchronized AggregateStatePdu setAggregateState(AggregateStateAggregateS
     return this;
 }
 /** Getter for {@link AggregateStatePdu#aggregateState}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AggregateStateAggregateState getAggregateState()
 {
+    if (aggregateState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateAggregateState aggregateState == null, ignored by returning default enumeration...");
+        return AggregateStateAggregateState.values()[0];
+    }
     return aggregateState; 
 }
 
@@ -301,9 +311,14 @@ public synchronized AggregateStatePdu setFormation(AggregateStateFormation pForm
     return this;
 }
 /** Getter for {@link AggregateStatePdu#formation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AggregateStateFormation getFormation()
 {
+    if (formation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateFormation formation == null, ignored by returning default enumeration...");
+        return AggregateStateFormation.values()[0];
+    }
     return formation; 
 }
 
@@ -396,7 +411,7 @@ public synchronized AggregateStatePdu setAggregateIDList(List<AggregateIdentifie
     return this;
 }
 /** Getter for {@link AggregateStatePdu#aggregateIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<AggregateIdentifier> getAggregateIDList()
 {
     return aggregateIDList; 
@@ -411,7 +426,7 @@ public synchronized AggregateStatePdu setEntityIDList(List<EntityID> pEntityIDLi
     return this;
 }
 /** Getter for {@link AggregateStatePdu#entityIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EntityID> getEntityIDList()
 {
     return entityIDList; 
@@ -426,7 +441,7 @@ public synchronized AggregateStatePdu setSilentAggregateSystemList(List<EntityTy
     return this;
 }
 /** Getter for {@link AggregateStatePdu#silentAggregateSystemList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EntityType> getSilentAggregateSystemList()
 {
     return silentAggregateSystemList; 
@@ -441,7 +456,7 @@ public synchronized AggregateStatePdu setSilentEntitySystemList(List<EntityType>
     return this;
 }
 /** Getter for {@link AggregateStatePdu#silentEntitySystemList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EntityType> getSilentEntitySystemList()
 {
     return silentEntitySystemList; 
@@ -456,7 +471,7 @@ public synchronized AggregateStatePdu setVariableDatumList(List<VariableDatum> p
     return this;
 }
 /** Getter for {@link AggregateStatePdu#variableDatumList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumList()
 {
     return variableDatumList; 

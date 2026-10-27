@@ -211,10 +211,10 @@ public synchronized MinefieldQueryPdu setRequestID(int pRequestID){
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link MinefieldQueryPdu#padding}
@@ -233,10 +233,10 @@ public synchronized MinefieldQueryPdu setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link MinefieldQueryPdu#dataFilter}
@@ -280,7 +280,7 @@ public synchronized MinefieldQueryPdu setRequestedPerimeterPoints(List<Vector2Fl
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#requestedPerimeterPoints}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Vector2Float> getRequestedPerimeterPoints()
 {
     return requestedPerimeterPoints; 
@@ -295,7 +295,7 @@ public synchronized MinefieldQueryPdu setSensorTypes(List<MinefieldSensorType> p
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#sensorTypes}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 

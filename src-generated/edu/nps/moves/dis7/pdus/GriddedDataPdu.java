@@ -221,10 +221,10 @@ public synchronized GriddedDataPdu setFieldNumber(int pFieldNumber){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#fieldNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getFieldNumber()
 {
-    return fieldNumber; 
+       return fieldNumber;
 }
 
 /** Setter for {@link GriddedDataPdu#pduNumber}
@@ -243,10 +243,10 @@ public synchronized GriddedDataPdu setPduNumber(int pPduNumber){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#pduNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPduNumber()
 {
-    return pduNumber; 
+       return pduNumber;
 }
 
 /** Setter for {@link GriddedDataPdu#pduTotal}
@@ -265,10 +265,10 @@ public synchronized GriddedDataPdu setPduTotal(int pPduTotal){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#pduTotal}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPduTotal()
 {
-    return pduTotal; 
+       return pduTotal;
 }
 
 /** Setter for {@link GriddedDataPdu#coordinateSystem}
@@ -280,9 +280,14 @@ public synchronized GriddedDataPdu setCoordinateSystem(GriddedDataCoordinateSyst
     return this;
 }
 /** Getter for {@link GriddedDataPdu#coordinateSystem}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public GriddedDataCoordinateSystem getCoordinateSystem()
 {
+    if (coordinateSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataCoordinateSystem coordinateSystem == null, ignored by returning default enumeration...");
+        return GriddedDataCoordinateSystem.values()[0];
+    }
     return coordinateSystem; 
 }
 
@@ -295,9 +300,14 @@ public synchronized GriddedDataPdu setConstantGrid(GriddedDataConstantGrid pCons
     return this;
 }
 /** Getter for {@link GriddedDataPdu#constantGrid}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public GriddedDataConstantGrid getConstantGrid()
 {
+    if (constantGrid == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataConstantGrid constantGrid == null, ignored by returning default enumeration...");
+        return GriddedDataConstantGrid.values()[0];
+    }
     return constantGrid; 
 }
 
@@ -358,10 +368,10 @@ public synchronized GriddedDataPdu setTotalValues(int pTotalValues)
     return this;
 }
 /** Getter for {@link GriddedDataPdu#totalValues}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTotalValues()
 {
-    return totalValues; 
+       return totalValues;
 }
 
 /** Setter for {@link GriddedDataPdu#vectorDimension}
@@ -380,10 +390,10 @@ public synchronized GriddedDataPdu setVectorDimension(int pVectorDimension){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#vectorDimension}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getVectorDimension()
 {
-    return vectorDimension; 
+       return vectorDimension;
 }
 
 /** Setter for {@link GriddedDataPdu#padding1}
@@ -402,10 +412,10 @@ public synchronized GriddedDataPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link GriddedDataPdu#padding2}
@@ -424,10 +434,10 @@ public synchronized GriddedDataPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link GriddedDataPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link GriddedDataPdu#gridAxisDescriptors}
@@ -439,7 +449,7 @@ public synchronized GriddedDataPdu setGridAxisDescriptors(List<GridAxisDescripto
     return this;
 }
 /** Getter for {@link GriddedDataPdu#gridAxisDescriptors}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<GridAxisDescriptor> getGridAxisDescriptors()
 {
     return gridAxisDescriptors; 
@@ -454,7 +464,7 @@ public synchronized GriddedDataPdu setGridDataRecords(List<GridData> pGridDataRe
     return this;
 }
 /** Getter for {@link GriddedDataPdu#gridDataRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<GridData> getGridDataRecords()
 {
     return gridDataRecords; 

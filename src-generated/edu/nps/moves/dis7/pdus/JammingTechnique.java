@@ -71,10 +71,10 @@ public synchronized JammingTechnique setKind(int pKind){
     return this;
 }
 /** Getter for {@link JammingTechnique#kind}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getKind()
 {
-    return kind; 
+       return kind;
 }
 
 /** Setter for {@link JammingTechnique#category}
@@ -93,10 +93,10 @@ public synchronized JammingTechnique setCategory(int pCategory){
     return this;
 }
 /** Getter for {@link JammingTechnique#category}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getCategory()
 {
-    return category; 
+       return category;
 }
 
 /** Setter for {@link JammingTechnique#subCategory}
@@ -115,10 +115,10 @@ public synchronized JammingTechnique setSubCategory(int pSubCategory){
     return this;
 }
 /** Getter for {@link JammingTechnique#subCategory}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSubCategory()
 {
-    return subCategory; 
+       return subCategory;
 }
 
 /** Setter for {@link JammingTechnique#specific}
@@ -137,10 +137,10 @@ public synchronized JammingTechnique setSpecific(int pSpecific){
     return this;
 }
 /** Getter for {@link JammingTechnique#specific}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSpecific()
 {
-    return specific; 
+       return specific;
 }
 
 /**

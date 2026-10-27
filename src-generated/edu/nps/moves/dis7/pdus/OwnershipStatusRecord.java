@@ -78,9 +78,14 @@ public synchronized OwnershipStatusRecord setOwnershipStatus(OwnershipStatus pOw
     return this;
 }
 /** Getter for {@link OwnershipStatusRecord#ownershipStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public OwnershipStatus getOwnershipStatus()
 {
+    if (ownershipStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration...");
+        return OwnershipStatus.values()[0];
+    }
     return ownershipStatus; 
 }
 
@@ -100,10 +105,10 @@ public synchronized OwnershipStatusRecord setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link OwnershipStatusRecord#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

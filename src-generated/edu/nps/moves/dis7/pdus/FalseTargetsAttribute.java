@@ -109,10 +109,10 @@ public synchronized FalseTargetsAttribute setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordType()
 {
-    return recordType; 
+       return recordType;
 }
 
 /** Setter for {@link FalseTargetsAttribute#recordLength}
@@ -131,10 +131,10 @@ public synchronized FalseTargetsAttribute setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link FalseTargetsAttribute#padding}
@@ -153,10 +153,10 @@ public synchronized FalseTargetsAttribute setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link FalseTargetsAttribute#emitterNumber}
@@ -175,10 +175,10 @@ public synchronized FalseTargetsAttribute setEmitterNumber(int pEmitterNumber){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#emitterNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getEmitterNumber()
 {
-    return emitterNumber; 
+       return emitterNumber;
 }
 
 /** Setter for {@link FalseTargetsAttribute#beamNumber}
@@ -197,10 +197,10 @@ public synchronized FalseTargetsAttribute setBeamNumber(int pBeamNumber){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#beamNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamNumber()
 {
-    return beamNumber; 
+       return beamNumber;
 }
 
 /** Setter for {@link FalseTargetsAttribute#stateIndicator}
@@ -212,9 +212,14 @@ public synchronized FalseTargetsAttribute setStateIndicator(EEAttributeStateIndi
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#stateIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EEAttributeStateIndicator getStateIndicator()
 {
+    if (stateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        return EEAttributeStateIndicator.values()[0];
+    }
     return stateIndicator; 
 }
 
@@ -234,10 +239,10 @@ public synchronized FalseTargetsAttribute setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link FalseTargetsAttribute#padding3}
@@ -256,10 +261,10 @@ public synchronized FalseTargetsAttribute setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /** Setter for {@link FalseTargetsAttribute#falseTargetCount}
@@ -278,10 +283,10 @@ public synchronized FalseTargetsAttribute setFalseTargetCount(int pFalseTargetCo
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#falseTargetCount}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getFalseTargetCount()
 {
-    return falseTargetCount; 
+       return falseTargetCount;
 }
 
 /** Setter for {@link FalseTargetsAttribute#walkSpeed}
@@ -293,10 +298,10 @@ public synchronized FalseTargetsAttribute setWalkSpeed(float pWalkSpeed)
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#walkSpeed}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getWalkSpeed()
 {
-    return walkSpeed; 
+       return walkSpeed;
 }
 
 /** Setter for {@link FalseTargetsAttribute#walkAcceleration}
@@ -308,10 +313,10 @@ public synchronized FalseTargetsAttribute setWalkAcceleration(float pWalkAcceler
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#walkAcceleration}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getWalkAcceleration()
 {
-    return walkAcceleration; 
+       return walkAcceleration;
 }
 
 /** Setter for {@link FalseTargetsAttribute#maximumWalkDistance}
@@ -323,10 +328,10 @@ public synchronized FalseTargetsAttribute setMaximumWalkDistance(float pMaximumW
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#maximumWalkDistance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getMaximumWalkDistance()
 {
-    return maximumWalkDistance; 
+       return maximumWalkDistance;
 }
 
 /** Setter for {@link FalseTargetsAttribute#keepTime}
@@ -338,10 +343,10 @@ public synchronized FalseTargetsAttribute setKeepTime(float pKeepTime)
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#keepTime}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getKeepTime()
 {
-    return keepTime; 
+       return keepTime;
 }
 
 /** Setter for {@link FalseTargetsAttribute#echoSpacing}
@@ -353,10 +358,10 @@ public synchronized FalseTargetsAttribute setEchoSpacing(float pEchoSpacing)
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#echoSpacing}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getEchoSpacing()
 {
-    return echoSpacing; 
+       return echoSpacing;
 }
 
 /** Setter for {@link FalseTargetsAttribute#firstTargetOffset}
@@ -368,10 +373,10 @@ public synchronized FalseTargetsAttribute setFirstTargetOffset(float pFirstTarge
     return this;
 }
 /** Getter for {@link FalseTargetsAttribute#firstTargetOffset}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getFirstTargetOffset()
 {
-    return firstTargetOffset; 
+       return firstTargetOffset;
 }
 
 /**

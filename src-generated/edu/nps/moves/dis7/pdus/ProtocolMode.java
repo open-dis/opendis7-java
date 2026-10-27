@@ -59,10 +59,10 @@ public synchronized ProtocolMode setProtocolMode(int pProtocolMode){
     return this;
 }
 /** Getter for {@link ProtocolMode#protocolMode}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getProtocolMode()
 {
-    return protocolMode; 
+       return protocolMode;
 }
 
 /**

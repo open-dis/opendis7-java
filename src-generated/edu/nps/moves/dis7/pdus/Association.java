@@ -67,9 +67,14 @@ public synchronized Association setAssociationType(EntityAssociationAssociationT
     return this;
 }
 /** Getter for {@link Association#associationType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityAssociationAssociationType getAssociationType()
 {
+    if (associationType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationType == null, ignored by returning default enumeration...");
+        return EntityAssociationAssociationType.values()[0];
+    }
     return associationType; 
 }
 
@@ -89,10 +94,10 @@ public synchronized Association setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link Association#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link Association#associatedEntityID}

@@ -198,10 +198,10 @@ public synchronized LEDetonationPdu setDetonationFlag1(int pDetonationFlag1){
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationFlag1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDetonationFlag1()
 {
-    return detonationFlag1; 
+       return detonationFlag1;
 }
 
 /** Setter for {@link LEDetonationPdu#detonationFlag2}
@@ -220,10 +220,10 @@ public synchronized LEDetonationPdu setDetonationFlag2(int pDetonationFlag2){
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationFlag2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDetonationFlag2()
 {
-    return detonationFlag2; 
+       return detonationFlag2;
 }
 
 /** Setter for {@link LEDetonationPdu#targetLiveEntityId}
@@ -370,10 +370,10 @@ public synchronized LEDetonationPdu setDetonationResult(int pDetonationResult){
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationResult}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDetonationResult()
 {
-    return detonationResult; 
+       return detonationResult;
 }
 
 /**

@@ -72,9 +72,14 @@ public synchronized AttachedPartVP setRecordType(VariableParameterRecordType pRe
     return this;
 }
 /** Getter for {@link AttachedPartVP#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -87,9 +92,14 @@ public synchronized AttachedPartVP setDetachedIndicator(AttachedPartDetachedIndi
     return this;
 }
 /** Getter for {@link AttachedPartVP#detachedIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AttachedPartDetachedIndicator getDetachedIndicator()
 {
+    if (detachedIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AttachedPartDetachedIndicator detachedIndicator == null, ignored by returning default enumeration...");
+        return AttachedPartDetachedIndicator.values()[0];
+    }
     return detachedIndicator; 
 }
 
@@ -109,10 +119,10 @@ public synchronized AttachedPartVP setPartAttachedTo(int pPartAttachedTo){
     return this;
 }
 /** Getter for {@link AttachedPartVP#partAttachedTo}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPartAttachedTo()
 {
-    return partAttachedTo; 
+       return partAttachedTo;
 }
 
 /** Setter for {@link AttachedPartVP#parameterType}
@@ -124,9 +134,14 @@ public synchronized AttachedPartVP setParameterType(AttachedParts pParameterType
     return this;
 }
 /** Getter for {@link AttachedPartVP#parameterType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AttachedParts getParameterType()
 {
+    if (parameterType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AttachedParts parameterType == null, ignored by returning default enumeration...");
+        return AttachedParts.values()[0];
+    }
     return parameterType; 
 }
 

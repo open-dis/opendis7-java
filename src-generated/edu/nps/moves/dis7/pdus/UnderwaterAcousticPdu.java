@@ -217,9 +217,14 @@ public synchronized UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeU
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#stateChangeIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAStateChangeUpdateIndicator getStateChangeIndicator()
 {
+    if (stateChangeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration...");
+        return UAStateChangeUpdateIndicator.values()[0];
+    }
     return stateChangeIndicator; 
 }
 
@@ -239,10 +244,10 @@ public synchronized UnderwaterAcousticPdu setPad(int pPad){
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#pad}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad()
 {
-    return pad; 
+       return pad;
 }
 
 /** Setter for {@link UnderwaterAcousticPdu#passiveParameterIndex}
@@ -254,9 +259,14 @@ public synchronized UnderwaterAcousticPdu setPassiveParameterIndex(UAPassivePara
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#passiveParameterIndex}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAPassiveParameterIndex getPassiveParameterIndex()
 {
+    if (passiveParameterIndex == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration...");
+        return UAPassiveParameterIndex.values()[0];
+    }
     return passiveParameterIndex; 
 }
 
@@ -276,10 +286,10 @@ public synchronized UnderwaterAcousticPdu setPropulsionPlantConfiguration(int pP
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPropulsionPlantConfiguration()
 {
-    return propulsionPlantConfiguration; 
+       return propulsionPlantConfiguration;
 }
 
 /** Setter for {@link UnderwaterAcousticPdu#shaftRPMs}
@@ -291,7 +301,7 @@ public synchronized UnderwaterAcousticPdu setShaftRPMs(List<ShaftRPM> pShaftRPMs
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#shaftRPMs}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<ShaftRPM> getShaftRPMs()
 {
     return shaftRPMs; 
@@ -306,7 +316,7 @@ public synchronized UnderwaterAcousticPdu setApaData(List<APA> pApaData)
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#apaData}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<APA> getApaData()
 {
     return apaData; 
@@ -321,7 +331,7 @@ public synchronized UnderwaterAcousticPdu setEmitterSystems(List<UAEmitter> pEmi
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#emitterSystems}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<UAEmitter> getEmitterSystems()
 {
     return emitterSystems; 

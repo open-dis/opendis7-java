@@ -81,10 +81,10 @@ public synchronized PduBase setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link PduBase#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

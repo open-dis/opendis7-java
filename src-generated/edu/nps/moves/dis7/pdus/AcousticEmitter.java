@@ -62,9 +62,14 @@ public synchronized AcousticEmitter setAcousticSystemName(UAAcousticSystemName p
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticSystemName}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAAcousticSystemName getAcousticSystemName()
 {
+    if (acousticSystemName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration...");
+        return UAAcousticSystemName.values()[0];
+    }
     return acousticSystemName; 
 }
 
@@ -77,9 +82,14 @@ public synchronized AcousticEmitter setAcousticFunction(UAAcousticEmitterSystemF
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticFunction}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public UAAcousticEmitterSystemFunction getAcousticFunction()
 {
+    if (acousticFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration...");
+        return UAAcousticEmitterSystemFunction.values()[0];
+    }
     return acousticFunction; 
 }
 
@@ -99,10 +109,10 @@ public synchronized AcousticEmitter setAcousticIDNumber(int pAcousticIDNumber){
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticIDNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getAcousticIDNumber()
 {
-    return acousticIDNumber; 
+       return acousticIDNumber;
 }
 
 /**

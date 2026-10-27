@@ -182,9 +182,14 @@ public synchronized ServiceRequestPdu setServiceTypeRequested(ServiceRequestServ
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#serviceTypeRequested}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 {
+    if (serviceTypeRequested == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration...");
+        return ServiceRequestServiceTypeRequested.values()[0];
+    }
     return serviceTypeRequested; 
 }
 
@@ -204,10 +209,10 @@ public synchronized ServiceRequestPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link ServiceRequestPdu#supplies}
@@ -219,7 +224,7 @@ public synchronized ServiceRequestPdu setSupplies(List<SupplyQuantity> pSupplies
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#supplies}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

@@ -261,10 +261,10 @@ public synchronized IFFPdu setSystemDesignator(int pSystemDesignator){
     return this;
 }
 /** Getter for {@link IFFPdu#systemDesignator}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSystemDesignator()
 {
-    return systemDesignator; 
+       return systemDesignator;
 }
 
 /** Setter for {@link IFFPdu#systemSpecificData}
@@ -283,10 +283,10 @@ public synchronized IFFPdu setSystemSpecificData(int pSystemSpecificData){
     return this;
 }
 /** Getter for {@link IFFPdu#systemSpecificData}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSystemSpecificData()
 {
-    return systemSpecificData; 
+       return systemSpecificData;
 }
 
 /** Setter for {@link IFFPdu#fundamentalParameters}

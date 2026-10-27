@@ -80,10 +80,10 @@ public synchronized GroupID setGroupNumber(int pGroupNumber){
     return this;
 }
 /** Getter for {@link GroupID#groupNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getGroupNumber()
 {
-    return groupNumber; 
+       return groupNumber;
 }
 
 /**

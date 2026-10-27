@@ -68,10 +68,10 @@ public synchronized EEFundamentalParameterData setFrequency(float pFrequency)
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#frequency}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getFrequency()
 {
-    return frequency; 
+       return frequency;
 }
 
 /** Setter for {@link EEFundamentalParameterData#frequencyRange}
@@ -83,10 +83,10 @@ public synchronized EEFundamentalParameterData setFrequencyRange(float pFrequenc
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#frequencyRange}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getFrequencyRange()
 {
-    return frequencyRange; 
+       return frequencyRange;
 }
 
 /** Setter for {@link EEFundamentalParameterData#effectiveRadiatedPower}
@@ -98,10 +98,10 @@ public synchronized EEFundamentalParameterData setEffectiveRadiatedPower(float p
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#effectiveRadiatedPower}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getEffectiveRadiatedPower()
 {
-    return effectiveRadiatedPower; 
+       return effectiveRadiatedPower;
 }
 
 /** Setter for {@link EEFundamentalParameterData#pulseRepetitionFrequency}
@@ -113,10 +113,10 @@ public synchronized EEFundamentalParameterData setPulseRepetitionFrequency(float
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#pulseRepetitionFrequency}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPulseRepetitionFrequency()
 {
-    return pulseRepetitionFrequency; 
+       return pulseRepetitionFrequency;
 }
 
 /** Setter for {@link EEFundamentalParameterData#pulseWidth}
@@ -128,10 +128,10 @@ public synchronized EEFundamentalParameterData setPulseWidth(float pPulseWidth)
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#pulseWidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPulseWidth()
 {
-    return pulseWidth; 
+       return pulseWidth;
 }
 
 /**

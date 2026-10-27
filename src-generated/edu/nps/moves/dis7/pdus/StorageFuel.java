@@ -71,10 +71,10 @@ public synchronized StorageFuel setFuelQuantity(int pFuelQuantity)
     return this;
 }
 /** Getter for {@link StorageFuel#fuelQuantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getFuelQuantity()
 {
-    return fuelQuantity; 
+       return fuelQuantity;
 }
 
 /** Setter for {@link StorageFuel#fuelMeasurementUnits}
@@ -86,9 +86,14 @@ public synchronized StorageFuel setFuelMeasurementUnits(FuelMeasurementUnits pFu
     return this;
 }
 /** Getter for {@link StorageFuel#fuelMeasurementUnits}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public FuelMeasurementUnits getFuelMeasurementUnits()
 {
+    if (fuelMeasurementUnits == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurementUnits == null, ignored by returning default enumeration...");
+        return FuelMeasurementUnits.values()[0];
+    }
     return fuelMeasurementUnits; 
 }
 
@@ -101,9 +106,14 @@ public synchronized StorageFuel setFuelType(SupplyFuelType pFuelType)
     return this;
 }
 /** Getter for {@link StorageFuel#fuelType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SupplyFuelType getFuelType()
 {
+    if (fuelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration...");
+        return SupplyFuelType.values()[0];
+    }
     return fuelType; 
 }
 
@@ -116,9 +126,14 @@ public synchronized StorageFuel setFuelLocation(FuelLocation pFuelLocation)
     return this;
 }
 /** Getter for {@link StorageFuel#fuelLocation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public FuelLocation getFuelLocation()
 {
+    if (fuelLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration...");
+        return FuelLocation.values()[0];
+    }
     return fuelLocation; 
 }
 
@@ -138,10 +153,10 @@ public synchronized StorageFuel setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link StorageFuel#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

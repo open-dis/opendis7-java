@@ -61,7 +61,7 @@ public synchronized RecordQuerySpecification setRecordIDs(List<VariableRecordTyp
     return this;
 }
 /** Getter for {@link RecordQuerySpecification#recordIDs}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableRecordType> getRecordIDs()
 {
     return recordIDs; 

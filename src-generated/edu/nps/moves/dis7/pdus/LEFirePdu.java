@@ -184,10 +184,10 @@ public synchronized LEFirePdu setFlags(int pFlags){
     return this;
 }
 /** Getter for {@link LEFirePdu#flags}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getFlags()
 {
-    return flags; 
+       return flags;
 }
 
 /** Setter for {@link LEFirePdu#targetLiveEntityId}
@@ -302,10 +302,10 @@ public synchronized LEFirePdu setRange(int pRange){
     return this;
 }
 /** Getter for {@link LEFirePdu#range}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRange()
 {
-    return range; 
+       return range;
 }
 
 /**

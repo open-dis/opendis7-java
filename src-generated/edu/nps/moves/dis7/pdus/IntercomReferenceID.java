@@ -67,10 +67,10 @@ public synchronized IntercomReferenceID setSiteNumber(int pSiteNumber){
     return this;
 }
 /** Getter for {@link IntercomReferenceID#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link IntercomReferenceID#applicationNumber}
@@ -89,10 +89,10 @@ public synchronized IntercomReferenceID setApplicationNumber(int pApplicationNum
     return this;
 }
 /** Getter for {@link IntercomReferenceID#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link IntercomReferenceID#referenceNumber}
@@ -111,10 +111,10 @@ public synchronized IntercomReferenceID setReferenceNumber(int pReferenceNumber)
     return this;
 }
 /** Getter for {@link IntercomReferenceID#referenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getReferenceNumber()
 {
-    return referenceNumber; 
+       return referenceNumber;
 }
 
 /**

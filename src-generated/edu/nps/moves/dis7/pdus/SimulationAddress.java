@@ -63,10 +63,10 @@ public synchronized SimulationAddress setSite(int pSite){
     return this;
 }
 /** Getter for {@link SimulationAddress#site}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSite()
 {
-    return site; 
+       return site;
 }
 
 /** Setter for {@link SimulationAddress#application}
@@ -85,10 +85,10 @@ public synchronized SimulationAddress setApplication(int pApplication){
     return this;
 }
 /** Getter for {@link SimulationAddress#application}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplication()
 {
-    return application; 
+       return application;
 }
 
 /**

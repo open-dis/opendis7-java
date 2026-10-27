@@ -79,9 +79,14 @@ public synchronized EntityType setEntityKind(EntityKind pEntityKind)
     return this;
 }
 /** Getter for {@link EntityType#entityKind}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityKind getEntityKind()
 {
+    if (entityKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        return EntityKind.values()[0];
+    }
     return entityKind; 
 }
 
@@ -110,9 +115,14 @@ public synchronized EntityType setCountry(Country pCountry)
     return this;
 }
 /** Getter for {@link EntityType#country}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public Country getCountry()
 {
+    if (country == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        return Country.values()[0];
+    }
     return country; 
 }
 
@@ -132,10 +142,10 @@ public synchronized EntityType setCategory(int pCategory){
     return this;
 }
 /** Getter for {@link EntityType#category}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getCategory()
 {
-    return category; 
+       return category;
 }
 
 /** Setter for {@link EntityType#subCategory}
@@ -154,10 +164,10 @@ public synchronized EntityType setSubCategory(int pSubCategory){
     return this;
 }
 /** Getter for {@link EntityType#subCategory}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSubCategory()
 {
-    return subCategory; 
+       return subCategory;
 }
 
 /** Setter for {@link EntityType#specific}
@@ -176,10 +186,10 @@ public synchronized EntityType setSpecific(int pSpecific){
     return this;
 }
 /** Getter for {@link EntityType#specific}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSpecific()
 {
-    return specific; 
+       return specific;
 }
 
 /** Setter for {@link EntityType#extra}
@@ -198,10 +208,10 @@ public synchronized EntityType setExtra(int pExtra){
     return this;
 }
 /** Getter for {@link EntityType#extra}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getExtra()
 {
-    return extra; 
+       return extra;
 }
 
 /**

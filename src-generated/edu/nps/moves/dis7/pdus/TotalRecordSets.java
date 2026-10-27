@@ -63,10 +63,10 @@ public synchronized TotalRecordSets setTotalRecordSets(int pTotalRecordSets){
     return this;
 }
 /** Getter for {@link TotalRecordSets#totalRecordSets}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getTotalRecordSets()
 {
-    return totalRecordSets; 
+       return totalRecordSets;
 }
 
 /** Setter for {@link TotalRecordSets#padding}
@@ -85,10 +85,10 @@ public synchronized TotalRecordSets setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link TotalRecordSets#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

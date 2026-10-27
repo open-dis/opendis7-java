@@ -63,10 +63,10 @@ public synchronized APA setParameterIndex(int pParameterIndex){
     return this;
 }
 /** Getter for {@link APA#parameterIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameterIndex()
 {
-    return parameterIndex; 
+       return parameterIndex;
 }
 
 /** Setter for {@link APA#value}
@@ -85,10 +85,10 @@ public synchronized APA setValue(int pValue){
     return this;
 }
 /** Getter for {@link APA#value}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getValue()
 {
-    return value; 
+       return value;
 }
 
 /**

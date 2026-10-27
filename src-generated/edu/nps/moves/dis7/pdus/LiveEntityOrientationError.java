@@ -67,10 +67,10 @@ public synchronized LiveEntityOrientationError setAzimuthError(int pAzimuthError
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#azimuthError}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getAzimuthError()
 {
-    return azimuthError; 
+       return azimuthError;
 }
 
 /** Setter for {@link LiveEntityOrientationError#elevationError}
@@ -89,10 +89,10 @@ public synchronized LiveEntityOrientationError setElevationError(int pElevationE
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#elevationError}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getElevationError()
 {
-    return elevationError; 
+       return elevationError;
 }
 
 /** Setter for {@link LiveEntityOrientationError#rotationError}
@@ -111,10 +111,10 @@ public synchronized LiveEntityOrientationError setRotationError(int pRotationErr
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#rotationError}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRotationError()
 {
-    return rotationError; 
+       return rotationError;
 }
 
 /**

@@ -77,9 +77,14 @@ public synchronized EntityTypeRaw setEntityKind(EntityKind pEntityKind)
     return this;
 }
 /** Getter for {@link EntityTypeRaw#entityKind}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityKind getEntityKind()
 {
+    if (entityKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        return EntityKind.values()[0];
+    }
     return entityKind; 
 }
 
@@ -99,10 +104,10 @@ public synchronized EntityTypeRaw setDomain(int pDomain){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#domain}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDomain()
 {
-    return domain; 
+       return domain;
 }
 
 /** Setter for {@link EntityTypeRaw#country}
@@ -121,10 +126,10 @@ public synchronized EntityTypeRaw setCountry(int pCountry){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#country}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getCountry()
 {
-    return country; 
+       return country;
 }
 
 /** Setter for {@link EntityTypeRaw#category}
@@ -143,10 +148,10 @@ public synchronized EntityTypeRaw setCategory(int pCategory){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#category}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getCategory()
 {
-    return category; 
+       return category;
 }
 
 /** Setter for {@link EntityTypeRaw#subCategory}
@@ -165,10 +170,10 @@ public synchronized EntityTypeRaw setSubCategory(int pSubCategory){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#subCategory}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSubCategory()
 {
-    return subCategory; 
+       return subCategory;
 }
 
 /** Setter for {@link EntityTypeRaw#specific}
@@ -187,10 +192,10 @@ public synchronized EntityTypeRaw setSpecific(int pSpecific){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#specific}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSpecific()
 {
-    return specific; 
+       return specific;
 }
 
 /** Setter for {@link EntityTypeRaw#extra}
@@ -209,10 +214,10 @@ public synchronized EntityTypeRaw setExtra(int pExtra){
     return this;
 }
 /** Getter for {@link EntityTypeRaw#extra}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getExtra()
 {
-    return extra; 
+       return extra;
 }
 
 /**

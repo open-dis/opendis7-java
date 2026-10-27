@@ -152,10 +152,10 @@ public synchronized DataQueryPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link DataQueryPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link DataQueryPdu#timeInterval}
@@ -167,10 +167,10 @@ public synchronized DataQueryPdu setTimeInterval(int pTimeInterval)
     return this;
 }
 /** Getter for {@link DataQueryPdu#timeInterval}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTimeInterval()
 {
-    return timeInterval; 
+       return timeInterval;
 }
 
 /** Setter for {@link DataQueryPdu#fixedDatums}
@@ -182,7 +182,7 @@ public synchronized DataQueryPdu setFixedDatums(List<FixedDatum> pFixedDatums)
     return this;
 }
 /** Getter for {@link DataQueryPdu#fixedDatums}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
@@ -197,7 +197,7 @@ public synchronized DataQueryPdu setVariableDatums(List<VariableDatum> pVariable
     return this;
 }
 /** Getter for {@link DataQueryPdu#variableDatums}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

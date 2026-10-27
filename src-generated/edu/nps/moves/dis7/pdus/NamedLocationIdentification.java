@@ -57,9 +57,14 @@ public synchronized NamedLocationIdentification setStationName(IsPartOfStationNa
     return this;
 }
 /** Getter for {@link NamedLocationIdentification#stationName}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IsPartOfStationName getStationName()
 {
+    if (stationName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfStationName stationName == null, ignored by returning default enumeration...");
+        return IsPartOfStationName.values()[0];
+    }
     return stationName; 
 }
 
@@ -79,10 +84,10 @@ public synchronized NamedLocationIdentification setStationNumber(int pStationNum
     return this;
 }
 /** Getter for {@link NamedLocationIdentification#stationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getStationNumber()
 {
-    return stationNumber; 
+       return stationNumber;
 }
 
 /**

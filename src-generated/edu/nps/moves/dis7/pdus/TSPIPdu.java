@@ -193,10 +193,10 @@ public synchronized TSPIPdu setTSPIFlag(int pTSPIFlag){
     return this;
 }
 /** Getter for {@link TSPIPdu#TSPIFlag}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getTSPIFlag()
 {
-    return TSPIFlag; 
+       return TSPIFlag;
 }
 
 /** Setter for {@link TSPIPdu#entityLocation}
@@ -311,10 +311,10 @@ public synchronized TSPIPdu setMeasuredSpeed(int pMeasuredSpeed){
     return this;
 }
 /** Getter for {@link TSPIPdu#measuredSpeed}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMeasuredSpeed()
 {
-    return measuredSpeed; 
+       return measuredSpeed;
 }
 
 /** Setter for {@link TSPIPdu#systemSpecificData}
@@ -326,7 +326,7 @@ public synchronized TSPIPdu setSystemSpecificData(byte[] pSystemSpecificData)
     return this;
 }
 /** Getter for {@link TSPIPdu#systemSpecificData}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

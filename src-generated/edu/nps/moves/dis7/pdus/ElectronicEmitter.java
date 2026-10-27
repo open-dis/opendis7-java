@@ -86,10 +86,10 @@ public synchronized ElectronicEmitter setSystemDataLength(int pSystemDataLength)
     return this;
 }
 /** Getter for {@link ElectronicEmitter#systemDataLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSystemDataLength()
 {
-    return systemDataLength; 
+       return systemDataLength;
 }
 
 /** Setter for {@link ElectronicEmitter#padding}
@@ -108,10 +108,10 @@ public synchronized ElectronicEmitter setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link ElectronicEmitter#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link ElectronicEmitter#emitterSystem}
@@ -155,7 +155,7 @@ public synchronized ElectronicEmitter setBeams(List<EmitterBeam> pBeams)
     return this;
 }
 /** Getter for {@link ElectronicEmitter#beams}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EmitterBeam> getBeams()
 {
     return beams; 

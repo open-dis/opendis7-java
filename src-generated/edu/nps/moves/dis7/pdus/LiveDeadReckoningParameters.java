@@ -63,9 +63,14 @@ public synchronized LiveDeadReckoningParameters setDeadReckoningAlgorithm(DeadRe
     return this;
 }
 /** Getter for {@link LiveDeadReckoningParameters#deadReckoningAlgorithm}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
+    if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        return DeadReckoningAlgorithm.values()[0];
+    }
     return deadReckoningAlgorithm; 
 }
 

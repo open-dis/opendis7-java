@@ -74,10 +74,10 @@ public synchronized DataFilterRecord setBitFlags(int pBitFlags)
     return this;
 }
 /** Getter for {@link DataFilterRecord#bitFlags}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getBitFlags()
 {
-    return bitFlags; 
+       return bitFlags;
 }
 
 /**

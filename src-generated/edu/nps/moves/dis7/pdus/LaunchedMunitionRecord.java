@@ -103,10 +103,10 @@ public synchronized LaunchedMunitionRecord setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link LaunchedMunitionRecord#firingEntityID}
@@ -141,10 +141,10 @@ public synchronized LaunchedMunitionRecord setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link LaunchedMunitionRecord#targetEntityID}
@@ -179,10 +179,10 @@ public synchronized LaunchedMunitionRecord setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /** Setter for {@link LaunchedMunitionRecord#targetLocation}

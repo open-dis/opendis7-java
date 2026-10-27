@@ -89,10 +89,10 @@ public synchronized ExpendableReload setStation(int pStation)
     return this;
 }
 /** Getter for {@link ExpendableReload#station}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStation()
 {
-    return station; 
+       return station;
 }
 
 /** Setter for {@link ExpendableReload#standardQuantity}
@@ -111,10 +111,10 @@ public synchronized ExpendableReload setStandardQuantity(int pStandardQuantity){
     return this;
 }
 /** Getter for {@link ExpendableReload#standardQuantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getStandardQuantity()
 {
-    return standardQuantity; 
+       return standardQuantity;
 }
 
 /** Setter for {@link ExpendableReload#maximumQuantity}
@@ -133,10 +133,10 @@ public synchronized ExpendableReload setMaximumQuantity(int pMaximumQuantity){
     return this;
 }
 /** Getter for {@link ExpendableReload#maximumQuantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMaximumQuantity()
 {
-    return maximumQuantity; 
+       return maximumQuantity;
 }
 
 /** Setter for {@link ExpendableReload#standardQuantityReloadTime}
@@ -148,10 +148,10 @@ public synchronized ExpendableReload setStandardQuantityReloadTime(int pStandard
     return this;
 }
 /** Getter for {@link ExpendableReload#standardQuantityReloadTime}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStandardQuantityReloadTime()
 {
-    return standardQuantityReloadTime; 
+       return standardQuantityReloadTime;
 }
 
 /** Setter for {@link ExpendableReload#maximumQuantityReloadTime}
@@ -163,10 +163,10 @@ public synchronized ExpendableReload setMaximumQuantityReloadTime(int pMaximumQu
     return this;
 }
 /** Getter for {@link ExpendableReload#maximumQuantityReloadTime}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getMaximumQuantityReloadTime()
 {
-    return maximumQuantityReloadTime; 
+       return maximumQuantityReloadTime;
 }
 
 /**

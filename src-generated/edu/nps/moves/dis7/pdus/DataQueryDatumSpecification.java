@@ -74,7 +74,7 @@ public synchronized DataQueryDatumSpecification setFixedDatumIDList(List<Unsigne
     return this;
 }
 /** Getter for {@link DataQueryDatumSpecification#fixedDatumIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<UnsignedDISInteger> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
@@ -89,7 +89,7 @@ public synchronized DataQueryDatumSpecification setVariableDatumIDList(List<Unsi
     return this;
 }
 /** Getter for {@link DataQueryDatumSpecification#variableDatumIDList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<UnsignedDISInteger> getVariableDatumIDList()
 {
     return variableDatumIDList; 

@@ -249,9 +249,14 @@ public synchronized TransmitterPdu setTransmitState(TransmitterTransmitState pTr
     return this;
 }
 /** Getter for {@link TransmitterPdu#transmitState}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterTransmitState getTransmitState()
 {
+    if (transmitState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterTransmitState transmitState == null, ignored by returning default enumeration...");
+        return TransmitterTransmitState.values()[0];
+    }
     return transmitState; 
 }
 
@@ -264,9 +269,14 @@ public synchronized TransmitterPdu setInputSource(TransmitterInputSource pInputS
     return this;
 }
 /** Getter for {@link TransmitterPdu#inputSource}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterInputSource getInputSource()
 {
+    if (inputSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterInputSource inputSource == null, ignored by returning default enumeration...");
+        return TransmitterInputSource.values()[0];
+    }
     return inputSource; 
 }
 
@@ -286,10 +296,10 @@ public synchronized TransmitterPdu setVariableTransmitterParameterCount(int pVar
     return this;
 }
 /** Getter for {@link TransmitterPdu#variableTransmitterParameterCount}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getVariableTransmitterParameterCount()
 {
-    return variableTransmitterParameterCount; 
+       return variableTransmitterParameterCount;
 }
 
 /** Setter for {@link TransmitterPdu#antennaLocation}
@@ -333,9 +343,14 @@ public synchronized TransmitterPdu setAntennaPatternType(TransmitterAntennaPatte
     return this;
 }
 /** Getter for {@link TransmitterPdu#antennaPatternType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterAntennaPatternType getAntennaPatternType()
 {
+    if (antennaPatternType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterAntennaPatternType antennaPatternType == null, ignored by returning default enumeration...");
+        return TransmitterAntennaPatternType.values()[0];
+    }
     return antennaPatternType; 
 }
 
@@ -355,10 +370,10 @@ public synchronized TransmitterPdu setFrequency(int pFrequency){
     return this;
 }
 /** Getter for {@link TransmitterPdu#frequency}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public long getFrequency()
 {
-    return frequency; 
+       return frequency;
 }
 
 /** Setter for {@link TransmitterPdu#transmitFrequencyBandwidth}
@@ -370,10 +385,10 @@ public synchronized TransmitterPdu setTransmitFrequencyBandwidth(float pTransmit
     return this;
 }
 /** Getter for {@link TransmitterPdu#transmitFrequencyBandwidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getTransmitFrequencyBandwidth()
 {
-    return transmitFrequencyBandwidth; 
+       return transmitFrequencyBandwidth;
 }
 
 /** Setter for {@link TransmitterPdu#power}
@@ -385,10 +400,10 @@ public synchronized TransmitterPdu setPower(float pPower)
     return this;
 }
 /** Getter for {@link TransmitterPdu#power}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPower()
 {
-    return power; 
+       return power;
 }
 
 /** Setter for {@link TransmitterPdu#modulationType}
@@ -416,9 +431,14 @@ public synchronized TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryp
     return this;
 }
 /** Getter for {@link TransmitterPdu#cryptoSystem}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransmitterCryptoSystem getCryptoSystem()
 {
+    if (cryptoSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterCryptoSystem cryptoSystem == null, ignored by returning default enumeration...");
+        return TransmitterCryptoSystem.values()[0];
+    }
     return cryptoSystem; 
 }
 
@@ -438,10 +458,10 @@ public synchronized TransmitterPdu setCryptoKeyId(int pCryptoKeyId){
     return this;
 }
 /** Getter for {@link TransmitterPdu#cryptoKeyId}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getCryptoKeyId()
 {
-    return cryptoKeyId; 
+       return cryptoKeyId;
 }
 
 /** Setter for {@link TransmitterPdu#padding1}
@@ -460,10 +480,10 @@ public synchronized TransmitterPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link TransmitterPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link TransmitterPdu#padding2}
@@ -482,10 +502,10 @@ public synchronized TransmitterPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link TransmitterPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link TransmitterPdu#modulationParametersList}
@@ -497,7 +517,7 @@ public synchronized TransmitterPdu setModulationParametersList(List<ModulationPa
     return this;
 }
 /** Getter for {@link TransmitterPdu#modulationParametersList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<ModulationParameters> getModulationParametersList()
 {
     return modulationParametersList; 
@@ -512,7 +532,7 @@ public synchronized TransmitterPdu setAntennaPatternList(List<VariableTransmitte
     return this;
 }
 /** Getter for {@link TransmitterPdu#antennaPatternList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableTransmitterParameters> getAntennaPatternList()
 {
     return antennaPatternList; 

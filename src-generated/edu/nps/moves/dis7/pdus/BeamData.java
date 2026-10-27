@@ -68,10 +68,10 @@ public synchronized BeamData setBeamAzimuthCenter(float pBeamAzimuthCenter)
     return this;
 }
 /** Getter for {@link BeamData#beamAzimuthCenter}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamAzimuthCenter()
 {
-    return beamAzimuthCenter; 
+       return beamAzimuthCenter;
 }
 
 /** Setter for {@link BeamData#beamAzimuthSweep}
@@ -83,10 +83,10 @@ public synchronized BeamData setBeamAzimuthSweep(float pBeamAzimuthSweep)
     return this;
 }
 /** Getter for {@link BeamData#beamAzimuthSweep}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamAzimuthSweep()
 {
-    return beamAzimuthSweep; 
+       return beamAzimuthSweep;
 }
 
 /** Setter for {@link BeamData#beamElevationCenter}
@@ -98,10 +98,10 @@ public synchronized BeamData setBeamElevationCenter(float pBeamElevationCenter)
     return this;
 }
 /** Getter for {@link BeamData#beamElevationCenter}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamElevationCenter()
 {
-    return beamElevationCenter; 
+       return beamElevationCenter;
 }
 
 /** Setter for {@link BeamData#beamElevationSweep}
@@ -113,10 +113,10 @@ public synchronized BeamData setBeamElevationSweep(float pBeamElevationSweep)
     return this;
 }
 /** Getter for {@link BeamData#beamElevationSweep}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamElevationSweep()
 {
-    return beamElevationSweep; 
+       return beamElevationSweep;
 }
 
 /** Setter for {@link BeamData#beamSweepSync}
@@ -128,10 +128,10 @@ public synchronized BeamData setBeamSweepSync(float pBeamSweepSync)
     return this;
 }
 /** Getter for {@link BeamData#beamSweepSync}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamSweepSync()
 {
-    return beamSweepSync; 
+       return beamSweepSync;
 }
 
 /**

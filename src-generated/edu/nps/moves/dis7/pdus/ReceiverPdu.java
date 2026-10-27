@@ -161,9 +161,14 @@ public synchronized ReceiverPdu setReceiverState(ReceiverReceiverState pReceiver
     return this;
 }
 /** Getter for {@link ReceiverPdu#receiverState}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ReceiverReceiverState getReceiverState()
 {
+    if (receiverState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ReceiverReceiverState receiverState == null, ignored by returning default enumeration...");
+        return ReceiverReceiverState.values()[0];
+    }
     return receiverState; 
 }
 
@@ -183,10 +188,10 @@ public synchronized ReceiverPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link ReceiverPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link ReceiverPdu#receivedPower}
@@ -198,10 +203,10 @@ public synchronized ReceiverPdu setReceivedPower(float pReceivedPower)
     return this;
 }
 /** Getter for {@link ReceiverPdu#receivedPower}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getReceivedPower()
 {
-    return receivedPower; 
+       return receivedPower;
 }
 
 /** Setter for {@link ReceiverPdu#transmitterEntityId}
@@ -236,10 +241,10 @@ public synchronized ReceiverPdu setTransmitterRadioId(int pTransmitterRadioId){
     return this;
 }
 /** Getter for {@link ReceiverPdu#transmitterRadioId}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getTransmitterRadioId()
 {
-    return transmitterRadioId; 
+       return transmitterRadioId;
 }
 
 /**

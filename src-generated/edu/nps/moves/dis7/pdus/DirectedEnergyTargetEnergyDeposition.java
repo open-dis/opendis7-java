@@ -84,10 +84,10 @@ public synchronized DirectedEnergyTargetEnergyDeposition setPadding(int pPadding
     return this;
 }
 /** Getter for {@link DirectedEnergyTargetEnergyDeposition#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link DirectedEnergyTargetEnergyDeposition#peakIrradiance}
@@ -99,10 +99,10 @@ public synchronized DirectedEnergyTargetEnergyDeposition setPeakIrradiance(float
     return this;
 }
 /** Getter for {@link DirectedEnergyTargetEnergyDeposition#peakIrradiance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPeakIrradiance()
 {
-    return peakIrradiance; 
+       return peakIrradiance;
 }
 
 /**

@@ -68,9 +68,14 @@ public synchronized IFFData setRecordType(VariableRecordType pRecordType)
     return this;
 }
 /** Getter for {@link IFFData#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -90,10 +95,10 @@ public synchronized IFFData setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link IFFData#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link IFFData#recordSpecificFields}
@@ -105,7 +110,7 @@ public synchronized IFFData setRecordSpecificFields(byte[] pRecordSpecificFields
     return this;
 }
 /** Getter for {@link IFFData#recordSpecificFields}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

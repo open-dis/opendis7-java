@@ -67,10 +67,10 @@ public synchronized LEVector3FixedByte setX(int pX){
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#x}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getX()
 {
-    return x; 
+       return x;
 }
 
 /** Setter for {@link LEVector3FixedByte#y}
@@ -89,10 +89,10 @@ public synchronized LEVector3FixedByte setY(int pY){
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#y}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getY()
 {
-    return y; 
+       return y;
 }
 
 /** Setter for {@link LEVector3FixedByte#z}
@@ -111,10 +111,10 @@ public synchronized LEVector3FixedByte setZ(int pZ){
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#z}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getZ()
 {
-    return z; 
+       return z;
 }
 
 /**

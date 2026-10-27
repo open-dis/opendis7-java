@@ -92,10 +92,10 @@ public synchronized Mode5TransponderBasicData setMode5Status(int pMode5Status){
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#mode5Status}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMode5Status()
 {
-    return mode5Status; 
+       return mode5Status;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#personalIdentificationNumber}
@@ -114,10 +114,10 @@ public synchronized Mode5TransponderBasicData setPersonalIdentificationNumber(in
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#personalIdentificationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPersonalIdentificationNumber()
 {
-    return personalIdentificationNumber; 
+       return personalIdentificationNumber;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#mode5MessageFormatsPresent}
@@ -129,10 +129,10 @@ public synchronized Mode5TransponderBasicData setMode5MessageFormatsPresent(int 
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#mode5MessageFormatsPresent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getMode5MessageFormatsPresent()
 {
-    return mode5MessageFormatsPresent; 
+       return mode5MessageFormatsPresent;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#enhancedMode1}
@@ -151,10 +151,10 @@ public synchronized Mode5TransponderBasicData setEnhancedMode1(int pEnhancedMode
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#enhancedMode1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getEnhancedMode1()
 {
-    return enhancedMode1; 
+       return enhancedMode1;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#nationalOrigin}
@@ -173,10 +173,10 @@ public synchronized Mode5TransponderBasicData setNationalOrigin(int pNationalOri
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#nationalOrigin}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getNationalOrigin()
 {
-    return nationalOrigin; 
+       return nationalOrigin;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#supplementalData}
@@ -195,10 +195,10 @@ public synchronized Mode5TransponderBasicData setSupplementalData(int pSupplemen
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#supplementalData}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSupplementalData()
 {
-    return supplementalData; 
+       return supplementalData;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#navigationSource}
@@ -210,9 +210,14 @@ public synchronized Mode5TransponderBasicData setNavigationSource(NavigationSour
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#navigationSource}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public NavigationSource getNavigationSource()
 {
+    if (navigationSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration...");
+        return NavigationSource.values()[0];
+    }
     return navigationSource; 
 }
 
@@ -232,10 +237,10 @@ public synchronized Mode5TransponderBasicData setFigureOfMerit(int pFigureOfMeri
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#figureOfMerit}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getFigureOfMerit()
 {
-    return figureOfMerit; 
+       return figureOfMerit;
 }
 
 /** Setter for {@link Mode5TransponderBasicData#padding}
@@ -254,10 +259,10 @@ public synchronized Mode5TransponderBasicData setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

@@ -187,9 +187,14 @@ public synchronized EnvironmentalProcessPdu setModelType(EnvironmentalProcessMod
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#modelType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EnvironmentalProcessModelType getModelType()
 {
+    if (modelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration...");
+        return EnvironmentalProcessModelType.values()[0];
+    }
     return modelType; 
 }
 
@@ -202,9 +207,14 @@ public synchronized EnvironmentalProcessPdu setEnvironmentStatus(EnvironmentalPr
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#environmentStatus}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public EnvironmentalProcessEnvironmentStatus getEnvironmentStatus()
 {
+    if (environmentStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype EnvironmentalProcessEnvironmentStatus environmentStatus == null, ignored by returning default bitfieldtype...");
+        return new EnvironmentalProcessEnvironmentStatus();
+    }
     return environmentStatus; 
 }
 
@@ -224,10 +234,10 @@ public synchronized EnvironmentalProcessPdu setSequenceNumber(int pSequenceNumbe
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#sequenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSequenceNumber()
 {
-    return sequenceNumber; 
+       return sequenceNumber;
 }
 
 /** Setter for {@link EnvironmentalProcessPdu#environmentRecords}
@@ -239,7 +249,7 @@ public synchronized EnvironmentalProcessPdu setEnvironmentRecords(List<Environme
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#environmentRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Environment> getEnvironmentRecords()
 {
     return environmentRecords; 

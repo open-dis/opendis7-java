@@ -53,9 +53,14 @@ public synchronized BeamStatus setBeamState(BeamStatusBeamState pBeamState)
     return this;
 }
 /** Getter for {@link BeamStatus#beamState}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public BeamStatusBeamState getBeamState()
 {
+    if (beamState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration...");
+        return BeamStatusBeamState.values()[0];
+    }
     return beamState; 
 }
 

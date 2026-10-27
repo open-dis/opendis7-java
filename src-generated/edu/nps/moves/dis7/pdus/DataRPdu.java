@@ -161,10 +161,10 @@ public synchronized DataRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link DataRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link DataRPdu#requiredReliabilityService}
@@ -176,9 +176,14 @@ public synchronized DataRPdu setRequiredReliabilityService(RequiredReliabilitySe
     return this;
 }
 /** Getter for {@link DataRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -198,10 +203,10 @@ public synchronized DataRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link DataRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link DataRPdu#pad2}
@@ -220,10 +225,10 @@ public synchronized DataRPdu setPad2(int pPad2){
     return this;
 }
 /** Getter for {@link DataRPdu#pad2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad2()
 {
-    return pad2; 
+       return pad2;
 }
 
 /** Setter for {@link DataRPdu#fixedDatumRecords}
@@ -235,7 +240,7 @@ public synchronized DataRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRe
     return this;
 }
 /** Getter for {@link DataRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -250,7 +255,7 @@ public synchronized DataRPdu setVariableDatumRecords(List<VariableDatum> pVariab
     return this;
 }
 /** Getter for {@link DataRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

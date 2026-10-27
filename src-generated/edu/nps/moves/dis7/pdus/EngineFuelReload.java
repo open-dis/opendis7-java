@@ -83,10 +83,10 @@ public synchronized EngineFuelReload setStandardQuantity(int pStandardQuantity)
     return this;
 }
 /** Getter for {@link EngineFuelReload#standardQuantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStandardQuantity()
 {
-    return standardQuantity; 
+       return standardQuantity;
 }
 
 /** Setter for {@link EngineFuelReload#maximumQuantity}
@@ -98,10 +98,10 @@ public synchronized EngineFuelReload setMaximumQuantity(int pMaximumQuantity)
     return this;
 }
 /** Getter for {@link EngineFuelReload#maximumQuantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getMaximumQuantity()
 {
-    return maximumQuantity; 
+       return maximumQuantity;
 }
 
 /** Setter for {@link EngineFuelReload#standardQuantityReloadTime}
@@ -113,10 +113,10 @@ public synchronized EngineFuelReload setStandardQuantityReloadTime(int pStandard
     return this;
 }
 /** Getter for {@link EngineFuelReload#standardQuantityReloadTime}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStandardQuantityReloadTime()
 {
-    return standardQuantityReloadTime; 
+       return standardQuantityReloadTime;
 }
 
 /** Setter for {@link EngineFuelReload#maximumQuantityReloadTime}
@@ -128,10 +128,10 @@ public synchronized EngineFuelReload setMaximumQuantityReloadTime(int pMaximumQu
     return this;
 }
 /** Getter for {@link EngineFuelReload#maximumQuantityReloadTime}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getMaximumQuantityReloadTime()
 {
-    return maximumQuantityReloadTime; 
+       return maximumQuantityReloadTime;
 }
 
 /** Setter for {@link EngineFuelReload#fuelMeasurmentUnits}
@@ -143,9 +143,14 @@ public synchronized EngineFuelReload setFuelMeasurmentUnits(FuelMeasurementUnits
     return this;
 }
 /** Getter for {@link EngineFuelReload#fuelMeasurmentUnits}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public FuelMeasurementUnits getFuelMeasurmentUnits()
 {
+    if (fuelMeasurmentUnits == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurmentUnits == null, ignored by returning default enumeration...");
+        return FuelMeasurementUnits.values()[0];
+    }
     return fuelMeasurmentUnits; 
 }
 
@@ -158,9 +163,14 @@ public synchronized EngineFuelReload setFuelType(SupplyFuelType pFuelType)
     return this;
 }
 /** Getter for {@link EngineFuelReload#fuelType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SupplyFuelType getFuelType()
 {
+    if (fuelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration...");
+        return SupplyFuelType.values()[0];
+    }
     return fuelType; 
 }
 
@@ -173,9 +183,14 @@ public synchronized EngineFuelReload setFuelLocation(FuelLocation pFuelLocation)
     return this;
 }
 /** Getter for {@link EngineFuelReload#fuelLocation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public FuelLocation getFuelLocation()
 {
+    if (fuelLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration...");
+        return FuelLocation.values()[0];
+    }
     return fuelLocation; 
 }
 
@@ -195,10 +210,10 @@ public synchronized EngineFuelReload setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link EngineFuelReload#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

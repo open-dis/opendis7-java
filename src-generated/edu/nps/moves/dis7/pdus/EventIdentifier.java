@@ -80,10 +80,10 @@ public synchronized EventIdentifier setEventNumber(int pEventNumber){
     return this;
 }
 /** Getter for {@link EventIdentifier#eventNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getEventNumber()
 {
-    return eventNumber; 
+       return eventNumber;
 }
 
 /**

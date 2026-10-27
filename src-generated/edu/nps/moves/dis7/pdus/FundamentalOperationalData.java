@@ -95,10 +95,10 @@ public synchronized FundamentalOperationalData setSystemStatus(int pSystemStatus
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#systemStatus}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSystemStatus()
 {
-    return systemStatus; 
+       return systemStatus;
 }
 
 /** Setter for {@link FundamentalOperationalData#dataField1}
@@ -117,10 +117,10 @@ public synchronized FundamentalOperationalData setDataField1(int pDataField1){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#dataField1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDataField1()
 {
-    return dataField1; 
+       return dataField1;
 }
 
 /** Setter for {@link FundamentalOperationalData#informationLayers}
@@ -139,10 +139,10 @@ public synchronized FundamentalOperationalData setInformationLayers(int pInforma
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#informationLayers}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getInformationLayers()
 {
-    return informationLayers; 
+       return informationLayers;
 }
 
 /** Setter for {@link FundamentalOperationalData#dataField2}
@@ -161,10 +161,10 @@ public synchronized FundamentalOperationalData setDataField2(int pDataField2){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#dataField2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDataField2()
 {
-    return dataField2; 
+       return dataField2;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter1}
@@ -183,10 +183,10 @@ public synchronized FundamentalOperationalData setParameter1(int pParameter1){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter1()
 {
-    return parameter1; 
+       return parameter1;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter2}
@@ -205,10 +205,10 @@ public synchronized FundamentalOperationalData setParameter2(int pParameter2){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter2()
 {
-    return parameter2; 
+       return parameter2;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter3}
@@ -227,10 +227,10 @@ public synchronized FundamentalOperationalData setParameter3(int pParameter3){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter3()
 {
-    return parameter3; 
+       return parameter3;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter4}
@@ -249,10 +249,10 @@ public synchronized FundamentalOperationalData setParameter4(int pParameter4){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter4}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter4()
 {
-    return parameter4; 
+       return parameter4;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter5}
@@ -271,10 +271,10 @@ public synchronized FundamentalOperationalData setParameter5(int pParameter5){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter5}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter5()
 {
-    return parameter5; 
+       return parameter5;
 }
 
 /** Setter for {@link FundamentalOperationalData#parameter6}
@@ -293,10 +293,10 @@ public synchronized FundamentalOperationalData setParameter6(int pParameter6){
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter6}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getParameter6()
 {
-    return parameter6; 
+       return parameter6;
 }
 
 /**

@@ -201,9 +201,14 @@ public synchronized EntityStatePdu setForceId(ForceID pForceId)
     return this;
 }
 /** Getter for {@link EntityStatePdu#forceId}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ForceID getForceId()
 {
+    if (forceId == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration...");
+        return ForceID.values()[0];
+    }
     return forceId; 
 }
 
@@ -296,10 +301,10 @@ public synchronized EntityStatePdu setEntityAppearance(int pEntityAppearance)
     return this;
 }
 /** Getter for {@link EntityStatePdu#entityAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getEntityAppearance()
 {
-    return entityAppearance; 
+       return entityAppearance;
 }
 
 /** Setter for {@link EntityStatePdu#deadReckoningParameters}
@@ -343,7 +348,7 @@ public synchronized EntityStatePdu setCapabilities(EntityCapabilities pCapabilit
     return this;
 }
 /** Getter for {@link EntityStatePdu#capabilities}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public EntityCapabilities getCapabilities()
 {
     return capabilities; 
@@ -358,7 +363,7 @@ public synchronized EntityStatePdu setVariableParameters(List<VariableParameter>
     return this;
 }
 /** Getter for {@link EntityStatePdu#variableParameters}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

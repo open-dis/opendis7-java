@@ -169,9 +169,14 @@ public synchronized IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntity
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#groupedEntityCategory}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IsGroupOfGroupedEntityCategory getGroupedEntityCategory()
 {
+    if (groupedEntityCategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory groupedEntityCategory == null, ignored by returning default enumeration...");
+        return IsGroupOfGroupedEntityCategory.values()[0];
+    }
     return groupedEntityCategory; 
 }
 
@@ -184,10 +189,10 @@ public synchronized IsGroupOfPdu setPad(int pPad)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#pad}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPad()
 {
-    return pad; 
+       return pad;
 }
 
 /** Setter for {@link IsGroupOfPdu#latitude}
@@ -199,10 +204,10 @@ public synchronized IsGroupOfPdu setLatitude(double pLatitude)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#latitude}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getLatitude()
 {
-    return latitude; 
+       return latitude;
 }
 
 /** Setter for {@link IsGroupOfPdu#longitude}
@@ -214,10 +219,10 @@ public synchronized IsGroupOfPdu setLongitude(double pLongitude)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#longitude}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getLongitude()
 {
-    return longitude; 
+       return longitude;
 }
 
 /** Setter for {@link IsGroupOfPdu#groupedEntityDescriptions}
@@ -229,7 +234,7 @@ public synchronized IsGroupOfPdu setGroupedEntityDescriptions(List<VariableDatum
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#groupedEntityDescriptions}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getGroupedEntityDescriptions()
 {
     return groupedEntityDescriptions; 

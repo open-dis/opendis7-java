@@ -80,10 +80,10 @@ public synchronized ObjectIdentifier setObjectNumber(int pObjectNumber){
     return this;
 }
 /** Getter for {@link ObjectIdentifier#objectNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getObjectNumber()
 {
-    return objectNumber; 
+       return objectNumber;
 }
 
 /**

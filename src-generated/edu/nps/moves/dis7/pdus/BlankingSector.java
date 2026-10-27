@@ -101,10 +101,10 @@ public synchronized BlankingSector setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link BlankingSector#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordType()
 {
-    return recordType; 
+       return recordType;
 }
 
 /** Setter for {@link BlankingSector#recordLength}
@@ -123,10 +123,10 @@ public synchronized BlankingSector setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link BlankingSector#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link BlankingSector#padding}
@@ -145,10 +145,10 @@ public synchronized BlankingSector setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link BlankingSector#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link BlankingSector#emitterNumber}
@@ -167,10 +167,10 @@ public synchronized BlankingSector setEmitterNumber(int pEmitterNumber){
     return this;
 }
 /** Getter for {@link BlankingSector#emitterNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getEmitterNumber()
 {
-    return emitterNumber; 
+       return emitterNumber;
 }
 
 /** Setter for {@link BlankingSector#beamNumber}
@@ -189,10 +189,10 @@ public synchronized BlankingSector setBeamNumber(int pBeamNumber){
     return this;
 }
 /** Getter for {@link BlankingSector#beamNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamNumber()
 {
-    return beamNumber; 
+       return beamNumber;
 }
 
 /** Setter for {@link BlankingSector#stateIndicator}
@@ -204,9 +204,14 @@ public synchronized BlankingSector setStateIndicator(EEAttributeStateIndicator p
     return this;
 }
 /** Getter for {@link BlankingSector#stateIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EEAttributeStateIndicator getStateIndicator()
 {
+    if (stateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        return EEAttributeStateIndicator.values()[0];
+    }
     return stateIndicator; 
 }
 
@@ -226,10 +231,10 @@ public synchronized BlankingSector setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link BlankingSector#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link BlankingSector#leftAzimuth}
@@ -241,10 +246,10 @@ public synchronized BlankingSector setLeftAzimuth(float pLeftAzimuth)
     return this;
 }
 /** Getter for {@link BlankingSector#leftAzimuth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getLeftAzimuth()
 {
-    return leftAzimuth; 
+       return leftAzimuth;
 }
 
 /** Setter for {@link BlankingSector#rightAzimuth}
@@ -256,10 +261,10 @@ public synchronized BlankingSector setRightAzimuth(float pRightAzimuth)
     return this;
 }
 /** Getter for {@link BlankingSector#rightAzimuth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getRightAzimuth()
 {
-    return rightAzimuth; 
+       return rightAzimuth;
 }
 
 /** Setter for {@link BlankingSector#lowerElevation}
@@ -271,10 +276,10 @@ public synchronized BlankingSector setLowerElevation(float pLowerElevation)
     return this;
 }
 /** Getter for {@link BlankingSector#lowerElevation}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getLowerElevation()
 {
-    return lowerElevation; 
+       return lowerElevation;
 }
 
 /** Setter for {@link BlankingSector#upperElevation}
@@ -286,10 +291,10 @@ public synchronized BlankingSector setUpperElevation(float pUpperElevation)
     return this;
 }
 /** Getter for {@link BlankingSector#upperElevation}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getUpperElevation()
 {
-    return upperElevation; 
+       return upperElevation;
 }
 
 /** Setter for {@link BlankingSector#residualPower}
@@ -301,10 +306,10 @@ public synchronized BlankingSector setResidualPower(float pResidualPower)
     return this;
 }
 /** Getter for {@link BlankingSector#residualPower}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getResidualPower()
 {
-    return residualPower; 
+       return residualPower;
 }
 
 /** Setter for {@link BlankingSector#padding3}
@@ -323,10 +328,10 @@ public synchronized BlankingSector setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link BlankingSector#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public long getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /**

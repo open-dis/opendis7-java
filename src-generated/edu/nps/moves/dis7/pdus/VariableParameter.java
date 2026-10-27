@@ -58,9 +58,14 @@ public synchronized VariableParameter setRecordType(VariableParameterRecordType 
     return this;
 }
 /** Getter for {@link VariableParameter#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -73,7 +78,7 @@ public synchronized VariableParameter setRecordSpecificFields(byte[] pRecordSpec
     return this;
 }
 /** Getter for {@link VariableParameter#recordSpecificFields}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

@@ -71,10 +71,10 @@ public synchronized RadioIdentifier setSiteNumber(int pSiteNumber){
     return this;
 }
 /** Getter for {@link RadioIdentifier#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link RadioIdentifier#applicationNumber}
@@ -93,10 +93,10 @@ public synchronized RadioIdentifier setApplicationNumber(int pApplicationNumber)
     return this;
 }
 /** Getter for {@link RadioIdentifier#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link RadioIdentifier#referenceNumber}
@@ -115,10 +115,10 @@ public synchronized RadioIdentifier setReferenceNumber(int pReferenceNumber){
     return this;
 }
 /** Getter for {@link RadioIdentifier#referenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getReferenceNumber()
 {
-    return referenceNumber; 
+       return referenceNumber;
 }
 
 /** Setter for {@link RadioIdentifier#radioNumber}
@@ -137,10 +137,10 @@ public synchronized RadioIdentifier setRadioNumber(int pRadioNumber){
     return this;
 }
 /** Getter for {@link RadioIdentifier#radioNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRadioNumber()
 {
-    return radioNumber; 
+       return radioNumber;
 }
 
 /**

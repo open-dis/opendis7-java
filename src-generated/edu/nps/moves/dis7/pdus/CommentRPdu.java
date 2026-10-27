@@ -135,7 +135,7 @@ public synchronized CommentRPdu setVariableDatumRecords(List<VariableDatum> pVar
     return this;
 }
 /** Getter for {@link CommentRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

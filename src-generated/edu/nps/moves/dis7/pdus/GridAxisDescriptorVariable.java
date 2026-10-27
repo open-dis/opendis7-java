@@ -83,10 +83,10 @@ public synchronized GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(int pNu
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getNumberOfPointsOnXiAxis()
 {
-    return numberOfPointsOnXiAxis; 
+       return numberOfPointsOnXiAxis;
 }
 
 /** Setter for {@link GridAxisDescriptorVariable#initialIndex}
@@ -105,10 +105,10 @@ public synchronized GridAxisDescriptorVariable setInitialIndex(int pInitialIndex
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#initialIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getInitialIndex()
 {
-    return initialIndex; 
+       return initialIndex;
 }
 
 /** Setter for {@link GridAxisDescriptorVariable#coordinateScaleXi}
@@ -120,10 +120,10 @@ public synchronized GridAxisDescriptorVariable setCoordinateScaleXi(double pCoor
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#coordinateScaleXi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getCoordinateScaleXi()
 {
-    return coordinateScaleXi; 
+       return coordinateScaleXi;
 }
 
 /** Setter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}
@@ -135,10 +135,10 @@ public synchronized GridAxisDescriptorVariable setCoordinateOffsetXi(double pCoo
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getCoordinateOffsetXi()
 {
-    return coordinateOffsetXi; 
+       return coordinateOffsetXi;
 }
 
 /** Setter for {@link GridAxisDescriptorVariable#xiValues}
@@ -150,7 +150,7 @@ public synchronized GridAxisDescriptorVariable setXiValues(short[] pXiValues)
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#xiValues}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public short[] getXiValues()
 {
     return xiValues; 

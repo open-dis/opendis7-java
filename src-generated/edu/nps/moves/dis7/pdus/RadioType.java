@@ -80,9 +80,14 @@ public synchronized RadioType setEntityKind(EntityKind pEntityKind)
     return this;
 }
 /** Getter for {@link RadioType#entityKind}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityKind getEntityKind()
 {
+    if (entityKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        return EntityKind.values()[0];
+    }
     return entityKind; 
 }
 
@@ -102,10 +107,10 @@ public synchronized RadioType setDomain(int pDomain){
     return this;
 }
 /** Getter for {@link RadioType#domain}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getDomain()
 {
-    return domain; 
+       return domain;
 }
 
 /** Setter for {@link RadioType#country}
@@ -117,9 +122,14 @@ public synchronized RadioType setCountry(Country pCountry)
     return this;
 }
 /** Getter for {@link RadioType#country}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public Country getCountry()
 {
+    if (country == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        return Country.values()[0];
+    }
     return country; 
 }
 
@@ -132,9 +142,14 @@ public synchronized RadioType setCategory(RadioCategory pCategory)
     return this;
 }
 /** Getter for {@link RadioType#category}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RadioCategory getCategory()
 {
+    if (category == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RadioCategory category == null, ignored by returning default enumeration...");
+        return RadioCategory.values()[0];
+    }
     return category; 
 }
 
@@ -147,9 +162,14 @@ public synchronized RadioType setSubcategory(RadioSubcategory pSubcategory)
     return this;
 }
 /** Getter for {@link RadioType#subcategory}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RadioSubcategory getSubcategory()
 {
+    if (subcategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RadioSubcategory subcategory == null, ignored by returning default enumeration...");
+        return RadioSubcategory.values()[0];
+    }
     return subcategory; 
 }
 
@@ -169,10 +189,10 @@ public synchronized RadioType setSpecific(int pSpecific){
     return this;
 }
 /** Getter for {@link RadioType#specific}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSpecific()
 {
-    return specific; 
+       return specific;
 }
 
 /** Setter for {@link RadioType#extra}
@@ -191,10 +211,10 @@ public synchronized RadioType setExtra(int pExtra){
     return this;
 }
 /** Getter for {@link RadioType#extra}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getExtra()
 {
-    return extra; 
+       return extra;
 }
 
 /**

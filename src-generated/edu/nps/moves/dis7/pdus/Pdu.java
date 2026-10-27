@@ -467,9 +467,14 @@ public synchronized Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
     return this;
 }
 /** Getter for {@link Pdu#protocolVersion}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DISProtocolVersion getProtocolVersion()
 {
+    if (protocolVersion == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration...");
+        return DISProtocolVersion.values()[0];
+    }
     return protocolVersion; 
 }
 
@@ -489,10 +494,10 @@ public synchronized Pdu setExerciseID(int pExerciseID){
     return this;
 }
 /** Getter for {@link Pdu#exerciseID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getExerciseID()
 {
-    return exerciseID; 
+       return exerciseID;
 }
 
 /** Setter for {@link Pdu#pduType}
@@ -504,9 +509,14 @@ public synchronized Pdu setPduType(DisPduType pPduType)
     return this;
 }
 /** Getter for {@link Pdu#pduType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DisPduType getPduType()
 {
+    if (pduType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration...");
+        return DisPduType.values()[0];
+    }
     return pduType; 
 }
 
@@ -519,9 +529,14 @@ public synchronized Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
     return this;
 }
 /** Getter for {@link Pdu#protocolFamily}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DISProtocolFamily getProtocolFamily()
 {
+    if (protocolFamily == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration...");
+        return DISProtocolFamily.values()[0];
+    }
     return protocolFamily; 
 }
 
@@ -540,10 +555,10 @@ public synchronized Pdu setTimestamp(int pTimestamp)
   * Warning: this method gets a DIS bit pattern
   * @see getTimestampSeconds
   * @see edu.nps.moves.dis7.utilities.DisTime
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTimestamp()
 {
-    return timestamp; 
+       return timestamp;
 }
 
 /** Setter for {@link Pdu#length}
@@ -562,10 +577,10 @@ public synchronized Pdu setLength(int pLength){
     return this;
 }
 /** Getter for {@link Pdu#length}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getLength()
 {
-    return length; 
+       return length;
 }
 
 /**

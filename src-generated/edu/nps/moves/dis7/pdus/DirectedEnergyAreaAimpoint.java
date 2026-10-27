@@ -92,10 +92,10 @@ public synchronized DirectedEnergyAreaAimpoint setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordType()
 {
-    return recordType; 
+       return recordType;
 }
 
 /** Setter for {@link DirectedEnergyAreaAimpoint#recordLength}
@@ -114,10 +114,10 @@ public synchronized DirectedEnergyAreaAimpoint setRecordLength(int pRecordLength
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link DirectedEnergyAreaAimpoint#padding}
@@ -136,10 +136,10 @@ public synchronized DirectedEnergyAreaAimpoint setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}
@@ -151,7 +151,7 @@ public synchronized DirectedEnergyAreaAimpoint setBeamAntennaParameterList(List<
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<BeamAntennaPattern> getBeamAntennaParameterList()
 {
     return beamAntennaParameterList; 
@@ -166,7 +166,7 @@ public synchronized DirectedEnergyAreaAimpoint setDirectedEnergyTargetEnergyDepo
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<DirectedEnergyTargetEnergyDeposition> getDirectedEnergyTargetEnergyDepositionRecordList()
 {
     return directedEnergyTargetEnergyDepositionRecordList; 

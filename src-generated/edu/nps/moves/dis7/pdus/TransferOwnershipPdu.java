@@ -184,10 +184,10 @@ public synchronized TransferOwnershipPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link TransferOwnershipPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link TransferOwnershipPdu#requiredReliabilityService}
@@ -199,9 +199,14 @@ public synchronized TransferOwnershipPdu setRequiredReliabilityService(RequiredR
     return this;
 }
 /** Getter for {@link TransferOwnershipPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -214,9 +219,14 @@ public synchronized TransferOwnershipPdu setTransferType(TransferControlTransfer
     return this;
 }
 /** Getter for {@link TransferOwnershipPdu#transferType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public TransferControlTransferType getTransferType()
 {
+    if (transferType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransferControlTransferType transferType == null, ignored by returning default enumeration...");
+        return TransferControlTransferType.values()[0];
+    }
     return transferType; 
 }
 

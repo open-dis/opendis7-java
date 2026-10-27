@@ -58,9 +58,14 @@ public synchronized GridData setSampleType(GriddedDataSampleType pSampleType)
     return this;
 }
 /** Getter for {@link GridData#sampleType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public GriddedDataSampleType getSampleType()
 {
+    if (sampleType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration...");
+        return GriddedDataSampleType.values()[0];
+    }
     return sampleType; 
 }
 
@@ -73,9 +78,14 @@ public synchronized GridData setDataRepresentation(GriddedDataDataRepresentation
     return this;
 }
 /** Getter for {@link GridData#dataRepresentation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public GriddedDataDataRepresentation getDataRepresentation()
 {
+    if (dataRepresentation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration...");
+        return GriddedDataDataRepresentation.values()[0];
+    }
     return dataRepresentation; 
 }
 

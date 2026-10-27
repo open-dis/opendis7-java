@@ -153,9 +153,14 @@ public synchronized EventReportRPdu setEventType(EventReportEventType pEventType
     return this;
 }
 /** Getter for {@link EventReportRPdu#eventType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EventReportEventType getEventType()
 {
+    if (eventType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration...");
+        return EventReportEventType.values()[0];
+    }
     return eventType; 
 }
 
@@ -168,10 +173,10 @@ public synchronized EventReportRPdu setPad1(int pPad1)
     return this;
 }
 /** Getter for {@link EventReportRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link EventReportRPdu#fixedDatumRecords}
@@ -183,7 +188,7 @@ public synchronized EventReportRPdu setFixedDatumRecords(List<FixedDatum> pFixed
     return this;
 }
 /** Getter for {@link EventReportRPdu#fixedDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -198,7 +203,7 @@ public synchronized EventReportRPdu setVariableDatumRecords(List<VariableDatum> 
     return this;
 }
 /** Getter for {@link EventReportRPdu#variableDatumRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

@@ -80,10 +80,10 @@ public synchronized AggregateIdentifier setAggregateID(int pAggregateID){
     return this;
 }
 /** Getter for {@link AggregateIdentifier#aggregateID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getAggregateID()
 {
-    return aggregateID; 
+       return aggregateID;
 }
 
 /**

@@ -73,10 +73,10 @@ public synchronized SilentEntitySystem setNumberOfEntities(int pNumberOfEntities
     return this;
 }
 /** Getter for {@link SilentEntitySystem#numberOfEntities}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getNumberOfEntities()
 {
-    return numberOfEntities; 
+       return numberOfEntities;
 }
 
 /** Setter for {@link SilentEntitySystem#entityType}
@@ -104,7 +104,7 @@ public synchronized SilentEntitySystem setAppearanceRecordList(int[] pAppearance
     return this;
 }
 /** Getter for {@link SilentEntitySystem#appearanceRecordList}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public int[] getAppearanceRecordList()
 {
     return appearanceRecordList; 

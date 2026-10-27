@@ -67,10 +67,10 @@ public synchronized LiveEntityOrientation setPsi(int pPsi){
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#psi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPsi()
 {
-    return psi; 
+       return psi;
 }
 
 /** Setter for {@link LiveEntityOrientation#theta}
@@ -89,10 +89,10 @@ public synchronized LiveEntityOrientation setTheta(int pTheta){
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#theta}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getTheta()
 {
-    return theta; 
+       return theta;
 }
 
 /** Setter for {@link LiveEntityOrientation#phi}
@@ -111,10 +111,10 @@ public synchronized LiveEntityOrientation setPhi(int pPhi){
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#phi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPhi()
 {
-    return phi; 
+       return phi;
 }
 
 /**

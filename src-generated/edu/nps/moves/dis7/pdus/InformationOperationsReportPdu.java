@@ -163,9 +163,14 @@ public synchronized InformationOperationsReportPdu setIoSimSource(IOActionIOSimu
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioSimSource}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOActionIOSimulationSource getIoSimSource()
 {
+    if (ioSimSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration...");
+        return IOActionIOSimulationSource.values()[0];
+    }
     return ioSimSource; 
 }
 
@@ -178,9 +183,14 @@ public synchronized InformationOperationsReportPdu setIoReportType(IOReportIORep
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioReportType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOReportIOReportType getIoReportType()
 {
+    if (ioReportType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration...");
+        return IOReportIOReportType.values()[0];
+    }
     return ioReportType; 
 }
 
@@ -200,10 +210,10 @@ public synchronized InformationOperationsReportPdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link InformationOperationsReportPdu#ioAttackerID}
@@ -254,10 +264,10 @@ public synchronized InformationOperationsReportPdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link InformationOperationsReportPdu#padding3}
@@ -276,10 +286,10 @@ public synchronized InformationOperationsReportPdu setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /** Setter for {@link InformationOperationsReportPdu#ioRecords}
@@ -291,7 +301,7 @@ public synchronized InformationOperationsReportPdu setIoRecords(List<IORecord> p
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

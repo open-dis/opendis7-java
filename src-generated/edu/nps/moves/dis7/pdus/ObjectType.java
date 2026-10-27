@@ -66,9 +66,14 @@ public synchronized ObjectType setDomain(PlatformDomain pDomain)
     return this;
 }
 /** Getter for {@link ObjectType#domain}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public PlatformDomain getDomain()
 {
+    if (domain == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        return PlatformDomain.values()[0];
+    }
     return domain; 
 }
 
@@ -81,9 +86,14 @@ public synchronized ObjectType setObjectKind(ObjectKind pObjectKind)
     return this;
 }
 /** Getter for {@link ObjectType#objectKind}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ObjectKind getObjectKind()
 {
+    if (objectKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration...");
+        return ObjectKind.values()[0];
+    }
     return objectKind; 
 }
 
@@ -103,10 +113,10 @@ public synchronized ObjectType setCategory(int pCategory){
     return this;
 }
 /** Getter for {@link ObjectType#category}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getCategory()
 {
-    return category; 
+       return category;
 }
 
 /** Setter for {@link ObjectType#subCategory}
@@ -125,10 +135,10 @@ public synchronized ObjectType setSubCategory(int pSubCategory){
     return this;
 }
 /** Getter for {@link ObjectType#subCategory}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSubCategory()
 {
-    return subCategory; 
+       return subCategory;
 }
 
 /**

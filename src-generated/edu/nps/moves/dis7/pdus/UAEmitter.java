@@ -86,10 +86,10 @@ public synchronized UAEmitter setSystemDataLength(int pSystemDataLength){
     return this;
 }
 /** Getter for {@link UAEmitter#systemDataLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSystemDataLength()
 {
-    return systemDataLength; 
+       return systemDataLength;
 }
 
 /** Setter for {@link UAEmitter#padding}
@@ -108,10 +108,10 @@ public synchronized UAEmitter setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link UAEmitter#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link UAEmitter#acousticEmitter}
@@ -155,7 +155,7 @@ public synchronized UAEmitter setBeams(List<UABeam> pBeams)
     return this;
 }
 /** Getter for {@link UAEmitter#beams}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<UABeam> getBeams()
 {
     return beams; 

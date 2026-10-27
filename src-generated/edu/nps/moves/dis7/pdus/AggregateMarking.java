@@ -58,9 +58,14 @@ public synchronized AggregateMarking setCharacterSet(EntityMarkingCharacterSet p
     return this;
 }
 /** Getter for {@link AggregateMarking#characterSet}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityMarkingCharacterSet getCharacterSet()
 {
+    if (characterSet == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityMarkingCharacterSet characterSet == null, ignored by returning default enumeration...");
+        return EntityMarkingCharacterSet.values()[0];
+    }
     return characterSet; 
 }
 
@@ -73,7 +78,7 @@ public synchronized AggregateMarking setCharacters(byte[] pCharacters)
     return this;
 }
 /** Getter for {@link AggregateMarking#characters}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getCharacters()
 {
     return characters; 

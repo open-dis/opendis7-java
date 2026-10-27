@@ -67,10 +67,10 @@ public synchronized EventIdentifierLiveEntity setSiteNumber(int pSiteNumber){
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link EventIdentifierLiveEntity#applicationNumber}
@@ -89,10 +89,10 @@ public synchronized EventIdentifierLiveEntity setApplicationNumber(int pApplicat
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link EventIdentifierLiveEntity#eventNumber}
@@ -111,10 +111,10 @@ public synchronized EventIdentifierLiveEntity setEventNumber(int pEventNumber){
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#eventNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getEventNumber()
 {
-    return eventNumber; 
+       return eventNumber;
 }
 
 /**

@@ -68,9 +68,14 @@ public synchronized SystemIdentifier setSystemType(IFFSystemType pSystemType)
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IFFSystemType getSystemType()
 {
+    if (systemType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemType systemType == null, ignored by returning default enumeration...");
+        return IFFSystemType.values()[0];
+    }
     return systemType; 
 }
 
@@ -83,9 +88,14 @@ public synchronized SystemIdentifier setSystemName(IFFSystemName pSystemName)
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemName}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IFFSystemName getSystemName()
 {
+    if (systemName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemName systemName == null, ignored by returning default enumeration...");
+        return IFFSystemName.values()[0];
+    }
     return systemName; 
 }
 
@@ -98,9 +108,14 @@ public synchronized SystemIdentifier setSystemMode(IFFSystemMode pSystemMode)
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemMode}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IFFSystemMode getSystemMode()
 {
+    if (systemMode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemMode systemMode == null, ignored by returning default enumeration...");
+        return IFFSystemMode.values()[0];
+    }
     return systemMode; 
 }
 

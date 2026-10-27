@@ -79,9 +79,14 @@ public synchronized RecordSpecificationElement setRecordID(VariableRecordType pR
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getRecordID()
 {
+    if (recordID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return recordID; 
 }
 
@@ -94,10 +99,10 @@ public synchronized RecordSpecificationElement setRecordSetSerialNumber(int pRec
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordSetSerialNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordSetSerialNumber()
 {
-    return recordSetSerialNumber; 
+       return recordSetSerialNumber;
 }
 
 /** Setter for {@link RecordSpecificationElement#padding}
@@ -109,10 +114,10 @@ public synchronized RecordSpecificationElement setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link RecordSpecificationElement#recordLength}
@@ -131,10 +136,10 @@ public synchronized RecordSpecificationElement setRecordLength(int pRecordLength
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link RecordSpecificationElement#recordCount}
@@ -153,10 +158,10 @@ public synchronized RecordSpecificationElement setRecordCount(int pRecordCount){
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordCount}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordCount()
 {
-    return recordCount; 
+       return recordCount;
 }
 
 /** Setter for {@link RecordSpecificationElement#recordValues}
@@ -168,7 +173,7 @@ public synchronized RecordSpecificationElement setRecordValues(byte[] pRecordVal
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordValues}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getRecordValues()
 {
     return recordValues; 
@@ -183,7 +188,7 @@ public synchronized RecordSpecificationElement setPadTo64(byte[] pPadTo64)
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#padTo64}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getPadTo64()
 {
     return padTo64; 

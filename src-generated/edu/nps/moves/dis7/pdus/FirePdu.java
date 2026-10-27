@@ -225,10 +225,10 @@ public synchronized FirePdu setFireMissionIndex(int pFireMissionIndex)
     return this;
 }
 /** Getter for {@link FirePdu#fireMissionIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getFireMissionIndex()
 {
-    return fireMissionIndex; 
+       return fireMissionIndex;
 }
 
 /** Setter for {@link FirePdu#locationInWorldCoordinates}
@@ -288,10 +288,10 @@ public synchronized FirePdu setRange(float pRange)
     return this;
 }
 /** Getter for {@link FirePdu#range}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getRange()
 {
-    return range; 
+       return range;
 }
 
 /**

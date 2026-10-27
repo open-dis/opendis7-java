@@ -322,10 +322,10 @@ public synchronized MinefieldDataPdu setMinefieldSequenceNumbeer(int pMinefieldS
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#minefieldSequenceNumbeer}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getMinefieldSequenceNumbeer()
 {
-    return minefieldSequenceNumbeer; 
+       return minefieldSequenceNumbeer;
 }
 
 /** Setter for {@link MinefieldDataPdu#requestID}
@@ -344,10 +344,10 @@ public synchronized MinefieldDataPdu setRequestID(int pRequestID){
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link MinefieldDataPdu#pduSequenceNumber}
@@ -366,10 +366,10 @@ public synchronized MinefieldDataPdu setPduSequenceNumber(int pPduSequenceNumber
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#pduSequenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPduSequenceNumber()
 {
-    return pduSequenceNumber; 
+       return pduSequenceNumber;
 }
 
 /** Setter for {@link MinefieldDataPdu#numberOfPdus}
@@ -388,10 +388,10 @@ public synchronized MinefieldDataPdu setNumberOfPdus(int pNumberOfPdus){
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfPdus}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getNumberOfPdus()
 {
-    return numberOfPdus; 
+       return numberOfPdus;
 }
 
 /** Setter for {@link MinefieldDataPdu#padding}
@@ -410,10 +410,10 @@ public synchronized MinefieldDataPdu setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link MinefieldDataPdu#dataFilter}
@@ -457,7 +457,7 @@ public synchronized MinefieldDataPdu setSensorTypes(List<MinefieldSensorType> pS
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#sensorTypes}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 
@@ -472,7 +472,7 @@ public synchronized MinefieldDataPdu setMineLocation(List<Vector3Float> pMineLoc
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineLocation}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Vector3Float> getMineLocation()
 {
     return mineLocation; 
@@ -487,7 +487,7 @@ public synchronized MinefieldDataPdu setGroundBurialDepthOffset(float[] pGroundB
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#groundBurialDepthOffset}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getGroundBurialDepthOffset()
 {
     return groundBurialDepthOffset; 
@@ -502,7 +502,7 @@ public synchronized MinefieldDataPdu setWaterBurialDepthOffset(float[] pWaterBur
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#waterBurialDepthOffset}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getWaterBurialDepthOffset()
 {
     return waterBurialDepthOffset; 
@@ -517,7 +517,7 @@ public synchronized MinefieldDataPdu setSnowBurialDepthOffset(float[] pSnowBuria
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#snowBurialDepthOffset}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getSnowBurialDepthOffset()
 {
     return snowBurialDepthOffset; 
@@ -532,7 +532,7 @@ public synchronized MinefieldDataPdu setMineOrientation(List<EulerAngles> pMineO
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineOrientation}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<EulerAngles> getMineOrientation()
 {
     return mineOrientation; 
@@ -547,7 +547,7 @@ public synchronized MinefieldDataPdu setThermalContrast(float[] pThermalContrast
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#thermalContrast}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getThermalContrast()
 {
     return thermalContrast; 
@@ -562,7 +562,7 @@ public synchronized MinefieldDataPdu setReflectance(float[] pReflectance)
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#reflectance}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public float[] getReflectance()
 {
     return reflectance; 
@@ -577,7 +577,7 @@ public synchronized MinefieldDataPdu setMineEmplacementTime(List<MineEmplacement
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineEmplacementTime}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<MineEmplacementTime> getMineEmplacementTime()
 {
     return mineEmplacementTime; 
@@ -592,7 +592,7 @@ public synchronized MinefieldDataPdu setMineEntityNumber(short[] pMineEntityNumb
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineEntityNumber}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public short[] getMineEntityNumber()
 {
     return mineEntityNumber; 
@@ -607,7 +607,7 @@ public synchronized MinefieldDataPdu setFusing(List<MinefieldDataFusing> pFusing
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#fusing}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<MinefieldDataFusing> getFusing()
 {
     return fusing; 
@@ -622,7 +622,7 @@ public synchronized MinefieldDataPdu setScalarDetectionCoefficient(byte[] pScala
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#scalarDetectionCoefficient}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getScalarDetectionCoefficient()
 {
     return scalarDetectionCoefficient; 
@@ -637,7 +637,7 @@ public synchronized MinefieldDataPdu setPaintScheme(List<MinefieldDataPaintSchem
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#paintScheme}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<MinefieldDataPaintScheme> getPaintScheme()
 {
     return paintScheme; 
@@ -652,7 +652,7 @@ public synchronized MinefieldDataPdu setNumberOfTripDetonationWires(byte[] pNumb
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfTripDetonationWires}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getNumberOfTripDetonationWires()
 {
     return numberOfTripDetonationWires; 
@@ -667,7 +667,7 @@ public synchronized MinefieldDataPdu setNumberOfVertices(byte[] pNumberOfVertice
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfVertices}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getNumberOfVertices()
 {
     return numberOfVertices; 

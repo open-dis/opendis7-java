@@ -63,10 +63,10 @@ public synchronized LiveSimulationAddress setLiveSiteNumber(int pLiveSiteNumber)
     return this;
 }
 /** Getter for {@link LiveSimulationAddress#liveSiteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getLiveSiteNumber()
 {
-    return liveSiteNumber; 
+       return liveSiteNumber;
 }
 
 /** Setter for {@link LiveSimulationAddress#liveApplicationNumber}
@@ -85,10 +85,10 @@ public synchronized LiveSimulationAddress setLiveApplicationNumber(int pLiveAppl
     return this;
 }
 /** Getter for {@link LiveSimulationAddress#liveApplicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getLiveApplicationNumber()
 {
-    return liveApplicationNumber; 
+       return liveApplicationNumber;
 }
 
 /**

@@ -67,10 +67,10 @@ public synchronized SecondaryOperationalData setOperationalData1(int pOperationa
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#operationalData1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getOperationalData1()
 {
-    return operationalData1; 
+       return operationalData1;
 }
 
 /** Setter for {@link SecondaryOperationalData#operationalData2}
@@ -89,10 +89,10 @@ public synchronized SecondaryOperationalData setOperationalData2(int pOperationa
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#operationalData2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getOperationalData2()
 {
-    return operationalData2; 
+       return operationalData2;
 }
 
 /** Setter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
@@ -111,10 +111,10 @@ public synchronized SecondaryOperationalData setNumberOfIFFFundamentalParameterR
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getNumberOfIFFFundamentalParameterRecords()
 {
-    return numberOfIFFFundamentalParameterRecords; 
+       return numberOfIFFFundamentalParameterRecords;
 }
 
 /**

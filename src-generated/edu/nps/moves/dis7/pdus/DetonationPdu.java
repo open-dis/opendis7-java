@@ -308,9 +308,14 @@ public synchronized DetonationPdu setDetonationResult(DetonationResult pDetonati
     return this;
 }
 /** Getter for {@link DetonationPdu#detonationResult}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DetonationResult getDetonationResult()
 {
+    if (detonationResult == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration...");
+        return DetonationResult.values()[0];
+    }
     return detonationResult; 
 }
 
@@ -330,10 +335,10 @@ public synchronized DetonationPdu setPad(int pPad){
     return this;
 }
 /** Getter for {@link DetonationPdu#pad}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPad()
 {
-    return pad; 
+       return pad;
 }
 
 /** Setter for {@link DetonationPdu#variableParameters}
@@ -345,7 +350,7 @@ public synchronized DetonationPdu setVariableParameters(List<VariableParameter> 
     return this;
 }
 /** Getter for {@link DetonationPdu#variableParameters}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

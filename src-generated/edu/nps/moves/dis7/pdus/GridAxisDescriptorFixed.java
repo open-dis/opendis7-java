@@ -64,10 +64,10 @@ public synchronized GridAxisDescriptorFixed setNumberOfPointsOnXiAxis(int pNumbe
     return this;
 }
 /** Getter for {@link GridAxisDescriptorFixed#numberOfPointsOnXiAxis}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getNumberOfPointsOnXiAxis()
 {
-    return numberOfPointsOnXiAxis; 
+       return numberOfPointsOnXiAxis;
 }
 
 /** Setter for {@link GridAxisDescriptorFixed#initialIndex}
@@ -86,10 +86,10 @@ public synchronized GridAxisDescriptorFixed setInitialIndex(int pInitialIndex){
     return this;
 }
 /** Getter for {@link GridAxisDescriptorFixed#initialIndex}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getInitialIndex()
 {
-    return initialIndex; 
+       return initialIndex;
 }
 
 /**

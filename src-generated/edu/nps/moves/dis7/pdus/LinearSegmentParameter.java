@@ -103,10 +103,10 @@ public synchronized LinearSegmentParameter setSegmentNumber(int pSegmentNumber){
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getSegmentNumber()
 {
-    return segmentNumber; 
+       return segmentNumber;
 }
 
 /** Setter for {@link LinearSegmentParameter#segmentModification}
@@ -118,9 +118,14 @@ public synchronized LinearSegmentParameter setSegmentModification(ObjectStateMod
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentModification}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public ObjectStateModificationLinearObject getSegmentModification()
 {
+    if (segmentModification == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype ObjectStateModificationLinearObject segmentModification == null, ignored by returning default bitfieldtype...");
+        return new ObjectStateModificationLinearObject();
+    }
     return segmentModification; 
 }
 
@@ -133,9 +138,14 @@ public synchronized LinearSegmentParameter setGeneralSegmentAppearance(ObjectSta
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#generalSegmentAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public ObjectStateAppearanceGeneral getGeneralSegmentAppearance()
 {
+    if (generalSegmentAppearance == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generalSegmentAppearance == null, ignored by returning default bitfieldtype...");
+        return new ObjectStateAppearanceGeneral();
+    }
     return generalSegmentAppearance; 
 }
 
@@ -148,10 +158,10 @@ public synchronized LinearSegmentParameter setSpecificSegmentAppearance(int pSpe
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#specificSegmentAppearance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getSpecificSegmentAppearance()
 {
-    return specificSegmentAppearance; 
+       return specificSegmentAppearance;
 }
 
 /** Setter for {@link LinearSegmentParameter#segmentLocation}
@@ -195,10 +205,10 @@ public synchronized LinearSegmentParameter setSegmentLength(float pSegmentLength
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getSegmentLength()
 {
-    return segmentLength; 
+       return segmentLength;
 }
 
 /** Setter for {@link LinearSegmentParameter#segmentWidth}
@@ -210,10 +220,10 @@ public synchronized LinearSegmentParameter setSegmentWidth(float pSegmentWidth)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentWidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getSegmentWidth()
 {
-    return segmentWidth; 
+       return segmentWidth;
 }
 
 /** Setter for {@link LinearSegmentParameter#segmentHeight}
@@ -225,10 +235,10 @@ public synchronized LinearSegmentParameter setSegmentHeight(float pSegmentHeight
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentHeight}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getSegmentHeight()
 {
-    return segmentHeight; 
+       return segmentHeight;
 }
 
 /** Setter for {@link LinearSegmentParameter#segmentDepth}
@@ -240,10 +250,10 @@ public synchronized LinearSegmentParameter setSegmentDepth(float pSegmentDepth)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentDepth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getSegmentDepth()
 {
-    return segmentDepth; 
+       return segmentDepth;
 }
 
 /** Setter for {@link LinearSegmentParameter#padding}
@@ -255,10 +265,10 @@ public synchronized LinearSegmentParameter setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

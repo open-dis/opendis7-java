@@ -153,10 +153,10 @@ public synchronized RecordQueryRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /** Setter for {@link RecordQueryRPdu#requiredReliabilityService}
@@ -168,9 +168,14 @@ public synchronized RecordQueryRPdu setRequiredReliabilityService(RequiredReliab
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#requiredReliabilityService}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
+    if (requiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        return RequiredReliabilityService.values()[0];
+    }
     return requiredReliabilityService; 
 }
 
@@ -190,10 +195,10 @@ public synchronized RecordQueryRPdu setPad1(int pPad1){
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#pad1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPad1()
 {
-    return pad1; 
+       return pad1;
 }
 
 /** Setter for {@link RecordQueryRPdu#eventType}
@@ -205,9 +210,14 @@ public synchronized RecordQueryRPdu setEventType(RecordQueryREventType pEventTyp
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#eventType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public RecordQueryREventType getEventType()
 {
+    if (eventType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RecordQueryREventType eventType == null, ignored by returning default enumeration...");
+        return RecordQueryREventType.values()[0];
+    }
     return eventType; 
 }
 
@@ -220,10 +230,10 @@ public synchronized RecordQueryRPdu setTime(int pTime)
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#time}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTime()
 {
-    return time; 
+       return time;
 }
 
 /** Setter for {@link RecordQueryRPdu#recordIDs}
@@ -235,7 +245,7 @@ public synchronized RecordQueryRPdu setRecordIDs(List<RecordQuerySpecification> 
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#recordIDs}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<RecordQuerySpecification> getRecordIDs()
 {
     return recordIDs; 

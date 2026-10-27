@@ -78,10 +78,10 @@ public synchronized IFFFundamentalParameterData setErp(float pErp)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#erp}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getErp()
 {
-    return erp; 
+       return erp;
 }
 
 /** Setter for {@link IFFFundamentalParameterData#frequency}
@@ -93,10 +93,10 @@ public synchronized IFFFundamentalParameterData setFrequency(float pFrequency)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#frequency}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getFrequency()
 {
-    return frequency; 
+       return frequency;
 }
 
 /** Setter for {@link IFFFundamentalParameterData#pgrf}
@@ -108,10 +108,10 @@ public synchronized IFFFundamentalParameterData setPgrf(float pPgrf)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#pgrf}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPgrf()
 {
-    return pgrf; 
+       return pgrf;
 }
 
 /** Setter for {@link IFFFundamentalParameterData#pulseWidth}
@@ -123,10 +123,10 @@ public synchronized IFFFundamentalParameterData setPulseWidth(float pPulseWidth)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#pulseWidth}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPulseWidth()
 {
-    return pulseWidth; 
+       return pulseWidth;
 }
 
 /** Setter for {@link IFFFundamentalParameterData#burstLength}
@@ -138,10 +138,10 @@ public synchronized IFFFundamentalParameterData setBurstLength(int pBurstLength)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#burstLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getBurstLength()
 {
-    return burstLength; 
+       return burstLength;
 }
 
 /** Setter for {@link IFFFundamentalParameterData#applicableModes}
@@ -153,9 +153,14 @@ public synchronized IFFFundamentalParameterData setApplicableModes(IFFApplicable
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#applicableModes}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IFFApplicableModes getApplicableModes()
 {
+    if (applicableModes == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration...");
+        return IFFApplicableModes.values()[0];
+    }
     return applicableModes; 
 }
 
@@ -168,7 +173,7 @@ public synchronized IFFFundamentalParameterData setSystemSpecificData(byte[] pSy
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#systemSpecificData}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

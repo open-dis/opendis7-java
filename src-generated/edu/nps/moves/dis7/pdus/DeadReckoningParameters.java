@@ -68,9 +68,14 @@ public synchronized DeadReckoningParameters setDeadReckoningAlgorithm(DeadReckon
     return this;
 }
 /** Getter for {@link DeadReckoningParameters#deadReckoningAlgorithm}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
+    if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        return DeadReckoningAlgorithm.values()[0];
+    }
     return deadReckoningAlgorithm; 
 }
 
@@ -83,7 +88,7 @@ public synchronized DeadReckoningParameters setParameters(byte[] pParameters)
     return this;
 }
 /** Getter for {@link DeadReckoningParameters#parameters}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getParameters()
 {
     return parameters; 

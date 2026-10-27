@@ -58,9 +58,14 @@ public synchronized Relationship setNature(IsPartOfNature pNature)
     return this;
 }
 /** Getter for {@link Relationship#nature}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IsPartOfNature getNature()
 {
+    if (nature == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration...");
+        return IsPartOfNature.values()[0];
+    }
     return nature; 
 }
 
@@ -73,9 +78,14 @@ public synchronized Relationship setPosition(IsPartOfPosition pPosition)
     return this;
 }
 /** Getter for {@link Relationship#position}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IsPartOfPosition getPosition()
 {
+    if (position == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration...");
+        return IsPartOfPosition.values()[0];
+    }
     return position; 
 }
 

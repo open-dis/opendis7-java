@@ -62,9 +62,14 @@ public synchronized EmitterSystem setEmitterName(EmitterName pEmitterName)
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterName}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EmitterName getEmitterName()
 {
+    if (emitterName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration...");
+        return EmitterName.values()[0];
+    }
     return emitterName; 
 }
 
@@ -77,9 +82,14 @@ public synchronized EmitterSystem setEmitterFunction(EmitterSystemFunction pEmit
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterFunction}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EmitterSystemFunction getEmitterFunction()
 {
+    if (emitterFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration...");
+        return EmitterSystemFunction.values()[0];
+    }
     return emitterFunction; 
 }
 
@@ -99,10 +109,10 @@ public synchronized EmitterSystem setEmitterIDNumber(int pEmitterIDNumber){
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterIDNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getEmitterIDNumber()
 {
-    return emitterIDNumber; 
+       return emitterIDNumber;
 }
 
 /**

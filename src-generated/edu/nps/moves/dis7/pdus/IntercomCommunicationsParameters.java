@@ -68,9 +68,14 @@ public synchronized IntercomCommunicationsParameters setRecordType(IntercomContr
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IntercomControlRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration...");
+        return IntercomControlRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -90,10 +95,10 @@ public synchronized IntercomCommunicationsParameters setRecordLength(int pRecord
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link IntercomCommunicationsParameters#recordSpecificField}
@@ -105,7 +110,7 @@ public synchronized IntercomCommunicationsParameters setRecordSpecificField(byte
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordSpecificField}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getRecordSpecificField()
 {
     return recordSpecificField; 

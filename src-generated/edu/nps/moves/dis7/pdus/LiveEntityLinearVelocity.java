@@ -67,10 +67,10 @@ public synchronized LiveEntityLinearVelocity setXComponent(int pXComponent){
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#xComponent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getXComponent()
 {
-    return xComponent; 
+       return xComponent;
 }
 
 /** Setter for {@link LiveEntityLinearVelocity#yComponent}
@@ -89,10 +89,10 @@ public synchronized LiveEntityLinearVelocity setYComponent(int pYComponent){
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#yComponent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getYComponent()
 {
-    return yComponent; 
+       return yComponent;
 }
 
 /** Setter for {@link LiveEntityLinearVelocity#zComponent}
@@ -111,10 +111,10 @@ public synchronized LiveEntityLinearVelocity setZComponent(int pZComponent){
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#zComponent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getZComponent()
 {
-    return zComponent; 
+       return zComponent;
 }
 
 /**

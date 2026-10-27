@@ -59,10 +59,10 @@ public synchronized MinefieldSensorType setSensorType(int pSensorType){
     return this;
 }
 /** Getter for {@link MinefieldSensorType#sensorType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSensorType()
 {
-    return sensorType; 
+       return sensorType;
 }
 
 /**

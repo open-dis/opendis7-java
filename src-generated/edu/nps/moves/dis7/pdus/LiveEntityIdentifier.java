@@ -80,10 +80,10 @@ public synchronized LiveEntityIdentifier setEntityNumber(int pEntityNumber){
     return this;
 }
 /** Getter for {@link LiveEntityIdentifier#entityNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getEntityNumber()
 {
-    return entityNumber; 
+       return entityNumber;
 }
 
 /**

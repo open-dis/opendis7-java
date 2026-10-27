@@ -157,9 +157,14 @@ public synchronized StopFreezePdu setReason(StopFreezeReason pReason)
     return this;
 }
 /** Getter for {@link StopFreezePdu#reason}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public StopFreezeReason getReason()
 {
+    if (reason == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration...");
+        return StopFreezeReason.values()[0];
+    }
     return reason; 
 }
 
@@ -172,9 +177,14 @@ public synchronized StopFreezePdu setFrozenBehavior(StopFreezeFrozenBehavior pFr
     return this;
 }
 /** Getter for {@link StopFreezePdu#frozenBehavior}
-  * @return value of interest */
+  * @return value of interest (getter #5) */
 public StopFreezeFrozenBehavior getFrozenBehavior()
 {
+    if (frozenBehavior == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype...");
+        return new StopFreezeFrozenBehavior();
+    }
     return frozenBehavior; 
 }
 
@@ -194,10 +204,10 @@ public synchronized StopFreezePdu setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link StopFreezePdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link StopFreezePdu#requestID}
@@ -209,10 +219,10 @@ public synchronized StopFreezePdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link StopFreezePdu#requestID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRequestID()
 {
-    return requestID; 
+       return requestID;
 }
 
 /**

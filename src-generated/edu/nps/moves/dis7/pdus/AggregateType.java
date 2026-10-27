@@ -81,9 +81,14 @@ public synchronized AggregateType setAggregateKind(AggregateStateAggregateKind p
     return this;
 }
 /** Getter for {@link AggregateType#aggregateKind}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AggregateStateAggregateKind getAggregateKind()
 {
+    if (aggregateKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateAggregateKind aggregateKind == null, ignored by returning default enumeration...");
+        return AggregateStateAggregateKind.values()[0];
+    }
     return aggregateKind; 
 }
 
@@ -96,9 +101,14 @@ public synchronized AggregateType setDomain(PlatformDomain pDomain)
     return this;
 }
 /** Getter for {@link AggregateType#domain}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public PlatformDomain getDomain()
 {
+    if (domain == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        return PlatformDomain.values()[0];
+    }
     return domain; 
 }
 
@@ -111,9 +121,14 @@ public synchronized AggregateType setCountry(Country pCountry)
     return this;
 }
 /** Getter for {@link AggregateType#country}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public Country getCountry()
 {
+    if (country == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        return Country.values()[0];
+    }
     return country; 
 }
 
@@ -133,10 +148,10 @@ public synchronized AggregateType setCategory(int pCategory){
     return this;
 }
 /** Getter for {@link AggregateType#category}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getCategory()
 {
-    return category; 
+       return category;
 }
 
 /** Setter for {@link AggregateType#subcategory}
@@ -148,9 +163,14 @@ public synchronized AggregateType setSubcategory(AggregateStateSubcategory pSubc
     return this;
 }
 /** Getter for {@link AggregateType#subcategory}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AggregateStateSubcategory getSubcategory()
 {
+    if (subcategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateSubcategory subcategory == null, ignored by returning default enumeration...");
+        return AggregateStateSubcategory.values()[0];
+    }
     return subcategory; 
 }
 
@@ -163,9 +183,14 @@ public synchronized AggregateType setSpecificInfo(AggregateStateSpecific pSpecif
     return this;
 }
 /** Getter for {@link AggregateType#specificInfo}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public AggregateStateSpecific getSpecificInfo()
 {
+    if (specificInfo == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateSpecific specificInfo == null, ignored by returning default enumeration...");
+        return AggregateStateSpecific.values()[0];
+    }
     return specificInfo; 
 }
 
@@ -185,10 +210,10 @@ public synchronized AggregateType setExtra(int pExtra){
     return this;
 }
 /** Getter for {@link AggregateType#extra}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getExtra()
 {
-    return extra; 
+       return extra;
 }
 
 /**

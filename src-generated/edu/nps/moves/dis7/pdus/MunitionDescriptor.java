@@ -87,9 +87,14 @@ public synchronized MunitionDescriptor setWarhead(MunitionDescriptorWarhead pWar
     return this;
 }
 /** Getter for {@link MunitionDescriptor#warhead}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public MunitionDescriptorWarhead getWarhead()
 {
+    if (warhead == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration...");
+        return MunitionDescriptorWarhead.values()[0];
+    }
     return warhead; 
 }
 
@@ -102,9 +107,14 @@ public synchronized MunitionDescriptor setFuse(MunitionDescriptorFuse pFuse)
     return this;
 }
 /** Getter for {@link MunitionDescriptor#fuse}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public MunitionDescriptorFuse getFuse()
 {
+    if (fuse == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration...");
+        return MunitionDescriptorFuse.values()[0];
+    }
     return fuse; 
 }
 
@@ -124,10 +134,10 @@ public synchronized MunitionDescriptor setQuantity(int pQuantity){
     return this;
 }
 /** Getter for {@link MunitionDescriptor#quantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getQuantity()
 {
-    return quantity; 
+       return quantity;
 }
 
 /** Setter for {@link MunitionDescriptor#rate}
@@ -146,10 +156,10 @@ public synchronized MunitionDescriptor setRate(int pRate){
     return this;
 }
 /** Getter for {@link MunitionDescriptor#rate}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRate()
 {
-    return rate; 
+       return rate;
 }
 
 /**

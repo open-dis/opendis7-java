@@ -76,9 +76,14 @@ public synchronized Environment setEnvironmentType(EnvironmentalProcessRecordTyp
     return this;
 }
 /** Getter for {@link Environment#environmentType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EnvironmentalProcessRecordType getEnvironmentType()
 {
+    if (environmentType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration...");
+        return EnvironmentalProcessRecordType.values()[0];
+    }
     return environmentType; 
 }
 
@@ -98,10 +103,10 @@ public synchronized Environment setLength(int pLength){
     return this;
 }
 /** Getter for {@link Environment#length}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getLength()
 {
-    return length; 
+       return length;
 }
 
 /** Setter for {@link Environment#index}
@@ -120,10 +125,10 @@ public synchronized Environment setIndex(int pIndex){
     return this;
 }
 /** Getter for {@link Environment#index}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getIndex()
 {
-    return index; 
+       return index;
 }
 
 /** Setter for {@link Environment#padding1}
@@ -142,10 +147,10 @@ public synchronized Environment setPadding1(int pPadding1){
     return this;
 }
 /** Getter for {@link Environment#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link Environment#geometry}
@@ -157,7 +162,7 @@ public synchronized Environment setGeometry(byte[] pGeometry)
     return this;
 }
 /** Getter for {@link Environment#geometry}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getGeometry()
 {
     return geometry; 

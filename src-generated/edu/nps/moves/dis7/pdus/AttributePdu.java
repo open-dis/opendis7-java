@@ -184,10 +184,10 @@ public synchronized AttributePdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link AttributePdu#padding1}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding1()
 {
-    return padding1; 
+       return padding1;
 }
 
 /** Setter for {@link AttributePdu#padding2}
@@ -206,10 +206,10 @@ public synchronized AttributePdu setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link AttributePdu#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link AttributePdu#attributeRecordPduType}
@@ -221,9 +221,14 @@ public synchronized AttributePdu setAttributeRecordPduType(DisPduType pAttribute
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordPduType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DisPduType getAttributeRecordPduType()
 {
+    if (attributeRecordPduType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration...");
+        return DisPduType.values()[0];
+    }
     return attributeRecordPduType; 
 }
 
@@ -236,9 +241,14 @@ public synchronized AttributePdu setAttributeRecordProtocolVersion(DISProtocolFa
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordProtocolVersion}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DISProtocolFamily getAttributeRecordProtocolVersion()
 {
+    if (attributeRecordProtocolVersion == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration...");
+        return DISProtocolFamily.values()[0];
+    }
     return attributeRecordProtocolVersion; 
 }
 
@@ -251,9 +261,14 @@ public synchronized AttributePdu setMasterAttributeRecordType(VariableRecordType
     return this;
 }
 /** Getter for {@link AttributePdu#masterAttributeRecordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getMasterAttributeRecordType()
 {
+    if (masterAttributeRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return masterAttributeRecordType; 
 }
 
@@ -266,9 +281,14 @@ public synchronized AttributePdu setActionCode(DISAttributeActionCode pActionCod
     return this;
 }
 /** Getter for {@link AttributePdu#actionCode}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DISAttributeActionCode getActionCode()
 {
+    if (actionCode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration...");
+        return DISAttributeActionCode.values()[0];
+    }
     return actionCode; 
 }
 
@@ -288,10 +308,10 @@ public synchronized AttributePdu setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link AttributePdu#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /** Setter for {@link AttributePdu#attributeRecordSets}
@@ -303,7 +323,7 @@ public synchronized AttributePdu setAttributeRecordSets(List<AttributeRecordSet>
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordSets}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<AttributeRecordSet> getAttributeRecordSets()
 {
     return attributeRecordSets; 

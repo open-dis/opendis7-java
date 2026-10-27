@@ -84,10 +84,10 @@ public synchronized TrackJamData setEmitterNumber(int pEmitterNumber){
     return this;
 }
 /** Getter for {@link TrackJamData#emitterNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getEmitterNumber()
 {
-    return emitterNumber; 
+       return emitterNumber;
 }
 
 /** Setter for {@link TrackJamData#beamNumber}
@@ -106,10 +106,10 @@ public synchronized TrackJamData setBeamNumber(int pBeamNumber){
     return this;
 }
 /** Getter for {@link TrackJamData#beamNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamNumber()
 {
-    return beamNumber; 
+       return beamNumber;
 }
 
 /**

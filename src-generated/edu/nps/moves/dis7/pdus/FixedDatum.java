@@ -57,9 +57,14 @@ public synchronized FixedDatum setFixedDatumID(VariableRecordType pFixedDatumID)
     return this;
 }
 /** Getter for {@link FixedDatum#fixedDatumID}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getFixedDatumID()
 {
+    if (fixedDatumID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType fixedDatumID == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return fixedDatumID; 
 }
 
@@ -72,10 +77,10 @@ public synchronized FixedDatum setFixedDatumValue(int pFixedDatumValue)
     return this;
 }
 /** Getter for {@link FixedDatum#fixedDatumValue}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getFixedDatumValue()
 {
-    return fixedDatumValue; 
+       return fixedDatumValue;
 }
 
 /**

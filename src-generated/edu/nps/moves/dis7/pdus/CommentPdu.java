@@ -135,7 +135,7 @@ public synchronized CommentPdu setVariableDatums(List<VariableDatum> pVariableDa
     return this;
 }
 /** Getter for {@link CommentPdu#variableDatums}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

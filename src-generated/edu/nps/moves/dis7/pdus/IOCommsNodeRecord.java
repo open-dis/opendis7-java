@@ -72,9 +72,14 @@ public synchronized IOCommsNodeRecord setRecordType(VariableRecordType pRecordTy
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -94,10 +99,10 @@ public synchronized IOCommsNodeRecord setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link IOCommsNodeRecord#commsNodeType}
@@ -109,9 +114,14 @@ public synchronized IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNod
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#commsNodeType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOCommsNodeRecordCommsNodeType getCommsNodeType()
 {
+    if (commsNodeType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType commsNodeType == null, ignored by returning default enumeration...");
+        return IOCommsNodeRecordCommsNodeType.values()[0];
+    }
     return commsNodeType; 
 }
 
@@ -131,10 +141,10 @@ public synchronized IOCommsNodeRecord setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link IOCommsNodeRecord#commsNodeId}

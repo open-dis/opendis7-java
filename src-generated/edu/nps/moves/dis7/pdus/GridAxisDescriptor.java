@@ -69,10 +69,10 @@ public synchronized GridAxisDescriptor setDomainInitialXi(double pDomainInitialX
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainInitialXi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getDomainInitialXi()
 {
-    return domainInitialXi; 
+       return domainInitialXi;
 }
 
 /** Setter for {@link GridAxisDescriptor#domainFinalXi}
@@ -84,10 +84,10 @@ public synchronized GridAxisDescriptor setDomainFinalXi(double pDomainFinalXi)
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainFinalXi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public double getDomainFinalXi()
 {
-    return domainFinalXi; 
+       return domainFinalXi;
 }
 
 /** Setter for {@link GridAxisDescriptor#domainPointsXi}
@@ -106,10 +106,10 @@ public synchronized GridAxisDescriptor setDomainPointsXi(int pDomainPointsXi){
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainPointsXi}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getDomainPointsXi()
 {
-    return domainPointsXi; 
+       return domainPointsXi;
 }
 
 /** Setter for {@link GridAxisDescriptor#interleafFactor}
@@ -128,10 +128,10 @@ public synchronized GridAxisDescriptor setInterleafFactor(int pInterleafFactor){
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#interleafFactor}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getInterleafFactor()
 {
-    return interleafFactor; 
+       return interleafFactor;
 }
 
 /** Setter for {@link GridAxisDescriptor#axisType}
@@ -143,9 +143,14 @@ public synchronized GridAxisDescriptor setAxisType(GridAxisDescriptorAxisType pA
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#axisType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public GridAxisDescriptorAxisType getAxisType()
 {
+    if (axisType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration...");
+        return GridAxisDescriptorAxisType.values()[0];
+    }
     return axisType; 
 }
 

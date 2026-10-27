@@ -64,7 +64,7 @@ public synchronized GridDataType0 setDataValues(byte[] pDataValues)
     return this;
 }
 /** Getter for {@link GridDataType0#dataValues}
-  * @return value of interest */
+  * @return value of interest (getter #2) */
 public byte[] getDataValues()
 {
     return dataValues; 

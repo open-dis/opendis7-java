@@ -74,9 +74,14 @@ public synchronized Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSourc
     return this;
 }
 /** Getter for {@link Sensor#sensorTypeSource}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SensorTypeSource getSensorTypeSource()
 {
+    if (sensorTypeSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SensorTypeSource sensorTypeSource == null, ignored by returning default enumeration...");
+        return SensorTypeSource.values()[0];
+    }
     return sensorTypeSource; 
 }
 
@@ -89,9 +94,14 @@ public synchronized Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffSt
     return this;
 }
 /** Getter for {@link Sensor#sensorOnOffStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public SensorOnOffStatus getSensorOnOffStatus()
 {
+    if (sensorOnOffStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SensorOnOffStatus sensorOnOffStatus == null, ignored by returning default enumeration...");
+        return SensorOnOffStatus.values()[0];
+    }
     return sensorOnOffStatus; 
 }
 
@@ -111,10 +121,10 @@ public synchronized Sensor setSensorType(int pSensorType){
     return this;
 }
 /** Getter for {@link Sensor#sensorType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSensorType()
 {
-    return sensorType; 
+       return sensorType;
 }
 
 /** Setter for {@link Sensor#station}
@@ -126,10 +136,10 @@ public synchronized Sensor setStation(int pStation)
     return this;
 }
 /** Getter for {@link Sensor#station}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getStation()
 {
-    return station; 
+       return station;
 }
 
 /** Setter for {@link Sensor#quantity}
@@ -148,10 +158,10 @@ public synchronized Sensor setQuantity(int pQuantity){
     return this;
 }
 /** Getter for {@link Sensor#quantity}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getQuantity()
 {
-    return quantity; 
+       return quantity;
 }
 
 /** Setter for {@link Sensor#padding}
@@ -170,10 +180,10 @@ public synchronized Sensor setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link Sensor#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

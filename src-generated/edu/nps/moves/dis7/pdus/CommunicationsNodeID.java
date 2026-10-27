@@ -80,10 +80,10 @@ public synchronized CommunicationsNodeID setElementID(int pElementID){
     return this;
 }
 /** Getter for {@link CommunicationsNodeID#elementID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getElementID()
 {
-    return elementID; 
+       return elementID;
 }
 
 /**

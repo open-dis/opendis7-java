@@ -114,10 +114,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setRecordType(int pRecordTyp
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getRecordType()
 {
-    return recordType; 
+       return recordType;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
@@ -136,10 +136,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setRecordLength(int pRecordL
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#padding}
@@ -158,10 +158,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotLocation}
@@ -260,10 +260,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setTargetComponentID(int pTa
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getTargetComponentID()
 {
-    return targetComponentID; 
+       return targetComponentID;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}
@@ -275,9 +275,14 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionA
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 {
+    if (beamSpotType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration...");
+        return DEPrecisionAimpointBeamSpotType.values()[0];
+    }
     return beamSpotType; 
 }
 
@@ -290,10 +295,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiM
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMajorAxis}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamSpotCrossSectionSemiMajorAxis()
 {
-    return beamSpotCrossSectionSemiMajorAxis; 
+       return beamSpotCrossSectionSemiMajorAxis;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}
@@ -305,10 +310,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiM
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamSpotCrossSectionSemiMinorAxis()
 {
-    return beamSpotCrossSectionSemiMinorAxis; 
+       return beamSpotCrossSectionSemiMinorAxis;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}
@@ -320,10 +325,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionOrien
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getBeamSpotCrossSectionOrientationAngle()
 {
-    return beamSpotCrossSectionOrientationAngle; 
+       return beamSpotCrossSectionOrientationAngle;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}
@@ -335,10 +340,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setPeakIrradiance(float pPea
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public float getPeakIrradiance()
 {
-    return peakIrradiance; 
+       return peakIrradiance;
 }
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#padding2}
@@ -350,10 +355,10 @@ public synchronized DirectedEnergyPrecisionAimpoint setPadding2(int pPadding2)
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /**

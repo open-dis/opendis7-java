@@ -80,10 +80,10 @@ public synchronized Mode5InterrogatorBasicData setMode5InterrogatorStatus(int pM
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#mode5InterrogatorStatus}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getMode5InterrogatorStatus()
 {
-    return mode5InterrogatorStatus; 
+       return mode5InterrogatorStatus;
 }
 
 /** Setter for {@link Mode5InterrogatorBasicData#padding}
@@ -102,10 +102,10 @@ public synchronized Mode5InterrogatorBasicData setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link Mode5InterrogatorBasicData#padding2}
@@ -124,10 +124,10 @@ public synchronized Mode5InterrogatorBasicData setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link Mode5InterrogatorBasicData#mode5MessageFormatsPresent}
@@ -139,10 +139,10 @@ public synchronized Mode5InterrogatorBasicData setMode5MessageFormatsPresent(int
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#mode5MessageFormatsPresent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getMode5MessageFormatsPresent()
 {
-    return mode5MessageFormatsPresent; 
+       return mode5MessageFormatsPresent;
 }
 
 /** Setter for {@link Mode5InterrogatorBasicData#entityID}
@@ -177,10 +177,10 @@ public synchronized Mode5InterrogatorBasicData setPadding3(int pPadding3){
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /**

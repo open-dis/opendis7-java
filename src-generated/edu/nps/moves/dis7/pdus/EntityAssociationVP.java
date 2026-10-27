@@ -92,9 +92,14 @@ public synchronized EntityAssociationVP setRecordType(VariableParameterRecordTyp
     return this;
 }
 /** Getter for {@link EntityAssociationVP#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableParameterRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -107,9 +112,14 @@ public synchronized EntityAssociationVP setChangeIndicator(EntityVPRecordChangeI
     return this;
 }
 /** Getter for {@link EntityAssociationVP#changeIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
+    if (changeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        return EntityVPRecordChangeIndicator.values()[0];
+    }
     return changeIndicator; 
 }
 
@@ -122,9 +132,14 @@ public synchronized EntityAssociationVP setAssociationStatus(EntityAssociationAs
     return this;
 }
 /** Getter for {@link EntityAssociationVP#associationStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityAssociationAssociationType getAssociationStatus()
 {
+    if (associationStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationStatus == null, ignored by returning default enumeration...");
+        return EntityAssociationAssociationType.values()[0];
+    }
     return associationStatus; 
 }
 
@@ -137,9 +152,14 @@ public synchronized EntityAssociationVP setAssociationType(EntityAssociationPhys
     return this;
 }
 /** Getter for {@link EntityAssociationVP#associationType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityAssociationPhysicalAssociationType getAssociationType()
 {
+    if (associationType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType associationType == null, ignored by returning default enumeration...");
+        return EntityAssociationPhysicalAssociationType.values()[0];
+    }
     return associationType; 
 }
 
@@ -168,9 +188,14 @@ public synchronized EntityAssociationVP setOwnStationLocation(IsPartOfStationNam
     return this;
 }
 /** Getter for {@link EntityAssociationVP#ownStationLocation}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IsPartOfStationName getOwnStationLocation()
 {
+    if (ownStationLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfStationName ownStationLocation == null, ignored by returning default enumeration...");
+        return IsPartOfStationName.values()[0];
+    }
     return ownStationLocation; 
 }
 
@@ -183,9 +208,14 @@ public synchronized EntityAssociationVP setPhysicalConnectionType(EntityAssociat
     return this;
 }
 /** Getter for {@link EntityAssociationVP#physicalConnectionType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityAssociationPhysicalConnectionType getPhysicalConnectionType()
 {
+    if (physicalConnectionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType physicalConnectionType == null, ignored by returning default enumeration...");
+        return EntityAssociationPhysicalConnectionType.values()[0];
+    }
     return physicalConnectionType; 
 }
 
@@ -198,9 +228,14 @@ public synchronized EntityAssociationVP setGroupMemberType(EntityAssociationGrou
     return this;
 }
 /** Getter for {@link EntityAssociationVP#groupMemberType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public EntityAssociationGroupMemberType getGroupMemberType()
 {
+    if (groupMemberType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationGroupMemberType groupMemberType == null, ignored by returning default enumeration...");
+        return EntityAssociationGroupMemberType.values()[0];
+    }
     return groupMemberType; 
 }
 
@@ -220,10 +255,10 @@ public synchronized EntityAssociationVP setGroupNumber(int pGroupNumber){
     return this;
 }
 /** Getter for {@link EntityAssociationVP#groupNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getGroupNumber()
 {
-    return groupNumber; 
+       return groupNumber;
 }
 
 /**

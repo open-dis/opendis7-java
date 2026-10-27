@@ -183,9 +183,14 @@ public synchronized ElectromagneticEmissionPdu setStateUpdateIndicator(Electroma
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public ElectromagneticEmissionStateUpdateIndicator getStateUpdateIndicator()
 {
+    if (stateUpdateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator stateUpdateIndicator == null, ignored by returning default enumeration...");
+        return ElectromagneticEmissionStateUpdateIndicator.values()[0];
+    }
     return stateUpdateIndicator; 
 }
 
@@ -205,10 +210,10 @@ public synchronized ElectromagneticEmissionPdu setPaddingForEmissionsPdu(int pPa
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPaddingForEmissionsPdu()
 {
-    return paddingForEmissionsPdu; 
+       return paddingForEmissionsPdu;
 }
 
 /** Setter for {@link ElectromagneticEmissionPdu#systems}
@@ -220,7 +225,7 @@ public synchronized ElectromagneticEmissionPdu setSystems(List<ElectronicEmitter
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#systems}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<ElectronicEmitter> getSystems()
 {
     return systems; 

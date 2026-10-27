@@ -82,7 +82,7 @@ public synchronized AttributeRecordSet setAttributeRecords(List<Attribute> pAttr
     return this;
 }
 /** Getter for {@link AttributeRecordSet#attributeRecords}
-  * @return value of interest */
+  * @return value of interest (getter #3) */
 public List<Attribute> getAttributeRecords()
 {
     return attributeRecords; 

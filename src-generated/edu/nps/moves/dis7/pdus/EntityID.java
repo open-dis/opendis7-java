@@ -67,10 +67,10 @@ public synchronized EntityID setSiteID(int pSiteID){
     return this;
 }
 /** Getter for {@link EntityID#siteID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteID()
 {
-    return siteID; 
+       return siteID;
 }
 
 /** Setter for {@link EntityID#applicationID}
@@ -89,10 +89,10 @@ public synchronized EntityID setApplicationID(int pApplicationID){
     return this;
 }
 /** Getter for {@link EntityID#applicationID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationID()
 {
-    return applicationID; 
+       return applicationID;
 }
 
 /** Setter for {@link EntityID#entityID}
@@ -111,10 +111,10 @@ public synchronized EntityID setEntityID(int pEntityID){
     return this;
 }
 /** Getter for {@link EntityID#entityID}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getEntityID()
 {
-    return entityID; 
+       return entityID;
 }
 
 /**

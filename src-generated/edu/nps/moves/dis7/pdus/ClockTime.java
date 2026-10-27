@@ -56,10 +56,10 @@ public synchronized ClockTime setHour(int pHour)
     return this;
 }
 /** Getter for {@link ClockTime#hour}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getHour()
 {
-    return hour; 
+       return hour;
 }
 
 /** Setter for {@link ClockTime#timePastHour}
@@ -71,10 +71,10 @@ public synchronized ClockTime setTimePastHour(int pTimePastHour)
     return this;
 }
 /** Getter for {@link ClockTime#timePastHour}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getTimePastHour()
 {
-    return timePastHour; 
+       return timePastHour;
 }
 
 /**

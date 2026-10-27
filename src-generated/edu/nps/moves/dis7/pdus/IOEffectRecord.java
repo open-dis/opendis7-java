@@ -90,9 +90,14 @@ public synchronized IOEffectRecord setRecordType(VariableRecordType pRecordType)
     return this;
 }
 /** Getter for {@link IOEffectRecord#recordType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public VariableRecordType getRecordType()
 {
+    if (recordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        return VariableRecordType.values()[0];
+    }
     return recordType; 
 }
 
@@ -112,10 +117,10 @@ public synchronized IOEffectRecord setRecordLength(int pRecordLength){
     return this;
 }
 /** Getter for {@link IOEffectRecord#recordLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getRecordLength()
 {
-    return recordLength; 
+       return recordLength;
 }
 
 /** Setter for {@link IOEffectRecord#ioStatus}
@@ -127,9 +132,14 @@ public synchronized IOEffectRecord setIoStatus(IOEffectsRecordIOStatus pIoStatus
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioStatus}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOEffectsRecordIOStatus getIoStatus()
 {
+    if (ioStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOStatus ioStatus == null, ignored by returning default enumeration...");
+        return IOEffectsRecordIOStatus.values()[0];
+    }
     return ioStatus; 
 }
 
@@ -142,9 +152,14 @@ public synchronized IOEffectRecord setIoLinkType(IOEffectsRecordIOLinkType pIoLi
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioLinkType}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOEffectsRecordIOLinkType getIoLinkType()
 {
+    if (ioLinkType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOLinkType ioLinkType == null, ignored by returning default enumeration...");
+        return IOEffectsRecordIOLinkType.values()[0];
+    }
     return ioLinkType; 
 }
 
@@ -157,9 +172,14 @@ public synchronized IOEffectRecord setIoEffect(IOEffectsRecordIOEffect pIoEffect
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffect}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOEffectsRecordIOEffect getIoEffect()
 {
+    if (ioEffect == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOEffect ioEffect == null, ignored by returning default enumeration...");
+        return IOEffectsRecordIOEffect.values()[0];
+    }
     return ioEffect; 
 }
 
@@ -179,10 +199,10 @@ public synchronized IOEffectRecord setIoEffectDutyCycle(int pIoEffectDutyCycle){
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffectDutyCycle}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getIoEffectDutyCycle()
 {
-    return ioEffectDutyCycle; 
+       return ioEffectDutyCycle;
 }
 
 /** Setter for {@link IOEffectRecord#ioEffectDuration}
@@ -201,10 +221,10 @@ public synchronized IOEffectRecord setIoEffectDuration(int pIoEffectDuration){
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffectDuration}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getIoEffectDuration()
 {
-    return ioEffectDuration; 
+       return ioEffectDuration;
 }
 
 /** Setter for {@link IOEffectRecord#ioProcess}
@@ -216,9 +236,14 @@ public synchronized IOEffectRecord setIoProcess(IOEffectsRecordIOProcess pIoProc
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioProcess}
-  * @return value of interest */
+  * @return value of interest (getter #4) */
 public IOEffectsRecordIOProcess getIoProcess()
 {
+    if (ioProcess == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOProcess ioProcess == null, ignored by returning default enumeration...");
+        return IOEffectsRecordIOProcess.values()[0];
+    }
     return ioProcess; 
 }
 
@@ -238,10 +263,10 @@ public synchronized IOEffectRecord setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link IOEffectRecord#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /**

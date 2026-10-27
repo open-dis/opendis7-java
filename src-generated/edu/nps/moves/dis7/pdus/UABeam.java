@@ -72,10 +72,10 @@ public synchronized UABeam setBeamDataLength(int pBeamDataLength){
     return this;
 }
 /** Getter for {@link UABeam#beamDataLength}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamDataLength()
 {
-    return beamDataLength; 
+       return beamDataLength;
 }
 
 /** Setter for {@link UABeam#beamNumber}
@@ -94,10 +94,10 @@ public synchronized UABeam setBeamNumber(int pBeamNumber){
     return this;
 }
 /** Getter for {@link UABeam#beamNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getBeamNumber()
 {
-    return beamNumber; 
+       return beamNumber;
 }
 
 /** Setter for {@link UABeam#padding}
@@ -116,10 +116,10 @@ public synchronized UABeam setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link UABeam#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link UABeam#fundamentalParameterData}

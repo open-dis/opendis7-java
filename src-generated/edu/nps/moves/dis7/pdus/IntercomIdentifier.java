@@ -71,10 +71,10 @@ public synchronized IntercomIdentifier setSiteNumber(int pSiteNumber){
     return this;
 }
 /** Getter for {@link IntercomIdentifier#siteNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getSiteNumber()
 {
-    return siteNumber; 
+       return siteNumber;
 }
 
 /** Setter for {@link IntercomIdentifier#applicationNumber}
@@ -93,10 +93,10 @@ public synchronized IntercomIdentifier setApplicationNumber(int pApplicationNumb
     return this;
 }
 /** Getter for {@link IntercomIdentifier#applicationNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getApplicationNumber()
 {
-    return applicationNumber; 
+       return applicationNumber;
 }
 
 /** Setter for {@link IntercomIdentifier#referenceNumber}
@@ -115,10 +115,10 @@ public synchronized IntercomIdentifier setReferenceNumber(int pReferenceNumber){
     return this;
 }
 /** Getter for {@link IntercomIdentifier#referenceNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getReferenceNumber()
 {
-    return referenceNumber; 
+       return referenceNumber;
 }
 
 /** Setter for {@link IntercomIdentifier#intercomNumber}
@@ -137,10 +137,10 @@ public synchronized IntercomIdentifier setIntercomNumber(int pIntercomNumber){
     return this;
 }
 /** Getter for {@link IntercomIdentifier#intercomNumber}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public short getIntercomNumber()
 {
-    return intercomNumber; 
+       return intercomNumber;
 }
 
 /**

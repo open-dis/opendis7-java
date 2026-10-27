@@ -91,10 +91,10 @@ public synchronized ModeSInterrogatorBasicData setModeSInterrogatorStatus(int pM
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#modeSInterrogatorStatus}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getModeSInterrogatorStatus()
 {
-    return modeSInterrogatorStatus; 
+       return modeSInterrogatorStatus;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding}
@@ -113,10 +113,10 @@ public synchronized ModeSInterrogatorBasicData setPadding(int pPadding){
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding()
 {
-    return padding; 
+       return padding;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#modeSLevelsPresent}
@@ -135,10 +135,10 @@ public synchronized ModeSInterrogatorBasicData setModeSLevelsPresent(int pModeSL
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#modeSLevelsPresent}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getModeSLevelsPresent()
 {
-    return modeSLevelsPresent; 
+       return modeSLevelsPresent;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding2}
@@ -157,10 +157,10 @@ public synchronized ModeSInterrogatorBasicData setPadding2(int pPadding2){
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding2}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public byte getPadding2()
 {
-    return padding2; 
+       return padding2;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding3}
@@ -172,10 +172,10 @@ public synchronized ModeSInterrogatorBasicData setPadding3(int pPadding3)
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding3}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding3()
 {
-    return padding3; 
+       return padding3;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding4}
@@ -187,10 +187,10 @@ public synchronized ModeSInterrogatorBasicData setPadding4(int pPadding4)
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding4}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding4()
 {
-    return padding4; 
+       return padding4;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding5}
@@ -202,10 +202,10 @@ public synchronized ModeSInterrogatorBasicData setPadding5(int pPadding5)
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding5}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding5()
 {
-    return padding5; 
+       return padding5;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding6}
@@ -217,10 +217,10 @@ public synchronized ModeSInterrogatorBasicData setPadding6(int pPadding6)
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding6}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding6()
 {
-    return padding6; 
+       return padding6;
 }
 
 /** Setter for {@link ModeSInterrogatorBasicData#padding7}
@@ -232,10 +232,10 @@ public synchronized ModeSInterrogatorBasicData setPadding7(int pPadding7)
     return this;
 }
 /** Getter for {@link ModeSInterrogatorBasicData#padding7}
-  * @return value of interest */
+  * @return value of interest (getter #1) */
 public int getPadding7()
 {
-    return padding7; 
+       return padding7;
 }
 
 /**
