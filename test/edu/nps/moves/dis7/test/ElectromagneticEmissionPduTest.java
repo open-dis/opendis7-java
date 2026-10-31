@@ -33,7 +33,9 @@ POSSIBILITY OF SUCH DAMAGE.
 */
 package edu.nps.moves.dis7.test;
 
+import edu.nps.moves.dis7.enumerations.EmitterName;
 import edu.nps.moves.dis7.pdus.ElectromagneticEmissionPdu;
+import edu.nps.moves.dis7.pdus.ElectronicEmitter;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.Pdu;
 import org.junit.jupiter.api.*;
@@ -73,6 +75,10 @@ public class ElectromagneticEmissionPduTest extends PduTest
         emPdu.setEventID(eventIdentifier.setEventNumber(incrementMasterEventNumber()));
         testOnePdu(emPdu);
 
+        // Test for null EmitterName: issue 45
+        ElectronicEmitter ee = new ElectronicEmitter();
+        ee.getEmitterSystem().setEmitterName(null);
+        emPdu.getSystems().add(ee);
         emPdu.setEventID(eventIdentifier.setEventNumber(incrementMasterEventNumber()));
         testOnePdu(emPdu);
     }
@@ -91,6 +97,13 @@ public class ElectromagneticEmissionPduTest extends PduTest
         assertEquals(createdCast.getSystems(),              receivedCast.getSystems(),              "mismatched Systems");
 
         testPduCommonFields(createdPdu);
+    }
+
+    @Test
+    public void testEmitterNameNotNull() {
+
+        EmitterName eName = EmitterName.getEnumForValue(0); // there is no zero, but should not return null
+        assertNotNull(eName);
     }
 
     /** Command-line invocation (CLI) of program, execution starts here
