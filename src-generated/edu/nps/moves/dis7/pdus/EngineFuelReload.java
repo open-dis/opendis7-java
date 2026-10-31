@@ -141,7 +141,7 @@ public synchronized EngineFuelReload setFuelMeasurmentUnits(FuelMeasurementUnits
 {
     if (pFuelMeasurmentUnits == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelMeasurementUnits pFuelMeasurmentUnits == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype FuelMeasurementUnits pFuelMeasurmentUnits == null, ignored by setting default enumeration FuelMeasurementUnits.values()[0]=" + FuelMeasurementUnits.values()[0]);
         fuelMeasurmentUnits = FuelMeasurementUnits.values()[0];
     } else
         fuelMeasurmentUnits = pFuelMeasurmentUnits;
@@ -154,7 +154,7 @@ public FuelMeasurementUnits getFuelMeasurmentUnits()
 {
     if (fuelMeasurmentUnits == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurmentUnits == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurmentUnits == null, ignored by returning default enumeration FuelMeasurementUnits.values()[0]=" + FuelMeasurementUnits.values()[0]);
         fuelMeasurmentUnits = FuelMeasurementUnits.values()[0];
     }
     return fuelMeasurmentUnits; 
@@ -167,7 +167,7 @@ public synchronized EngineFuelReload setFuelType(SupplyFuelType pFuelType)
 {
     if (pFuelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SupplyFuelType pFuelType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype SupplyFuelType pFuelType == null, ignored by setting default enumeration SupplyFuelType.values()[0]=" + SupplyFuelType.values()[0]);
         fuelType = SupplyFuelType.values()[0];
     } else
         fuelType = pFuelType;
@@ -180,7 +180,7 @@ public SupplyFuelType getFuelType()
 {
     if (fuelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration SupplyFuelType.values()[0]=" + SupplyFuelType.values()[0]);
         fuelType = SupplyFuelType.values()[0];
     }
     return fuelType; 
@@ -193,7 +193,7 @@ public synchronized EngineFuelReload setFuelLocation(FuelLocation pFuelLocation)
 {
     if (pFuelLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelLocation pFuelLocation == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype FuelLocation pFuelLocation == null, ignored by setting default enumeration FuelLocation.values()[0]=" + FuelLocation.values()[0]);
         fuelLocation = FuelLocation.values()[0];
     } else
         fuelLocation = pFuelLocation;
@@ -206,7 +206,7 @@ public FuelLocation getFuelLocation()
 {
     if (fuelLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration FuelLocation.values()[0]=" + FuelLocation.values()[0]);
         fuelLocation = FuelLocation.values()[0];
     }
     return fuelLocation; 

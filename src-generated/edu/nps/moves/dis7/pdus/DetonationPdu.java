@@ -306,7 +306,7 @@ public synchronized DetonationPdu setDetonationResult(DetonationResult pDetonati
 {
     if (pDetonationResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DetonationResult pDetonationResult == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DetonationResult pDetonationResult == null, ignored by setting default enumeration DetonationResult.values()[0]=" + DetonationResult.values()[0]);
         detonationResult = DetonationResult.values()[0];
     } else
         detonationResult = pDetonationResult;
@@ -319,7 +319,7 @@ public DetonationResult getDetonationResult()
 {
     if (detonationResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration DetonationResult.values()[0]=" + DetonationResult.values()[0]);
         detonationResult = DetonationResult.values()[0];
     }
     return detonationResult; 

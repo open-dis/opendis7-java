@@ -130,7 +130,7 @@ public synchronized AcknowledgeRPdu setAcknowledgeFlag(AcknowledgeAcknowledgeFla
 {
     if (pAcknowledgeFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag pAcknowledgeFlag == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag pAcknowledgeFlag == null, ignored by setting default enumeration AcknowledgeAcknowledgeFlag.values()[0]=" + AcknowledgeAcknowledgeFlag.values()[0]);
         acknowledgeFlag = AcknowledgeAcknowledgeFlag.values()[0];
     } else
         acknowledgeFlag = pAcknowledgeFlag;
@@ -143,7 +143,7 @@ public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
     if (acknowledgeFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration AcknowledgeAcknowledgeFlag.values()[0]=" + AcknowledgeAcknowledgeFlag.values()[0]);
         acknowledgeFlag = AcknowledgeAcknowledgeFlag.values()[0];
     }
     return acknowledgeFlag; 
@@ -156,7 +156,7 @@ public synchronized AcknowledgeRPdu setResponseFlag(AcknowledgeResponseFlag pRes
 {
     if (pResponseFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeResponseFlag pResponseFlag == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeResponseFlag pResponseFlag == null, ignored by setting default enumeration AcknowledgeResponseFlag.values()[0]=" + AcknowledgeResponseFlag.values()[0]);
         responseFlag = AcknowledgeResponseFlag.values()[0];
     } else
         responseFlag = pResponseFlag;
@@ -169,7 +169,7 @@ public AcknowledgeResponseFlag getResponseFlag()
 {
     if (responseFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration AcknowledgeResponseFlag.values()[0]=" + AcknowledgeResponseFlag.values()[0]);
         responseFlag = AcknowledgeResponseFlag.values()[0];
     }
     return responseFlag; 

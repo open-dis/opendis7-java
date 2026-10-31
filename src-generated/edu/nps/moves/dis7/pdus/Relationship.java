@@ -56,7 +56,7 @@ public synchronized Relationship setNature(IsPartOfNature pNature)
 {
     if (pNature == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfNature pNature == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IsPartOfNature pNature == null, ignored by setting default enumeration IsPartOfNature.values()[0]=" + IsPartOfNature.values()[0]);
         nature = IsPartOfNature.values()[0];
     } else
         nature = pNature;
@@ -69,7 +69,7 @@ public IsPartOfNature getNature()
 {
     if (nature == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration IsPartOfNature.values()[0]=" + IsPartOfNature.values()[0]);
         nature = IsPartOfNature.values()[0];
     }
     return nature; 
@@ -82,7 +82,7 @@ public synchronized Relationship setPosition(IsPartOfPosition pPosition)
 {
     if (pPosition == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfPosition pPosition == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IsPartOfPosition pPosition == null, ignored by setting default enumeration IsPartOfPosition.values()[0]=" + IsPartOfPosition.values()[0]);
         position = IsPartOfPosition.values()[0];
     } else
         position = pPosition;
@@ -95,7 +95,7 @@ public IsPartOfPosition getPosition()
 {
     if (position == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration IsPartOfPosition.values()[0]=" + IsPartOfPosition.values()[0]);
         position = IsPartOfPosition.values()[0];
     }
     return position; 

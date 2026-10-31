@@ -185,7 +185,7 @@ public synchronized EnvironmentalProcessPdu setModelType(EnvironmentalProcessMod
 {
     if (pModelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessModelType pModelType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessModelType pModelType == null, ignored by setting default enumeration EnvironmentalProcessModelType.values()[0]=" + EnvironmentalProcessModelType.values()[0]);
         modelType = EnvironmentalProcessModelType.values()[0];
     } else
         modelType = pModelType;
@@ -198,7 +198,7 @@ public EnvironmentalProcessModelType getModelType()
 {
     if (modelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration EnvironmentalProcessModelType.values()[0]=" + EnvironmentalProcessModelType.values()[0]);
         modelType = EnvironmentalProcessModelType.values()[0];
     }
     return modelType; 

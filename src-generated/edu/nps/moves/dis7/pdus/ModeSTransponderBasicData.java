@@ -137,7 +137,7 @@ public synchronized ModeSTransponderBasicData setAircraftPresentDomain(AircraftP
 {
     if (pAircraftPresentDomain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftPresentDomain pAircraftPresentDomain == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AircraftPresentDomain pAircraftPresentDomain == null, ignored by setting default enumeration AircraftPresentDomain.values()[0]=" + AircraftPresentDomain.values()[0]);
         aircraftPresentDomain = AircraftPresentDomain.values()[0];
     } else
         aircraftPresentDomain = pAircraftPresentDomain;
@@ -150,7 +150,7 @@ public AircraftPresentDomain getAircraftPresentDomain()
 {
     if (aircraftPresentDomain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration AircraftPresentDomain.values()[0]=" + AircraftPresentDomain.values()[0]);
         aircraftPresentDomain = AircraftPresentDomain.values()[0];
     }
     return aircraftPresentDomain; 
@@ -200,7 +200,7 @@ public synchronized ModeSTransponderBasicData setAircraftIdentificationType(Airc
 {
     if (pAircraftIdentificationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftIdentificationType pAircraftIdentificationType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AircraftIdentificationType pAircraftIdentificationType == null, ignored by setting default enumeration AircraftIdentificationType.values()[0]=" + AircraftIdentificationType.values()[0]);
         aircraftIdentificationType = AircraftIdentificationType.values()[0];
     } else
         aircraftIdentificationType = pAircraftIdentificationType;
@@ -213,7 +213,7 @@ public AircraftIdentificationType getAircraftIdentificationType()
 {
     if (aircraftIdentificationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration AircraftIdentificationType.values()[0]=" + AircraftIdentificationType.values()[0]);
         aircraftIdentificationType = AircraftIdentificationType.values()[0];
     }
     return aircraftIdentificationType; 
@@ -270,7 +270,7 @@ public synchronized ModeSTransponderBasicData setCapabilityReport(CapabilityRepo
 {
     if (pCapabilityReport == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CapabilityReport pCapabilityReport == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype CapabilityReport pCapabilityReport == null, ignored by setting default enumeration CapabilityReport.values()[0]=" + CapabilityReport.values()[0]);
         capabilityReport = CapabilityReport.values()[0];
     } else
         capabilityReport = pCapabilityReport;
@@ -283,7 +283,7 @@ public CapabilityReport getCapabilityReport()
 {
     if (capabilityReport == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration CapabilityReport.values()[0]=" + CapabilityReport.values()[0]);
         capabilityReport = CapabilityReport.values()[0];
     }
     return capabilityReport; 

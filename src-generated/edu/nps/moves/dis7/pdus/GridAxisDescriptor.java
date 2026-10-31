@@ -141,7 +141,7 @@ public synchronized GridAxisDescriptor setAxisType(GridAxisDescriptorAxisType pA
 {
     if (pAxisType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GridAxisDescriptorAxisType pAxisType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType pAxisType == null, ignored by setting default enumeration GridAxisDescriptorAxisType.values()[0]=" + GridAxisDescriptorAxisType.values()[0]);
         axisType = GridAxisDescriptorAxisType.values()[0];
     } else
         axisType = pAxisType;
@@ -154,7 +154,7 @@ public GridAxisDescriptorAxisType getAxisType()
 {
     if (axisType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration GridAxisDescriptorAxisType.values()[0]=" + GridAxisDescriptorAxisType.values()[0]);
         axisType = GridAxisDescriptorAxisType.values()[0];
     }
     return axisType; 

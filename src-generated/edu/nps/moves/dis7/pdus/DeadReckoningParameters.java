@@ -66,7 +66,7 @@ public synchronized DeadReckoningParameters setDeadReckoningAlgorithm(DeadReckon
 {
     if (pDeadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
         deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     } else
         deadReckoningAlgorithm = pDeadReckoningAlgorithm;
@@ -79,7 +79,7 @@ public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
         deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     }
     return deadReckoningAlgorithm; 

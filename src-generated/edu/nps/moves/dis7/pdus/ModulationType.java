@@ -86,7 +86,7 @@ public synchronized ModulationType setMajorModulation(TransmitterMajorModulation
 {
     if (pMajorModulation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterMajorModulation pMajorModulation == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterMajorModulation pMajorModulation == null, ignored by setting default enumeration TransmitterMajorModulation.values()[0]=" + TransmitterMajorModulation.values()[0]);
         majorModulation = TransmitterMajorModulation.values()[0];
     } else
         majorModulation = pMajorModulation;
@@ -99,7 +99,7 @@ public TransmitterMajorModulation getMajorModulation()
 {
     if (majorModulation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterMajorModulation majorModulation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterMajorModulation majorModulation == null, ignored by returning default enumeration TransmitterMajorModulation.values()[0]=" + TransmitterMajorModulation.values()[0]);
         majorModulation = TransmitterMajorModulation.values()[0];
     }
     return majorModulation; 
@@ -134,7 +134,7 @@ public synchronized ModulationType setRadioSystem(TransmitterModulationTypeSyste
 {
     if (pRadioSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterModulationTypeSystem pRadioSystem == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterModulationTypeSystem pRadioSystem == null, ignored by setting default enumeration TransmitterModulationTypeSystem.values()[0]=" + TransmitterModulationTypeSystem.values()[0]);
         radioSystem = TransmitterModulationTypeSystem.values()[0];
     } else
         radioSystem = pRadioSystem;
@@ -147,7 +147,7 @@ public TransmitterModulationTypeSystem getRadioSystem()
 {
     if (radioSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterModulationTypeSystem radioSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterModulationTypeSystem radioSystem == null, ignored by returning default enumeration TransmitterModulationTypeSystem.values()[0]=" + TransmitterModulationTypeSystem.values()[0]);
         radioSystem = TransmitterModulationTypeSystem.values()[0];
     }
     return radioSystem; 

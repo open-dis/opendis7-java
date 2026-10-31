@@ -174,7 +174,7 @@ public synchronized DataRPdu setRequiredReliabilityService(RequiredReliabilitySe
 {
     if (pRequiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     } else
         requiredReliabilityService = pRequiredReliabilityService;
@@ -187,7 +187,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 

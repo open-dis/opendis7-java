@@ -160,7 +160,7 @@ public synchronized StopFreezeRPdu setReason(StopFreezeReason pReason)
 {
     if (pReason == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype StopFreezeReason pReason == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype StopFreezeReason pReason == null, ignored by setting default enumeration StopFreezeReason.values()[0]=" + StopFreezeReason.values()[0]);
         reason = StopFreezeReason.values()[0];
     } else
         reason = pReason;
@@ -173,7 +173,7 @@ public StopFreezeReason getReason()
 {
     if (reason == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration StopFreezeReason.values()[0]=" + StopFreezeReason.values()[0]);
         reason = StopFreezeReason.values()[0];
     }
     return reason; 
@@ -206,7 +206,7 @@ public synchronized StopFreezeRPdu setRequiredReliabilityService(RequiredReliabi
 {
     if (pRequiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     } else
         requiredReliabilityService = pRequiredReliabilityService;
@@ -219,7 +219,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 

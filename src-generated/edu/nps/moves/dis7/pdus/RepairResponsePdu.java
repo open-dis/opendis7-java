@@ -171,7 +171,7 @@ public synchronized RepairResponsePdu setRepairResult(RepairResponseRepairResult
 {
     if (pRepairResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairResponseRepairResult pRepairResult == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RepairResponseRepairResult pRepairResult == null, ignored by setting default enumeration RepairResponseRepairResult.values()[0]=" + RepairResponseRepairResult.values()[0]);
         repairResult = RepairResponseRepairResult.values()[0];
     } else
         repairResult = pRepairResult;
@@ -184,7 +184,7 @@ public RepairResponseRepairResult getRepairResult()
 {
     if (repairResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration RepairResponseRepairResult.values()[0]=" + RepairResponseRepairResult.values()[0]);
         repairResult = RepairResponseRepairResult.values()[0];
     }
     return repairResult; 

@@ -55,7 +55,7 @@ public synchronized FixedDatum setFixedDatumID(VariableRecordType pFixedDatumID)
 {
     if (pFixedDatumID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType pFixedDatumID == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType pFixedDatumID == null, ignored by setting default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         fixedDatumID = VariableRecordType.values()[0];
     } else
         fixedDatumID = pFixedDatumID;
@@ -68,7 +68,7 @@ public VariableRecordType getFixedDatumID()
 {
     if (fixedDatumID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType fixedDatumID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType fixedDatumID == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         fixedDatumID = VariableRecordType.values()[0];
     }
     return fixedDatumID; 

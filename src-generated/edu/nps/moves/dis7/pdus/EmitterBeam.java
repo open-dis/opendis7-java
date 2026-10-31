@@ -199,7 +199,7 @@ public synchronized EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunct
 {
     if (pBeamFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction pBeamFunction == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction pBeamFunction == null, ignored by setting default enumeration ElectromagneticEmissionBeamFunction.values()[0]=" + ElectromagneticEmissionBeamFunction.values()[0]);
         beamFunction = ElectromagneticEmissionBeamFunction.values()[0];
     } else
         beamFunction = pBeamFunction;
@@ -212,7 +212,7 @@ public ElectromagneticEmissionBeamFunction getBeamFunction()
 {
     if (beamFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration ElectromagneticEmissionBeamFunction.values()[0]=" + ElectromagneticEmissionBeamFunction.values()[0]);
         beamFunction = ElectromagneticEmissionBeamFunction.values()[0];
     }
     return beamFunction; 
@@ -225,7 +225,7 @@ public synchronized EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHigh
 {
     if (pHighDensityTrackJam == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype HighDensityTrackJam pHighDensityTrackJam == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype HighDensityTrackJam pHighDensityTrackJam == null, ignored by setting default enumeration HighDensityTrackJam.values()[0]=" + HighDensityTrackJam.values()[0]);
         highDensityTrackJam = HighDensityTrackJam.values()[0];
     } else
         highDensityTrackJam = pHighDensityTrackJam;
@@ -238,7 +238,7 @@ public HighDensityTrackJam getHighDensityTrackJam()
 {
     if (highDensityTrackJam == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration HighDensityTrackJam.values()[0]=" + HighDensityTrackJam.values()[0]);
         highDensityTrackJam = HighDensityTrackJam.values()[0];
     }
     return highDensityTrackJam; 

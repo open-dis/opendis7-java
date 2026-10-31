@@ -56,7 +56,7 @@ public synchronized AggregateMarking setCharacterSet(EntityMarkingCharacterSet p
 {
     if (pCharacterSet == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityMarkingCharacterSet pCharacterSet == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EntityMarkingCharacterSet pCharacterSet == null, ignored by setting default enumeration EntityMarkingCharacterSet.values()[0]=" + EntityMarkingCharacterSet.values()[0]);
         characterSet = EntityMarkingCharacterSet.values()[0];
     } else
         characterSet = pCharacterSet;
@@ -69,7 +69,7 @@ public EntityMarkingCharacterSet getCharacterSet()
 {
     if (characterSet == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityMarkingCharacterSet characterSet == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityMarkingCharacterSet characterSet == null, ignored by returning default enumeration EntityMarkingCharacterSet.values()[0]=" + EntityMarkingCharacterSet.values()[0]);
         characterSet = EntityMarkingCharacterSet.values()[0];
     }
     return characterSet; 

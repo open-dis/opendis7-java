@@ -215,7 +215,7 @@ public synchronized UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeU
 {
     if (pStateChangeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAStateChangeUpdateIndicator pStateChangeIndicator == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator pStateChangeIndicator == null, ignored by setting default enumeration UAStateChangeUpdateIndicator.values()[0]=" + UAStateChangeUpdateIndicator.values()[0]);
         stateChangeIndicator = UAStateChangeUpdateIndicator.values()[0];
     } else
         stateChangeIndicator = pStateChangeIndicator;
@@ -228,7 +228,7 @@ public UAStateChangeUpdateIndicator getStateChangeIndicator()
 {
     if (stateChangeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration UAStateChangeUpdateIndicator.values()[0]=" + UAStateChangeUpdateIndicator.values()[0]);
         stateChangeIndicator = UAStateChangeUpdateIndicator.values()[0];
     }
     return stateChangeIndicator; 
@@ -263,7 +263,7 @@ public synchronized UnderwaterAcousticPdu setPassiveParameterIndex(UAPassivePara
 {
     if (pPassiveParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAPassiveParameterIndex pPassiveParameterIndex == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAPassiveParameterIndex pPassiveParameterIndex == null, ignored by setting default enumeration UAPassiveParameterIndex.values()[0]=" + UAPassiveParameterIndex.values()[0]);
         passiveParameterIndex = UAPassiveParameterIndex.values()[0];
     } else
         passiveParameterIndex = pPassiveParameterIndex;
@@ -276,7 +276,7 @@ public UAPassiveParameterIndex getPassiveParameterIndex()
 {
     if (passiveParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration UAPassiveParameterIndex.values()[0]=" + UAPassiveParameterIndex.values()[0]);
         passiveParameterIndex = UAPassiveParameterIndex.values()[0];
     }
     return passiveParameterIndex; 

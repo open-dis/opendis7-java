@@ -85,7 +85,7 @@ public synchronized MunitionDescriptor setWarhead(MunitionDescriptorWarhead pWar
 {
     if (pWarhead == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorWarhead pWarhead == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorWarhead pWarhead == null, ignored by setting default enumeration MunitionDescriptorWarhead.values()[0]=" + MunitionDescriptorWarhead.values()[0]);
         warhead = MunitionDescriptorWarhead.values()[0];
     } else
         warhead = pWarhead;
@@ -98,7 +98,7 @@ public MunitionDescriptorWarhead getWarhead()
 {
     if (warhead == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration MunitionDescriptorWarhead.values()[0]=" + MunitionDescriptorWarhead.values()[0]);
         warhead = MunitionDescriptorWarhead.values()[0];
     }
     return warhead; 
@@ -111,7 +111,7 @@ public synchronized MunitionDescriptor setFuse(MunitionDescriptorFuse pFuse)
 {
     if (pFuse == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorFuse pFuse == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorFuse pFuse == null, ignored by setting default enumeration MunitionDescriptorFuse.values()[0]=" + MunitionDescriptorFuse.values()[0]);
         fuse = MunitionDescriptorFuse.values()[0];
     } else
         fuse = pFuse;
@@ -124,7 +124,7 @@ public MunitionDescriptorFuse getFuse()
 {
     if (fuse == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration MunitionDescriptorFuse.values()[0]=" + MunitionDescriptorFuse.values()[0]);
         fuse = MunitionDescriptorFuse.values()[0];
     }
     return fuse; 

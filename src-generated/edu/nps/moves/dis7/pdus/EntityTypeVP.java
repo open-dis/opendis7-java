@@ -69,7 +69,7 @@ public synchronized EntityTypeVP setRecordType(VariableParameterRecordType pReco
 {
     if (pRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
         recordType = VariableParameterRecordType.values()[0];
     } else
         recordType = pRecordType;
@@ -82,7 +82,7 @@ public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
         recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
@@ -95,7 +95,7 @@ public synchronized EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicato
 {
     if (pChangeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityVPRecordChangeIndicator pChangeIndicator == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator pChangeIndicator == null, ignored by setting default enumeration EntityVPRecordChangeIndicator.values()[0]=" + EntityVPRecordChangeIndicator.values()[0]);
         changeIndicator = EntityVPRecordChangeIndicator.values()[0];
     } else
         changeIndicator = pChangeIndicator;
@@ -108,7 +108,7 @@ public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     if (changeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration EntityVPRecordChangeIndicator.values()[0]=" + EntityVPRecordChangeIndicator.values()[0]);
         changeIndicator = EntityVPRecordChangeIndicator.values()[0];
     }
     return changeIndicator; 

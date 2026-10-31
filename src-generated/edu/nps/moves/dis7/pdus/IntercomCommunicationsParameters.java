@@ -66,7 +66,7 @@ public synchronized IntercomCommunicationsParameters setRecordType(IntercomContr
 {
     if (pRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlRecordType pRecordType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IntercomControlRecordType pRecordType == null, ignored by setting default enumeration IntercomControlRecordType.values()[0]=" + IntercomControlRecordType.values()[0]);
         recordType = IntercomControlRecordType.values()[0];
     } else
         recordType = pRecordType;
@@ -79,7 +79,7 @@ public IntercomControlRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration IntercomControlRecordType.values()[0]=" + IntercomControlRecordType.values()[0]);
         recordType = IntercomControlRecordType.values()[0];
     }
     return recordType; 

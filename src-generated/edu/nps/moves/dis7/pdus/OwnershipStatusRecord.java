@@ -76,7 +76,7 @@ public synchronized OwnershipStatusRecord setOwnershipStatus(OwnershipStatus pOw
 {
     if (pOwnershipStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype OwnershipStatus pOwnershipStatus == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype OwnershipStatus pOwnershipStatus == null, ignored by setting default enumeration OwnershipStatus.values()[0]=" + OwnershipStatus.values()[0]);
         ownershipStatus = OwnershipStatus.values()[0];
     } else
         ownershipStatus = pOwnershipStatus;
@@ -89,7 +89,7 @@ public OwnershipStatus getOwnershipStatus()
 {
     if (ownershipStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration OwnershipStatus.values()[0]=" + OwnershipStatus.values()[0]);
         ownershipStatus = OwnershipStatus.values()[0];
     }
     return ownershipStatus; 

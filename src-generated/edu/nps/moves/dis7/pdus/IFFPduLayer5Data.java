@@ -194,7 +194,7 @@ public synchronized IFFPduLayer5Data setDataCategory(DataCategory pDataCategory)
 {
     if (pDataCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DataCategory pDataCategory == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DataCategory pDataCategory == null, ignored by setting default enumeration DataCategory.values()[0]=" + DataCategory.values()[0]);
         dataCategory = DataCategory.values()[0];
     } else
         dataCategory = pDataCategory;
@@ -207,7 +207,7 @@ public DataCategory getDataCategory()
 {
     if (dataCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration DataCategory.values()[0]=" + DataCategory.values()[0]);
         dataCategory = DataCategory.values()[0];
     }
     return dataCategory; 

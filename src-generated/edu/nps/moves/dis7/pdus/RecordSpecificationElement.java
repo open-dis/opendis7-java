@@ -77,7 +77,7 @@ public synchronized RecordSpecificationElement setRecordID(VariableRecordType pR
 {
     if (pRecordID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType pRecordID == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType pRecordID == null, ignored by setting default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordID = VariableRecordType.values()[0];
     } else
         recordID = pRecordID;
@@ -90,7 +90,7 @@ public VariableRecordType getRecordID()
 {
     if (recordID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordID = VariableRecordType.values()[0];
     }
     return recordID; 

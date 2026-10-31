@@ -166,7 +166,7 @@ public synchronized RecordQueryRPdu setRequiredReliabilityService(RequiredReliab
 {
     if (pRequiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     } else
         requiredReliabilityService = pRequiredReliabilityService;
@@ -179,7 +179,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
@@ -214,7 +214,7 @@ public synchronized RecordQueryRPdu setEventType(RecordQueryREventType pEventTyp
 {
     if (pEventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RecordQueryREventType pEventType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RecordQueryREventType pEventType == null, ignored by setting default enumeration RecordQueryREventType.values()[0]=" + RecordQueryREventType.values()[0]);
         eventType = RecordQueryREventType.values()[0];
     } else
         eventType = pEventType;
@@ -227,7 +227,7 @@ public RecordQueryREventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RecordQueryREventType eventType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RecordQueryREventType eventType == null, ignored by returning default enumeration RecordQueryREventType.values()[0]=" + RecordQueryREventType.values()[0]);
         eventType = RecordQueryREventType.values()[0];
     }
     return eventType; 

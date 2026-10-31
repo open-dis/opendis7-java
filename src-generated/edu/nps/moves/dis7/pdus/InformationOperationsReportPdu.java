@@ -161,7 +161,7 @@ public synchronized InformationOperationsReportPdu setIoSimSource(IOActionIOSimu
 {
     if (pIoSimSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource pIoSimSource == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource pIoSimSource == null, ignored by setting default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         ioSimSource = IOActionIOSimulationSource.values()[0];
     } else
         ioSimSource = pIoSimSource;
@@ -174,7 +174,7 @@ public IOActionIOSimulationSource getIoSimSource()
 {
     if (ioSimSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         ioSimSource = IOActionIOSimulationSource.values()[0];
     }
     return ioSimSource; 
@@ -187,7 +187,7 @@ public synchronized InformationOperationsReportPdu setIoReportType(IOReportIORep
 {
     if (pIoReportType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOReportIOReportType pIoReportType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOReportIOReportType pIoReportType == null, ignored by setting default enumeration IOReportIOReportType.values()[0]=" + IOReportIOReportType.values()[0]);
         ioReportType = IOReportIOReportType.values()[0];
     } else
         ioReportType = pIoReportType;
@@ -200,7 +200,7 @@ public IOReportIOReportType getIoReportType()
 {
     if (ioReportType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration IOReportIOReportType.values()[0]=" + IOReportIOReportType.values()[0]);
         ioReportType = IOReportIOReportType.values()[0];
     }
     return ioReportType; 

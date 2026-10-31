@@ -253,7 +253,7 @@ public synchronized AggregateStatePdu setForceID(ForceID pForceID)
 {
     if (pForceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         forceID = ForceID.values()[0];
     } else
         forceID = pForceID;
@@ -266,7 +266,7 @@ public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         forceID = ForceID.values()[0];
     }
     return forceID; 
@@ -279,7 +279,7 @@ public synchronized AggregateStatePdu setAggregateState(AggregateStateAggregateS
 {
     if (pAggregateState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateAggregateState pAggregateState == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AggregateStateAggregateState pAggregateState == null, ignored by setting default enumeration AggregateStateAggregateState.values()[0]=" + AggregateStateAggregateState.values()[0]);
         aggregateState = AggregateStateAggregateState.values()[0];
     } else
         aggregateState = pAggregateState;
@@ -292,7 +292,7 @@ public AggregateStateAggregateState getAggregateState()
 {
     if (aggregateState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateAggregateState aggregateState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateAggregateState aggregateState == null, ignored by returning default enumeration AggregateStateAggregateState.values()[0]=" + AggregateStateAggregateState.values()[0]);
         aggregateState = AggregateStateAggregateState.values()[0];
     }
     return aggregateState; 
@@ -321,7 +321,7 @@ public synchronized AggregateStatePdu setFormation(AggregateStateFormation pForm
 {
     if (pFormation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateFormation pFormation == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype AggregateStateFormation pFormation == null, ignored by setting default enumeration AggregateStateFormation.values()[0]=" + AggregateStateFormation.values()[0]);
         formation = AggregateStateFormation.values()[0];
     } else
         formation = pFormation;
@@ -334,7 +334,7 @@ public AggregateStateFormation getFormation()
 {
     if (formation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateFormation formation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype AggregateStateFormation formation == null, ignored by returning default enumeration AggregateStateFormation.values()[0]=" + AggregateStateFormation.values()[0]);
         formation = AggregateStateFormation.values()[0];
     }
     return formation; 

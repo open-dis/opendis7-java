@@ -205,7 +205,7 @@ public synchronized DirectedEnergyDamage setComponentIdentification(EntityDamage
 {
     if (pComponentIdentification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification pComponentIdentification == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification pComponentIdentification == null, ignored by setting default enumeration EntityDamageStatusComponentIdentification.values()[0]=" + EntityDamageStatusComponentIdentification.values()[0]);
         componentIdentification = EntityDamageStatusComponentIdentification.values()[0];
     } else
         componentIdentification = pComponentIdentification;
@@ -218,7 +218,7 @@ public EntityDamageStatusComponentIdentification getComponentIdentification()
 {
     if (componentIdentification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration EntityDamageStatusComponentIdentification.values()[0]=" + EntityDamageStatusComponentIdentification.values()[0]);
         componentIdentification = EntityDamageStatusComponentIdentification.values()[0];
     }
     return componentIdentification; 
@@ -231,7 +231,7 @@ public synchronized DirectedEnergyDamage setComponentDamageStatus(DEDamageDescri
 {
     if (pComponentDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus pComponentDamageStatus == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus pComponentDamageStatus == null, ignored by setting default enumeration DEDamageDescriptionComponentDamageStatus.values()[0]=" + DEDamageDescriptionComponentDamageStatus.values()[0]);
         componentDamageStatus = DEDamageDescriptionComponentDamageStatus.values()[0];
     } else
         componentDamageStatus = pComponentDamageStatus;
@@ -244,7 +244,7 @@ public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 {
     if (componentDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration DEDamageDescriptionComponentDamageStatus.values()[0]=" + DEDamageDescriptionComponentDamageStatus.values()[0]);
         componentDamageStatus = DEDamageDescriptionComponentDamageStatus.values()[0];
     }
     return componentDamageStatus; 
@@ -277,7 +277,7 @@ public synchronized DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDe
 {
     if (pComponentVisualSmokeColor == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor == null, ignored by setting default enumeration DEDamageDescriptionComponentVisualSmokeColor.values()[0]=" + DEDamageDescriptionComponentVisualSmokeColor.values()[0]);
         componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.values()[0];
     } else
         componentVisualSmokeColor = pComponentVisualSmokeColor;
@@ -290,7 +290,7 @@ public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor
 {
     if (componentVisualSmokeColor == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration DEDamageDescriptionComponentVisualSmokeColor.values()[0]=" + DEDamageDescriptionComponentVisualSmokeColor.values()[0]);
         componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.values()[0];
     }
     return componentVisualSmokeColor; 

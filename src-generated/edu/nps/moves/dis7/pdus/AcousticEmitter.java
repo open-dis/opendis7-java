@@ -60,7 +60,7 @@ public synchronized AcousticEmitter setAcousticSystemName(UAAcousticSystemName p
 {
     if (pAcousticSystemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticSystemName pAcousticSystemName == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAAcousticSystemName pAcousticSystemName == null, ignored by setting default enumeration UAAcousticSystemName.values()[0]=" + UAAcousticSystemName.values()[0]);
         acousticSystemName = UAAcousticSystemName.values()[0];
     } else
         acousticSystemName = pAcousticSystemName;
@@ -73,7 +73,7 @@ public UAAcousticSystemName getAcousticSystemName()
 {
     if (acousticSystemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration UAAcousticSystemName.values()[0]=" + UAAcousticSystemName.values()[0]);
         acousticSystemName = UAAcousticSystemName.values()[0];
     }
     return acousticSystemName; 
@@ -86,7 +86,7 @@ public synchronized AcousticEmitter setAcousticFunction(UAAcousticEmitterSystemF
 {
     if (pAcousticFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction pAcousticFunction == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction pAcousticFunction == null, ignored by setting default enumeration UAAcousticEmitterSystemFunction.values()[0]=" + UAAcousticEmitterSystemFunction.values()[0]);
         acousticFunction = UAAcousticEmitterSystemFunction.values()[0];
     } else
         acousticFunction = pAcousticFunction;
@@ -99,7 +99,7 @@ public UAAcousticEmitterSystemFunction getAcousticFunction()
 {
     if (acousticFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration UAAcousticEmitterSystemFunction.values()[0]=" + UAAcousticEmitterSystemFunction.values()[0]);
         acousticFunction = UAAcousticEmitterSystemFunction.values()[0];
     }
     return acousticFunction; 

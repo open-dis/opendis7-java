@@ -273,7 +273,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionA
 {
     if (pBeamSpotType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType pBeamSpotType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType pBeamSpotType == null, ignored by setting default enumeration DEPrecisionAimpointBeamSpotType.values()[0]=" + DEPrecisionAimpointBeamSpotType.values()[0]);
         beamSpotType = DEPrecisionAimpointBeamSpotType.values()[0];
     } else
         beamSpotType = pBeamSpotType;
@@ -286,7 +286,7 @@ public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 {
     if (beamSpotType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration DEPrecisionAimpointBeamSpotType.values()[0]=" + DEPrecisionAimpointBeamSpotType.values()[0]);
         beamSpotType = DEPrecisionAimpointBeamSpotType.values()[0];
     }
     return beamSpotType; 

@@ -72,7 +72,7 @@ public synchronized Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSourc
 {
     if (pSensorTypeSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorTypeSource pSensorTypeSource == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype SensorTypeSource pSensorTypeSource == null, ignored by setting default enumeration SensorTypeSource.values()[0]=" + SensorTypeSource.values()[0]);
         sensorTypeSource = SensorTypeSource.values()[0];
     } else
         sensorTypeSource = pSensorTypeSource;
@@ -85,7 +85,7 @@ public SensorTypeSource getSensorTypeSource()
 {
     if (sensorTypeSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorTypeSource sensorTypeSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype SensorTypeSource sensorTypeSource == null, ignored by returning default enumeration SensorTypeSource.values()[0]=" + SensorTypeSource.values()[0]);
         sensorTypeSource = SensorTypeSource.values()[0];
     }
     return sensorTypeSource; 
@@ -98,7 +98,7 @@ public synchronized Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffSt
 {
     if (pSensorOnOffStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorOnOffStatus pSensorOnOffStatus == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype SensorOnOffStatus pSensorOnOffStatus == null, ignored by setting default enumeration SensorOnOffStatus.values()[0]=" + SensorOnOffStatus.values()[0]);
         sensorOnOffStatus = SensorOnOffStatus.values()[0];
     } else
         sensorOnOffStatus = pSensorOnOffStatus;
@@ -111,7 +111,7 @@ public SensorOnOffStatus getSensorOnOffStatus()
 {
     if (sensorOnOffStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorOnOffStatus sensorOnOffStatus == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype SensorOnOffStatus sensorOnOffStatus == null, ignored by returning default enumeration SensorOnOffStatus.values()[0]=" + SensorOnOffStatus.values()[0]);
         sensorOnOffStatus = SensorOnOffStatus.values()[0];
     }
     return sensorOnOffStatus; 

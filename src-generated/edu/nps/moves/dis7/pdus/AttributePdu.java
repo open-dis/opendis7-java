@@ -219,7 +219,7 @@ public synchronized AttributePdu setAttributeRecordPduType(DisPduType pAttribute
 {
     if (pAttributeRecordPduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType pAttributeRecordPduType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DisPduType pAttributeRecordPduType == null, ignored by setting default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         attributeRecordPduType = DisPduType.values()[0];
     } else
         attributeRecordPduType = pAttributeRecordPduType;
@@ -232,7 +232,7 @@ public DisPduType getAttributeRecordPduType()
 {
     if (attributeRecordPduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         attributeRecordPduType = DisPduType.values()[0];
     }
     return attributeRecordPduType; 
@@ -245,7 +245,7 @@ public synchronized AttributePdu setAttributeRecordProtocolVersion(DISProtocolFa
 {
     if (pAttributeRecordProtocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily pAttributeRecordProtocolVersion == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily pAttributeRecordProtocolVersion == null, ignored by setting default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
     } else
         attributeRecordProtocolVersion = pAttributeRecordProtocolVersion;
@@ -258,7 +258,7 @@ public DISProtocolFamily getAttributeRecordProtocolVersion()
 {
     if (attributeRecordProtocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
     }
     return attributeRecordProtocolVersion; 
@@ -271,7 +271,7 @@ public synchronized AttributePdu setMasterAttributeRecordType(VariableRecordType
 {
     if (pMasterAttributeRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType pMasterAttributeRecordType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType pMasterAttributeRecordType == null, ignored by setting default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         masterAttributeRecordType = VariableRecordType.values()[0];
     } else
         masterAttributeRecordType = pMasterAttributeRecordType;
@@ -284,7 +284,7 @@ public VariableRecordType getMasterAttributeRecordType()
 {
     if (masterAttributeRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         masterAttributeRecordType = VariableRecordType.values()[0];
     }
     return masterAttributeRecordType; 
@@ -297,7 +297,7 @@ public synchronized AttributePdu setActionCode(DISAttributeActionCode pActionCod
 {
     if (pActionCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISAttributeActionCode pActionCode == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DISAttributeActionCode pActionCode == null, ignored by setting default enumeration DISAttributeActionCode.values()[0]=" + DISAttributeActionCode.values()[0]);
         actionCode = DISAttributeActionCode.values()[0];
     } else
         actionCode = pActionCode;
@@ -310,7 +310,7 @@ public DISAttributeActionCode getActionCode()
 {
     if (actionCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration DISAttributeActionCode.values()[0]=" + DISAttributeActionCode.values()[0]);
         actionCode = DISAttributeActionCode.values()[0];
     }
     return actionCode; 

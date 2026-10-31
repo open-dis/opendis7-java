@@ -66,7 +66,7 @@ public synchronized SystemIdentifier setSystemType(IFFSystemType pSystemType)
 {
     if (pSystemType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemType pSystemType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IFFSystemType pSystemType == null, ignored by setting default enumeration IFFSystemType.values()[0]=" + IFFSystemType.values()[0]);
         systemType = IFFSystemType.values()[0];
     } else
         systemType = pSystemType;
@@ -79,7 +79,7 @@ public IFFSystemType getSystemType()
 {
     if (systemType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemType systemType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IFFSystemType systemType == null, ignored by returning default enumeration IFFSystemType.values()[0]=" + IFFSystemType.values()[0]);
         systemType = IFFSystemType.values()[0];
     }
     return systemType; 
@@ -92,7 +92,7 @@ public synchronized SystemIdentifier setSystemName(IFFSystemName pSystemName)
 {
     if (pSystemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemName pSystemName == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IFFSystemName pSystemName == null, ignored by setting default enumeration IFFSystemName.values()[0]=" + IFFSystemName.values()[0]);
         systemName = IFFSystemName.values()[0];
     } else
         systemName = pSystemName;
@@ -105,7 +105,7 @@ public IFFSystemName getSystemName()
 {
     if (systemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemName systemName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IFFSystemName systemName == null, ignored by returning default enumeration IFFSystemName.values()[0]=" + IFFSystemName.values()[0]);
         systemName = IFFSystemName.values()[0];
     }
     return systemName; 
@@ -118,7 +118,7 @@ public synchronized SystemIdentifier setSystemMode(IFFSystemMode pSystemMode)
 {
     if (pSystemMode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemMode pSystemMode == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IFFSystemMode pSystemMode == null, ignored by setting default enumeration IFFSystemMode.values()[0]=" + IFFSystemMode.values()[0]);
         systemMode = IFFSystemMode.values()[0];
     } else
         systemMode = pSystemMode;
@@ -131,7 +131,7 @@ public IFFSystemMode getSystemMode()
 {
     if (systemMode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemMode systemMode == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IFFSystemMode systemMode == null, ignored by returning default enumeration IFFSystemMode.values()[0]=" + IFFSystemMode.values()[0]);
         systemMode = IFFSystemMode.values()[0];
     }
     return systemMode; 

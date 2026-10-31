@@ -180,7 +180,7 @@ public synchronized ServiceRequestPdu setServiceTypeRequested(ServiceRequestServ
 {
     if (pServiceTypeRequested == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested pServiceTypeRequested == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested pServiceTypeRequested == null, ignored by setting default enumeration ServiceRequestServiceTypeRequested.values()[0]=" + ServiceRequestServiceTypeRequested.values()[0]);
         serviceTypeRequested = ServiceRequestServiceTypeRequested.values()[0];
     } else
         serviceTypeRequested = pServiceTypeRequested;
@@ -193,7 +193,7 @@ public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 {
     if (serviceTypeRequested == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration ServiceRequestServiceTypeRequested.values()[0]=" + ServiceRequestServiceTypeRequested.values()[0]);
         serviceTypeRequested = ServiceRequestServiceTypeRequested.values()[0];
     }
     return serviceTypeRequested; 

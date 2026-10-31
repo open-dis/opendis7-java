@@ -134,7 +134,7 @@ public synchronized BeamAntennaPattern setReferenceSystem(TransmitterAntennaPatt
 {
     if (pReferenceSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem pReferenceSystem == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem pReferenceSystem == null, ignored by setting default enumeration TransmitterAntennaPatternReferenceSystem.values()[0]=" + TransmitterAntennaPatternReferenceSystem.values()[0]);
         referenceSystem = TransmitterAntennaPatternReferenceSystem.values()[0];
     } else
         referenceSystem = pReferenceSystem;
@@ -147,7 +147,7 @@ public TransmitterAntennaPatternReferenceSystem getReferenceSystem()
 {
     if (referenceSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem referenceSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterAntennaPatternReferenceSystem referenceSystem == null, ignored by returning default enumeration TransmitterAntennaPatternReferenceSystem.values()[0]=" + TransmitterAntennaPatternReferenceSystem.values()[0]);
         referenceSystem = TransmitterAntennaPatternReferenceSystem.values()[0];
     }
     return referenceSystem; 

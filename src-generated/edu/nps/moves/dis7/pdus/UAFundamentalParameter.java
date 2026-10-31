@@ -72,7 +72,7 @@ public synchronized UAFundamentalParameter setActiveEmissionParameterIndex(UAAct
 {
     if (pActiveEmissionParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAActiveEmissionParameterIndex pActiveEmissionParameterIndex == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex pActiveEmissionParameterIndex == null, ignored by setting default enumeration UAActiveEmissionParameterIndex.values()[0]=" + UAActiveEmissionParameterIndex.values()[0]);
         activeEmissionParameterIndex = UAActiveEmissionParameterIndex.values()[0];
     } else
         activeEmissionParameterIndex = pActiveEmissionParameterIndex;
@@ -85,7 +85,7 @@ public UAActiveEmissionParameterIndex getActiveEmissionParameterIndex()
 {
     if (activeEmissionParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration UAActiveEmissionParameterIndex.values()[0]=" + UAActiveEmissionParameterIndex.values()[0]);
         activeEmissionParameterIndex = UAActiveEmissionParameterIndex.values()[0];
     }
     return activeEmissionParameterIndex; 
@@ -98,7 +98,7 @@ public synchronized UAFundamentalParameter setScanPattern(UAScanPattern pScanPat
 {
     if (pScanPattern == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAScanPattern pScanPattern == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype UAScanPattern pScanPattern == null, ignored by setting default enumeration UAScanPattern.values()[0]=" + UAScanPattern.values()[0]);
         scanPattern = UAScanPattern.values()[0];
     } else
         scanPattern = pScanPattern;
@@ -111,7 +111,7 @@ public UAScanPattern getScanPattern()
 {
     if (scanPattern == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration UAScanPattern.values()[0]=" + UAScanPattern.values()[0]);
         scanPattern = UAScanPattern.values()[0];
     }
     return scanPattern; 

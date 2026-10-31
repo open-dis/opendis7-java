@@ -390,7 +390,7 @@ public synchronized DirectedEnergyFirePdu setPulseShape(DEFirePulseShape pPulseS
 {
     if (pPulseShape == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEFirePulseShape pPulseShape == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DEFirePulseShape pPulseShape == null, ignored by setting default enumeration DEFirePulseShape.values()[0]=" + DEFirePulseShape.values()[0]);
         pulseShape = DEFirePulseShape.values()[0];
     } else
         pulseShape = pPulseShape;
@@ -403,7 +403,7 @@ public DEFirePulseShape getPulseShape()
 {
     if (pulseShape == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration DEFirePulseShape.values()[0]=" + DEFirePulseShape.values()[0]);
         pulseShape = DEFirePulseShape.values()[0];
     }
     return pulseShape; 

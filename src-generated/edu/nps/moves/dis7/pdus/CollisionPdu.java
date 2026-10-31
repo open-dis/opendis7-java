@@ -202,7 +202,7 @@ public synchronized CollisionPdu setCollisionType(CollisionType pCollisionType)
 {
     if (pCollisionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CollisionType pCollisionType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype CollisionType pCollisionType == null, ignored by setting default enumeration CollisionType.values()[0]=" + CollisionType.values()[0]);
         collisionType = CollisionType.values()[0];
     } else
         collisionType = pCollisionType;
@@ -215,7 +215,7 @@ public CollisionType getCollisionType()
 {
     if (collisionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration CollisionType.values()[0]=" + CollisionType.values()[0]);
         collisionType = CollisionType.values()[0];
     }
     return collisionType; 

@@ -167,7 +167,7 @@ public synchronized IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntity
 {
     if (pGroupedEntityCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory pGroupedEntityCategory == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory pGroupedEntityCategory == null, ignored by setting default enumeration IsGroupOfGroupedEntityCategory.values()[0]=" + IsGroupOfGroupedEntityCategory.values()[0]);
         groupedEntityCategory = IsGroupOfGroupedEntityCategory.values()[0];
     } else
         groupedEntityCategory = pGroupedEntityCategory;
@@ -180,7 +180,7 @@ public IsGroupOfGroupedEntityCategory getGroupedEntityCategory()
 {
     if (groupedEntityCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory groupedEntityCategory == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory groupedEntityCategory == null, ignored by returning default enumeration IsGroupOfGroupedEntityCategory.values()[0]=" + IsGroupOfGroupedEntityCategory.values()[0]);
         groupedEntityCategory = IsGroupOfGroupedEntityCategory.values()[0];
     }
     return groupedEntityCategory; 

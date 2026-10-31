@@ -230,7 +230,7 @@ public synchronized ArealObjectStatePdu setForceID(ForceID pForceID)
 {
     if (pForceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         forceID = ForceID.values()[0];
     } else
         forceID = pForceID;
@@ -243,7 +243,7 @@ public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
         forceID = ForceID.values()[0];
     }
     return forceID; 

@@ -202,7 +202,7 @@ public synchronized BlankingSector setStateIndicator(EEAttributeStateIndicator p
 {
     if (pStateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EEAttributeStateIndicator pStateIndicator == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EEAttributeStateIndicator pStateIndicator == null, ignored by setting default enumeration EEAttributeStateIndicator.values()[0]=" + EEAttributeStateIndicator.values()[0]);
         stateIndicator = EEAttributeStateIndicator.values()[0];
     } else
         stateIndicator = pStateIndicator;
@@ -215,7 +215,7 @@ public EEAttributeStateIndicator getStateIndicator()
 {
     if (stateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration EEAttributeStateIndicator.values()[0]=" + EEAttributeStateIndicator.values()[0]);
         stateIndicator = EEAttributeStateIndicator.values()[0];
     }
     return stateIndicator; 

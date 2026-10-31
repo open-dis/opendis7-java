@@ -207,7 +207,7 @@ public synchronized InformationOperationsActionPdu setIOWarfareType(IOActionIOWa
 {
     if (pIOWarfareType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOWarfareType pIOWarfareType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOActionIOWarfareType pIOWarfareType == null, ignored by setting default enumeration IOActionIOWarfareType.values()[0]=" + IOActionIOWarfareType.values()[0]);
         IOWarfareType = IOActionIOWarfareType.values()[0];
     } else
         IOWarfareType = pIOWarfareType;
@@ -220,7 +220,7 @@ public IOActionIOWarfareType getIOWarfareType()
 {
     if (IOWarfareType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration IOActionIOWarfareType.values()[0]=" + IOActionIOWarfareType.values()[0]);
         IOWarfareType = IOActionIOWarfareType.values()[0];
     }
     return IOWarfareType; 
@@ -233,7 +233,7 @@ public synchronized InformationOperationsActionPdu setIOSimulationSource(IOActio
 {
     if (pIOSimulationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource pIOSimulationSource == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource pIOSimulationSource == null, ignored by setting default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         IOSimulationSource = IOActionIOSimulationSource.values()[0];
     } else
         IOSimulationSource = pIOSimulationSource;
@@ -246,7 +246,7 @@ public IOActionIOSimulationSource getIOSimulationSource()
 {
     if (IOSimulationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
         IOSimulationSource = IOActionIOSimulationSource.values()[0];
     }
     return IOSimulationSource; 
@@ -259,7 +259,7 @@ public synchronized InformationOperationsActionPdu setIOActionType(IOActionIOAct
 {
     if (pIOActionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionType pIOActionType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionType pIOActionType == null, ignored by setting default enumeration IOActionIOActionType.values()[0]=" + IOActionIOActionType.values()[0]);
         IOActionType = IOActionIOActionType.values()[0];
     } else
         IOActionType = pIOActionType;
@@ -272,7 +272,7 @@ public IOActionIOActionType getIOActionType()
 {
     if (IOActionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration IOActionIOActionType.values()[0]=" + IOActionIOActionType.values()[0]);
         IOActionType = IOActionIOActionType.values()[0];
     }
     return IOActionType; 
@@ -285,7 +285,7 @@ public synchronized InformationOperationsActionPdu setIOActionPhase(IOActionIOAc
 {
     if (pIOActionPhase == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionPhase pIOActionPhase == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionPhase pIOActionPhase == null, ignored by setting default enumeration IOActionIOActionPhase.values()[0]=" + IOActionIOActionPhase.values()[0]);
         IOActionPhase = IOActionIOActionPhase.values()[0];
     } else
         IOActionPhase = pIOActionPhase;
@@ -298,7 +298,7 @@ public IOActionIOActionPhase getIOActionPhase()
 {
     if (IOActionPhase == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration IOActionIOActionPhase.values()[0]=" + IOActionIOActionPhase.values()[0]);
         IOActionPhase = IOActionIOActionPhase.values()[0];
     }
     return IOActionPhase; 

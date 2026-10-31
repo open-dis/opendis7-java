@@ -77,7 +77,7 @@ public synchronized EntityType setEntityKind(EntityKind pEntityKind)
 {
     if (pEntityKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityKind pEntityKind == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EntityKind pEntityKind == null, ignored by setting default enumeration EntityKind.values()[0]=" + EntityKind.values()[0]);
         entityKind = EntityKind.values()[0];
     } else
         entityKind = pEntityKind;
@@ -90,7 +90,7 @@ public EntityKind getEntityKind()
 {
     if (entityKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration EntityKind.values()[0]=" + EntityKind.values()[0]);
         entityKind = EntityKind.values()[0];
     }
     return entityKind; 
@@ -119,7 +119,7 @@ public synchronized EntityType setCountry(Country pCountry)
 {
     if (pCountry == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country pCountry == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype Country pCountry == null, ignored by setting default enumeration Country.values()[0]=" + Country.values()[0]);
         country = Country.values()[0];
     } else
         country = pCountry;
@@ -132,7 +132,7 @@ public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
         country = Country.values()[0];
     }
     return country; 

@@ -151,7 +151,7 @@ public synchronized EventReportRPdu setEventType(EventReportEventType pEventType
 {
     if (pEventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EventReportEventType pEventType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EventReportEventType pEventType == null, ignored by setting default enumeration EventReportEventType.values()[0]=" + EventReportEventType.values()[0]);
         eventType = EventReportEventType.values()[0];
     } else
         eventType = pEventType;
@@ -164,7 +164,7 @@ public EventReportEventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration EventReportEventType.values()[0]=" + EventReportEventType.values()[0]);
         eventType = EventReportEventType.values()[0];
     }
     return eventType; 

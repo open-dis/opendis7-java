@@ -188,7 +188,7 @@ public synchronized DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
 {
     if (pCodeName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorSystemName pCodeName == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DesignatorSystemName pCodeName == null, ignored by setting default enumeration DesignatorSystemName.values()[0]=" + DesignatorSystemName.values()[0]);
         codeName = DesignatorSystemName.values()[0];
     } else
         codeName = pCodeName;
@@ -201,7 +201,7 @@ public DesignatorSystemName getCodeName()
 {
     if (codeName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration DesignatorSystemName.values()[0]=" + DesignatorSystemName.values()[0]);
         codeName = DesignatorSystemName.values()[0];
     }
     return codeName; 
@@ -230,7 +230,7 @@ public synchronized DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDe
 {
     if (pDesignatorCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorDesignatorCode pDesignatorCode == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DesignatorDesignatorCode pDesignatorCode == null, ignored by setting default enumeration DesignatorDesignatorCode.values()[0]=" + DesignatorDesignatorCode.values()[0]);
         designatorCode = DesignatorDesignatorCode.values()[0];
     } else
         designatorCode = pDesignatorCode;
@@ -243,7 +243,7 @@ public DesignatorDesignatorCode getDesignatorCode()
 {
     if (designatorCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration DesignatorDesignatorCode.values()[0]=" + DesignatorDesignatorCode.values()[0]);
         designatorCode = DesignatorDesignatorCode.values()[0];
     }
     return designatorCode; 
@@ -318,7 +318,7 @@ public synchronized DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorit
 {
     if (pDeadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
         deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     } else
         deadReckoningAlgorithm = pDeadReckoningAlgorithm;
@@ -331,7 +331,7 @@ public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
         deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     }
     return deadReckoningAlgorithm; 

@@ -74,7 +74,7 @@ public synchronized Environment setEnvironmentType(EnvironmentalProcessRecordTyp
 {
     if (pEnvironmentType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessRecordType pEnvironmentType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType pEnvironmentType == null, ignored by setting default enumeration EnvironmentalProcessRecordType.values()[0]=" + EnvironmentalProcessRecordType.values()[0]);
         environmentType = EnvironmentalProcessRecordType.values()[0];
     } else
         environmentType = pEnvironmentType;
@@ -87,7 +87,7 @@ public EnvironmentalProcessRecordType getEnvironmentType()
 {
     if (environmentType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration EnvironmentalProcessRecordType.values()[0]=" + EnvironmentalProcessRecordType.values()[0]);
         environmentType = EnvironmentalProcessRecordType.values()[0];
     }
     return environmentType; 

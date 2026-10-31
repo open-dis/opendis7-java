@@ -247,7 +247,7 @@ public synchronized TransmitterPdu setTransmitState(TransmitterTransmitState pTr
 {
     if (pTransmitState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterTransmitState pTransmitState == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterTransmitState pTransmitState == null, ignored by setting default enumeration TransmitterTransmitState.values()[0]=" + TransmitterTransmitState.values()[0]);
         transmitState = TransmitterTransmitState.values()[0];
     } else
         transmitState = pTransmitState;
@@ -260,7 +260,7 @@ public TransmitterTransmitState getTransmitState()
 {
     if (transmitState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterTransmitState transmitState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterTransmitState transmitState == null, ignored by returning default enumeration TransmitterTransmitState.values()[0]=" + TransmitterTransmitState.values()[0]);
         transmitState = TransmitterTransmitState.values()[0];
     }
     return transmitState; 
@@ -273,7 +273,7 @@ public synchronized TransmitterPdu setInputSource(TransmitterInputSource pInputS
 {
     if (pInputSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterInputSource pInputSource == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterInputSource pInputSource == null, ignored by setting default enumeration TransmitterInputSource.values()[0]=" + TransmitterInputSource.values()[0]);
         inputSource = TransmitterInputSource.values()[0];
     } else
         inputSource = pInputSource;
@@ -286,7 +286,7 @@ public TransmitterInputSource getInputSource()
 {
     if (inputSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterInputSource inputSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterInputSource inputSource == null, ignored by returning default enumeration TransmitterInputSource.values()[0]=" + TransmitterInputSource.values()[0]);
         inputSource = TransmitterInputSource.values()[0];
     }
     return inputSource; 
@@ -353,7 +353,7 @@ public synchronized TransmitterPdu setAntennaPatternType(TransmitterAntennaPatte
 {
     if (pAntennaPatternType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternType pAntennaPatternType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterAntennaPatternType pAntennaPatternType == null, ignored by setting default enumeration TransmitterAntennaPatternType.values()[0]=" + TransmitterAntennaPatternType.values()[0]);
         antennaPatternType = TransmitterAntennaPatternType.values()[0];
     } else
         antennaPatternType = pAntennaPatternType;
@@ -366,7 +366,7 @@ public TransmitterAntennaPatternType getAntennaPatternType()
 {
     if (antennaPatternType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternType antennaPatternType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterAntennaPatternType antennaPatternType == null, ignored by returning default enumeration TransmitterAntennaPatternType.values()[0]=" + TransmitterAntennaPatternType.values()[0]);
         antennaPatternType = TransmitterAntennaPatternType.values()[0];
     }
     return antennaPatternType; 
@@ -447,7 +447,7 @@ public synchronized TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryp
 {
     if (pCryptoSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterCryptoSystem pCryptoSystem == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransmitterCryptoSystem pCryptoSystem == null, ignored by setting default enumeration TransmitterCryptoSystem.values()[0]=" + TransmitterCryptoSystem.values()[0]);
         cryptoSystem = TransmitterCryptoSystem.values()[0];
     } else
         cryptoSystem = pCryptoSystem;
@@ -460,7 +460,7 @@ public TransmitterCryptoSystem getCryptoSystem()
 {
     if (cryptoSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterCryptoSystem cryptoSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransmitterCryptoSystem cryptoSystem == null, ignored by returning default enumeration TransmitterCryptoSystem.values()[0]=" + TransmitterCryptoSystem.values()[0]);
         cryptoSystem = TransmitterCryptoSystem.values()[0];
     }
     return cryptoSystem; 

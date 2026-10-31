@@ -56,7 +56,7 @@ public synchronized GridData setSampleType(GriddedDataSampleType pSampleType)
 {
     if (pSampleType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataSampleType pSampleType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype GriddedDataSampleType pSampleType == null, ignored by setting default enumeration GriddedDataSampleType.values()[0]=" + GriddedDataSampleType.values()[0]);
         sampleType = GriddedDataSampleType.values()[0];
     } else
         sampleType = pSampleType;
@@ -69,7 +69,7 @@ public GriddedDataSampleType getSampleType()
 {
     if (sampleType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration GriddedDataSampleType.values()[0]=" + GriddedDataSampleType.values()[0]);
         sampleType = GriddedDataSampleType.values()[0];
     }
     return sampleType; 
@@ -82,7 +82,7 @@ public synchronized GridData setDataRepresentation(GriddedDataDataRepresentation
 {
     if (pDataRepresentation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataDataRepresentation pDataRepresentation == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype GriddedDataDataRepresentation pDataRepresentation == null, ignored by setting default enumeration GriddedDataDataRepresentation.values()[0]=" + GriddedDataDataRepresentation.values()[0]);
         dataRepresentation = GriddedDataDataRepresentation.values()[0];
     } else
         dataRepresentation = pDataRepresentation;
@@ -95,7 +95,7 @@ public GriddedDataDataRepresentation getDataRepresentation()
 {
     if (dataRepresentation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration GriddedDataDataRepresentation.values()[0]=" + GriddedDataDataRepresentation.values()[0]);
         dataRepresentation = GriddedDataDataRepresentation.values()[0];
     }
     return dataRepresentation; 

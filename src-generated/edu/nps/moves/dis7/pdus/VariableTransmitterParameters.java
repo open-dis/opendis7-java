@@ -66,7 +66,7 @@ public synchronized VariableTransmitterParameters setRecordType(VariableRecordTy
 {
     if (pRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordType = VariableRecordType.values()[0];
     } else
         recordType = pRecordType;
@@ -79,7 +79,7 @@ public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordType = VariableRecordType.values()[0];
     }
     return recordType; 

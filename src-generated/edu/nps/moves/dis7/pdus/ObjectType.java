@@ -64,7 +64,7 @@ public synchronized ObjectType setDomain(PlatformDomain pDomain)
 {
     if (pDomain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain pDomain == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype PlatformDomain pDomain == null, ignored by setting default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
         domain = PlatformDomain.values()[0];
     } else
         domain = pDomain;
@@ -77,7 +77,7 @@ public PlatformDomain getDomain()
 {
     if (domain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
         domain = PlatformDomain.values()[0];
     }
     return domain; 
@@ -90,7 +90,7 @@ public synchronized ObjectType setObjectKind(ObjectKind pObjectKind)
 {
     if (pObjectKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ObjectKind pObjectKind == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype ObjectKind pObjectKind == null, ignored by setting default enumeration ObjectKind.values()[0]=" + ObjectKind.values()[0]);
         objectKind = ObjectKind.values()[0];
     } else
         objectKind = pObjectKind;
@@ -103,7 +103,7 @@ public ObjectKind getObjectKind()
 {
     if (objectKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration ObjectKind.values()[0]=" + ObjectKind.values()[0]);
         objectKind = ObjectKind.values()[0];
     }
     return objectKind; 

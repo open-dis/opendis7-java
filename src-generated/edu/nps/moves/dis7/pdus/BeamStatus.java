@@ -51,7 +51,7 @@ public synchronized BeamStatus setBeamState(BeamStatusBeamState pBeamState)
 {
     if (pBeamState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype BeamStatusBeamState pBeamState == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype BeamStatusBeamState pBeamState == null, ignored by setting default enumeration BeamStatusBeamState.values()[0]=" + BeamStatusBeamState.values()[0]);
         beamState = BeamStatusBeamState.values()[0];
     } else
         beamState = pBeamState;
@@ -64,7 +64,7 @@ public BeamStatusBeamState getBeamState()
 {
     if (beamState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration BeamStatusBeamState.values()[0]=" + BeamStatusBeamState.values()[0]);
         beamState = BeamStatusBeamState.values()[0];
     }
     return beamState; 

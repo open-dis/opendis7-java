@@ -278,7 +278,7 @@ public synchronized GriddedDataPdu setCoordinateSystem(GriddedDataCoordinateSyst
 {
     if (pCoordinateSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataCoordinateSystem pCoordinateSystem == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype GriddedDataCoordinateSystem pCoordinateSystem == null, ignored by setting default enumeration GriddedDataCoordinateSystem.values()[0]=" + GriddedDataCoordinateSystem.values()[0]);
         coordinateSystem = GriddedDataCoordinateSystem.values()[0];
     } else
         coordinateSystem = pCoordinateSystem;
@@ -291,7 +291,7 @@ public GriddedDataCoordinateSystem getCoordinateSystem()
 {
     if (coordinateSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataCoordinateSystem coordinateSystem == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataCoordinateSystem coordinateSystem == null, ignored by returning default enumeration GriddedDataCoordinateSystem.values()[0]=" + GriddedDataCoordinateSystem.values()[0]);
         coordinateSystem = GriddedDataCoordinateSystem.values()[0];
     }
     return coordinateSystem; 
@@ -304,7 +304,7 @@ public synchronized GriddedDataPdu setConstantGrid(GriddedDataConstantGrid pCons
 {
     if (pConstantGrid == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataConstantGrid pConstantGrid == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype GriddedDataConstantGrid pConstantGrid == null, ignored by setting default enumeration GriddedDataConstantGrid.values()[0]=" + GriddedDataConstantGrid.values()[0]);
         constantGrid = GriddedDataConstantGrid.values()[0];
     } else
         constantGrid = pConstantGrid;
@@ -317,7 +317,7 @@ public GriddedDataConstantGrid getConstantGrid()
 {
     if (constantGrid == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataConstantGrid constantGrid == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype GriddedDataConstantGrid constantGrid == null, ignored by returning default enumeration GriddedDataConstantGrid.values()[0]=" + GriddedDataConstantGrid.values()[0]);
         constantGrid = GriddedDataConstantGrid.values()[0];
     }
     return constantGrid; 

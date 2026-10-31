@@ -60,7 +60,7 @@ public synchronized EmitterSystem setEmitterName(EmitterName pEmitterName)
 {
     if (pEmitterName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterName pEmitterName == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EmitterName pEmitterName == null, ignored by setting default enumeration EmitterName.values()[0]=" + EmitterName.values()[0]);
         emitterName = EmitterName.values()[0];
     } else
         emitterName = pEmitterName;
@@ -73,7 +73,7 @@ public EmitterName getEmitterName()
 {
     if (emitterName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration EmitterName.values()[0]=" + EmitterName.values()[0]);
         emitterName = EmitterName.values()[0];
     }
     return emitterName; 
@@ -86,7 +86,7 @@ public synchronized EmitterSystem setEmitterFunction(EmitterSystemFunction pEmit
 {
     if (pEmitterFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterSystemFunction pEmitterFunction == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype EmitterSystemFunction pEmitterFunction == null, ignored by setting default enumeration EmitterSystemFunction.values()[0]=" + EmitterSystemFunction.values()[0]);
         emitterFunction = EmitterSystemFunction.values()[0];
     } else
         emitterFunction = pEmitterFunction;
@@ -99,7 +99,7 @@ public EmitterSystemFunction getEmitterFunction()
 {
     if (emitterFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration EmitterSystemFunction.values()[0]=" + EmitterSystemFunction.values()[0]);
         emitterFunction = EmitterSystemFunction.values()[0];
     }
     return emitterFunction; 

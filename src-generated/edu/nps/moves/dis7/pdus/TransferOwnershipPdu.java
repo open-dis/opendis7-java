@@ -197,7 +197,7 @@ public synchronized TransferOwnershipPdu setRequiredReliabilityService(RequiredR
 {
     if (pRequiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     } else
         requiredReliabilityService = pRequiredReliabilityService;
@@ -210,7 +210,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
         requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
@@ -223,7 +223,7 @@ public synchronized TransferOwnershipPdu setTransferType(TransferControlTransfer
 {
     if (pTransferType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransferControlTransferType pTransferType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype TransferControlTransferType pTransferType == null, ignored by setting default enumeration TransferControlTransferType.values()[0]=" + TransferControlTransferType.values()[0]);
         transferType = TransferControlTransferType.values()[0];
     } else
         transferType = pTransferType;
@@ -236,7 +236,7 @@ public TransferControlTransferType getTransferType()
 {
     if (transferType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransferControlTransferType transferType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype TransferControlTransferType transferType == null, ignored by returning default enumeration TransferControlTransferType.values()[0]=" + TransferControlTransferType.values()[0]);
         transferType = TransferControlTransferType.values()[0];
     }
     return transferType; 

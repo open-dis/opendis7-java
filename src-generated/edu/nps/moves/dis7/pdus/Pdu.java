@@ -465,7 +465,7 @@ public synchronized Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
 {
     if (pProtocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolVersion pProtocolVersion == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DISProtocolVersion pProtocolVersion == null, ignored by setting default enumeration DISProtocolVersion.values()[0]=" + DISProtocolVersion.values()[0]);
         protocolVersion = DISProtocolVersion.values()[0];
     } else
         protocolVersion = pProtocolVersion;
@@ -478,7 +478,7 @@ public DISProtocolVersion getProtocolVersion()
 {
     if (protocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration DISProtocolVersion.values()[0]=" + DISProtocolVersion.values()[0]);
         protocolVersion = DISProtocolVersion.values()[0];
     }
     return protocolVersion; 
@@ -513,7 +513,7 @@ public synchronized Pdu setPduType(DisPduType pPduType)
 {
     if (pPduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType pPduType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DisPduType pPduType == null, ignored by setting default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         pduType = DisPduType.values()[0];
     } else
         pduType = pPduType;
@@ -526,7 +526,7 @@ public DisPduType getPduType()
 {
     if (pduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
         pduType = DisPduType.values()[0];
     }
     return pduType; 
@@ -539,7 +539,7 @@ public synchronized Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
 {
     if (pProtocolFamily == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily pProtocolFamily == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily pProtocolFamily == null, ignored by setting default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         protocolFamily = DISProtocolFamily.values()[0];
     } else
         protocolFamily = pProtocolFamily;
@@ -552,7 +552,7 @@ public DISProtocolFamily getProtocolFamily()
 {
     if (protocolFamily == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
         protocolFamily = DISProtocolFamily.values()[0];
     }
     return protocolFamily; 

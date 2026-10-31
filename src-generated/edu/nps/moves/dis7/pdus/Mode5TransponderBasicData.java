@@ -208,7 +208,7 @@ public synchronized Mode5TransponderBasicData setNavigationSource(NavigationSour
 {
     if (pNavigationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype NavigationSource pNavigationSource == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype NavigationSource pNavigationSource == null, ignored by setting default enumeration NavigationSource.values()[0]=" + NavigationSource.values()[0]);
         navigationSource = NavigationSource.values()[0];
     } else
         navigationSource = pNavigationSource;
@@ -221,7 +221,7 @@ public NavigationSource getNavigationSource()
 {
     if (navigationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration NavigationSource.values()[0]=" + NavigationSource.values()[0]);
         navigationSource = NavigationSource.values()[0];
     }
     return navigationSource; 

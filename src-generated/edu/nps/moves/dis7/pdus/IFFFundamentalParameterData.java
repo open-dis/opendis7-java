@@ -151,7 +151,7 @@ public synchronized IFFFundamentalParameterData setApplicableModes(IFFApplicable
 {
     if (pApplicableModes == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFApplicableModes pApplicableModes == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IFFApplicableModes pApplicableModes == null, ignored by setting default enumeration IFFApplicableModes.values()[0]=" + IFFApplicableModes.values()[0]);
         applicableModes = IFFApplicableModes.values()[0];
     } else
         applicableModes = pApplicableModes;
@@ -164,7 +164,7 @@ public IFFApplicableModes getApplicableModes()
 {
     if (applicableModes == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration IFFApplicableModes.values()[0]=" + IFFApplicableModes.values()[0]);
         applicableModes = IFFApplicableModes.values()[0];
     }
     return applicableModes; 

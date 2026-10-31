@@ -70,7 +70,7 @@ public synchronized IOCommsNodeRecord setRecordType(VariableRecordType pRecordTy
 {
     if (pRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordType = VariableRecordType.values()[0];
     } else
         recordType = pRecordType;
@@ -83,7 +83,7 @@ public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
         recordType = VariableRecordType.values()[0];
     }
     return recordType; 
@@ -118,7 +118,7 @@ public synchronized IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNod
 {
     if (pCommsNodeType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType pCommsNodeType == null, ignored by setting default enumeration...");
+        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType pCommsNodeType == null, ignored by setting default enumeration IOCommsNodeRecordCommsNodeType.values()[0]=" + IOCommsNodeRecordCommsNodeType.values()[0]);
         commsNodeType = IOCommsNodeRecordCommsNodeType.values()[0];
     } else
         commsNodeType = pCommsNodeType;
@@ -131,7 +131,7 @@ public IOCommsNodeRecordCommsNodeType getCommsNodeType()
 {
     if (commsNodeType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType commsNodeType == null, ignored by returning default enumeration...");
+        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType commsNodeType == null, ignored by returning default enumeration IOCommsNodeRecordCommsNodeType.values()[0]=" + IOCommsNodeRecordCommsNodeType.values()[0]);
         commsNodeType = IOCommsNodeRecordCommsNodeType.values()[0];
     }
     return commsNodeType; 
