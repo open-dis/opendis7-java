@@ -233,13 +233,13 @@ public synchronized CollisionElasticPdu setPad(short pPad)
 }
 /** Utility setter for {@link CollisionElasticPdu#pad}
   * @param pPad new value of interest
-  * @return same object to permit progressive setters */
+  * @return CollisionElasticPdu to permit progressive setters */
 public synchronized CollisionElasticPdu setPad(int pPad){
     pad = (short) pPad;
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#pad}
-  * @return value of interest (getter #1) */
+  * @return this.pad (getter #1) */
 public short getPad()
 {
        return pad;
@@ -270,7 +270,7 @@ public synchronized CollisionElasticPdu setMass(float pMass)
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#mass}
-  * @return value of interest (getter #1) */
+  * @return this.mass (getter #1) */
 public float getMass()
 {
        return mass;
@@ -301,7 +301,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXX(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXX}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultXX (getter #1) */
 public float getCollisionIntermediateResultXX()
 {
        return collisionIntermediateResultXX;
@@ -316,7 +316,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXY(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXY}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultXY (getter #1) */
 public float getCollisionIntermediateResultXY()
 {
        return collisionIntermediateResultXY;
@@ -331,7 +331,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultXZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultXZ (getter #1) */
 public float getCollisionIntermediateResultXZ()
 {
        return collisionIntermediateResultXZ;
@@ -346,7 +346,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultYY(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYY}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultYY (getter #1) */
 public float getCollisionIntermediateResultYY()
 {
        return collisionIntermediateResultYY;
@@ -361,7 +361,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultYZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultYZ (getter #1) */
 public float getCollisionIntermediateResultYZ()
 {
        return collisionIntermediateResultYZ;
@@ -376,7 +376,7 @@ public synchronized CollisionElasticPdu setCollisionIntermediateResultZZ(float p
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}
-  * @return value of interest (getter #1) */
+  * @return this.collisionIntermediateResultZZ (getter #1) */
 public float getCollisionIntermediateResultZZ()
 {
        return collisionIntermediateResultZZ;
@@ -407,7 +407,7 @@ public synchronized CollisionElasticPdu setCoefficientOfRestitution(float pCoeff
     return this;
 }
 /** Getter for {@link CollisionElasticPdu#coefficientOfRestitution}
-  * @return value of interest (getter #1) */
+  * @return this.coefficientOfRestitution (getter #1) */
 public float getCoefficientOfRestitution()
 {
        return coefficientOfRestitution;

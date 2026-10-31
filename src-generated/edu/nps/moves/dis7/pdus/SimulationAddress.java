@@ -57,13 +57,13 @@ public synchronized SimulationAddress setSite(short pSite)
 }
 /** Utility setter for {@link SimulationAddress#site}
   * @param pSite new value of interest
-  * @return same object to permit progressive setters */
+  * @return SimulationAddress to permit progressive setters */
 public synchronized SimulationAddress setSite(int pSite){
     site = (short) pSite;
     return this;
 }
 /** Getter for {@link SimulationAddress#site}
-  * @return value of interest (getter #1) */
+  * @return this.site (getter #1) */
 public short getSite()
 {
        return site;
@@ -79,13 +79,13 @@ public synchronized SimulationAddress setApplication(short pApplication)
 }
 /** Utility setter for {@link SimulationAddress#application}
   * @param pApplication new value of interest
-  * @return same object to permit progressive setters */
+  * @return SimulationAddress to permit progressive setters */
 public synchronized SimulationAddress setApplication(int pApplication){
     application = (short) pApplication;
     return this;
 }
 /** Getter for {@link SimulationAddress#application}
-  * @return value of interest (getter #1) */
+  * @return this.application (getter #1) */
 public short getApplication()
 {
        return application;

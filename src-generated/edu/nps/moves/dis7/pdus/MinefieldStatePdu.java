@@ -200,13 +200,13 @@ public synchronized MinefieldStatePdu setMinefieldSequence(short pMinefieldSeque
 }
 /** Utility setter for {@link MinefieldStatePdu#minefieldSequence}
   * @param pMinefieldSequence new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldStatePdu to permit progressive setters */
 public synchronized MinefieldStatePdu setMinefieldSequence(int pMinefieldSequence){
     minefieldSequence = (short) pMinefieldSequence;
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#minefieldSequence}
-  * @return value of interest (getter #1) */
+  * @return this.minefieldSequence (getter #1) */
 public short getMinefieldSequence()
 {
        return minefieldSequence;
@@ -214,20 +214,26 @@ public short getMinefieldSequence()
 
 /** Setter for {@link MinefieldStatePdu#forceID}
   * @param pForceID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this MinefieldStatePdu to permit progressive setters */
 public synchronized MinefieldStatePdu setForceID(ForceID pForceID)
 {
-    forceID = pForceID;
+    if (pForceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        forceID = ForceID.values()[0];
+    } else
+        forceID = pForceID;
+
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#forceID}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceID (getter #4) */
 public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        forceID = ForceID.values()[0];
     }
     return forceID; 
 }
@@ -294,7 +300,7 @@ public MinefieldStateAppearanceBitMap getAppearance()
 {
     if (appearance == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype MinefieldStateAppearanceBitMap appearance == null, ignored by returning default bitfieldtype new MinefieldStateAppearanceBitMap()=" + new MinefieldStateAppearanceBitMap());
+        System.err.println("Error: bitfieldtype MinefieldStateAppearanceBitMap appearance == null, ignored by returning default bitfieldtype...");
         return new MinefieldStateAppearanceBitMap();
     }
     return appearance; 
@@ -318,14 +324,14 @@ public ProtocolMode getProtocolMode()
 
 /** Setter for {@link MinefieldStatePdu#perimeterPoints}
   * @param pPerimeterPoints new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldStatePdu to permit progressive setters */
 public synchronized MinefieldStatePdu setPerimeterPoints(List<Vector2Float> pPerimeterPoints)
 {
     perimeterPoints = pPerimeterPoints;
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#perimeterPoints}
-  * @return value of interest (getter #3) */
+  * @return this.perimeterPoints (getter #3) */
 public List<Vector2Float> getPerimeterPoints()
 {
     return perimeterPoints; 
@@ -333,14 +339,14 @@ public List<Vector2Float> getPerimeterPoints()
 
 /** Setter for {@link MinefieldStatePdu#mineType}
   * @param pMineType new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldStatePdu to permit progressive setters */
 public synchronized MinefieldStatePdu setMineType(List<EntityType> pMineType)
 {
     mineType = pMineType;
     return this;
 }
 /** Getter for {@link MinefieldStatePdu#mineType}
-  * @return value of interest (getter #3) */
+  * @return this.mineType (getter #3) */
 public List<EntityType> getMineType()
 {
     return mineType; 

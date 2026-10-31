@@ -80,13 +80,13 @@ public synchronized ElectronicEmitter setSystemDataLength(byte pSystemDataLength
 }
 /** Utility setter for {@link ElectronicEmitter#systemDataLength}
   * @param pSystemDataLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return ElectronicEmitter to permit progressive setters */
 public synchronized ElectronicEmitter setSystemDataLength(int pSystemDataLength){
     systemDataLength = (byte) pSystemDataLength;
     return this;
 }
 /** Getter for {@link ElectronicEmitter#systemDataLength}
-  * @return value of interest (getter #1) */
+  * @return this.systemDataLength (getter #1) */
 public byte getSystemDataLength()
 {
        return systemDataLength;
@@ -102,13 +102,13 @@ public synchronized ElectronicEmitter setPadding(short pPadding)
 }
 /** Utility setter for {@link ElectronicEmitter#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return ElectronicEmitter to permit progressive setters */
 public synchronized ElectronicEmitter setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link ElectronicEmitter#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -148,14 +148,14 @@ public Vector3Float getLocation()
 
 /** Setter for {@link ElectronicEmitter#beams}
   * @param pBeams new value of interest
-  * @return same object to permit progressive setters */
+  * @return ElectronicEmitter to permit progressive setters */
 public synchronized ElectronicEmitter setBeams(List<EmitterBeam> pBeams)
 {
     beams = pBeams;
     return this;
 }
 /** Getter for {@link ElectronicEmitter#beams}
-  * @return value of interest (getter #3) */
+  * @return this.beams (getter #3) */
 public List<EmitterBeam> getBeams()
 {
     return beams; 

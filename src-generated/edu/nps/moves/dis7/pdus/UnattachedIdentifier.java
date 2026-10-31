@@ -74,13 +74,13 @@ public synchronized UnattachedIdentifier setReferenceNumber(short pReferenceNumb
 }
 /** Utility setter for {@link UnattachedIdentifier#referenceNumber}
   * @param pReferenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnattachedIdentifier to permit progressive setters */
 public synchronized UnattachedIdentifier setReferenceNumber(int pReferenceNumber){
     referenceNumber = (short) pReferenceNumber;
     return this;
 }
 /** Getter for {@link UnattachedIdentifier#referenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.referenceNumber (getter #1) */
 public short getReferenceNumber()
 {
        return referenceNumber;

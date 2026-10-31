@@ -80,13 +80,13 @@ public synchronized UAEmitter setSystemDataLength(byte pSystemDataLength)
 }
 /** Utility setter for {@link UAEmitter#systemDataLength}
   * @param pSystemDataLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return UAEmitter to permit progressive setters */
 public synchronized UAEmitter setSystemDataLength(int pSystemDataLength){
     systemDataLength = (byte) pSystemDataLength;
     return this;
 }
 /** Getter for {@link UAEmitter#systemDataLength}
-  * @return value of interest (getter #1) */
+  * @return this.systemDataLength (getter #1) */
 public byte getSystemDataLength()
 {
        return systemDataLength;
@@ -102,13 +102,13 @@ public synchronized UAEmitter setPadding(short pPadding)
 }
 /** Utility setter for {@link UAEmitter#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return UAEmitter to permit progressive setters */
 public synchronized UAEmitter setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link UAEmitter#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -148,14 +148,14 @@ public Vector3Float getLocation()
 
 /** Setter for {@link UAEmitter#beams}
   * @param pBeams new value of interest
-  * @return same object to permit progressive setters */
+  * @return UAEmitter to permit progressive setters */
 public synchronized UAEmitter setBeams(List<UABeam> pBeams)
 {
     beams = pBeams;
     return this;
 }
 /** Getter for {@link UAEmitter#beams}
-  * @return value of interest (getter #3) */
+  * @return this.beams (getter #3) */
 public List<UABeam> getBeams()
 {
     return beams; 

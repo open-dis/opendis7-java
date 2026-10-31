@@ -113,13 +113,13 @@ public synchronized IFFPduLayer2Data setSecondaryOpParameter1(byte pSecondaryOpP
 }
 /** Utility setter for {@link IFFPduLayer2Data#secondaryOpParameter1}
   * @param pSecondaryOpParameter1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer2Data to permit progressive setters */
 public synchronized IFFPduLayer2Data setSecondaryOpParameter1(int pSecondaryOpParameter1){
     secondaryOpParameter1 = (byte) pSecondaryOpParameter1;
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#secondaryOpParameter1}
-  * @return value of interest (getter #1) */
+  * @return this.secondaryOpParameter1 (getter #1) */
 public byte getSecondaryOpParameter1()
 {
        return secondaryOpParameter1;
@@ -135,13 +135,13 @@ public synchronized IFFPduLayer2Data setSecondaryOpParameter2(byte pSecondaryOpP
 }
 /** Utility setter for {@link IFFPduLayer2Data#secondaryOpParameter2}
   * @param pSecondaryOpParameter2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer2Data to permit progressive setters */
 public synchronized IFFPduLayer2Data setSecondaryOpParameter2(int pSecondaryOpParameter2){
     secondaryOpParameter2 = (byte) pSecondaryOpParameter2;
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#secondaryOpParameter2}
-  * @return value of interest (getter #1) */
+  * @return this.secondaryOpParameter2 (getter #1) */
 public byte getSecondaryOpParameter2()
 {
        return secondaryOpParameter2;
@@ -168,14 +168,14 @@ public synchronized IFFPduLayer2Data setNumberOfIFFFundamentalParameterDataRecor
 
 /** Setter for {@link IFFPduLayer2Data#IFFFundamentalParameterDataRecord}
   * @param pIFFFundamentalParameterDataRecord new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer2Data to permit progressive setters */
 public synchronized IFFPduLayer2Data setIFFFundamentalParameterDataRecord(List<IFFFundamentalParameterData> pIFFFundamentalParameterDataRecord)
 {
     IFFFundamentalParameterDataRecord = pIFFFundamentalParameterDataRecord;
     return this;
 }
 /** Getter for {@link IFFPduLayer2Data#IFFFundamentalParameterDataRecord}
-  * @return value of interest (getter #3) */
+  * @return this.IFFFundamentalParameterDataRecord (getter #3) */
 public List<IFFFundamentalParameterData> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

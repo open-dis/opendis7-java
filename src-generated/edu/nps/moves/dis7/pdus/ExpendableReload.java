@@ -89,7 +89,7 @@ public synchronized ExpendableReload setStation(int pStation)
     return this;
 }
 /** Getter for {@link ExpendableReload#station}
-  * @return value of interest (getter #1) */
+  * @return this.station (getter #1) */
 public int getStation()
 {
        return station;
@@ -105,13 +105,13 @@ public synchronized ExpendableReload setStandardQuantity(short pStandardQuantity
 }
 /** Utility setter for {@link ExpendableReload#standardQuantity}
   * @param pStandardQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return ExpendableReload to permit progressive setters */
 public synchronized ExpendableReload setStandardQuantity(int pStandardQuantity){
     standardQuantity = (short) pStandardQuantity;
     return this;
 }
 /** Getter for {@link ExpendableReload#standardQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantity (getter #1) */
 public short getStandardQuantity()
 {
        return standardQuantity;
@@ -127,13 +127,13 @@ public synchronized ExpendableReload setMaximumQuantity(short pMaximumQuantity)
 }
 /** Utility setter for {@link ExpendableReload#maximumQuantity}
   * @param pMaximumQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return ExpendableReload to permit progressive setters */
 public synchronized ExpendableReload setMaximumQuantity(int pMaximumQuantity){
     maximumQuantity = (short) pMaximumQuantity;
     return this;
 }
 /** Getter for {@link ExpendableReload#maximumQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantity (getter #1) */
 public short getMaximumQuantity()
 {
        return maximumQuantity;
@@ -148,7 +148,7 @@ public synchronized ExpendableReload setStandardQuantityReloadTime(int pStandard
     return this;
 }
 /** Getter for {@link ExpendableReload#standardQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantityReloadTime (getter #1) */
 public int getStandardQuantityReloadTime()
 {
        return standardQuantityReloadTime;
@@ -163,7 +163,7 @@ public synchronized ExpendableReload setMaximumQuantityReloadTime(int pMaximumQu
     return this;
 }
 /** Getter for {@link ExpendableReload#maximumQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantityReloadTime (getter #1) */
 public int getMaximumQuantityReloadTime()
 {
        return maximumQuantityReloadTime;

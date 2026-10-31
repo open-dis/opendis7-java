@@ -74,13 +74,13 @@ public synchronized SimulationIdentifier setReferenceNumber(short pReferenceNumb
 }
 /** Utility setter for {@link SimulationIdentifier#referenceNumber}
   * @param pReferenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return SimulationIdentifier to permit progressive setters */
 public synchronized SimulationIdentifier setReferenceNumber(int pReferenceNumber){
     referenceNumber = (short) pReferenceNumber;
     return this;
 }
 /** Getter for {@link SimulationIdentifier#referenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.referenceNumber (getter #1) */
 public short getReferenceNumber()
 {
        return referenceNumber;

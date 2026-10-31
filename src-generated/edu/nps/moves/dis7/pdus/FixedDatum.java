@@ -50,20 +50,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link FixedDatum#fixedDatumID}
   * @param pFixedDatumID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this FixedDatum to permit progressive setters */
 public synchronized FixedDatum setFixedDatumID(VariableRecordType pFixedDatumID)
 {
-    fixedDatumID = pFixedDatumID;
+    if (pFixedDatumID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pFixedDatumID == null, ignored by setting default enumeration...");
+        fixedDatumID = VariableRecordType.values()[0];
+    } else
+        fixedDatumID = pFixedDatumID;
+
     return this;
 }
 /** Getter for {@link FixedDatum#fixedDatumID}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.fixedDatumID (getter #4) */
 public VariableRecordType getFixedDatumID()
 {
     if (fixedDatumID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType fixedDatumID == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType fixedDatumID == null, ignored by returning default enumeration...");
+        fixedDatumID = VariableRecordType.values()[0];
     }
     return fixedDatumID; 
 }
@@ -77,7 +83,7 @@ public synchronized FixedDatum setFixedDatumValue(int pFixedDatumValue)
     return this;
 }
 /** Getter for {@link FixedDatum#fixedDatumValue}
-  * @return value of interest (getter #1) */
+  * @return this.fixedDatumValue (getter #1) */
 public int getFixedDatumValue()
 {
        return fixedDatumValue;

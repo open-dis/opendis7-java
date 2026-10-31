@@ -53,13 +53,13 @@ public synchronized ProtocolMode setProtocolMode(short pProtocolMode)
 }
 /** Utility setter for {@link ProtocolMode#protocolMode}
   * @param pProtocolMode new value of interest
-  * @return same object to permit progressive setters */
+  * @return ProtocolMode to permit progressive setters */
 public synchronized ProtocolMode setProtocolMode(int pProtocolMode){
     protocolMode = (short) pProtocolMode;
     return this;
 }
 /** Getter for {@link ProtocolMode#protocolMode}
-  * @return value of interest (getter #1) */
+  * @return this.protocolMode (getter #1) */
 public short getProtocolMode()
 {
        return protocolMode;

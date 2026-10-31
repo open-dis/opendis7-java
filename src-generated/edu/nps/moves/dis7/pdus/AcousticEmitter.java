@@ -55,40 +55,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link AcousticEmitter#acousticSystemName}
   * @param pAcousticSystemName new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AcousticEmitter to permit progressive setters */
 public synchronized AcousticEmitter setAcousticSystemName(UAAcousticSystemName pAcousticSystemName)
 {
-    acousticSystemName = pAcousticSystemName;
+    if (pAcousticSystemName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAAcousticSystemName pAcousticSystemName == null, ignored by setting default enumeration...");
+        acousticSystemName = UAAcousticSystemName.values()[0];
+    } else
+        acousticSystemName = pAcousticSystemName;
+
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticSystemName}
-  * @return value of interest (getter #4) */
+  * @return UAAcousticSystemName this.acousticSystemName (getter #4) */
 public UAAcousticSystemName getAcousticSystemName()
 {
     if (acousticSystemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration UAAcousticSystemName.values()[0]=" + UAAcousticSystemName.values()[0]);
-        return UAAcousticSystemName.values()[0];
+        System.err.println("Error: enumtype UAAcousticSystemName acousticSystemName == null, ignored by returning default enumeration...");
+        acousticSystemName = UAAcousticSystemName.values()[0];
     }
     return acousticSystemName; 
 }
 
 /** Setter for {@link AcousticEmitter#acousticFunction}
   * @param pAcousticFunction new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AcousticEmitter to permit progressive setters */
 public synchronized AcousticEmitter setAcousticFunction(UAAcousticEmitterSystemFunction pAcousticFunction)
 {
-    acousticFunction = pAcousticFunction;
+    if (pAcousticFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction pAcousticFunction == null, ignored by setting default enumeration...");
+        acousticFunction = UAAcousticEmitterSystemFunction.values()[0];
+    } else
+        acousticFunction = pAcousticFunction;
+
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticFunction}
-  * @return value of interest (getter #4) */
+  * @return UAAcousticEmitterSystemFunction this.acousticFunction (getter #4) */
 public UAAcousticEmitterSystemFunction getAcousticFunction()
 {
     if (acousticFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration UAAcousticEmitterSystemFunction.values()[0]=" + UAAcousticEmitterSystemFunction.values()[0]);
-        return UAAcousticEmitterSystemFunction.values()[0];
+        System.err.println("Error: enumtype UAAcousticEmitterSystemFunction acousticFunction == null, ignored by returning default enumeration...");
+        acousticFunction = UAAcousticEmitterSystemFunction.values()[0];
     }
     return acousticFunction; 
 }
@@ -103,13 +115,13 @@ public synchronized AcousticEmitter setAcousticIDNumber(byte pAcousticIDNumber)
 }
 /** Utility setter for {@link AcousticEmitter#acousticIDNumber}
   * @param pAcousticIDNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return AcousticEmitter to permit progressive setters */
 public synchronized AcousticEmitter setAcousticIDNumber(int pAcousticIDNumber){
     acousticIDNumber = (byte) pAcousticIDNumber;
     return this;
 }
 /** Getter for {@link AcousticEmitter#acousticIDNumber}
-  * @return value of interest (getter #1) */
+  * @return this.acousticIDNumber (getter #1) */
 public byte getAcousticIDNumber()
 {
        return acousticIDNumber;

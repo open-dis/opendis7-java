@@ -255,13 +255,13 @@ public synchronized IFFPdu setSystemDesignator(byte pSystemDesignator)
 }
 /** Utility setter for {@link IFFPdu#systemDesignator}
   * @param pSystemDesignator new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPdu to permit progressive setters */
 public synchronized IFFPdu setSystemDesignator(int pSystemDesignator){
     systemDesignator = (byte) pSystemDesignator;
     return this;
 }
 /** Getter for {@link IFFPdu#systemDesignator}
-  * @return value of interest (getter #1) */
+  * @return this.systemDesignator (getter #1) */
 public byte getSystemDesignator()
 {
        return systemDesignator;
@@ -277,13 +277,13 @@ public synchronized IFFPdu setSystemSpecificData(byte pSystemSpecificData)
 }
 /** Utility setter for {@link IFFPdu#systemSpecificData}
   * @param pSystemSpecificData new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPdu to permit progressive setters */
 public synchronized IFFPdu setSystemSpecificData(int pSystemSpecificData){
     systemSpecificData = (byte) pSystemSpecificData;
     return this;
 }
 /** Getter for {@link IFFPdu#systemSpecificData}
-  * @return value of interest (getter #1) */
+  * @return this.systemSpecificData (getter #1) */
 public byte getSystemSpecificData()
 {
        return systemSpecificData;

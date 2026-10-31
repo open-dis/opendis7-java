@@ -57,13 +57,13 @@ public synchronized APA setParameterIndex(short pParameterIndex)
 }
 /** Utility setter for {@link APA#parameterIndex}
   * @param pParameterIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return APA to permit progressive setters */
 public synchronized APA setParameterIndex(int pParameterIndex){
     parameterIndex = (short) pParameterIndex;
     return this;
 }
 /** Getter for {@link APA#parameterIndex}
-  * @return value of interest (getter #1) */
+  * @return this.parameterIndex (getter #1) */
 public short getParameterIndex()
 {
        return parameterIndex;
@@ -79,13 +79,13 @@ public synchronized APA setValue(short pValue)
 }
 /** Utility setter for {@link APA#value}
   * @param pValue new value of interest
-  * @return same object to permit progressive setters */
+  * @return APA to permit progressive setters */
 public synchronized APA setValue(int pValue){
     value = (short) pValue;
     return this;
 }
 /** Getter for {@link APA#value}
-  * @return value of interest (getter #1) */
+  * @return this.value (getter #1) */
 public short getValue()
 {
        return value;

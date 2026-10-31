@@ -101,7 +101,7 @@ public synchronized BlankingSector setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link BlankingSector#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -117,13 +117,13 @@ public synchronized BlankingSector setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link BlankingSector#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link BlankingSector#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -139,13 +139,13 @@ public synchronized BlankingSector setPadding(short pPadding)
 }
 /** Utility setter for {@link BlankingSector#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link BlankingSector#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -161,13 +161,13 @@ public synchronized BlankingSector setEmitterNumber(byte pEmitterNumber)
 }
 /** Utility setter for {@link BlankingSector#emitterNumber}
   * @param pEmitterNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
 /** Getter for {@link BlankingSector#emitterNumber}
-  * @return value of interest (getter #1) */
+  * @return this.emitterNumber (getter #1) */
 public byte getEmitterNumber()
 {
        return emitterNumber;
@@ -183,13 +183,13 @@ public synchronized BlankingSector setBeamNumber(byte pBeamNumber)
 }
 /** Utility setter for {@link BlankingSector#beamNumber}
   * @param pBeamNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
 /** Getter for {@link BlankingSector#beamNumber}
-  * @return value of interest (getter #1) */
+  * @return this.beamNumber (getter #1) */
 public byte getBeamNumber()
 {
        return beamNumber;
@@ -197,20 +197,26 @@ public byte getBeamNumber()
 
 /** Setter for {@link BlankingSector#stateIndicator}
   * @param pStateIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this BlankingSector to permit progressive setters */
 public synchronized BlankingSector setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
-    stateIndicator = pStateIndicator;
+    if (pStateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EEAttributeStateIndicator pStateIndicator == null, ignored by setting default enumeration...");
+        stateIndicator = EEAttributeStateIndicator.values()[0];
+    } else
+        stateIndicator = pStateIndicator;
+
     return this;
 }
 /** Getter for {@link BlankingSector#stateIndicator}
-  * @return value of interest (getter #4) */
+  * @return EEAttributeStateIndicator this.stateIndicator (getter #4) */
 public EEAttributeStateIndicator getStateIndicator()
 {
     if (stateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration EEAttributeStateIndicator.values()[0]=" + EEAttributeStateIndicator.values()[0]);
-        return EEAttributeStateIndicator.values()[0];
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        stateIndicator = EEAttributeStateIndicator.values()[0];
     }
     return stateIndicator; 
 }
@@ -225,13 +231,13 @@ public synchronized BlankingSector setPadding2(byte pPadding2)
 }
 /** Utility setter for {@link BlankingSector#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setPadding2(int pPadding2){
     padding2 = (byte) pPadding2;
     return this;
 }
 /** Getter for {@link BlankingSector#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public byte getPadding2()
 {
        return padding2;
@@ -246,7 +252,7 @@ public synchronized BlankingSector setLeftAzimuth(float pLeftAzimuth)
     return this;
 }
 /** Getter for {@link BlankingSector#leftAzimuth}
-  * @return value of interest (getter #1) */
+  * @return this.leftAzimuth (getter #1) */
 public float getLeftAzimuth()
 {
        return leftAzimuth;
@@ -261,7 +267,7 @@ public synchronized BlankingSector setRightAzimuth(float pRightAzimuth)
     return this;
 }
 /** Getter for {@link BlankingSector#rightAzimuth}
-  * @return value of interest (getter #1) */
+  * @return this.rightAzimuth (getter #1) */
 public float getRightAzimuth()
 {
        return rightAzimuth;
@@ -276,7 +282,7 @@ public synchronized BlankingSector setLowerElevation(float pLowerElevation)
     return this;
 }
 /** Getter for {@link BlankingSector#lowerElevation}
-  * @return value of interest (getter #1) */
+  * @return this.lowerElevation (getter #1) */
 public float getLowerElevation()
 {
        return lowerElevation;
@@ -291,7 +297,7 @@ public synchronized BlankingSector setUpperElevation(float pUpperElevation)
     return this;
 }
 /** Getter for {@link BlankingSector#upperElevation}
-  * @return value of interest (getter #1) */
+  * @return this.upperElevation (getter #1) */
 public float getUpperElevation()
 {
        return upperElevation;
@@ -306,7 +312,7 @@ public synchronized BlankingSector setResidualPower(float pResidualPower)
     return this;
 }
 /** Getter for {@link BlankingSector#residualPower}
-  * @return value of interest (getter #1) */
+  * @return this.residualPower (getter #1) */
 public float getResidualPower()
 {
        return residualPower;
@@ -322,13 +328,13 @@ public synchronized BlankingSector setPadding3(long pPadding3)
 }
 /** Utility setter for {@link BlankingSector#padding3}
   * @param pPadding3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return BlankingSector to permit progressive setters */
 public synchronized BlankingSector setPadding3(int pPadding3){
     padding3 = (long) pPadding3;
     return this;
 }
 /** Getter for {@link BlankingSector#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public long getPadding3()
 {
        return padding3;

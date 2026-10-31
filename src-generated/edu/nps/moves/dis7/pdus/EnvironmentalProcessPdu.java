@@ -180,20 +180,26 @@ public EntityType getEnvironmentType()
 
 /** Setter for {@link EnvironmentalProcessPdu#modelType}
   * @param pModelType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EnvironmentalProcessPdu to permit progressive setters */
 public synchronized EnvironmentalProcessPdu setModelType(EnvironmentalProcessModelType pModelType)
 {
-    modelType = pModelType;
+    if (pModelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EnvironmentalProcessModelType pModelType == null, ignored by setting default enumeration...");
+        modelType = EnvironmentalProcessModelType.values()[0];
+    } else
+        modelType = pModelType;
+
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#modelType}
-  * @return value of interest (getter #4) */
+  * @return EnvironmentalProcessModelType this.modelType (getter #4) */
 public EnvironmentalProcessModelType getModelType()
 {
     if (modelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration EnvironmentalProcessModelType.values()[0]=" + EnvironmentalProcessModelType.values()[0]);
-        return EnvironmentalProcessModelType.values()[0];
+        System.err.println("Error: enumtype EnvironmentalProcessModelType modelType == null, ignored by returning default enumeration...");
+        modelType = EnvironmentalProcessModelType.values()[0];
     }
     return modelType; 
 }
@@ -212,7 +218,7 @@ public EnvironmentalProcessEnvironmentStatus getEnvironmentStatus()
 {
     if (environmentStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype EnvironmentalProcessEnvironmentStatus environmentStatus == null, ignored by returning default bitfieldtype new EnvironmentalProcessEnvironmentStatus()=" + new EnvironmentalProcessEnvironmentStatus());
+        System.err.println("Error: bitfieldtype EnvironmentalProcessEnvironmentStatus environmentStatus == null, ignored by returning default bitfieldtype...");
         return new EnvironmentalProcessEnvironmentStatus();
     }
     return environmentStatus; 
@@ -228,13 +234,13 @@ public synchronized EnvironmentalProcessPdu setSequenceNumber(short pSequenceNum
 }
 /** Utility setter for {@link EnvironmentalProcessPdu#sequenceNumber}
   * @param pSequenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EnvironmentalProcessPdu to permit progressive setters */
 public synchronized EnvironmentalProcessPdu setSequenceNumber(int pSequenceNumber){
     sequenceNumber = (short) pSequenceNumber;
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#sequenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.sequenceNumber (getter #1) */
 public short getSequenceNumber()
 {
        return sequenceNumber;
@@ -242,14 +248,14 @@ public short getSequenceNumber()
 
 /** Setter for {@link EnvironmentalProcessPdu#environmentRecords}
   * @param pEnvironmentRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return EnvironmentalProcessPdu to permit progressive setters */
 public synchronized EnvironmentalProcessPdu setEnvironmentRecords(List<Environment> pEnvironmentRecords)
 {
     environmentRecords = pEnvironmentRecords;
     return this;
 }
 /** Getter for {@link EnvironmentalProcessPdu#environmentRecords}
-  * @return value of interest (getter #3) */
+  * @return this.environmentRecords (getter #3) */
 public List<Environment> getEnvironmentRecords()
 {
     return environmentRecords; 

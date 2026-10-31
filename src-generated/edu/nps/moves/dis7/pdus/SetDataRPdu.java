@@ -154,20 +154,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link SetDataRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SetDataRPdu to permit progressive setters */
 public synchronized SetDataRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
-    requiredReliabilityService = pRequiredReliabilityService;
+    if (pRequiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
+    } else
+        requiredReliabilityService = pRequiredReliabilityService;
+
     return this;
 }
 /** Getter for {@link SetDataRPdu#requiredReliabilityService}
-  * @return value of interest (getter #4) */
+  * @return RequiredReliabilityService this.requiredReliabilityService (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
-        return RequiredReliabilityService.values()[0];
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
 }
@@ -182,13 +188,13 @@ public synchronized SetDataRPdu setPad1(byte pPad1)
 }
 /** Utility setter for {@link SetDataRPdu#pad1}
   * @param pPad1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataRPdu to permit progressive setters */
 public synchronized SetDataRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
 /** Getter for {@link SetDataRPdu#pad1}
-  * @return value of interest (getter #1) */
+  * @return this.pad1 (getter #1) */
 public byte getPad1()
 {
        return pad1;
@@ -204,13 +210,13 @@ public synchronized SetDataRPdu setPad2(short pPad2)
 }
 /** Utility setter for {@link SetDataRPdu#pad2}
   * @param pPad2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataRPdu to permit progressive setters */
 public synchronized SetDataRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
 /** Getter for {@link SetDataRPdu#pad2}
-  * @return value of interest (getter #1) */
+  * @return this.pad2 (getter #1) */
 public short getPad2()
 {
        return pad2;
@@ -225,7 +231,7 @@ public synchronized SetDataRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link SetDataRPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -233,14 +239,14 @@ public int getRequestID()
 
 /** Setter for {@link SetDataRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataRPdu to permit progressive setters */
 public synchronized SetDataRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 /** Getter for {@link SetDataRPdu#fixedDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatumRecords (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -248,14 +254,14 @@ public List<FixedDatum> getFixedDatumRecords()
 
 /** Setter for {@link SetDataRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataRPdu to permit progressive setters */
 public synchronized SetDataRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 /** Getter for {@link SetDataRPdu#variableDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumRecords (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

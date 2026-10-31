@@ -59,40 +59,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link ObjectType#domain}
   * @param pDomain new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ObjectType to permit progressive setters */
 public synchronized ObjectType setDomain(PlatformDomain pDomain)
 {
-    domain = pDomain;
+    if (pDomain == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype PlatformDomain pDomain == null, ignored by setting default enumeration...");
+        domain = PlatformDomain.values()[0];
+    } else
+        domain = pDomain;
+
     return this;
 }
 /** Getter for {@link ObjectType#domain}
-  * @return value of interest (getter #4) */
+  * @return PlatformDomain this.domain (getter #4) */
 public PlatformDomain getDomain()
 {
     if (domain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
-        return PlatformDomain.values()[0];
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        domain = PlatformDomain.values()[0];
     }
     return domain; 
 }
 
 /** Setter for {@link ObjectType#objectKind}
   * @param pObjectKind new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ObjectType to permit progressive setters */
 public synchronized ObjectType setObjectKind(ObjectKind pObjectKind)
 {
-    objectKind = pObjectKind;
+    if (pObjectKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ObjectKind pObjectKind == null, ignored by setting default enumeration...");
+        objectKind = ObjectKind.values()[0];
+    } else
+        objectKind = pObjectKind;
+
     return this;
 }
 /** Getter for {@link ObjectType#objectKind}
-  * @return value of interest (getter #4) */
+  * @return ObjectKind this.objectKind (getter #4) */
 public ObjectKind getObjectKind()
 {
     if (objectKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration ObjectKind.values()[0]=" + ObjectKind.values()[0]);
-        return ObjectKind.values()[0];
+        System.err.println("Error: enumtype ObjectKind objectKind == null, ignored by returning default enumeration...");
+        objectKind = ObjectKind.values()[0];
     }
     return objectKind; 
 }
@@ -107,13 +119,13 @@ public synchronized ObjectType setCategory(byte pCategory)
 }
 /** Utility setter for {@link ObjectType#category}
   * @param pCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return ObjectType to permit progressive setters */
 public synchronized ObjectType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
 /** Getter for {@link ObjectType#category}
-  * @return value of interest (getter #1) */
+  * @return this.category (getter #1) */
 public byte getCategory()
 {
        return category;
@@ -129,13 +141,13 @@ public synchronized ObjectType setSubCategory(byte pSubCategory)
 }
 /** Utility setter for {@link ObjectType#subCategory}
   * @param pSubCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return ObjectType to permit progressive setters */
 public synchronized ObjectType setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
 /** Getter for {@link ObjectType#subCategory}
-  * @return value of interest (getter #1) */
+  * @return this.subCategory (getter #1) */
 public byte getSubCategory()
 {
        return subCategory;

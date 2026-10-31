@@ -242,40 +242,52 @@ public RadioType getRadioEntityType()
 
 /** Setter for {@link TransmitterPdu#transmitState}
   * @param pTransmitState new value of interest
-  * @return same object to permit progressive setters */
+  * @return this TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setTransmitState(TransmitterTransmitState pTransmitState)
 {
-    transmitState = pTransmitState;
+    if (pTransmitState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterTransmitState pTransmitState == null, ignored by setting default enumeration...");
+        transmitState = TransmitterTransmitState.values()[0];
+    } else
+        transmitState = pTransmitState;
+
     return this;
 }
 /** Getter for {@link TransmitterPdu#transmitState}
-  * @return value of interest (getter #4) */
+  * @return TransmitterTransmitState this.transmitState (getter #4) */
 public TransmitterTransmitState getTransmitState()
 {
     if (transmitState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterTransmitState transmitState == null, ignored by returning default enumeration TransmitterTransmitState.values()[0]=" + TransmitterTransmitState.values()[0]);
-        return TransmitterTransmitState.values()[0];
+        System.err.println("Error: enumtype TransmitterTransmitState transmitState == null, ignored by returning default enumeration...");
+        transmitState = TransmitterTransmitState.values()[0];
     }
     return transmitState; 
 }
 
 /** Setter for {@link TransmitterPdu#inputSource}
   * @param pInputSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return this TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setInputSource(TransmitterInputSource pInputSource)
 {
-    inputSource = pInputSource;
+    if (pInputSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterInputSource pInputSource == null, ignored by setting default enumeration...");
+        inputSource = TransmitterInputSource.values()[0];
+    } else
+        inputSource = pInputSource;
+
     return this;
 }
 /** Getter for {@link TransmitterPdu#inputSource}
-  * @return value of interest (getter #4) */
+  * @return TransmitterInputSource this.inputSource (getter #4) */
 public TransmitterInputSource getInputSource()
 {
     if (inputSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterInputSource inputSource == null, ignored by returning default enumeration TransmitterInputSource.values()[0]=" + TransmitterInputSource.values()[0]);
-        return TransmitterInputSource.values()[0];
+        System.err.println("Error: enumtype TransmitterInputSource inputSource == null, ignored by returning default enumeration...");
+        inputSource = TransmitterInputSource.values()[0];
     }
     return inputSource; 
 }
@@ -290,13 +302,13 @@ public synchronized TransmitterPdu setVariableTransmitterParameterCount(short pV
 }
 /** Utility setter for {@link TransmitterPdu#variableTransmitterParameterCount}
   * @param pVariableTransmitterParameterCount new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setVariableTransmitterParameterCount(int pVariableTransmitterParameterCount){
     variableTransmitterParameterCount = (short) pVariableTransmitterParameterCount;
     return this;
 }
 /** Getter for {@link TransmitterPdu#variableTransmitterParameterCount}
-  * @return value of interest (getter #1) */
+  * @return this.variableTransmitterParameterCount (getter #1) */
 public short getVariableTransmitterParameterCount()
 {
        return variableTransmitterParameterCount;
@@ -336,20 +348,26 @@ public Vector3Float getRelativeAntennaLocation()
 
 /** Setter for {@link TransmitterPdu#antennaPatternType}
   * @param pAntennaPatternType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setAntennaPatternType(TransmitterAntennaPatternType pAntennaPatternType)
 {
-    antennaPatternType = pAntennaPatternType;
+    if (pAntennaPatternType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterAntennaPatternType pAntennaPatternType == null, ignored by setting default enumeration...");
+        antennaPatternType = TransmitterAntennaPatternType.values()[0];
+    } else
+        antennaPatternType = pAntennaPatternType;
+
     return this;
 }
 /** Getter for {@link TransmitterPdu#antennaPatternType}
-  * @return value of interest (getter #4) */
+  * @return TransmitterAntennaPatternType this.antennaPatternType (getter #4) */
 public TransmitterAntennaPatternType getAntennaPatternType()
 {
     if (antennaPatternType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterAntennaPatternType antennaPatternType == null, ignored by returning default enumeration TransmitterAntennaPatternType.values()[0]=" + TransmitterAntennaPatternType.values()[0]);
-        return TransmitterAntennaPatternType.values()[0];
+        System.err.println("Error: enumtype TransmitterAntennaPatternType antennaPatternType == null, ignored by returning default enumeration...");
+        antennaPatternType = TransmitterAntennaPatternType.values()[0];
     }
     return antennaPatternType; 
 }
@@ -364,13 +382,13 @@ public synchronized TransmitterPdu setFrequency(long pFrequency)
 }
 /** Utility setter for {@link TransmitterPdu#frequency}
   * @param pFrequency new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setFrequency(int pFrequency){
     frequency = (long) pFrequency;
     return this;
 }
 /** Getter for {@link TransmitterPdu#frequency}
-  * @return value of interest (getter #1) */
+  * @return this.frequency (getter #1) */
 public long getFrequency()
 {
        return frequency;
@@ -385,7 +403,7 @@ public synchronized TransmitterPdu setTransmitFrequencyBandwidth(float pTransmit
     return this;
 }
 /** Getter for {@link TransmitterPdu#transmitFrequencyBandwidth}
-  * @return value of interest (getter #1) */
+  * @return this.transmitFrequencyBandwidth (getter #1) */
 public float getTransmitFrequencyBandwidth()
 {
        return transmitFrequencyBandwidth;
@@ -400,7 +418,7 @@ public synchronized TransmitterPdu setPower(float pPower)
     return this;
 }
 /** Getter for {@link TransmitterPdu#power}
-  * @return value of interest (getter #1) */
+  * @return this.power (getter #1) */
 public float getPower()
 {
        return power;
@@ -424,20 +442,26 @@ public ModulationType getModulationType()
 
 /** Setter for {@link TransmitterPdu#cryptoSystem}
   * @param pCryptoSystem new value of interest
-  * @return same object to permit progressive setters */
+  * @return this TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryptoSystem)
 {
-    cryptoSystem = pCryptoSystem;
+    if (pCryptoSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype TransmitterCryptoSystem pCryptoSystem == null, ignored by setting default enumeration...");
+        cryptoSystem = TransmitterCryptoSystem.values()[0];
+    } else
+        cryptoSystem = pCryptoSystem;
+
     return this;
 }
 /** Getter for {@link TransmitterPdu#cryptoSystem}
-  * @return value of interest (getter #4) */
+  * @return TransmitterCryptoSystem this.cryptoSystem (getter #4) */
 public TransmitterCryptoSystem getCryptoSystem()
 {
     if (cryptoSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype TransmitterCryptoSystem cryptoSystem == null, ignored by returning default enumeration TransmitterCryptoSystem.values()[0]=" + TransmitterCryptoSystem.values()[0]);
-        return TransmitterCryptoSystem.values()[0];
+        System.err.println("Error: enumtype TransmitterCryptoSystem cryptoSystem == null, ignored by returning default enumeration...");
+        cryptoSystem = TransmitterCryptoSystem.values()[0];
     }
     return cryptoSystem; 
 }
@@ -452,13 +476,13 @@ public synchronized TransmitterPdu setCryptoKeyId(short pCryptoKeyId)
 }
 /** Utility setter for {@link TransmitterPdu#cryptoKeyId}
   * @param pCryptoKeyId new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setCryptoKeyId(int pCryptoKeyId){
     cryptoKeyId = (short) pCryptoKeyId;
     return this;
 }
 /** Getter for {@link TransmitterPdu#cryptoKeyId}
-  * @return value of interest (getter #1) */
+  * @return this.cryptoKeyId (getter #1) */
 public short getCryptoKeyId()
 {
        return cryptoKeyId;
@@ -474,13 +498,13 @@ public synchronized TransmitterPdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link TransmitterPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link TransmitterPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -496,13 +520,13 @@ public synchronized TransmitterPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link TransmitterPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link TransmitterPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -510,14 +534,14 @@ public short getPadding2()
 
 /** Setter for {@link TransmitterPdu#modulationParametersList}
   * @param pModulationParametersList new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setModulationParametersList(List<ModulationParameters> pModulationParametersList)
 {
     modulationParametersList = pModulationParametersList;
     return this;
 }
 /** Getter for {@link TransmitterPdu#modulationParametersList}
-  * @return value of interest (getter #3) */
+  * @return this.modulationParametersList (getter #3) */
 public List<ModulationParameters> getModulationParametersList()
 {
     return modulationParametersList; 
@@ -525,14 +549,14 @@ public List<ModulationParameters> getModulationParametersList()
 
 /** Setter for {@link TransmitterPdu#antennaPatternList}
   * @param pAntennaPatternList new value of interest
-  * @return same object to permit progressive setters */
+  * @return TransmitterPdu to permit progressive setters */
 public synchronized TransmitterPdu setAntennaPatternList(List<VariableTransmitterParameters> pAntennaPatternList)
 {
     antennaPatternList = pAntennaPatternList;
     return this;
 }
 /** Getter for {@link TransmitterPdu#antennaPatternList}
-  * @return value of interest (getter #3) */
+  * @return this.antennaPatternList (getter #3) */
 public List<VariableTransmitterParameters> getAntennaPatternList()
 {
     return antennaPatternList; 

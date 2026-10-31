@@ -173,20 +173,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IntercomControlPdu#controlType}
   * @param pControlType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setControlType(IntercomControlControlType pControlType)
 {
-    controlType = pControlType;
+    if (pControlType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IntercomControlControlType pControlType == null, ignored by setting default enumeration...");
+        controlType = IntercomControlControlType.values()[0];
+    } else
+        controlType = pControlType;
+
     return this;
 }
 /** Getter for {@link IntercomControlPdu#controlType}
-  * @return value of interest (getter #4) */
+  * @return IntercomControlControlType this.controlType (getter #4) */
 public IntercomControlControlType getControlType()
 {
     if (controlType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlControlType controlType == null, ignored by returning default enumeration IntercomControlControlType.values()[0]=" + IntercomControlControlType.values()[0]);
-        return IntercomControlControlType.values()[0];
+        System.err.println("Error: enumtype IntercomControlControlType controlType == null, ignored by returning default enumeration...");
+        controlType = IntercomControlControlType.values()[0];
     }
     return controlType; 
 }
@@ -201,13 +207,13 @@ public synchronized IntercomControlPdu setCommunicationsChannelType(byte pCommun
 }
 /** Utility setter for {@link IntercomControlPdu#communicationsChannelType}
   * @param pCommunicationsChannelType new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setCommunicationsChannelType(int pCommunicationsChannelType){
     communicationsChannelType = (byte) pCommunicationsChannelType;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#communicationsChannelType}
-  * @return value of interest (getter #1) */
+  * @return this.communicationsChannelType (getter #1) */
 public byte getCommunicationsChannelType()
 {
        return communicationsChannelType;
@@ -239,13 +245,13 @@ public synchronized IntercomControlPdu setSourceIntercomNumber(short pSourceInte
 }
 /** Utility setter for {@link IntercomControlPdu#sourceIntercomNumber}
   * @param pSourceIntercomNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setSourceIntercomNumber(int pSourceIntercomNumber){
     sourceIntercomNumber = (short) pSourceIntercomNumber;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#sourceIntercomNumber}
-  * @return value of interest (getter #1) */
+  * @return this.sourceIntercomNumber (getter #1) */
 public short getSourceIntercomNumber()
 {
        return sourceIntercomNumber;
@@ -261,13 +267,13 @@ public synchronized IntercomControlPdu setSourceLineID(byte pSourceLineID)
 }
 /** Utility setter for {@link IntercomControlPdu#sourceLineID}
   * @param pSourceLineID new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setSourceLineID(int pSourceLineID){
     sourceLineID = (byte) pSourceLineID;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#sourceLineID}
-  * @return value of interest (getter #1) */
+  * @return this.sourceLineID (getter #1) */
 public byte getSourceLineID()
 {
        return sourceLineID;
@@ -283,13 +289,13 @@ public synchronized IntercomControlPdu setTransmitPriority(byte pTransmitPriorit
 }
 /** Utility setter for {@link IntercomControlPdu#transmitPriority}
   * @param pTransmitPriority new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setTransmitPriority(int pTransmitPriority){
     transmitPriority = (byte) pTransmitPriority;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#transmitPriority}
-  * @return value of interest (getter #1) */
+  * @return this.transmitPriority (getter #1) */
 public byte getTransmitPriority()
 {
        return transmitPriority;
@@ -297,40 +303,52 @@ public byte getTransmitPriority()
 
 /** Setter for {@link IntercomControlPdu#transmitLineState}
   * @param pTransmitLineState new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setTransmitLineState(IntercomControlTransmitLineState pTransmitLineState)
 {
-    transmitLineState = pTransmitLineState;
+    if (pTransmitLineState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IntercomControlTransmitLineState pTransmitLineState == null, ignored by setting default enumeration...");
+        transmitLineState = IntercomControlTransmitLineState.values()[0];
+    } else
+        transmitLineState = pTransmitLineState;
+
     return this;
 }
 /** Getter for {@link IntercomControlPdu#transmitLineState}
-  * @return value of interest (getter #4) */
+  * @return IntercomControlTransmitLineState this.transmitLineState (getter #4) */
 public IntercomControlTransmitLineState getTransmitLineState()
 {
     if (transmitLineState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlTransmitLineState transmitLineState == null, ignored by returning default enumeration IntercomControlTransmitLineState.values()[0]=" + IntercomControlTransmitLineState.values()[0]);
-        return IntercomControlTransmitLineState.values()[0];
+        System.err.println("Error: enumtype IntercomControlTransmitLineState transmitLineState == null, ignored by returning default enumeration...");
+        transmitLineState = IntercomControlTransmitLineState.values()[0];
     }
     return transmitLineState; 
 }
 
 /** Setter for {@link IntercomControlPdu#command}
   * @param pCommand new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setCommand(IntercomControlCommand pCommand)
 {
-    command = pCommand;
+    if (pCommand == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IntercomControlCommand pCommand == null, ignored by setting default enumeration...");
+        command = IntercomControlCommand.values()[0];
+    } else
+        command = pCommand;
+
     return this;
 }
 /** Getter for {@link IntercomControlPdu#command}
-  * @return value of interest (getter #4) */
+  * @return IntercomControlCommand this.command (getter #4) */
 public IntercomControlCommand getCommand()
 {
     if (command == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlCommand command == null, ignored by returning default enumeration IntercomControlCommand.values()[0]=" + IntercomControlCommand.values()[0]);
-        return IntercomControlCommand.values()[0];
+        System.err.println("Error: enumtype IntercomControlCommand command == null, ignored by returning default enumeration...");
+        command = IntercomControlCommand.values()[0];
     }
     return command; 
 }
@@ -361,13 +379,13 @@ public synchronized IntercomControlPdu setMasterIntercomNumber(short pMasterInte
 }
 /** Utility setter for {@link IntercomControlPdu#masterIntercomNumber}
   * @param pMasterIntercomNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setMasterIntercomNumber(int pMasterIntercomNumber){
     masterIntercomNumber = (short) pMasterIntercomNumber;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#masterIntercomNumber}
-  * @return value of interest (getter #1) */
+  * @return this.masterIntercomNumber (getter #1) */
 public short getMasterIntercomNumber()
 {
        return masterIntercomNumber;
@@ -383,13 +401,13 @@ public synchronized IntercomControlPdu setMasterChannelID(short pMasterChannelID
 }
 /** Utility setter for {@link IntercomControlPdu#masterChannelID}
   * @param pMasterChannelID new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setMasterChannelID(int pMasterChannelID){
     masterChannelID = (short) pMasterChannelID;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#masterChannelID}
-  * @return value of interest (getter #1) */
+  * @return this.masterChannelID (getter #1) */
 public short getMasterChannelID()
 {
        return masterChannelID;
@@ -397,14 +415,14 @@ public short getMasterChannelID()
 
 /** Setter for {@link IntercomControlPdu#intercomParameters}
   * @param pIntercomParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomControlPdu to permit progressive setters */
 public synchronized IntercomControlPdu setIntercomParameters(List<IntercomCommunicationsParameters> pIntercomParameters)
 {
     intercomParameters = pIntercomParameters;
     return this;
 }
 /** Getter for {@link IntercomControlPdu#intercomParameters}
-  * @return value of interest (getter #3) */
+  * @return this.intercomParameters (getter #3) */
 public List<IntercomCommunicationsParameters> getIntercomParameters()
 {
     return intercomParameters; 

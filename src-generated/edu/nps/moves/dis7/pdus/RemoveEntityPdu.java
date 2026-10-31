@@ -122,7 +122,7 @@ public synchronized RemoveEntityPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link RemoveEntityPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;

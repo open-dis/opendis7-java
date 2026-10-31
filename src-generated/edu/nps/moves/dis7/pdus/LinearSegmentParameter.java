@@ -97,13 +97,13 @@ public synchronized LinearSegmentParameter setSegmentNumber(byte pSegmentNumber)
 }
 /** Utility setter for {@link LinearSegmentParameter#segmentNumber}
   * @param pSegmentNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return LinearSegmentParameter to permit progressive setters */
 public synchronized LinearSegmentParameter setSegmentNumber(int pSegmentNumber){
     segmentNumber = (byte) pSegmentNumber;
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentNumber}
-  * @return value of interest (getter #1) */
+  * @return this.segmentNumber (getter #1) */
 public byte getSegmentNumber()
 {
        return segmentNumber;
@@ -123,7 +123,7 @@ public ObjectStateModificationLinearObject getSegmentModification()
 {
     if (segmentModification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateModificationLinearObject segmentModification == null, ignored by returning default bitfieldtype new ObjectStateModificationLinearObject()=" + new ObjectStateModificationLinearObject());
+        System.err.println("Error: bitfieldtype ObjectStateModificationLinearObject segmentModification == null, ignored by returning default bitfieldtype...");
         return new ObjectStateModificationLinearObject();
     }
     return segmentModification; 
@@ -143,7 +143,7 @@ public ObjectStateAppearanceGeneral getGeneralSegmentAppearance()
 {
     if (generalSegmentAppearance == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generalSegmentAppearance == null, ignored by returning default bitfieldtype new ObjectStateAppearanceGeneral()=" + new ObjectStateAppearanceGeneral());
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generalSegmentAppearance == null, ignored by returning default bitfieldtype...");
         return new ObjectStateAppearanceGeneral();
     }
     return generalSegmentAppearance; 
@@ -158,7 +158,7 @@ public synchronized LinearSegmentParameter setSpecificSegmentAppearance(int pSpe
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#specificSegmentAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.specificSegmentAppearance (getter #1) */
 public int getSpecificSegmentAppearance()
 {
        return specificSegmentAppearance;
@@ -205,7 +205,7 @@ public synchronized LinearSegmentParameter setSegmentLength(float pSegmentLength
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentLength}
-  * @return value of interest (getter #1) */
+  * @return this.segmentLength (getter #1) */
 public float getSegmentLength()
 {
        return segmentLength;
@@ -220,7 +220,7 @@ public synchronized LinearSegmentParameter setSegmentWidth(float pSegmentWidth)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentWidth}
-  * @return value of interest (getter #1) */
+  * @return this.segmentWidth (getter #1) */
 public float getSegmentWidth()
 {
        return segmentWidth;
@@ -235,7 +235,7 @@ public synchronized LinearSegmentParameter setSegmentHeight(float pSegmentHeight
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentHeight}
-  * @return value of interest (getter #1) */
+  * @return this.segmentHeight (getter #1) */
 public float getSegmentHeight()
 {
        return segmentHeight;
@@ -250,7 +250,7 @@ public synchronized LinearSegmentParameter setSegmentDepth(float pSegmentDepth)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#segmentDepth}
-  * @return value of interest (getter #1) */
+  * @return this.segmentDepth (getter #1) */
 public float getSegmentDepth()
 {
        return segmentDepth;
@@ -265,7 +265,7 @@ public synchronized LinearSegmentParameter setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link LinearSegmentParameter#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public int getPadding()
 {
        return padding;

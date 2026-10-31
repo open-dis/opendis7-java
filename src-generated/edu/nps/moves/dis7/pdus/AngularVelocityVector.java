@@ -60,7 +60,7 @@ public synchronized AngularVelocityVector setX(float pX)
     return this;
 }
 /** Getter for {@link AngularVelocityVector#x}
-  * @return value of interest (getter #1) */
+  * @return this.x (getter #1) */
 public float getX()
 {
        return x;
@@ -75,7 +75,7 @@ public synchronized AngularVelocityVector setY(float pY)
     return this;
 }
 /** Getter for {@link AngularVelocityVector#y}
-  * @return value of interest (getter #1) */
+  * @return this.y (getter #1) */
 public float getY()
 {
        return y;
@@ -90,7 +90,7 @@ public synchronized AngularVelocityVector setZ(float pZ)
     return this;
 }
 /** Getter for {@link AngularVelocityVector#z}
-  * @return value of interest (getter #1) */
+  * @return this.z (getter #1) */
 public float getZ()
 {
        return z;

@@ -194,20 +194,26 @@ public EntityID getEntityID()
 
 /** Setter for {@link EntityStatePdu#forceId}
   * @param pForceId new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityStatePdu to permit progressive setters */
 public synchronized EntityStatePdu setForceId(ForceID pForceId)
 {
-    forceId = pForceId;
+    if (pForceId == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceId == null, ignored by setting default enumeration...");
+        forceId = ForceID.values()[0];
+    } else
+        forceId = pForceId;
+
     return this;
 }
 /** Getter for {@link EntityStatePdu#forceId}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceId (getter #4) */
 public ForceID getForceId()
 {
     if (forceId == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration...");
+        forceId = ForceID.values()[0];
     }
     return forceId; 
 }
@@ -301,7 +307,7 @@ public synchronized EntityStatePdu setEntityAppearance(int pEntityAppearance)
     return this;
 }
 /** Getter for {@link EntityStatePdu#entityAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.entityAppearance (getter #1) */
 public int getEntityAppearance()
 {
        return entityAppearance;
@@ -356,14 +362,14 @@ public EntityCapabilities getCapabilities()
 
 /** Setter for {@link EntityStatePdu#variableParameters}
   * @param pVariableParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityStatePdu to permit progressive setters */
 public synchronized EntityStatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 /** Getter for {@link EntityStatePdu#variableParameters}
-  * @return value of interest (getter #3) */
+  * @return this.variableParameters (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

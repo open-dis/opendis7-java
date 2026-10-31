@@ -184,7 +184,7 @@ public synchronized AttributePdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link AttributePdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public int getPadding1()
 {
        return padding1;
@@ -200,13 +200,13 @@ public synchronized AttributePdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link AttributePdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return AttributePdu to permit progressive setters */
 public synchronized AttributePdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link AttributePdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -214,80 +214,104 @@ public short getPadding2()
 
 /** Setter for {@link AttributePdu#attributeRecordPduType}
   * @param pAttributeRecordPduType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttributePdu to permit progressive setters */
 public synchronized AttributePdu setAttributeRecordPduType(DisPduType pAttributeRecordPduType)
 {
-    attributeRecordPduType = pAttributeRecordPduType;
+    if (pAttributeRecordPduType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DisPduType pAttributeRecordPduType == null, ignored by setting default enumeration...");
+        attributeRecordPduType = DisPduType.values()[0];
+    } else
+        attributeRecordPduType = pAttributeRecordPduType;
+
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordPduType}
-  * @return value of interest (getter #4) */
+  * @return DisPduType this.attributeRecordPduType (getter #4) */
 public DisPduType getAttributeRecordPduType()
 {
     if (attributeRecordPduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
-        return DisPduType.values()[0];
+        System.err.println("Error: enumtype DisPduType attributeRecordPduType == null, ignored by returning default enumeration...");
+        attributeRecordPduType = DisPduType.values()[0];
     }
     return attributeRecordPduType; 
 }
 
 /** Setter for {@link AttributePdu#attributeRecordProtocolVersion}
   * @param pAttributeRecordProtocolVersion new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttributePdu to permit progressive setters */
 public synchronized AttributePdu setAttributeRecordProtocolVersion(DISProtocolFamily pAttributeRecordProtocolVersion)
 {
-    attributeRecordProtocolVersion = pAttributeRecordProtocolVersion;
+    if (pAttributeRecordProtocolVersion == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolFamily pAttributeRecordProtocolVersion == null, ignored by setting default enumeration...");
+        attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
+    } else
+        attributeRecordProtocolVersion = pAttributeRecordProtocolVersion;
+
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordProtocolVersion}
-  * @return value of interest (getter #4) */
+  * @return DISProtocolFamily this.attributeRecordProtocolVersion (getter #4) */
 public DISProtocolFamily getAttributeRecordProtocolVersion()
 {
     if (attributeRecordProtocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
-        return DISProtocolFamily.values()[0];
+        System.err.println("Error: enumtype DISProtocolFamily attributeRecordProtocolVersion == null, ignored by returning default enumeration...");
+        attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
     }
     return attributeRecordProtocolVersion; 
 }
 
 /** Setter for {@link AttributePdu#masterAttributeRecordType}
   * @param pMasterAttributeRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttributePdu to permit progressive setters */
 public synchronized AttributePdu setMasterAttributeRecordType(VariableRecordType pMasterAttributeRecordType)
 {
-    masterAttributeRecordType = pMasterAttributeRecordType;
+    if (pMasterAttributeRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pMasterAttributeRecordType == null, ignored by setting default enumeration...");
+        masterAttributeRecordType = VariableRecordType.values()[0];
+    } else
+        masterAttributeRecordType = pMasterAttributeRecordType;
+
     return this;
 }
 /** Getter for {@link AttributePdu#masterAttributeRecordType}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.masterAttributeRecordType (getter #4) */
 public VariableRecordType getMasterAttributeRecordType()
 {
     if (masterAttributeRecordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType masterAttributeRecordType == null, ignored by returning default enumeration...");
+        masterAttributeRecordType = VariableRecordType.values()[0];
     }
     return masterAttributeRecordType; 
 }
 
 /** Setter for {@link AttributePdu#actionCode}
   * @param pActionCode new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttributePdu to permit progressive setters */
 public synchronized AttributePdu setActionCode(DISAttributeActionCode pActionCode)
 {
-    actionCode = pActionCode;
+    if (pActionCode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISAttributeActionCode pActionCode == null, ignored by setting default enumeration...");
+        actionCode = DISAttributeActionCode.values()[0];
+    } else
+        actionCode = pActionCode;
+
     return this;
 }
 /** Getter for {@link AttributePdu#actionCode}
-  * @return value of interest (getter #4) */
+  * @return DISAttributeActionCode this.actionCode (getter #4) */
 public DISAttributeActionCode getActionCode()
 {
     if (actionCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration DISAttributeActionCode.values()[0]=" + DISAttributeActionCode.values()[0]);
-        return DISAttributeActionCode.values()[0];
+        System.err.println("Error: enumtype DISAttributeActionCode actionCode == null, ignored by returning default enumeration...");
+        actionCode = DISAttributeActionCode.values()[0];
     }
     return actionCode; 
 }
@@ -302,13 +326,13 @@ public synchronized AttributePdu setPadding3(byte pPadding3)
 }
 /** Utility setter for {@link AttributePdu#padding3}
   * @param pPadding3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return AttributePdu to permit progressive setters */
 public synchronized AttributePdu setPadding3(int pPadding3){
     padding3 = (byte) pPadding3;
     return this;
 }
 /** Getter for {@link AttributePdu#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public byte getPadding3()
 {
        return padding3;
@@ -316,14 +340,14 @@ public byte getPadding3()
 
 /** Setter for {@link AttributePdu#attributeRecordSets}
   * @param pAttributeRecordSets new value of interest
-  * @return same object to permit progressive setters */
+  * @return AttributePdu to permit progressive setters */
 public synchronized AttributePdu setAttributeRecordSets(List<AttributeRecordSet> pAttributeRecordSets)
 {
     attributeRecordSets = pAttributeRecordSets;
     return this;
 }
 /** Getter for {@link AttributePdu#attributeRecordSets}
-  * @return value of interest (getter #3) */
+  * @return this.attributeRecordSets (getter #3) */
 public List<AttributeRecordSet> getAttributeRecordSets()
 {
     return attributeRecordSets; 

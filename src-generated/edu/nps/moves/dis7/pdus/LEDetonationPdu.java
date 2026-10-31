@@ -192,13 +192,13 @@ public synchronized LEDetonationPdu setDetonationFlag1(byte pDetonationFlag1)
 }
 /** Utility setter for {@link LEDetonationPdu#detonationFlag1}
   * @param pDetonationFlag1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEDetonationPdu to permit progressive setters */
 public synchronized LEDetonationPdu setDetonationFlag1(int pDetonationFlag1){
     detonationFlag1 = (byte) pDetonationFlag1;
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationFlag1}
-  * @return value of interest (getter #1) */
+  * @return this.detonationFlag1 (getter #1) */
 public byte getDetonationFlag1()
 {
        return detonationFlag1;
@@ -214,13 +214,13 @@ public synchronized LEDetonationPdu setDetonationFlag2(byte pDetonationFlag2)
 }
 /** Utility setter for {@link LEDetonationPdu#detonationFlag2}
   * @param pDetonationFlag2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEDetonationPdu to permit progressive setters */
 public synchronized LEDetonationPdu setDetonationFlag2(int pDetonationFlag2){
     detonationFlag2 = (byte) pDetonationFlag2;
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationFlag2}
-  * @return value of interest (getter #1) */
+  * @return this.detonationFlag2 (getter #1) */
 public byte getDetonationFlag2()
 {
        return detonationFlag2;
@@ -364,13 +364,13 @@ public synchronized LEDetonationPdu setDetonationResult(byte pDetonationResult)
 }
 /** Utility setter for {@link LEDetonationPdu#detonationResult}
   * @param pDetonationResult new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEDetonationPdu to permit progressive setters */
 public synchronized LEDetonationPdu setDetonationResult(int pDetonationResult){
     detonationResult = (byte) pDetonationResult;
     return this;
 }
 /** Getter for {@link LEDetonationPdu#detonationResult}
-  * @return value of interest (getter #1) */
+  * @return this.detonationResult (getter #1) */
 public byte getDetonationResult()
 {
        return detonationResult;

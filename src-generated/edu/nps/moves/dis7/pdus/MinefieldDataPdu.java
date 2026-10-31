@@ -316,13 +316,13 @@ public synchronized MinefieldDataPdu setMinefieldSequenceNumbeer(short pMinefiel
 }
 /** Utility setter for {@link MinefieldDataPdu#minefieldSequenceNumbeer}
   * @param pMinefieldSequenceNumbeer new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setMinefieldSequenceNumbeer(int pMinefieldSequenceNumbeer){
     minefieldSequenceNumbeer = (short) pMinefieldSequenceNumbeer;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#minefieldSequenceNumbeer}
-  * @return value of interest (getter #1) */
+  * @return this.minefieldSequenceNumbeer (getter #1) */
 public short getMinefieldSequenceNumbeer()
 {
        return minefieldSequenceNumbeer;
@@ -338,13 +338,13 @@ public synchronized MinefieldDataPdu setRequestID(byte pRequestID)
 }
 /** Utility setter for {@link MinefieldDataPdu#requestID}
   * @param pRequestID new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setRequestID(int pRequestID){
     requestID = (byte) pRequestID;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public byte getRequestID()
 {
        return requestID;
@@ -360,13 +360,13 @@ public synchronized MinefieldDataPdu setPduSequenceNumber(byte pPduSequenceNumbe
 }
 /** Utility setter for {@link MinefieldDataPdu#pduSequenceNumber}
   * @param pPduSequenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setPduSequenceNumber(int pPduSequenceNumber){
     pduSequenceNumber = (byte) pPduSequenceNumber;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#pduSequenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.pduSequenceNumber (getter #1) */
 public byte getPduSequenceNumber()
 {
        return pduSequenceNumber;
@@ -382,13 +382,13 @@ public synchronized MinefieldDataPdu setNumberOfPdus(byte pNumberOfPdus)
 }
 /** Utility setter for {@link MinefieldDataPdu#numberOfPdus}
   * @param pNumberOfPdus new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setNumberOfPdus(int pNumberOfPdus){
     numberOfPdus = (byte) pNumberOfPdus;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfPdus}
-  * @return value of interest (getter #1) */
+  * @return this.numberOfPdus (getter #1) */
 public byte getNumberOfPdus()
 {
        return numberOfPdus;
@@ -404,13 +404,13 @@ public synchronized MinefieldDataPdu setPadding(byte pPadding)
 }
 /** Utility setter for {@link MinefieldDataPdu#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;
@@ -450,14 +450,14 @@ public EntityType getMineType()
 
 /** Setter for {@link MinefieldDataPdu#sensorTypes}
   * @param pSensorTypes new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
 {
     sensorTypes = pSensorTypes;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#sensorTypes}
-  * @return value of interest (getter #3) */
+  * @return this.sensorTypes (getter #3) */
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 
@@ -465,14 +465,14 @@ public List<MinefieldSensorType> getSensorTypes()
 
 /** Setter for {@link MinefieldDataPdu#mineLocation}
   * @param pMineLocation new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setMineLocation(List<Vector3Float> pMineLocation)
 {
     mineLocation = pMineLocation;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineLocation}
-  * @return value of interest (getter #3) */
+  * @return this.mineLocation (getter #3) */
 public List<Vector3Float> getMineLocation()
 {
     return mineLocation; 
@@ -480,14 +480,14 @@ public List<Vector3Float> getMineLocation()
 
 /** Setter for {@link MinefieldDataPdu#groundBurialDepthOffset}
   * @param pGroundBurialDepthOffset new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setGroundBurialDepthOffset(float[] pGroundBurialDepthOffset)
 {
     groundBurialDepthOffset = pGroundBurialDepthOffset;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#groundBurialDepthOffset}
-  * @return value of interest (getter #2) */
+  * @return this.groundBurialDepthOffset (getter #2) */
 public float[] getGroundBurialDepthOffset()
 {
     return groundBurialDepthOffset; 
@@ -495,14 +495,14 @@ public float[] getGroundBurialDepthOffset()
 
 /** Setter for {@link MinefieldDataPdu#waterBurialDepthOffset}
   * @param pWaterBurialDepthOffset new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setWaterBurialDepthOffset(float[] pWaterBurialDepthOffset)
 {
     waterBurialDepthOffset = pWaterBurialDepthOffset;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#waterBurialDepthOffset}
-  * @return value of interest (getter #2) */
+  * @return this.waterBurialDepthOffset (getter #2) */
 public float[] getWaterBurialDepthOffset()
 {
     return waterBurialDepthOffset; 
@@ -510,14 +510,14 @@ public float[] getWaterBurialDepthOffset()
 
 /** Setter for {@link MinefieldDataPdu#snowBurialDepthOffset}
   * @param pSnowBurialDepthOffset new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setSnowBurialDepthOffset(float[] pSnowBurialDepthOffset)
 {
     snowBurialDepthOffset = pSnowBurialDepthOffset;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#snowBurialDepthOffset}
-  * @return value of interest (getter #2) */
+  * @return this.snowBurialDepthOffset (getter #2) */
 public float[] getSnowBurialDepthOffset()
 {
     return snowBurialDepthOffset; 
@@ -525,14 +525,14 @@ public float[] getSnowBurialDepthOffset()
 
 /** Setter for {@link MinefieldDataPdu#mineOrientation}
   * @param pMineOrientation new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setMineOrientation(List<EulerAngles> pMineOrientation)
 {
     mineOrientation = pMineOrientation;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineOrientation}
-  * @return value of interest (getter #3) */
+  * @return this.mineOrientation (getter #3) */
 public List<EulerAngles> getMineOrientation()
 {
     return mineOrientation; 
@@ -540,14 +540,14 @@ public List<EulerAngles> getMineOrientation()
 
 /** Setter for {@link MinefieldDataPdu#thermalContrast}
   * @param pThermalContrast new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setThermalContrast(float[] pThermalContrast)
 {
     thermalContrast = pThermalContrast;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#thermalContrast}
-  * @return value of interest (getter #2) */
+  * @return this.thermalContrast (getter #2) */
 public float[] getThermalContrast()
 {
     return thermalContrast; 
@@ -555,14 +555,14 @@ public float[] getThermalContrast()
 
 /** Setter for {@link MinefieldDataPdu#reflectance}
   * @param pReflectance new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setReflectance(float[] pReflectance)
 {
     reflectance = pReflectance;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#reflectance}
-  * @return value of interest (getter #2) */
+  * @return this.reflectance (getter #2) */
 public float[] getReflectance()
 {
     return reflectance; 
@@ -570,14 +570,14 @@ public float[] getReflectance()
 
 /** Setter for {@link MinefieldDataPdu#mineEmplacementTime}
   * @param pMineEmplacementTime new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setMineEmplacementTime(List<MineEmplacementTime> pMineEmplacementTime)
 {
     mineEmplacementTime = pMineEmplacementTime;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineEmplacementTime}
-  * @return value of interest (getter #3) */
+  * @return this.mineEmplacementTime (getter #3) */
 public List<MineEmplacementTime> getMineEmplacementTime()
 {
     return mineEmplacementTime; 
@@ -585,14 +585,14 @@ public List<MineEmplacementTime> getMineEmplacementTime()
 
 /** Setter for {@link MinefieldDataPdu#mineEntityNumber}
   * @param pMineEntityNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setMineEntityNumber(short[] pMineEntityNumber)
 {
     mineEntityNumber = pMineEntityNumber;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#mineEntityNumber}
-  * @return value of interest (getter #2) */
+  * @return this.mineEntityNumber (getter #2) */
 public short[] getMineEntityNumber()
 {
     return mineEntityNumber; 
@@ -600,14 +600,14 @@ public short[] getMineEntityNumber()
 
 /** Setter for {@link MinefieldDataPdu#fusing}
   * @param pFusing new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setFusing(List<MinefieldDataFusing> pFusing)
 {
     fusing = pFusing;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#fusing}
-  * @return value of interest (getter #3) */
+  * @return this.fusing (getter #3) */
 public List<MinefieldDataFusing> getFusing()
 {
     return fusing; 
@@ -615,14 +615,14 @@ public List<MinefieldDataFusing> getFusing()
 
 /** Setter for {@link MinefieldDataPdu#scalarDetectionCoefficient}
   * @param pScalarDetectionCoefficient new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setScalarDetectionCoefficient(byte[] pScalarDetectionCoefficient)
 {
     scalarDetectionCoefficient = pScalarDetectionCoefficient;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#scalarDetectionCoefficient}
-  * @return value of interest (getter #2) */
+  * @return this.scalarDetectionCoefficient (getter #2) */
 public byte[] getScalarDetectionCoefficient()
 {
     return scalarDetectionCoefficient; 
@@ -630,14 +630,14 @@ public byte[] getScalarDetectionCoefficient()
 
 /** Setter for {@link MinefieldDataPdu#paintScheme}
   * @param pPaintScheme new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setPaintScheme(List<MinefieldDataPaintScheme> pPaintScheme)
 {
     paintScheme = pPaintScheme;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#paintScheme}
-  * @return value of interest (getter #3) */
+  * @return this.paintScheme (getter #3) */
 public List<MinefieldDataPaintScheme> getPaintScheme()
 {
     return paintScheme; 
@@ -645,14 +645,14 @@ public List<MinefieldDataPaintScheme> getPaintScheme()
 
 /** Setter for {@link MinefieldDataPdu#numberOfTripDetonationWires}
   * @param pNumberOfTripDetonationWires new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setNumberOfTripDetonationWires(byte[] pNumberOfTripDetonationWires)
 {
     numberOfTripDetonationWires = pNumberOfTripDetonationWires;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfTripDetonationWires}
-  * @return value of interest (getter #2) */
+  * @return this.numberOfTripDetonationWires (getter #2) */
 public byte[] getNumberOfTripDetonationWires()
 {
     return numberOfTripDetonationWires; 
@@ -660,14 +660,14 @@ public byte[] getNumberOfTripDetonationWires()
 
 /** Setter for {@link MinefieldDataPdu#numberOfVertices}
   * @param pNumberOfVertices new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldDataPdu to permit progressive setters */
 public synchronized MinefieldDataPdu setNumberOfVertices(byte[] pNumberOfVertices)
 {
     numberOfVertices = pNumberOfVertices;
     return this;
 }
 /** Getter for {@link MinefieldDataPdu#numberOfVertices}
-  * @return value of interest (getter #2) */
+  * @return this.numberOfVertices (getter #2) */
 public byte[] getNumberOfVertices()
 {
     return numberOfVertices; 

@@ -153,7 +153,7 @@ public synchronized RecordQueryRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -161,20 +161,26 @@ public int getRequestID()
 
 /** Setter for {@link RecordQueryRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RecordQueryRPdu to permit progressive setters */
 public synchronized RecordQueryRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
-    requiredReliabilityService = pRequiredReliabilityService;
+    if (pRequiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
+    } else
+        requiredReliabilityService = pRequiredReliabilityService;
+
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#requiredReliabilityService}
-  * @return value of interest (getter #4) */
+  * @return RequiredReliabilityService this.requiredReliabilityService (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
-        return RequiredReliabilityService.values()[0];
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
 }
@@ -189,13 +195,13 @@ public synchronized RecordQueryRPdu setPad1(byte pPad1)
 }
 /** Utility setter for {@link RecordQueryRPdu#pad1}
   * @param pPad1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordQueryRPdu to permit progressive setters */
 public synchronized RecordQueryRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#pad1}
-  * @return value of interest (getter #1) */
+  * @return this.pad1 (getter #1) */
 public byte getPad1()
 {
        return pad1;
@@ -203,20 +209,26 @@ public byte getPad1()
 
 /** Setter for {@link RecordQueryRPdu#eventType}
   * @param pEventType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RecordQueryRPdu to permit progressive setters */
 public synchronized RecordQueryRPdu setEventType(RecordQueryREventType pEventType)
 {
-    eventType = pEventType;
+    if (pEventType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RecordQueryREventType pEventType == null, ignored by setting default enumeration...");
+        eventType = RecordQueryREventType.values()[0];
+    } else
+        eventType = pEventType;
+
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#eventType}
-  * @return value of interest (getter #4) */
+  * @return RecordQueryREventType this.eventType (getter #4) */
 public RecordQueryREventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RecordQueryREventType eventType == null, ignored by returning default enumeration RecordQueryREventType.values()[0]=" + RecordQueryREventType.values()[0]);
-        return RecordQueryREventType.values()[0];
+        System.err.println("Error: enumtype RecordQueryREventType eventType == null, ignored by returning default enumeration...");
+        eventType = RecordQueryREventType.values()[0];
     }
     return eventType; 
 }
@@ -230,7 +242,7 @@ public synchronized RecordQueryRPdu setTime(int pTime)
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#time}
-  * @return value of interest (getter #1) */
+  * @return this.time (getter #1) */
 public int getTime()
 {
        return time;
@@ -238,14 +250,14 @@ public int getTime()
 
 /** Setter for {@link RecordQueryRPdu#recordIDs}
   * @param pRecordIDs new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordQueryRPdu to permit progressive setters */
 public synchronized RecordQueryRPdu setRecordIDs(List<RecordQuerySpecification> pRecordIDs)
 {
     recordIDs = pRecordIDs;
     return this;
 }
 /** Getter for {@link RecordQueryRPdu#recordIDs}
-  * @return value of interest (getter #3) */
+  * @return this.recordIDs (getter #3) */
 public List<RecordQuerySpecification> getRecordIDs()
 {
     return recordIDs; 

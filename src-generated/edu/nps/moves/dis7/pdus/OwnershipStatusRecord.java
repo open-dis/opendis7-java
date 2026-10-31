@@ -71,20 +71,26 @@ public EntityID getEntityId()
 
 /** Setter for {@link OwnershipStatusRecord#ownershipStatus}
   * @param pOwnershipStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this OwnershipStatusRecord to permit progressive setters */
 public synchronized OwnershipStatusRecord setOwnershipStatus(OwnershipStatus pOwnershipStatus)
 {
-    ownershipStatus = pOwnershipStatus;
+    if (pOwnershipStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype OwnershipStatus pOwnershipStatus == null, ignored by setting default enumeration...");
+        ownershipStatus = OwnershipStatus.values()[0];
+    } else
+        ownershipStatus = pOwnershipStatus;
+
     return this;
 }
 /** Getter for {@link OwnershipStatusRecord#ownershipStatus}
-  * @return value of interest (getter #4) */
+  * @return OwnershipStatus this.ownershipStatus (getter #4) */
 public OwnershipStatus getOwnershipStatus()
 {
     if (ownershipStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration OwnershipStatus.values()[0]=" + OwnershipStatus.values()[0]);
-        return OwnershipStatus.values()[0];
+        System.err.println("Error: enumtype OwnershipStatus ownershipStatus == null, ignored by returning default enumeration...");
+        ownershipStatus = OwnershipStatus.values()[0];
     }
     return ownershipStatus; 
 }
@@ -99,13 +105,13 @@ public synchronized OwnershipStatusRecord setPadding(byte pPadding)
 }
 /** Utility setter for {@link OwnershipStatusRecord#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return OwnershipStatusRecord to permit progressive setters */
 public synchronized OwnershipStatusRecord setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link OwnershipStatusRecord#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

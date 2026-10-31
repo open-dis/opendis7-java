@@ -73,20 +73,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link RadioType#entityKind}
   * @param pEntityKind new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RadioType to permit progressive setters */
 public synchronized RadioType setEntityKind(EntityKind pEntityKind)
 {
-    entityKind = pEntityKind;
+    if (pEntityKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityKind pEntityKind == null, ignored by setting default enumeration...");
+        entityKind = EntityKind.values()[0];
+    } else
+        entityKind = pEntityKind;
+
     return this;
 }
 /** Getter for {@link RadioType#entityKind}
-  * @return value of interest (getter #4) */
+  * @return EntityKind this.entityKind (getter #4) */
 public EntityKind getEntityKind()
 {
     if (entityKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration EntityKind.values()[0]=" + EntityKind.values()[0]);
-        return EntityKind.values()[0];
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        entityKind = EntityKind.values()[0];
     }
     return entityKind; 
 }
@@ -101,13 +107,13 @@ public synchronized RadioType setDomain(byte pDomain)
 }
 /** Utility setter for {@link RadioType#domain}
   * @param pDomain new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioType to permit progressive setters */
 public synchronized RadioType setDomain(int pDomain){
     domain = (byte) pDomain;
     return this;
 }
 /** Getter for {@link RadioType#domain}
-  * @return value of interest (getter #1) */
+  * @return this.domain (getter #1) */
 public byte getDomain()
 {
        return domain;
@@ -115,60 +121,78 @@ public byte getDomain()
 
 /** Setter for {@link RadioType#country}
   * @param pCountry new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RadioType to permit progressive setters */
 public synchronized RadioType setCountry(Country pCountry)
 {
-    country = pCountry;
+    if (pCountry == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country pCountry == null, ignored by setting default enumeration...");
+        country = Country.values()[0];
+    } else
+        country = pCountry;
+
     return this;
 }
 /** Getter for {@link RadioType#country}
-  * @return value of interest (getter #4) */
+  * @return Country this.country (getter #4) */
 public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
-        return Country.values()[0];
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        country = Country.values()[0];
     }
     return country; 
 }
 
 /** Setter for {@link RadioType#category}
   * @param pCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RadioType to permit progressive setters */
 public synchronized RadioType setCategory(RadioCategory pCategory)
 {
-    category = pCategory;
+    if (pCategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RadioCategory pCategory == null, ignored by setting default enumeration...");
+        category = RadioCategory.values()[0];
+    } else
+        category = pCategory;
+
     return this;
 }
 /** Getter for {@link RadioType#category}
-  * @return value of interest (getter #4) */
+  * @return RadioCategory this.category (getter #4) */
 public RadioCategory getCategory()
 {
     if (category == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RadioCategory category == null, ignored by returning default enumeration RadioCategory.values()[0]=" + RadioCategory.values()[0]);
-        return RadioCategory.values()[0];
+        System.err.println("Error: enumtype RadioCategory category == null, ignored by returning default enumeration...");
+        category = RadioCategory.values()[0];
     }
     return category; 
 }
 
 /** Setter for {@link RadioType#subcategory}
   * @param pSubcategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RadioType to permit progressive setters */
 public synchronized RadioType setSubcategory(RadioSubcategory pSubcategory)
 {
-    subcategory = pSubcategory;
+    if (pSubcategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RadioSubcategory pSubcategory == null, ignored by setting default enumeration...");
+        subcategory = RadioSubcategory.values()[0];
+    } else
+        subcategory = pSubcategory;
+
     return this;
 }
 /** Getter for {@link RadioType#subcategory}
-  * @return value of interest (getter #4) */
+  * @return RadioSubcategory this.subcategory (getter #4) */
 public RadioSubcategory getSubcategory()
 {
     if (subcategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RadioSubcategory subcategory == null, ignored by returning default enumeration RadioSubcategory.values()[0]=" + RadioSubcategory.values()[0]);
-        return RadioSubcategory.values()[0];
+        System.err.println("Error: enumtype RadioSubcategory subcategory == null, ignored by returning default enumeration...");
+        subcategory = RadioSubcategory.values()[0];
     }
     return subcategory; 
 }
@@ -183,13 +207,13 @@ public synchronized RadioType setSpecific(byte pSpecific)
 }
 /** Utility setter for {@link RadioType#specific}
   * @param pSpecific new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioType to permit progressive setters */
 public synchronized RadioType setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
 /** Getter for {@link RadioType#specific}
-  * @return value of interest (getter #1) */
+  * @return this.specific (getter #1) */
 public byte getSpecific()
 {
        return specific;
@@ -205,13 +229,13 @@ public synchronized RadioType setExtra(byte pExtra)
 }
 /** Utility setter for {@link RadioType#extra}
   * @param pExtra new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioType to permit progressive setters */
 public synchronized RadioType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
 /** Getter for {@link RadioType#extra}
-  * @return value of interest (getter #1) */
+  * @return this.extra (getter #1) */
 public byte getExtra()
 {
        return extra;

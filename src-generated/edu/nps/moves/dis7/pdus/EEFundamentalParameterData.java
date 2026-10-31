@@ -68,7 +68,7 @@ public synchronized EEFundamentalParameterData setFrequency(float pFrequency)
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#frequency}
-  * @return value of interest (getter #1) */
+  * @return this.frequency (getter #1) */
 public float getFrequency()
 {
        return frequency;
@@ -83,7 +83,7 @@ public synchronized EEFundamentalParameterData setFrequencyRange(float pFrequenc
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#frequencyRange}
-  * @return value of interest (getter #1) */
+  * @return this.frequencyRange (getter #1) */
 public float getFrequencyRange()
 {
        return frequencyRange;
@@ -98,7 +98,7 @@ public synchronized EEFundamentalParameterData setEffectiveRadiatedPower(float p
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#effectiveRadiatedPower}
-  * @return value of interest (getter #1) */
+  * @return this.effectiveRadiatedPower (getter #1) */
 public float getEffectiveRadiatedPower()
 {
        return effectiveRadiatedPower;
@@ -113,7 +113,7 @@ public synchronized EEFundamentalParameterData setPulseRepetitionFrequency(float
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#pulseRepetitionFrequency}
-  * @return value of interest (getter #1) */
+  * @return this.pulseRepetitionFrequency (getter #1) */
 public float getPulseRepetitionFrequency()
 {
        return pulseRepetitionFrequency;
@@ -128,7 +128,7 @@ public synchronized EEFundamentalParameterData setPulseWidth(float pPulseWidth)
     return this;
 }
 /** Getter for {@link EEFundamentalParameterData#pulseWidth}
-  * @return value of interest (getter #1) */
+  * @return this.pulseWidth (getter #1) */
 public float getPulseWidth()
 {
        return pulseWidth;

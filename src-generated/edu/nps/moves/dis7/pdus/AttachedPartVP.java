@@ -65,40 +65,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link AttachedPartVP#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttachedPartVP to permit progressive setters */
 public synchronized AttachedPartVP setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link AttachedPartVP#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link AttachedPartVP#detachedIndicator}
   * @param pDetachedIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttachedPartVP to permit progressive setters */
 public synchronized AttachedPartVP setDetachedIndicator(AttachedPartDetachedIndicator pDetachedIndicator)
 {
-    detachedIndicator = pDetachedIndicator;
+    if (pDetachedIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AttachedPartDetachedIndicator pDetachedIndicator == null, ignored by setting default enumeration...");
+        detachedIndicator = AttachedPartDetachedIndicator.values()[0];
+    } else
+        detachedIndicator = pDetachedIndicator;
+
     return this;
 }
 /** Getter for {@link AttachedPartVP#detachedIndicator}
-  * @return value of interest (getter #4) */
+  * @return AttachedPartDetachedIndicator this.detachedIndicator (getter #4) */
 public AttachedPartDetachedIndicator getDetachedIndicator()
 {
     if (detachedIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AttachedPartDetachedIndicator detachedIndicator == null, ignored by returning default enumeration AttachedPartDetachedIndicator.values()[0]=" + AttachedPartDetachedIndicator.values()[0]);
-        return AttachedPartDetachedIndicator.values()[0];
+        System.err.println("Error: enumtype AttachedPartDetachedIndicator detachedIndicator == null, ignored by returning default enumeration...");
+        detachedIndicator = AttachedPartDetachedIndicator.values()[0];
     }
     return detachedIndicator; 
 }
@@ -113,13 +125,13 @@ public synchronized AttachedPartVP setPartAttachedTo(short pPartAttachedTo)
 }
 /** Utility setter for {@link AttachedPartVP#partAttachedTo}
   * @param pPartAttachedTo new value of interest
-  * @return same object to permit progressive setters */
+  * @return AttachedPartVP to permit progressive setters */
 public synchronized AttachedPartVP setPartAttachedTo(int pPartAttachedTo){
     partAttachedTo = (short) pPartAttachedTo;
     return this;
 }
 /** Getter for {@link AttachedPartVP#partAttachedTo}
-  * @return value of interest (getter #1) */
+  * @return this.partAttachedTo (getter #1) */
 public short getPartAttachedTo()
 {
        return partAttachedTo;
@@ -127,20 +139,26 @@ public short getPartAttachedTo()
 
 /** Setter for {@link AttachedPartVP#parameterType}
   * @param pParameterType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AttachedPartVP to permit progressive setters */
 public synchronized AttachedPartVP setParameterType(AttachedParts pParameterType)
 {
-    parameterType = pParameterType;
+    if (pParameterType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AttachedParts pParameterType == null, ignored by setting default enumeration...");
+        parameterType = AttachedParts.values()[0];
+    } else
+        parameterType = pParameterType;
+
     return this;
 }
 /** Getter for {@link AttachedPartVP#parameterType}
-  * @return value of interest (getter #4) */
+  * @return AttachedParts this.parameterType (getter #4) */
 public AttachedParts getParameterType()
 {
     if (parameterType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AttachedParts parameterType == null, ignored by returning default enumeration AttachedParts.values()[0]=" + AttachedParts.values()[0]);
-        return AttachedParts.values()[0];
+        System.err.println("Error: enumtype AttachedParts parameterType == null, ignored by returning default enumeration...");
+        parameterType = AttachedParts.values()[0];
     }
     return parameterType; 
 }

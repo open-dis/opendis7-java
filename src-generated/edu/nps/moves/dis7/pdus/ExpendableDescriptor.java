@@ -74,13 +74,13 @@ public synchronized ExpendableDescriptor setPadding(long pPadding)
 }
 /** Utility setter for {@link ExpendableDescriptor#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return ExpendableDescriptor to permit progressive setters */
 public synchronized ExpendableDescriptor setPadding(int pPadding){
     padding = (long) pPadding;
     return this;
 }
 /** Getter for {@link ExpendableDescriptor#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public long getPadding()
 {
        return padding;

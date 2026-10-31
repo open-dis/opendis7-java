@@ -145,14 +145,14 @@ public EntityID getLiveEntityId()
 
 /** Setter for {@link ArticulatedPartsPdu#variableParameters}
   * @param pVariableParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArticulatedPartsPdu to permit progressive setters */
 public synchronized ArticulatedPartsPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 /** Getter for {@link ArticulatedPartsPdu#variableParameters}
-  * @return value of interest (getter #3) */
+  * @return this.variableParameters (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

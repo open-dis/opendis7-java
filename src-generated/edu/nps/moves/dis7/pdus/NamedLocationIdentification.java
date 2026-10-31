@@ -50,20 +50,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link NamedLocationIdentification#stationName}
   * @param pStationName new value of interest
-  * @return same object to permit progressive setters */
+  * @return this NamedLocationIdentification to permit progressive setters */
 public synchronized NamedLocationIdentification setStationName(IsPartOfStationName pStationName)
 {
-    stationName = pStationName;
+    if (pStationName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfStationName pStationName == null, ignored by setting default enumeration...");
+        stationName = IsPartOfStationName.values()[0];
+    } else
+        stationName = pStationName;
+
     return this;
 }
 /** Getter for {@link NamedLocationIdentification#stationName}
-  * @return value of interest (getter #4) */
+  * @return IsPartOfStationName this.stationName (getter #4) */
 public IsPartOfStationName getStationName()
 {
     if (stationName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfStationName stationName == null, ignored by returning default enumeration IsPartOfStationName.values()[0]=" + IsPartOfStationName.values()[0]);
-        return IsPartOfStationName.values()[0];
+        System.err.println("Error: enumtype IsPartOfStationName stationName == null, ignored by returning default enumeration...");
+        stationName = IsPartOfStationName.values()[0];
     }
     return stationName; 
 }
@@ -78,13 +84,13 @@ public synchronized NamedLocationIdentification setStationNumber(short pStationN
 }
 /** Utility setter for {@link NamedLocationIdentification#stationNumber}
   * @param pStationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return NamedLocationIdentification to permit progressive setters */
 public synchronized NamedLocationIdentification setStationNumber(int pStationNumber){
     stationNumber = (short) pStationNumber;
     return this;
 }
 /** Getter for {@link NamedLocationIdentification#stationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.stationNumber (getter #1) */
 public short getStationNumber()
 {
        return stationNumber;

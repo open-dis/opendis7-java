@@ -61,13 +61,13 @@ public synchronized EntityID setSiteID(short pSiteID)
 }
 /** Utility setter for {@link EntityID#siteID}
   * @param pSiteID new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityID to permit progressive setters */
 public synchronized EntityID setSiteID(int pSiteID){
     siteID = (short) pSiteID;
     return this;
 }
 /** Getter for {@link EntityID#siteID}
-  * @return value of interest (getter #1) */
+  * @return this.siteID (getter #1) */
 public short getSiteID()
 {
        return siteID;
@@ -83,13 +83,13 @@ public synchronized EntityID setApplicationID(short pApplicationID)
 }
 /** Utility setter for {@link EntityID#applicationID}
   * @param pApplicationID new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityID to permit progressive setters */
 public synchronized EntityID setApplicationID(int pApplicationID){
     applicationID = (short) pApplicationID;
     return this;
 }
 /** Getter for {@link EntityID#applicationID}
-  * @return value of interest (getter #1) */
+  * @return this.applicationID (getter #1) */
 public short getApplicationID()
 {
        return applicationID;
@@ -105,13 +105,13 @@ public synchronized EntityID setEntityID(short pEntityID)
 }
 /** Utility setter for {@link EntityID#entityID}
   * @param pEntityID new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityID to permit progressive setters */
 public synchronized EntityID setEntityID(int pEntityID){
     entityID = (short) pEntityID;
     return this;
 }
 /** Getter for {@link EntityID#entityID}
-  * @return value of interest (getter #1) */
+  * @return this.entityID (getter #1) */
 public short getEntityID()
 {
        return entityID;

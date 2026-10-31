@@ -65,13 +65,13 @@ public synchronized IntercomIdentifier setSiteNumber(short pSiteNumber)
 }
 /** Utility setter for {@link IntercomIdentifier#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomIdentifier to permit progressive setters */
 public synchronized IntercomIdentifier setSiteNumber(int pSiteNumber){
     siteNumber = (short) pSiteNumber;
     return this;
 }
 /** Getter for {@link IntercomIdentifier#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public short getSiteNumber()
 {
        return siteNumber;
@@ -87,13 +87,13 @@ public synchronized IntercomIdentifier setApplicationNumber(short pApplicationNu
 }
 /** Utility setter for {@link IntercomIdentifier#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomIdentifier to permit progressive setters */
 public synchronized IntercomIdentifier setApplicationNumber(int pApplicationNumber){
     applicationNumber = (short) pApplicationNumber;
     return this;
 }
 /** Getter for {@link IntercomIdentifier#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public short getApplicationNumber()
 {
        return applicationNumber;
@@ -109,13 +109,13 @@ public synchronized IntercomIdentifier setReferenceNumber(short pReferenceNumber
 }
 /** Utility setter for {@link IntercomIdentifier#referenceNumber}
   * @param pReferenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomIdentifier to permit progressive setters */
 public synchronized IntercomIdentifier setReferenceNumber(int pReferenceNumber){
     referenceNumber = (short) pReferenceNumber;
     return this;
 }
 /** Getter for {@link IntercomIdentifier#referenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.referenceNumber (getter #1) */
 public short getReferenceNumber()
 {
        return referenceNumber;
@@ -131,13 +131,13 @@ public synchronized IntercomIdentifier setIntercomNumber(short pIntercomNumber)
 }
 /** Utility setter for {@link IntercomIdentifier#intercomNumber}
   * @param pIntercomNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomIdentifier to permit progressive setters */
 public synchronized IntercomIdentifier setIntercomNumber(int pIntercomNumber){
     intercomNumber = (short) pIntercomNumber;
     return this;
 }
 /** Getter for {@link IntercomIdentifier#intercomNumber}
-  * @return value of interest (getter #1) */
+  * @return this.intercomNumber (getter #1) */
 public short getIntercomNumber()
 {
        return intercomNumber;

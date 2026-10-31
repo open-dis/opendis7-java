@@ -67,14 +67,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link DataQueryDatumSpecification#fixedDatumIDList}
   * @param pFixedDatumIDList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DataQueryDatumSpecification to permit progressive setters */
 public synchronized DataQueryDatumSpecification setFixedDatumIDList(List<UnsignedDISInteger> pFixedDatumIDList)
 {
     fixedDatumIDList = pFixedDatumIDList;
     return this;
 }
 /** Getter for {@link DataQueryDatumSpecification#fixedDatumIDList}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatumIDList (getter #3) */
 public List<UnsignedDISInteger> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
@@ -82,14 +82,14 @@ public List<UnsignedDISInteger> getFixedDatumIDList()
 
 /** Setter for {@link DataQueryDatumSpecification#variableDatumIDList}
   * @param pVariableDatumIDList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DataQueryDatumSpecification to permit progressive setters */
 public synchronized DataQueryDatumSpecification setVariableDatumIDList(List<UnsignedDISInteger> pVariableDatumIDList)
 {
     variableDatumIDList = pVariableDatumIDList;
     return this;
 }
 /** Getter for {@link DataQueryDatumSpecification#variableDatumIDList}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumIDList (getter #3) */
 public List<UnsignedDISInteger> getVariableDatumIDList()
 {
     return variableDatumIDList; 

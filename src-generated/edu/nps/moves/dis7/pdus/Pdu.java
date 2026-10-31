@@ -460,20 +460,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link Pdu#protocolVersion}
   * @param pProtocolVersion new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Pdu to permit progressive setters */
 public synchronized Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
 {
-    protocolVersion = pProtocolVersion;
+    if (pProtocolVersion == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolVersion pProtocolVersion == null, ignored by setting default enumeration...");
+        protocolVersion = DISProtocolVersion.values()[0];
+    } else
+        protocolVersion = pProtocolVersion;
+
     return this;
 }
 /** Getter for {@link Pdu#protocolVersion}
-  * @return value of interest (getter #4) */
+  * @return DISProtocolVersion this.protocolVersion (getter #4) */
 public DISProtocolVersion getProtocolVersion()
 {
     if (protocolVersion == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration DISProtocolVersion.values()[0]=" + DISProtocolVersion.values()[0]);
-        return DISProtocolVersion.values()[0];
+        System.err.println("Error: enumtype DISProtocolVersion protocolVersion == null, ignored by returning default enumeration...");
+        protocolVersion = DISProtocolVersion.values()[0];
     }
     return protocolVersion; 
 }
@@ -488,13 +494,13 @@ public synchronized Pdu setExerciseID(byte pExerciseID)
 }
 /** Utility setter for {@link Pdu#exerciseID}
   * @param pExerciseID new value of interest
-  * @return same object to permit progressive setters */
+  * @return Pdu to permit progressive setters */
 public synchronized Pdu setExerciseID(int pExerciseID){
     exerciseID = (byte) pExerciseID;
     return this;
 }
 /** Getter for {@link Pdu#exerciseID}
-  * @return value of interest (getter #1) */
+  * @return this.exerciseID (getter #1) */
 public byte getExerciseID()
 {
        return exerciseID;
@@ -502,40 +508,52 @@ public byte getExerciseID()
 
 /** Setter for {@link Pdu#pduType}
   * @param pPduType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Pdu to permit progressive setters */
 public synchronized Pdu setPduType(DisPduType pPduType)
 {
-    pduType = pPduType;
+    if (pPduType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DisPduType pPduType == null, ignored by setting default enumeration...");
+        pduType = DisPduType.values()[0];
+    } else
+        pduType = pPduType;
+
     return this;
 }
 /** Getter for {@link Pdu#pduType}
-  * @return value of interest (getter #4) */
+  * @return DisPduType this.pduType (getter #4) */
 public DisPduType getPduType()
 {
     if (pduType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration DisPduType.values()[0]=" + DisPduType.values()[0]);
-        return DisPduType.values()[0];
+        System.err.println("Error: enumtype DisPduType pduType == null, ignored by returning default enumeration...");
+        pduType = DisPduType.values()[0];
     }
     return pduType; 
 }
 
 /** Setter for {@link Pdu#protocolFamily}
   * @param pProtocolFamily new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Pdu to permit progressive setters */
 public synchronized Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
 {
-    protocolFamily = pProtocolFamily;
+    if (pProtocolFamily == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DISProtocolFamily pProtocolFamily == null, ignored by setting default enumeration...");
+        protocolFamily = DISProtocolFamily.values()[0];
+    } else
+        protocolFamily = pProtocolFamily;
+
     return this;
 }
 /** Getter for {@link Pdu#protocolFamily}
-  * @return value of interest (getter #4) */
+  * @return DISProtocolFamily this.protocolFamily (getter #4) */
 public DISProtocolFamily getProtocolFamily()
 {
     if (protocolFamily == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration DISProtocolFamily.values()[0]=" + DISProtocolFamily.values()[0]);
-        return DISProtocolFamily.values()[0];
+        System.err.println("Error: enumtype DISProtocolFamily protocolFamily == null, ignored by returning default enumeration...");
+        protocolFamily = DISProtocolFamily.values()[0];
     }
     return protocolFamily; 
 }
@@ -555,7 +573,7 @@ public synchronized Pdu setTimestamp(int pTimestamp)
   * Warning: this method gets a DIS bit pattern
   * @see getTimestampSeconds
   * @see edu.nps.moves.dis7.utilities.DisTime
-  * @return value of interest (getter #1) */
+  * @return this.timestamp (getter #1) */
 public int getTimestamp()
 {
        return timestamp;
@@ -571,13 +589,13 @@ public synchronized Pdu setLength(short pLength)
 }
 /** Utility setter for {@link Pdu#length}
   * @param pLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return Pdu to permit progressive setters */
 public synchronized Pdu setLength(int pLength){
     length = (short) pLength;
     return this;
 }
 /** Getter for {@link Pdu#length}
-  * @return value of interest (getter #1) */
+  * @return this.length (getter #1) */
 public short getLength()
 {
        return length;

@@ -58,13 +58,13 @@ public synchronized GridAxisDescriptorFixed setNumberOfPointsOnXiAxis(short pNum
 }
 /** Utility setter for {@link GridAxisDescriptorFixed#numberOfPointsOnXiAxis}
   * @param pNumberOfPointsOnXiAxis new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptorFixed to permit progressive setters */
 public synchronized GridAxisDescriptorFixed setNumberOfPointsOnXiAxis(int pNumberOfPointsOnXiAxis){
     numberOfPointsOnXiAxis = (short) pNumberOfPointsOnXiAxis;
     return this;
 }
 /** Getter for {@link GridAxisDescriptorFixed#numberOfPointsOnXiAxis}
-  * @return value of interest (getter #1) */
+  * @return this.numberOfPointsOnXiAxis (getter #1) */
 public short getNumberOfPointsOnXiAxis()
 {
        return numberOfPointsOnXiAxis;
@@ -80,13 +80,13 @@ public synchronized GridAxisDescriptorFixed setInitialIndex(short pInitialIndex)
 }
 /** Utility setter for {@link GridAxisDescriptorFixed#initialIndex}
   * @param pInitialIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptorFixed to permit progressive setters */
 public synchronized GridAxisDescriptorFixed setInitialIndex(int pInitialIndex){
     initialIndex = (short) pInitialIndex;
     return this;
 }
 /** Getter for {@link GridAxisDescriptorFixed#initialIndex}
-  * @return value of interest (getter #1) */
+  * @return this.initialIndex (getter #1) */
 public short getInitialIndex()
 {
        return initialIndex;

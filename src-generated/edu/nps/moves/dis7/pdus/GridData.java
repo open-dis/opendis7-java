@@ -51,40 +51,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link GridData#sampleType}
   * @param pSampleType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this GridData to permit progressive setters */
 public synchronized GridData setSampleType(GriddedDataSampleType pSampleType)
 {
-    sampleType = pSampleType;
+    if (pSampleType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataSampleType pSampleType == null, ignored by setting default enumeration...");
+        sampleType = GriddedDataSampleType.values()[0];
+    } else
+        sampleType = pSampleType;
+
     return this;
 }
 /** Getter for {@link GridData#sampleType}
-  * @return value of interest (getter #4) */
+  * @return GriddedDataSampleType this.sampleType (getter #4) */
 public GriddedDataSampleType getSampleType()
 {
     if (sampleType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration GriddedDataSampleType.values()[0]=" + GriddedDataSampleType.values()[0]);
-        return GriddedDataSampleType.values()[0];
+        System.err.println("Error: enumtype GriddedDataSampleType sampleType == null, ignored by returning default enumeration...");
+        sampleType = GriddedDataSampleType.values()[0];
     }
     return sampleType; 
 }
 
 /** Setter for {@link GridData#dataRepresentation}
   * @param pDataRepresentation new value of interest
-  * @return same object to permit progressive setters */
+  * @return this GridData to permit progressive setters */
 public synchronized GridData setDataRepresentation(GriddedDataDataRepresentation pDataRepresentation)
 {
-    dataRepresentation = pDataRepresentation;
+    if (pDataRepresentation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataDataRepresentation pDataRepresentation == null, ignored by setting default enumeration...");
+        dataRepresentation = GriddedDataDataRepresentation.values()[0];
+    } else
+        dataRepresentation = pDataRepresentation;
+
     return this;
 }
 /** Getter for {@link GridData#dataRepresentation}
-  * @return value of interest (getter #4) */
+  * @return GriddedDataDataRepresentation this.dataRepresentation (getter #4) */
 public GriddedDataDataRepresentation getDataRepresentation()
 {
     if (dataRepresentation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration GriddedDataDataRepresentation.values()[0]=" + GriddedDataDataRepresentation.values()[0]);
-        return GriddedDataDataRepresentation.values()[0];
+        System.err.println("Error: enumtype GriddedDataDataRepresentation dataRepresentation == null, ignored by returning default enumeration...");
+        dataRepresentation = GriddedDataDataRepresentation.values()[0];
     }
     return dataRepresentation; 
 }

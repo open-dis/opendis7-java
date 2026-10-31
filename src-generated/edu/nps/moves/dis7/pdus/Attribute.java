@@ -67,7 +67,7 @@ public synchronized Attribute setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link Attribute#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -75,14 +75,14 @@ public int getRecordType()
 
 /** Setter for {@link Attribute#recordSpecificFields}
   * @param pRecordSpecificFields new value of interest
-  * @return same object to permit progressive setters */
+  * @return Attribute to permit progressive setters */
 public synchronized Attribute setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 /** Getter for {@link Attribute#recordSpecificFields}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificFields (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

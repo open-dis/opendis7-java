@@ -102,7 +102,7 @@ public synchronized DirectedEnergyDamage setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -118,13 +118,13 @@ public synchronized DirectedEnergyDamage setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link DirectedEnergyDamage#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -140,13 +140,13 @@ public synchronized DirectedEnergyDamage setPadding(short pPadding)
 }
 /** Utility setter for {@link DirectedEnergyDamage#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -177,7 +177,7 @@ public synchronized DirectedEnergyDamage setDamageDiameter(float pDamageDiameter
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#damageDiameter}
-  * @return value of interest (getter #1) */
+  * @return this.damageDiameter (getter #1) */
 public float getDamageDiameter()
 {
        return damageDiameter;
@@ -192,7 +192,7 @@ public synchronized DirectedEnergyDamage setTemperature(float pTemperature)
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#temperature}
-  * @return value of interest (getter #1) */
+  * @return this.temperature (getter #1) */
 public float getTemperature()
 {
        return temperature;
@@ -200,40 +200,52 @@ public float getTemperature()
 
 /** Setter for {@link DirectedEnergyDamage#componentIdentification}
   * @param pComponentIdentification new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setComponentIdentification(EntityDamageStatusComponentIdentification pComponentIdentification)
 {
-    componentIdentification = pComponentIdentification;
+    if (pComponentIdentification == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification pComponentIdentification == null, ignored by setting default enumeration...");
+        componentIdentification = EntityDamageStatusComponentIdentification.values()[0];
+    } else
+        componentIdentification = pComponentIdentification;
+
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentIdentification}
-  * @return value of interest (getter #4) */
+  * @return EntityDamageStatusComponentIdentification this.componentIdentification (getter #4) */
 public EntityDamageStatusComponentIdentification getComponentIdentification()
 {
     if (componentIdentification == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration EntityDamageStatusComponentIdentification.values()[0]=" + EntityDamageStatusComponentIdentification.values()[0]);
-        return EntityDamageStatusComponentIdentification.values()[0];
+        System.err.println("Error: enumtype EntityDamageStatusComponentIdentification componentIdentification == null, ignored by returning default enumeration...");
+        componentIdentification = EntityDamageStatusComponentIdentification.values()[0];
     }
     return componentIdentification; 
 }
 
 /** Setter for {@link DirectedEnergyDamage#componentDamageStatus}
   * @param pComponentDamageStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setComponentDamageStatus(DEDamageDescriptionComponentDamageStatus pComponentDamageStatus)
 {
-    componentDamageStatus = pComponentDamageStatus;
+    if (pComponentDamageStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus pComponentDamageStatus == null, ignored by setting default enumeration...");
+        componentDamageStatus = DEDamageDescriptionComponentDamageStatus.values()[0];
+    } else
+        componentDamageStatus = pComponentDamageStatus;
+
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentDamageStatus}
-  * @return value of interest (getter #4) */
+  * @return DEDamageDescriptionComponentDamageStatus this.componentDamageStatus (getter #4) */
 public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 {
     if (componentDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration DEDamageDescriptionComponentDamageStatus.values()[0]=" + DEDamageDescriptionComponentDamageStatus.values()[0]);
-        return DEDamageDescriptionComponentDamageStatus.values()[0];
+        System.err.println("Error: enumtype DEDamageDescriptionComponentDamageStatus componentDamageStatus == null, ignored by returning default enumeration...");
+        componentDamageStatus = DEDamageDescriptionComponentDamageStatus.values()[0];
     }
     return componentDamageStatus; 
 }
@@ -252,7 +264,7 @@ public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageSt
 {
     if (componentVisualDamageStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype DEDamageDescriptionComponentVisualDamageStatus componentVisualDamageStatus == null, ignored by returning default bitfieldtype new DEDamageDescriptionComponentVisualDamageStatus()=" + new DEDamageDescriptionComponentVisualDamageStatus());
+        System.err.println("Error: bitfieldtype DEDamageDescriptionComponentVisualDamageStatus componentVisualDamageStatus == null, ignored by returning default bitfieldtype...");
         return new DEDamageDescriptionComponentVisualDamageStatus();
     }
     return componentVisualDamageStatus; 
@@ -260,20 +272,26 @@ public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageSt
 
 /** Setter for {@link DirectedEnergyDamage#componentVisualSmokeColor}
   * @param pComponentVisualSmokeColor new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor)
 {
-    componentVisualSmokeColor = pComponentVisualSmokeColor;
+    if (pComponentVisualSmokeColor == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor == null, ignored by setting default enumeration...");
+        componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.values()[0];
+    } else
+        componentVisualSmokeColor = pComponentVisualSmokeColor;
+
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#componentVisualSmokeColor}
-  * @return value of interest (getter #4) */
+  * @return DEDamageDescriptionComponentVisualSmokeColor this.componentVisualSmokeColor (getter #4) */
 public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor()
 {
     if (componentVisualSmokeColor == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration DEDamageDescriptionComponentVisualSmokeColor.values()[0]=" + DEDamageDescriptionComponentVisualSmokeColor.values()[0]);
-        return DEDamageDescriptionComponentVisualSmokeColor.values()[0];
+        System.err.println("Error: enumtype DEDamageDescriptionComponentVisualSmokeColor componentVisualSmokeColor == null, ignored by returning default enumeration...");
+        componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.values()[0];
     }
     return componentVisualSmokeColor; 
 }
@@ -304,13 +322,13 @@ public synchronized DirectedEnergyDamage setPadding2(short pPadding2)
 }
 /** Utility setter for {@link DirectedEnergyDamage#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyDamage to permit progressive setters */
 public synchronized DirectedEnergyDamage setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link DirectedEnergyDamage#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;

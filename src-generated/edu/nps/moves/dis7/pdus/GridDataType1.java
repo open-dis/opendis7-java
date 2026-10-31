@@ -72,7 +72,7 @@ public synchronized GridDataType1 setFieldScale(float pFieldScale)
     return this;
 }
 /** Getter for {@link GridDataType1#fieldScale}
-  * @return value of interest (getter #1) */
+  * @return this.fieldScale (getter #1) */
 public float getFieldScale()
 {
        return fieldScale;
@@ -87,7 +87,7 @@ public synchronized GridDataType1 setFieldOffset(float pFieldOffset)
     return this;
 }
 /** Getter for {@link GridDataType1#fieldOffset}
-  * @return value of interest (getter #1) */
+  * @return this.fieldOffset (getter #1) */
 public float getFieldOffset()
 {
        return fieldOffset;
@@ -95,14 +95,14 @@ public float getFieldOffset()
 
 /** Setter for {@link GridDataType1#dataValues}
   * @param pDataValues new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridDataType1 to permit progressive setters */
 public synchronized GridDataType1 setDataValues(short[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 /** Getter for {@link GridDataType1#dataValues}
-  * @return value of interest (getter #2) */
+  * @return this.dataValues (getter #2) */
 public short[] getDataValues()
 {
     return dataValues; 

@@ -56,7 +56,7 @@ public synchronized PropulsionSystemData setPowerSetting(float pPowerSetting)
     return this;
 }
 /** Getter for {@link PropulsionSystemData#powerSetting}
-  * @return value of interest (getter #1) */
+  * @return this.powerSetting (getter #1) */
 public float getPowerSetting()
 {
        return powerSetting;
@@ -71,7 +71,7 @@ public synchronized PropulsionSystemData setEngineRpm(float pEngineRpm)
     return this;
 }
 /** Getter for {@link PropulsionSystemData#engineRpm}
-  * @return value of interest (getter #1) */
+  * @return this.engineRpm (getter #1) */
 public float getEngineRpm()
 {
        return engineRpm;

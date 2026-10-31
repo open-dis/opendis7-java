@@ -69,20 +69,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link Environment#environmentType}
   * @param pEnvironmentType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Environment to permit progressive setters */
 public synchronized Environment setEnvironmentType(EnvironmentalProcessRecordType pEnvironmentType)
 {
-    environmentType = pEnvironmentType;
+    if (pEnvironmentType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType pEnvironmentType == null, ignored by setting default enumeration...");
+        environmentType = EnvironmentalProcessRecordType.values()[0];
+    } else
+        environmentType = pEnvironmentType;
+
     return this;
 }
 /** Getter for {@link Environment#environmentType}
-  * @return value of interest (getter #4) */
+  * @return EnvironmentalProcessRecordType this.environmentType (getter #4) */
 public EnvironmentalProcessRecordType getEnvironmentType()
 {
     if (environmentType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration EnvironmentalProcessRecordType.values()[0]=" + EnvironmentalProcessRecordType.values()[0]);
-        return EnvironmentalProcessRecordType.values()[0];
+        System.err.println("Error: enumtype EnvironmentalProcessRecordType environmentType == null, ignored by returning default enumeration...");
+        environmentType = EnvironmentalProcessRecordType.values()[0];
     }
     return environmentType; 
 }
@@ -97,13 +103,13 @@ public synchronized Environment setLength(short pLength)
 }
 /** Utility setter for {@link Environment#length}
   * @param pLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return Environment to permit progressive setters */
 public synchronized Environment setLength(int pLength){
     length = (short) pLength;
     return this;
 }
 /** Getter for {@link Environment#length}
-  * @return value of interest (getter #1) */
+  * @return this.length (getter #1) */
 public short getLength()
 {
        return length;
@@ -119,13 +125,13 @@ public synchronized Environment setIndex(byte pIndex)
 }
 /** Utility setter for {@link Environment#index}
   * @param pIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return Environment to permit progressive setters */
 public synchronized Environment setIndex(int pIndex){
     index = (byte) pIndex;
     return this;
 }
 /** Getter for {@link Environment#index}
-  * @return value of interest (getter #1) */
+  * @return this.index (getter #1) */
 public byte getIndex()
 {
        return index;
@@ -141,13 +147,13 @@ public synchronized Environment setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link Environment#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return Environment to permit progressive setters */
 public synchronized Environment setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link Environment#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -155,14 +161,14 @@ public byte getPadding1()
 
 /** Setter for {@link Environment#geometry}
   * @param pGeometry new value of interest
-  * @return same object to permit progressive setters */
+  * @return Environment to permit progressive setters */
 public synchronized Environment setGeometry(byte[] pGeometry)
 {
     geometry = pGeometry;
     return this;
 }
 /** Getter for {@link Environment#geometry}
-  * @return value of interest (getter #2) */
+  * @return this.geometry (getter #2) */
 public byte[] getGeometry()
 {
     return geometry; 

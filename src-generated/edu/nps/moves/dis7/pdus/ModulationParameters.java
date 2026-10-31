@@ -52,14 +52,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link ModulationParameters#recordSpecificFields}
   * @param pRecordSpecificFields new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModulationParameters to permit progressive setters */
 public synchronized ModulationParameters setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 /** Getter for {@link ModulationParameters#recordSpecificFields}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificFields (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

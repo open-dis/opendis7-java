@@ -73,14 +73,14 @@ public synchronized StandardVariableSpecification setNumberOfStandardVariableRec
 
 /** Setter for {@link StandardVariableSpecification#standardVariables}
   * @param pStandardVariables new value of interest
-  * @return same object to permit progressive setters */
+  * @return StandardVariableSpecification to permit progressive setters */
 public synchronized StandardVariableSpecification setStandardVariables(List<StandardVariableRecord> pStandardVariables)
 {
     standardVariables = pStandardVariables;
     return this;
 }
 /** Getter for {@link StandardVariableSpecification#standardVariables}
-  * @return value of interest (getter #3) */
+  * @return this.standardVariables (getter #3) */
 public List<StandardVariableRecord> getStandardVariables()
 {
     return standardVariables; 

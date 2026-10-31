@@ -75,20 +75,26 @@ public EntityType getExplodingObject()
 
 /** Setter for {@link ExplosionDescriptor#explosiveMaterial}
   * @param pExplosiveMaterial new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ExplosionDescriptor to permit progressive setters */
 public synchronized ExplosionDescriptor setExplosiveMaterial(ExplosiveMaterialCategories pExplosiveMaterial)
 {
-    explosiveMaterial = pExplosiveMaterial;
+    if (pExplosiveMaterial == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ExplosiveMaterialCategories pExplosiveMaterial == null, ignored by setting default enumeration...");
+        explosiveMaterial = ExplosiveMaterialCategories.values()[0];
+    } else
+        explosiveMaterial = pExplosiveMaterial;
+
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#explosiveMaterial}
-  * @return value of interest (getter #4) */
+  * @return ExplosiveMaterialCategories this.explosiveMaterial (getter #4) */
 public ExplosiveMaterialCategories getExplosiveMaterial()
 {
     if (explosiveMaterial == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ExplosiveMaterialCategories explosiveMaterial == null, ignored by returning default enumeration ExplosiveMaterialCategories.values()[0]=" + ExplosiveMaterialCategories.values()[0]);
-        return ExplosiveMaterialCategories.values()[0];
+        System.err.println("Error: enumtype ExplosiveMaterialCategories explosiveMaterial == null, ignored by returning default enumeration...");
+        explosiveMaterial = ExplosiveMaterialCategories.values()[0];
     }
     return explosiveMaterial; 
 }
@@ -103,13 +109,13 @@ public synchronized ExplosionDescriptor setPadding(short pPadding)
 }
 /** Utility setter for {@link ExplosionDescriptor#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return ExplosionDescriptor to permit progressive setters */
 public synchronized ExplosionDescriptor setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -124,7 +130,7 @@ public synchronized ExplosionDescriptor setExplosiveForce(float pExplosiveForce)
     return this;
 }
 /** Getter for {@link ExplosionDescriptor#explosiveForce}
-  * @return value of interest (getter #1) */
+  * @return this.explosiveForce (getter #1) */
 public float getExplosiveForce()
 {
        return explosiveForce;

@@ -150,20 +150,26 @@ public ClockTime getRealWorldTime()
 
 /** Setter for {@link StopFreezePdu#reason}
   * @param pReason new value of interest
-  * @return same object to permit progressive setters */
+  * @return this StopFreezePdu to permit progressive setters */
 public synchronized StopFreezePdu setReason(StopFreezeReason pReason)
 {
-    reason = pReason;
+    if (pReason == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype StopFreezeReason pReason == null, ignored by setting default enumeration...");
+        reason = StopFreezeReason.values()[0];
+    } else
+        reason = pReason;
+
     return this;
 }
 /** Getter for {@link StopFreezePdu#reason}
-  * @return value of interest (getter #4) */
+  * @return StopFreezeReason this.reason (getter #4) */
 public StopFreezeReason getReason()
 {
     if (reason == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration StopFreezeReason.values()[0]=" + StopFreezeReason.values()[0]);
-        return StopFreezeReason.values()[0];
+        System.err.println("Error: enumtype StopFreezeReason reason == null, ignored by returning default enumeration...");
+        reason = StopFreezeReason.values()[0];
     }
     return reason; 
 }
@@ -182,7 +188,7 @@ public StopFreezeFrozenBehavior getFrozenBehavior()
 {
     if (frozenBehavior == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype new StopFreezeFrozenBehavior()=" + new StopFreezeFrozenBehavior());
+        System.err.println("Error: bitfieldtype StopFreezeFrozenBehavior frozenBehavior == null, ignored by returning default bitfieldtype...");
         return new StopFreezeFrozenBehavior();
     }
     return frozenBehavior; 
@@ -198,13 +204,13 @@ public synchronized StopFreezePdu setPadding1(short pPadding1)
 }
 /** Utility setter for {@link StopFreezePdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return StopFreezePdu to permit progressive setters */
 public synchronized StopFreezePdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
 /** Getter for {@link StopFreezePdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public short getPadding1()
 {
        return padding1;
@@ -219,7 +225,7 @@ public synchronized StopFreezePdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link StopFreezePdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;

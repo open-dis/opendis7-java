@@ -61,13 +61,13 @@ public synchronized LEVector3FixedByte setX(byte pX)
 }
 /** Utility setter for {@link LEVector3FixedByte#x}
   * @param pX new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEVector3FixedByte to permit progressive setters */
 public synchronized LEVector3FixedByte setX(int pX){
     x = (byte) pX;
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#x}
-  * @return value of interest (getter #1) */
+  * @return this.x (getter #1) */
 public byte getX()
 {
        return x;
@@ -83,13 +83,13 @@ public synchronized LEVector3FixedByte setY(byte pY)
 }
 /** Utility setter for {@link LEVector3FixedByte#y}
   * @param pY new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEVector3FixedByte to permit progressive setters */
 public synchronized LEVector3FixedByte setY(int pY){
     y = (byte) pY;
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#y}
-  * @return value of interest (getter #1) */
+  * @return this.y (getter #1) */
 public byte getY()
 {
        return y;
@@ -105,13 +105,13 @@ public synchronized LEVector3FixedByte setZ(byte pZ)
 }
 /** Utility setter for {@link LEVector3FixedByte#z}
   * @param pZ new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEVector3FixedByte to permit progressive setters */
 public synchronized LEVector3FixedByte setZ(int pZ){
     z = (byte) pZ;
     return this;
 }
 /** Getter for {@link LEVector3FixedByte#z}
-  * @return value of interest (getter #1) */
+  * @return this.z (getter #1) */
 public byte getZ()
 {
        return z;

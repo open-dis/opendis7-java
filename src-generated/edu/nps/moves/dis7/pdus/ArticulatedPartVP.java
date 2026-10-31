@@ -66,20 +66,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link ArticulatedPartVP#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ArticulatedPartVP to permit progressive setters */
 public synchronized ArticulatedPartVP setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
@@ -94,13 +100,13 @@ public synchronized ArticulatedPartVP setChangeIndicator(byte pChangeIndicator)
 }
 /** Utility setter for {@link ArticulatedPartVP#changeIndicator}
   * @param pChangeIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArticulatedPartVP to permit progressive setters */
 public synchronized ArticulatedPartVP setChangeIndicator(int pChangeIndicator){
     changeIndicator = (byte) pChangeIndicator;
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#changeIndicator}
-  * @return value of interest (getter #1) */
+  * @return this.changeIndicator (getter #1) */
 public byte getChangeIndicator()
 {
        return changeIndicator;
@@ -116,13 +122,13 @@ public synchronized ArticulatedPartVP setPartAttachedTo(short pPartAttachedTo)
 }
 /** Utility setter for {@link ArticulatedPartVP#partAttachedTo}
   * @param pPartAttachedTo new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArticulatedPartVP to permit progressive setters */
 public synchronized ArticulatedPartVP setPartAttachedTo(int pPartAttachedTo){
     partAttachedTo = (short) pPartAttachedTo;
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#partAttachedTo}
-  * @return value of interest (getter #1) */
+  * @return this.partAttachedTo (getter #1) */
 public short getPartAttachedTo()
 {
        return partAttachedTo;
@@ -137,7 +143,7 @@ public synchronized ArticulatedPartVP setParameterType(int pParameterType)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#parameterType}
-  * @return value of interest (getter #1) */
+  * @return this.parameterType (getter #1) */
 public int getParameterType()
 {
        return parameterType;
@@ -152,7 +158,7 @@ public synchronized ArticulatedPartVP setParameterValue(float pParameterValue)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#parameterValue}
-  * @return value of interest (getter #1) */
+  * @return this.parameterValue (getter #1) */
 public float getParameterValue()
 {
        return parameterValue;
@@ -167,7 +173,7 @@ public synchronized ArticulatedPartVP setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link ArticulatedPartVP#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public int getPadding()
 {
        return padding;

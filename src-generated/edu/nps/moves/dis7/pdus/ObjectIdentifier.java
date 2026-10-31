@@ -74,13 +74,13 @@ public synchronized ObjectIdentifier setObjectNumber(short pObjectNumber)
 }
 /** Utility setter for {@link ObjectIdentifier#objectNumber}
   * @param pObjectNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return ObjectIdentifier to permit progressive setters */
 public synchronized ObjectIdentifier setObjectNumber(int pObjectNumber){
     objectNumber = (short) pObjectNumber;
     return this;
 }
 /** Getter for {@link ObjectIdentifier#objectNumber}
-  * @return value of interest (getter #1) */
+  * @return this.objectNumber (getter #1) */
 public short getObjectNumber()
 {
        return objectNumber;

@@ -125,40 +125,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link AcknowledgePdu#acknowledgeFlag}
   * @param pAcknowledgeFlag new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AcknowledgePdu to permit progressive setters */
 public synchronized AcknowledgePdu setAcknowledgeFlag(AcknowledgeAcknowledgeFlag pAcknowledgeFlag)
 {
-    acknowledgeFlag = pAcknowledgeFlag;
+    if (pAcknowledgeFlag == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag pAcknowledgeFlag == null, ignored by setting default enumeration...");
+        acknowledgeFlag = AcknowledgeAcknowledgeFlag.values()[0];
+    } else
+        acknowledgeFlag = pAcknowledgeFlag;
+
     return this;
 }
 /** Getter for {@link AcknowledgePdu#acknowledgeFlag}
-  * @return value of interest (getter #4) */
+  * @return AcknowledgeAcknowledgeFlag this.acknowledgeFlag (getter #4) */
 public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
     if (acknowledgeFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration AcknowledgeAcknowledgeFlag.values()[0]=" + AcknowledgeAcknowledgeFlag.values()[0]);
-        return AcknowledgeAcknowledgeFlag.values()[0];
+        System.err.println("Error: enumtype AcknowledgeAcknowledgeFlag acknowledgeFlag == null, ignored by returning default enumeration...");
+        acknowledgeFlag = AcknowledgeAcknowledgeFlag.values()[0];
     }
     return acknowledgeFlag; 
 }
 
 /** Setter for {@link AcknowledgePdu#responseFlag}
   * @param pResponseFlag new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AcknowledgePdu to permit progressive setters */
 public synchronized AcknowledgePdu setResponseFlag(AcknowledgeResponseFlag pResponseFlag)
 {
-    responseFlag = pResponseFlag;
+    if (pResponseFlag == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AcknowledgeResponseFlag pResponseFlag == null, ignored by setting default enumeration...");
+        responseFlag = AcknowledgeResponseFlag.values()[0];
+    } else
+        responseFlag = pResponseFlag;
+
     return this;
 }
 /** Getter for {@link AcknowledgePdu#responseFlag}
-  * @return value of interest (getter #4) */
+  * @return AcknowledgeResponseFlag this.responseFlag (getter #4) */
 public AcknowledgeResponseFlag getResponseFlag()
 {
     if (responseFlag == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration AcknowledgeResponseFlag.values()[0]=" + AcknowledgeResponseFlag.values()[0]);
-        return AcknowledgeResponseFlag.values()[0];
+        System.err.println("Error: enumtype AcknowledgeResponseFlag responseFlag == null, ignored by returning default enumeration...");
+        responseFlag = AcknowledgeResponseFlag.values()[0];
     }
     return responseFlag; 
 }
@@ -172,7 +184,7 @@ public synchronized AcknowledgePdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link AcknowledgePdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;

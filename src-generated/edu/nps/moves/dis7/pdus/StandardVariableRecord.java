@@ -61,34 +61,40 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link StandardVariableRecord#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this StandardVariableRecord to permit progressive setters */
 public synchronized StandardVariableRecord setRecordType(VariableRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link StandardVariableRecord#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.recordType (getter #4) */
 public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link StandardVariableRecord#recordSpecificFields}
   * @param pRecordSpecificFields new value of interest
-  * @return same object to permit progressive setters */
+  * @return StandardVariableRecord to permit progressive setters */
 public synchronized StandardVariableRecord setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 /** Getter for {@link StandardVariableRecord#recordSpecificFields}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificFields (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

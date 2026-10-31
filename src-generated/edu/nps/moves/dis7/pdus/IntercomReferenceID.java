@@ -61,13 +61,13 @@ public synchronized IntercomReferenceID setSiteNumber(short pSiteNumber)
 }
 /** Utility setter for {@link IntercomReferenceID#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomReferenceID to permit progressive setters */
 public synchronized IntercomReferenceID setSiteNumber(int pSiteNumber){
     siteNumber = (short) pSiteNumber;
     return this;
 }
 /** Getter for {@link IntercomReferenceID#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public short getSiteNumber()
 {
        return siteNumber;
@@ -83,13 +83,13 @@ public synchronized IntercomReferenceID setApplicationNumber(short pApplicationN
 }
 /** Utility setter for {@link IntercomReferenceID#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomReferenceID to permit progressive setters */
 public synchronized IntercomReferenceID setApplicationNumber(int pApplicationNumber){
     applicationNumber = (short) pApplicationNumber;
     return this;
 }
 /** Getter for {@link IntercomReferenceID#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public short getApplicationNumber()
 {
        return applicationNumber;
@@ -105,13 +105,13 @@ public synchronized IntercomReferenceID setReferenceNumber(short pReferenceNumbe
 }
 /** Utility setter for {@link IntercomReferenceID#referenceNumber}
   * @param pReferenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomReferenceID to permit progressive setters */
 public synchronized IntercomReferenceID setReferenceNumber(int pReferenceNumber){
     referenceNumber = (short) pReferenceNumber;
     return this;
 }
 /** Getter for {@link IntercomReferenceID#referenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.referenceNumber (getter #1) */
 public short getReferenceNumber()
 {
        return referenceNumber;

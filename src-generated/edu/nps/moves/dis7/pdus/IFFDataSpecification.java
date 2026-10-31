@@ -54,14 +54,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IFFDataSpecification#iffDataRecords}
   * @param pIffDataRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFDataSpecification to permit progressive setters */
 public synchronized IFFDataSpecification setIffDataRecords(List<IFFData> pIffDataRecords)
 {
     iffDataRecords = pIffDataRecords;
     return this;
 }
 /** Getter for {@link IFFDataSpecification#iffDataRecords}
-  * @return value of interest (getter #3) */
+  * @return this.iffDataRecords (getter #3) */
 public List<IFFData> getIffDataRecords()
 {
     return iffDataRecords; 

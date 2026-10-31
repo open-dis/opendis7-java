@@ -174,13 +174,13 @@ public synchronized AppearancePdu setAppearanceFlags(short pAppearanceFlags)
 }
 /** Utility setter for {@link AppearancePdu#appearanceFlags}
   * @param pAppearanceFlags new value of interest
-  * @return same object to permit progressive setters */
+  * @return AppearancePdu to permit progressive setters */
 public synchronized AppearancePdu setAppearanceFlags(int pAppearanceFlags){
     appearanceFlags = (short) pAppearanceFlags;
     return this;
 }
 /** Getter for {@link AppearancePdu#appearanceFlags}
-  * @return value of interest (getter #1) */
+  * @return this.appearanceFlags (getter #1) */
 public short getAppearanceFlags()
 {
        return appearanceFlags;
@@ -188,20 +188,26 @@ public short getAppearanceFlags()
 
 /** Setter for {@link AppearancePdu#forceId}
   * @param pForceId new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AppearancePdu to permit progressive setters */
 public synchronized AppearancePdu setForceId(ForceID pForceId)
 {
-    forceId = pForceId;
+    if (pForceId == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceId == null, ignored by setting default enumeration...");
+        forceId = ForceID.values()[0];
+    } else
+        forceId = pForceId;
+
     return this;
 }
 /** Getter for {@link AppearancePdu#forceId}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceId (getter #4) */
 public ForceID getForceId()
 {
     if (forceId == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceId == null, ignored by returning default enumeration...");
+        forceId = ForceID.values()[0];
     }
     return forceId; 
 }

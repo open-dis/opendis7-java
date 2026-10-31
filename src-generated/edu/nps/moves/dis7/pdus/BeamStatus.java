@@ -46,20 +46,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link BeamStatus#beamState}
   * @param pBeamState new value of interest
-  * @return same object to permit progressive setters */
+  * @return this BeamStatus to permit progressive setters */
 public synchronized BeamStatus setBeamState(BeamStatusBeamState pBeamState)
 {
-    beamState = pBeamState;
+    if (pBeamState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype BeamStatusBeamState pBeamState == null, ignored by setting default enumeration...");
+        beamState = BeamStatusBeamState.values()[0];
+    } else
+        beamState = pBeamState;
+
     return this;
 }
 /** Getter for {@link BeamStatus#beamState}
-  * @return value of interest (getter #4) */
+  * @return BeamStatusBeamState this.beamState (getter #4) */
 public BeamStatusBeamState getBeamState()
 {
     if (beamState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration BeamStatusBeamState.values()[0]=" + BeamStatusBeamState.values()[0]);
-        return BeamStatusBeamState.values()[0];
+        System.err.println("Error: enumtype BeamStatusBeamState beamState == null, ignored by returning default enumeration...");
+        beamState = BeamStatusBeamState.values()[0];
     }
     return beamState; 
 }

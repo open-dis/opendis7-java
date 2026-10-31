@@ -182,13 +182,13 @@ public synchronized ResupplyOfferPdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link ResupplyOfferPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return ResupplyOfferPdu to permit progressive setters */
 public synchronized ResupplyOfferPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link ResupplyOfferPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -204,13 +204,13 @@ public synchronized ResupplyOfferPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link ResupplyOfferPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return ResupplyOfferPdu to permit progressive setters */
 public synchronized ResupplyOfferPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link ResupplyOfferPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -218,14 +218,14 @@ public short getPadding2()
 
 /** Setter for {@link ResupplyOfferPdu#supplies}
   * @param pSupplies new value of interest
-  * @return same object to permit progressive setters */
+  * @return ResupplyOfferPdu to permit progressive setters */
 public synchronized ResupplyOfferPdu setSupplies(List<SupplyQuantity> pSupplies)
 {
     supplies = pSupplies;
     return this;
 }
 /** Getter for {@link ResupplyOfferPdu#supplies}
-  * @return value of interest (getter #3) */
+  * @return this.supplies (getter #3) */
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

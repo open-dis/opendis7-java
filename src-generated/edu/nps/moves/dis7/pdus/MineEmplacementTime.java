@@ -56,7 +56,7 @@ public synchronized MineEmplacementTime setHour(int pHour)
     return this;
 }
 /** Getter for {@link MineEmplacementTime#hour}
-  * @return value of interest (getter #1) */
+  * @return this.hour (getter #1) */
 public int getHour()
 {
        return hour;
@@ -71,7 +71,7 @@ public synchronized MineEmplacementTime setTimePastTheHour(int pTimePastTheHour)
     return this;
 }
 /** Getter for {@link MineEmplacementTime#timePastTheHour}
-  * @return value of interest (getter #1) */
+  * @return this.timePastTheHour (getter #1) */
 public int getTimePastTheHour()
 {
        return timePastTheHour;

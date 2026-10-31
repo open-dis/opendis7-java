@@ -74,13 +74,13 @@ public synchronized EntityIdentifier setEntityNumber(short pEntityNumber)
 }
 /** Utility setter for {@link EntityIdentifier#entityNumber}
   * @param pEntityNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityIdentifier to permit progressive setters */
 public synchronized EntityIdentifier setEntityNumber(int pEntityNumber){
     entityNumber = (short) pEntityNumber;
     return this;
 }
 /** Getter for {@link EntityIdentifier#entityNumber}
-  * @return value of interest (getter #1) */
+  * @return this.entityNumber (getter #1) */
 public short getEntityNumber()
 {
        return entityNumber;

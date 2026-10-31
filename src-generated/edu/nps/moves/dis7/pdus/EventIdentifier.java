@@ -74,13 +74,13 @@ public synchronized EventIdentifier setEventNumber(short pEventNumber)
 }
 /** Utility setter for {@link EventIdentifier#eventNumber}
   * @param pEventNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventIdentifier to permit progressive setters */
 public synchronized EventIdentifier setEventNumber(int pEventNumber){
     eventNumber = (short) pEventNumber;
     return this;
 }
 /** Getter for {@link EventIdentifier#eventNumber}
-  * @return value of interest (getter #1) */
+  * @return this.eventNumber (getter #1) */
 public short getEventNumber()
 {
        return eventNumber;

@@ -128,20 +128,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link RemoveEntityRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RemoveEntityRPdu to permit progressive setters */
 public synchronized RemoveEntityRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
-    requiredReliabilityService = pRequiredReliabilityService;
+    if (pRequiredReliabilityService == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RequiredReliabilityService pRequiredReliabilityService == null, ignored by setting default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
+    } else
+        requiredReliabilityService = pRequiredReliabilityService;
+
     return this;
 }
 /** Getter for {@link RemoveEntityRPdu#requiredReliabilityService}
-  * @return value of interest (getter #4) */
+  * @return RequiredReliabilityService this.requiredReliabilityService (getter #4) */
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     if (requiredReliabilityService == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration RequiredReliabilityService.values()[0]=" + RequiredReliabilityService.values()[0]);
-        return RequiredReliabilityService.values()[0];
+        System.err.println("Error: enumtype RequiredReliabilityService requiredReliabilityService == null, ignored by returning default enumeration...");
+        requiredReliabilityService = RequiredReliabilityService.values()[0];
     }
     return requiredReliabilityService; 
 }
@@ -156,13 +162,13 @@ public synchronized RemoveEntityRPdu setPad1(byte pPad1)
 }
 /** Utility setter for {@link RemoveEntityRPdu#pad1}
   * @param pPad1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RemoveEntityRPdu to permit progressive setters */
 public synchronized RemoveEntityRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
 /** Getter for {@link RemoveEntityRPdu#pad1}
-  * @return value of interest (getter #1) */
+  * @return this.pad1 (getter #1) */
 public byte getPad1()
 {
        return pad1;
@@ -178,13 +184,13 @@ public synchronized RemoveEntityRPdu setPad2(short pPad2)
 }
 /** Utility setter for {@link RemoveEntityRPdu#pad2}
   * @param pPad2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RemoveEntityRPdu to permit progressive setters */
 public synchronized RemoveEntityRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
 /** Getter for {@link RemoveEntityRPdu#pad2}
-  * @return value of interest (getter #1) */
+  * @return this.pad2 (getter #1) */
 public short getPad2()
 {
        return pad2;
@@ -199,7 +205,7 @@ public synchronized RemoveEntityRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link RemoveEntityRPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;

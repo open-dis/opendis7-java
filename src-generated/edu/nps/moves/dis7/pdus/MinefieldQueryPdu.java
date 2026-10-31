@@ -205,13 +205,13 @@ public synchronized MinefieldQueryPdu setRequestID(byte pRequestID)
 }
 /** Utility setter for {@link MinefieldQueryPdu#requestID}
   * @param pRequestID new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldQueryPdu to permit progressive setters */
 public synchronized MinefieldQueryPdu setRequestID(int pRequestID){
     requestID = (byte) pRequestID;
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public byte getRequestID()
 {
        return requestID;
@@ -227,13 +227,13 @@ public synchronized MinefieldQueryPdu setPadding(byte pPadding)
 }
 /** Utility setter for {@link MinefieldQueryPdu#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldQueryPdu to permit progressive setters */
 public synchronized MinefieldQueryPdu setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;
@@ -273,14 +273,14 @@ public EntityType getRequestedMineType()
 
 /** Setter for {@link MinefieldQueryPdu#requestedPerimeterPoints}
   * @param pRequestedPerimeterPoints new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldQueryPdu to permit progressive setters */
 public synchronized MinefieldQueryPdu setRequestedPerimeterPoints(List<Vector2Float> pRequestedPerimeterPoints)
 {
     requestedPerimeterPoints = pRequestedPerimeterPoints;
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#requestedPerimeterPoints}
-  * @return value of interest (getter #3) */
+  * @return this.requestedPerimeterPoints (getter #3) */
 public List<Vector2Float> getRequestedPerimeterPoints()
 {
     return requestedPerimeterPoints; 
@@ -288,14 +288,14 @@ public List<Vector2Float> getRequestedPerimeterPoints()
 
 /** Setter for {@link MinefieldQueryPdu#sensorTypes}
   * @param pSensorTypes new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldQueryPdu to permit progressive setters */
 public synchronized MinefieldQueryPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
 {
     sensorTypes = pSensorTypes;
     return this;
 }
 /** Getter for {@link MinefieldQueryPdu#sensorTypes}
-  * @return value of interest (getter #3) */
+  * @return this.sensorTypes (getter #3) */
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 

@@ -197,20 +197,26 @@ public EventIdentifier getEventID()
 
 /** Setter for {@link CollisionPdu#collisionType}
   * @param pCollisionType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this CollisionPdu to permit progressive setters */
 public synchronized CollisionPdu setCollisionType(CollisionType pCollisionType)
 {
-    collisionType = pCollisionType;
+    if (pCollisionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype CollisionType pCollisionType == null, ignored by setting default enumeration...");
+        collisionType = CollisionType.values()[0];
+    } else
+        collisionType = pCollisionType;
+
     return this;
 }
 /** Getter for {@link CollisionPdu#collisionType}
-  * @return value of interest (getter #4) */
+  * @return CollisionType this.collisionType (getter #4) */
 public CollisionType getCollisionType()
 {
     if (collisionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration CollisionType.values()[0]=" + CollisionType.values()[0]);
-        return CollisionType.values()[0];
+        System.err.println("Error: enumtype CollisionType collisionType == null, ignored by returning default enumeration...");
+        collisionType = CollisionType.values()[0];
     }
     return collisionType; 
 }
@@ -225,13 +231,13 @@ public synchronized CollisionPdu setPad(byte pPad)
 }
 /** Utility setter for {@link CollisionPdu#pad}
   * @param pPad new value of interest
-  * @return same object to permit progressive setters */
+  * @return CollisionPdu to permit progressive setters */
 public synchronized CollisionPdu setPad(int pPad){
     pad = (byte) pPad;
     return this;
 }
 /** Getter for {@link CollisionPdu#pad}
-  * @return value of interest (getter #1) */
+  * @return this.pad (getter #1) */
 public byte getPad()
 {
        return pad;
@@ -262,7 +268,7 @@ public synchronized CollisionPdu setMass(float pMass)
     return this;
 }
 /** Getter for {@link CollisionPdu#mass}
-  * @return value of interest (getter #1) */
+  * @return this.mass (getter #1) */
 public float getMass()
 {
        return mass;

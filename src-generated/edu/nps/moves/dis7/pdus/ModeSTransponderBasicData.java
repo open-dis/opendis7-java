@@ -96,13 +96,13 @@ public synchronized ModeSTransponderBasicData setModeSTransponderStatus(short pM
 }
 /** Utility setter for {@link ModeSTransponderBasicData#modeSTransponderStatus}
   * @param pModeSTransponderStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setModeSTransponderStatus(int pModeSTransponderStatus){
     modeSTransponderStatus = (short) pModeSTransponderStatus;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#modeSTransponderStatus}
-  * @return value of interest (getter #1) */
+  * @return this.modeSTransponderStatus (getter #1) */
 public short getModeSTransponderStatus()
 {
        return modeSTransponderStatus;
@@ -118,13 +118,13 @@ public synchronized ModeSTransponderBasicData setModeSLevelsPresent(byte pModeSL
 }
 /** Utility setter for {@link ModeSTransponderBasicData#modeSLevelsPresent}
   * @param pModeSLevelsPresent new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setModeSLevelsPresent(int pModeSLevelsPresent){
     modeSLevelsPresent = (byte) pModeSLevelsPresent;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#modeSLevelsPresent}
-  * @return value of interest (getter #1) */
+  * @return this.modeSLevelsPresent (getter #1) */
 public byte getModeSLevelsPresent()
 {
        return modeSLevelsPresent;
@@ -132,20 +132,26 @@ public byte getModeSLevelsPresent()
 
 /** Setter for {@link ModeSTransponderBasicData#aircraftPresentDomain}
   * @param pAircraftPresentDomain new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setAircraftPresentDomain(AircraftPresentDomain pAircraftPresentDomain)
 {
-    aircraftPresentDomain = pAircraftPresentDomain;
+    if (pAircraftPresentDomain == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AircraftPresentDomain pAircraftPresentDomain == null, ignored by setting default enumeration...");
+        aircraftPresentDomain = AircraftPresentDomain.values()[0];
+    } else
+        aircraftPresentDomain = pAircraftPresentDomain;
+
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#aircraftPresentDomain}
-  * @return value of interest (getter #4) */
+  * @return AircraftPresentDomain this.aircraftPresentDomain (getter #4) */
 public AircraftPresentDomain getAircraftPresentDomain()
 {
     if (aircraftPresentDomain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration AircraftPresentDomain.values()[0]=" + AircraftPresentDomain.values()[0]);
-        return AircraftPresentDomain.values()[0];
+        System.err.println("Error: enumtype AircraftPresentDomain aircraftPresentDomain == null, ignored by returning default enumeration...");
+        aircraftPresentDomain = AircraftPresentDomain.values()[0];
     }
     return aircraftPresentDomain; 
 }
@@ -160,13 +166,13 @@ public synchronized ModeSTransponderBasicData setAircraftIdentification(long pAi
 }
 /** Utility setter for {@link ModeSTransponderBasicData#aircraftIdentification}
   * @param pAircraftIdentification new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setAircraftIdentification(int pAircraftIdentification){
     aircraftIdentification = (long) pAircraftIdentification;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#aircraftIdentification}
-  * @return value of interest (getter #1) */
+  * @return this.aircraftIdentification (getter #1) */
 public long getAircraftIdentification()
 {
        return aircraftIdentification;
@@ -181,7 +187,7 @@ public synchronized ModeSTransponderBasicData setAircraftAddress(int pAircraftAd
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#aircraftAddress}
-  * @return value of interest (getter #1) */
+  * @return this.aircraftAddress (getter #1) */
 public int getAircraftAddress()
 {
        return aircraftAddress;
@@ -189,20 +195,26 @@ public int getAircraftAddress()
 
 /** Setter for {@link ModeSTransponderBasicData#aircraftIdentificationType}
   * @param pAircraftIdentificationType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setAircraftIdentificationType(AircraftIdentificationType pAircraftIdentificationType)
 {
-    aircraftIdentificationType = pAircraftIdentificationType;
+    if (pAircraftIdentificationType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AircraftIdentificationType pAircraftIdentificationType == null, ignored by setting default enumeration...");
+        aircraftIdentificationType = AircraftIdentificationType.values()[0];
+    } else
+        aircraftIdentificationType = pAircraftIdentificationType;
+
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#aircraftIdentificationType}
-  * @return value of interest (getter #4) */
+  * @return AircraftIdentificationType this.aircraftIdentificationType (getter #4) */
 public AircraftIdentificationType getAircraftIdentificationType()
 {
     if (aircraftIdentificationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration AircraftIdentificationType.values()[0]=" + AircraftIdentificationType.values()[0]);
-        return AircraftIdentificationType.values()[0];
+        System.err.println("Error: enumtype AircraftIdentificationType aircraftIdentificationType == null, ignored by returning default enumeration...");
+        aircraftIdentificationType = AircraftIdentificationType.values()[0];
     }
     return aircraftIdentificationType; 
 }
@@ -217,13 +229,13 @@ public synchronized ModeSTransponderBasicData setDapSource(byte pDapSource)
 }
 /** Utility setter for {@link ModeSTransponderBasicData#dapSource}
   * @param pDapSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setDapSource(int pDapSource){
     dapSource = (byte) pDapSource;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#dapSource}
-  * @return value of interest (getter #1) */
+  * @return this.dapSource (getter #1) */
 public byte getDapSource()
 {
        return dapSource;
@@ -239,13 +251,13 @@ public synchronized ModeSTransponderBasicData setModeSAltitude(short pModeSAltit
 }
 /** Utility setter for {@link ModeSTransponderBasicData#modeSAltitude}
   * @param pModeSAltitude new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setModeSAltitude(int pModeSAltitude){
     modeSAltitude = (short) pModeSAltitude;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#modeSAltitude}
-  * @return value of interest (getter #1) */
+  * @return this.modeSAltitude (getter #1) */
 public short getModeSAltitude()
 {
        return modeSAltitude;
@@ -253,20 +265,26 @@ public short getModeSAltitude()
 
 /** Setter for {@link ModeSTransponderBasicData#capabilityReport}
   * @param pCapabilityReport new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setCapabilityReport(CapabilityReport pCapabilityReport)
 {
-    capabilityReport = pCapabilityReport;
+    if (pCapabilityReport == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype CapabilityReport pCapabilityReport == null, ignored by setting default enumeration...");
+        capabilityReport = CapabilityReport.values()[0];
+    } else
+        capabilityReport = pCapabilityReport;
+
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#capabilityReport}
-  * @return value of interest (getter #4) */
+  * @return CapabilityReport this.capabilityReport (getter #4) */
 public CapabilityReport getCapabilityReport()
 {
     if (capabilityReport == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration CapabilityReport.values()[0]=" + CapabilityReport.values()[0]);
-        return CapabilityReport.values()[0];
+        System.err.println("Error: enumtype CapabilityReport capabilityReport == null, ignored by returning default enumeration...");
+        capabilityReport = CapabilityReport.values()[0];
     }
     return capabilityReport; 
 }
@@ -281,13 +299,13 @@ public synchronized ModeSTransponderBasicData setPadding(byte pPadding)
 }
 /** Utility setter for {@link ModeSTransponderBasicData#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;
@@ -303,13 +321,13 @@ public synchronized ModeSTransponderBasicData setPadding2(short pPadding2)
 }
 /** Utility setter for {@link ModeSTransponderBasicData#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return ModeSTransponderBasicData to permit progressive setters */
 public synchronized ModeSTransponderBasicData setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link ModeSTransponderBasicData#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;

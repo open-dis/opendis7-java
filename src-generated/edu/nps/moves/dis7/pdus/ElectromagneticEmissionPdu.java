@@ -39,7 +39,7 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsRegeneration
    /** padding */
    protected short paddingForEmissionsPdu;
 
-   /** Electronic emmissions systems */
+   /** Electronic emissions systems */
    protected List< ElectronicEmitter > systems = new ArrayList<>();
  
 
@@ -176,20 +176,26 @@ public EventIdentifier getEventID()
 
 /** Setter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}
   * @param pStateUpdateIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ElectromagneticEmissionPdu to permit progressive setters */
 public synchronized ElectromagneticEmissionPdu setStateUpdateIndicator(ElectromagneticEmissionStateUpdateIndicator pStateUpdateIndicator)
 {
-    stateUpdateIndicator = pStateUpdateIndicator;
+    if (pStateUpdateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator pStateUpdateIndicator == null, ignored by setting default enumeration...");
+        stateUpdateIndicator = ElectromagneticEmissionStateUpdateIndicator.values()[0];
+    } else
+        stateUpdateIndicator = pStateUpdateIndicator;
+
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}
-  * @return value of interest (getter #4) */
+  * @return ElectromagneticEmissionStateUpdateIndicator this.stateUpdateIndicator (getter #4) */
 public ElectromagneticEmissionStateUpdateIndicator getStateUpdateIndicator()
 {
     if (stateUpdateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator stateUpdateIndicator == null, ignored by returning default enumeration ElectromagneticEmissionStateUpdateIndicator.values()[0]=" + ElectromagneticEmissionStateUpdateIndicator.values()[0]);
-        return ElectromagneticEmissionStateUpdateIndicator.values()[0];
+        System.err.println("Error: enumtype ElectromagneticEmissionStateUpdateIndicator stateUpdateIndicator == null, ignored by returning default enumeration...");
+        stateUpdateIndicator = ElectromagneticEmissionStateUpdateIndicator.values()[0];
     }
     return stateUpdateIndicator; 
 }
@@ -204,13 +210,13 @@ public synchronized ElectromagneticEmissionPdu setPaddingForEmissionsPdu(short p
 }
 /** Utility setter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}
   * @param pPaddingForEmissionsPdu new value of interest
-  * @return same object to permit progressive setters */
+  * @return ElectromagneticEmissionPdu to permit progressive setters */
 public synchronized ElectromagneticEmissionPdu setPaddingForEmissionsPdu(int pPaddingForEmissionsPdu){
     paddingForEmissionsPdu = (short) pPaddingForEmissionsPdu;
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}
-  * @return value of interest (getter #1) */
+  * @return this.paddingForEmissionsPdu (getter #1) */
 public short getPaddingForEmissionsPdu()
 {
        return paddingForEmissionsPdu;
@@ -218,14 +224,14 @@ public short getPaddingForEmissionsPdu()
 
 /** Setter for {@link ElectromagneticEmissionPdu#systems}
   * @param pSystems new value of interest
-  * @return same object to permit progressive setters */
+  * @return ElectromagneticEmissionPdu to permit progressive setters */
 public synchronized ElectromagneticEmissionPdu setSystems(List<ElectronicEmitter> pSystems)
 {
     systems = pSystems;
     return this;
 }
 /** Getter for {@link ElectromagneticEmissionPdu#systems}
-  * @return value of interest (getter #3) */
+  * @return this.systems (getter #3) */
 public List<ElectronicEmitter> getSystems()
 {
     return systems; 

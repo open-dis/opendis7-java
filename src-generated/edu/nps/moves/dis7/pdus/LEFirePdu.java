@@ -178,13 +178,13 @@ public synchronized LEFirePdu setFlags(byte pFlags)
 }
 /** Utility setter for {@link LEFirePdu#flags}
   * @param pFlags new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEFirePdu to permit progressive setters */
 public synchronized LEFirePdu setFlags(int pFlags){
     flags = (byte) pFlags;
     return this;
 }
 /** Getter for {@link LEFirePdu#flags}
-  * @return value of interest (getter #1) */
+  * @return this.flags (getter #1) */
 public byte getFlags()
 {
        return flags;
@@ -296,13 +296,13 @@ public synchronized LEFirePdu setRange(short pRange)
 }
 /** Utility setter for {@link LEFirePdu#range}
   * @param pRange new value of interest
-  * @return same object to permit progressive setters */
+  * @return LEFirePdu to permit progressive setters */
 public synchronized LEFirePdu setRange(int pRange){
     range = (short) pRange;
     return this;
 }
 /** Getter for {@link LEFirePdu#range}
-  * @return value of interest (getter #1) */
+  * @return this.range (getter #1) */
 public short getRange()
 {
        return range;

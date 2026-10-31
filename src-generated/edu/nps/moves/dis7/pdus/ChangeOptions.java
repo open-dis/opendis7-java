@@ -53,13 +53,13 @@ public synchronized ChangeOptions setValue(byte pValue)
 }
 /** Utility setter for {@link ChangeOptions#value}
   * @param pValue new value of interest
-  * @return same object to permit progressive setters */
+  * @return ChangeOptions to permit progressive setters */
 public synchronized ChangeOptions setValue(int pValue){
     value = (byte) pValue;
     return this;
 }
 /** Getter for {@link ChangeOptions#value}
-  * @return value of interest (getter #1) */
+  * @return this.value (getter #1) */
 public byte getValue()
 {
        return value;

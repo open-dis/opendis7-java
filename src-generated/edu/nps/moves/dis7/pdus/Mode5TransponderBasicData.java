@@ -86,13 +86,13 @@ public synchronized Mode5TransponderBasicData setMode5Status(short pMode5Status)
 }
 /** Utility setter for {@link Mode5TransponderBasicData#mode5Status}
   * @param pMode5Status new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setMode5Status(int pMode5Status){
     mode5Status = (short) pMode5Status;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#mode5Status}
-  * @return value of interest (getter #1) */
+  * @return this.mode5Status (getter #1) */
 public short getMode5Status()
 {
        return mode5Status;
@@ -108,13 +108,13 @@ public synchronized Mode5TransponderBasicData setPersonalIdentificationNumber(sh
 }
 /** Utility setter for {@link Mode5TransponderBasicData#personalIdentificationNumber}
   * @param pPersonalIdentificationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setPersonalIdentificationNumber(int pPersonalIdentificationNumber){
     personalIdentificationNumber = (short) pPersonalIdentificationNumber;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#personalIdentificationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.personalIdentificationNumber (getter #1) */
 public short getPersonalIdentificationNumber()
 {
        return personalIdentificationNumber;
@@ -129,7 +129,7 @@ public synchronized Mode5TransponderBasicData setMode5MessageFormatsPresent(int 
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#mode5MessageFormatsPresent}
-  * @return value of interest (getter #1) */
+  * @return this.mode5MessageFormatsPresent (getter #1) */
 public int getMode5MessageFormatsPresent()
 {
        return mode5MessageFormatsPresent;
@@ -145,13 +145,13 @@ public synchronized Mode5TransponderBasicData setEnhancedMode1(short pEnhancedMo
 }
 /** Utility setter for {@link Mode5TransponderBasicData#enhancedMode1}
   * @param pEnhancedMode1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setEnhancedMode1(int pEnhancedMode1){
     enhancedMode1 = (short) pEnhancedMode1;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#enhancedMode1}
-  * @return value of interest (getter #1) */
+  * @return this.enhancedMode1 (getter #1) */
 public short getEnhancedMode1()
 {
        return enhancedMode1;
@@ -167,13 +167,13 @@ public synchronized Mode5TransponderBasicData setNationalOrigin(short pNationalO
 }
 /** Utility setter for {@link Mode5TransponderBasicData#nationalOrigin}
   * @param pNationalOrigin new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setNationalOrigin(int pNationalOrigin){
     nationalOrigin = (short) pNationalOrigin;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#nationalOrigin}
-  * @return value of interest (getter #1) */
+  * @return this.nationalOrigin (getter #1) */
 public short getNationalOrigin()
 {
        return nationalOrigin;
@@ -189,13 +189,13 @@ public synchronized Mode5TransponderBasicData setSupplementalData(byte pSuppleme
 }
 /** Utility setter for {@link Mode5TransponderBasicData#supplementalData}
   * @param pSupplementalData new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setSupplementalData(int pSupplementalData){
     supplementalData = (byte) pSupplementalData;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#supplementalData}
-  * @return value of interest (getter #1) */
+  * @return this.supplementalData (getter #1) */
 public byte getSupplementalData()
 {
        return supplementalData;
@@ -203,20 +203,26 @@ public byte getSupplementalData()
 
 /** Setter for {@link Mode5TransponderBasicData#navigationSource}
   * @param pNavigationSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setNavigationSource(NavigationSource pNavigationSource)
 {
-    navigationSource = pNavigationSource;
+    if (pNavigationSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype NavigationSource pNavigationSource == null, ignored by setting default enumeration...");
+        navigationSource = NavigationSource.values()[0];
+    } else
+        navigationSource = pNavigationSource;
+
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#navigationSource}
-  * @return value of interest (getter #4) */
+  * @return NavigationSource this.navigationSource (getter #4) */
 public NavigationSource getNavigationSource()
 {
     if (navigationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration NavigationSource.values()[0]=" + NavigationSource.values()[0]);
-        return NavigationSource.values()[0];
+        System.err.println("Error: enumtype NavigationSource navigationSource == null, ignored by returning default enumeration...");
+        navigationSource = NavigationSource.values()[0];
     }
     return navigationSource; 
 }
@@ -231,13 +237,13 @@ public synchronized Mode5TransponderBasicData setFigureOfMerit(byte pFigureOfMer
 }
 /** Utility setter for {@link Mode5TransponderBasicData#figureOfMerit}
   * @param pFigureOfMerit new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setFigureOfMerit(int pFigureOfMerit){
     figureOfMerit = (byte) pFigureOfMerit;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#figureOfMerit}
-  * @return value of interest (getter #1) */
+  * @return this.figureOfMerit (getter #1) */
 public byte getFigureOfMerit()
 {
        return figureOfMerit;
@@ -253,13 +259,13 @@ public synchronized Mode5TransponderBasicData setPadding(byte pPadding)
 }
 /** Utility setter for {@link Mode5TransponderBasicData#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5TransponderBasicData to permit progressive setters */
 public synchronized Mode5TransponderBasicData setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link Mode5TransponderBasicData#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

@@ -54,14 +54,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link RecordSpecification#recordSets}
   * @param pRecordSets new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordSpecification to permit progressive setters */
 public synchronized RecordSpecification setRecordSets(List<RecordSpecificationElement> pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
 }
 /** Getter for {@link RecordSpecification#recordSets}
-  * @return value of interest (getter #3) */
+  * @return this.recordSets (getter #3) */
 public List<RecordSpecificationElement> getRecordSets()
 {
     return recordSets; 

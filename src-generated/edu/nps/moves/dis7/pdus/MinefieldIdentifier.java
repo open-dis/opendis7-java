@@ -74,13 +74,13 @@ public synchronized MinefieldIdentifier setMinefieldNumber(short pMinefieldNumbe
 }
 /** Utility setter for {@link MinefieldIdentifier#minefieldNumber}
   * @param pMinefieldNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldIdentifier to permit progressive setters */
 public synchronized MinefieldIdentifier setMinefieldNumber(int pMinefieldNumber){
     minefieldNumber = (short) pMinefieldNumber;
     return this;
 }
 /** Getter for {@link MinefieldIdentifier#minefieldNumber}
-  * @return value of interest (getter #1) */
+  * @return this.minefieldNumber (getter #1) */
 public short getMinefieldNumber()
 {
        return minefieldNumber;

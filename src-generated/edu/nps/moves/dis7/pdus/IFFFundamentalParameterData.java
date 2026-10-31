@@ -78,7 +78,7 @@ public synchronized IFFFundamentalParameterData setErp(float pErp)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#erp}
-  * @return value of interest (getter #1) */
+  * @return this.erp (getter #1) */
 public float getErp()
 {
        return erp;
@@ -93,7 +93,7 @@ public synchronized IFFFundamentalParameterData setFrequency(float pFrequency)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#frequency}
-  * @return value of interest (getter #1) */
+  * @return this.frequency (getter #1) */
 public float getFrequency()
 {
        return frequency;
@@ -108,7 +108,7 @@ public synchronized IFFFundamentalParameterData setPgrf(float pPgrf)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#pgrf}
-  * @return value of interest (getter #1) */
+  * @return this.pgrf (getter #1) */
 public float getPgrf()
 {
        return pgrf;
@@ -123,7 +123,7 @@ public synchronized IFFFundamentalParameterData setPulseWidth(float pPulseWidth)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#pulseWidth}
-  * @return value of interest (getter #1) */
+  * @return this.pulseWidth (getter #1) */
 public float getPulseWidth()
 {
        return pulseWidth;
@@ -138,7 +138,7 @@ public synchronized IFFFundamentalParameterData setBurstLength(int pBurstLength)
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#burstLength}
-  * @return value of interest (getter #1) */
+  * @return this.burstLength (getter #1) */
 public int getBurstLength()
 {
        return burstLength;
@@ -146,34 +146,40 @@ public int getBurstLength()
 
 /** Setter for {@link IFFFundamentalParameterData#applicableModes}
   * @param pApplicableModes new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IFFFundamentalParameterData to permit progressive setters */
 public synchronized IFFFundamentalParameterData setApplicableModes(IFFApplicableModes pApplicableModes)
 {
-    applicableModes = pApplicableModes;
+    if (pApplicableModes == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFApplicableModes pApplicableModes == null, ignored by setting default enumeration...");
+        applicableModes = IFFApplicableModes.values()[0];
+    } else
+        applicableModes = pApplicableModes;
+
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#applicableModes}
-  * @return value of interest (getter #4) */
+  * @return IFFApplicableModes this.applicableModes (getter #4) */
 public IFFApplicableModes getApplicableModes()
 {
     if (applicableModes == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration IFFApplicableModes.values()[0]=" + IFFApplicableModes.values()[0]);
-        return IFFApplicableModes.values()[0];
+        System.err.println("Error: enumtype IFFApplicableModes applicableModes == null, ignored by returning default enumeration...");
+        applicableModes = IFFApplicableModes.values()[0];
     }
     return applicableModes; 
 }
 
 /** Setter for {@link IFFFundamentalParameterData#systemSpecificData}
   * @param pSystemSpecificData new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFFundamentalParameterData to permit progressive setters */
 public synchronized IFFFundamentalParameterData setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
 }
 /** Getter for {@link IFFFundamentalParameterData#systemSpecificData}
-  * @return value of interest (getter #2) */
+  * @return this.systemSpecificData (getter #2) */
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

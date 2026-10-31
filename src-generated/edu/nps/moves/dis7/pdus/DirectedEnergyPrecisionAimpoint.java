@@ -114,7 +114,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setRecordType(int pRecordTyp
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -130,13 +130,13 @@ public synchronized DirectedEnergyPrecisionAimpoint setRecordLength(short pRecor
 }
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyPrecisionAimpoint to permit progressive setters */
 public synchronized DirectedEnergyPrecisionAimpoint setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -152,13 +152,13 @@ public synchronized DirectedEnergyPrecisionAimpoint setPadding(short pPadding)
 }
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyPrecisionAimpoint to permit progressive setters */
 public synchronized DirectedEnergyPrecisionAimpoint setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -254,13 +254,13 @@ public synchronized DirectedEnergyPrecisionAimpoint setTargetComponentID(byte pT
 }
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}
   * @param pTargetComponentID new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyPrecisionAimpoint to permit progressive setters */
 public synchronized DirectedEnergyPrecisionAimpoint setTargetComponentID(int pTargetComponentID){
     targetComponentID = (byte) pTargetComponentID;
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}
-  * @return value of interest (getter #1) */
+  * @return this.targetComponentID (getter #1) */
 public byte getTargetComponentID()
 {
        return targetComponentID;
@@ -268,20 +268,26 @@ public byte getTargetComponentID()
 
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}
   * @param pBeamSpotType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DirectedEnergyPrecisionAimpoint to permit progressive setters */
 public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionAimpointBeamSpotType pBeamSpotType)
 {
-    beamSpotType = pBeamSpotType;
+    if (pBeamSpotType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType pBeamSpotType == null, ignored by setting default enumeration...");
+        beamSpotType = DEPrecisionAimpointBeamSpotType.values()[0];
+    } else
+        beamSpotType = pBeamSpotType;
+
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}
-  * @return value of interest (getter #4) */
+  * @return DEPrecisionAimpointBeamSpotType this.beamSpotType (getter #4) */
 public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 {
     if (beamSpotType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration DEPrecisionAimpointBeamSpotType.values()[0]=" + DEPrecisionAimpointBeamSpotType.values()[0]);
-        return DEPrecisionAimpointBeamSpotType.values()[0];
+        System.err.println("Error: enumtype DEPrecisionAimpointBeamSpotType beamSpotType == null, ignored by returning default enumeration...");
+        beamSpotType = DEPrecisionAimpointBeamSpotType.values()[0];
     }
     return beamSpotType; 
 }
@@ -295,7 +301,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiM
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMajorAxis}
-  * @return value of interest (getter #1) */
+  * @return this.beamSpotCrossSectionSemiMajorAxis (getter #1) */
 public float getBeamSpotCrossSectionSemiMajorAxis()
 {
        return beamSpotCrossSectionSemiMajorAxis;
@@ -310,7 +316,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiM
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}
-  * @return value of interest (getter #1) */
+  * @return this.beamSpotCrossSectionSemiMinorAxis (getter #1) */
 public float getBeamSpotCrossSectionSemiMinorAxis()
 {
        return beamSpotCrossSectionSemiMinorAxis;
@@ -325,7 +331,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionOrien
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}
-  * @return value of interest (getter #1) */
+  * @return this.beamSpotCrossSectionOrientationAngle (getter #1) */
 public float getBeamSpotCrossSectionOrientationAngle()
 {
        return beamSpotCrossSectionOrientationAngle;
@@ -340,7 +346,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setPeakIrradiance(float pPea
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}
-  * @return value of interest (getter #1) */
+  * @return this.peakIrradiance (getter #1) */
 public float getPeakIrradiance()
 {
        return peakIrradiance;
@@ -355,7 +361,7 @@ public synchronized DirectedEnergyPrecisionAimpoint setPadding2(int pPadding2)
     return this;
 }
 /** Getter for {@link DirectedEnergyPrecisionAimpoint#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public int getPadding2()
 {
        return padding2;

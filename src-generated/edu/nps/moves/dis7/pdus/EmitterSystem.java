@@ -55,40 +55,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EmitterSystem#emitterName}
   * @param pEmitterName new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EmitterSystem to permit progressive setters */
 public synchronized EmitterSystem setEmitterName(EmitterName pEmitterName)
 {
-    emitterName = pEmitterName;
+    if (pEmitterName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EmitterName pEmitterName == null, ignored by setting default enumeration...");
+        emitterName = EmitterName.values()[0];
+    } else
+        emitterName = pEmitterName;
+
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterName}
-  * @return value of interest (getter #4) */
+  * @return EmitterName this.emitterName (getter #4) */
 public EmitterName getEmitterName()
 {
     if (emitterName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration EmitterName.values()[0]=" + EmitterName.values()[0]);
-        return EmitterName.values()[0];
+        System.err.println("Error: enumtype EmitterName emitterName == null, ignored by returning default enumeration...");
+        emitterName = EmitterName.values()[0];
     }
     return emitterName; 
 }
 
 /** Setter for {@link EmitterSystem#emitterFunction}
   * @param pEmitterFunction new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EmitterSystem to permit progressive setters */
 public synchronized EmitterSystem setEmitterFunction(EmitterSystemFunction pEmitterFunction)
 {
-    emitterFunction = pEmitterFunction;
+    if (pEmitterFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EmitterSystemFunction pEmitterFunction == null, ignored by setting default enumeration...");
+        emitterFunction = EmitterSystemFunction.values()[0];
+    } else
+        emitterFunction = pEmitterFunction;
+
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterFunction}
-  * @return value of interest (getter #4) */
+  * @return EmitterSystemFunction this.emitterFunction (getter #4) */
 public EmitterSystemFunction getEmitterFunction()
 {
     if (emitterFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration EmitterSystemFunction.values()[0]=" + EmitterSystemFunction.values()[0]);
-        return EmitterSystemFunction.values()[0];
+        System.err.println("Error: enumtype EmitterSystemFunction emitterFunction == null, ignored by returning default enumeration...");
+        emitterFunction = EmitterSystemFunction.values()[0];
     }
     return emitterFunction; 
 }
@@ -103,13 +115,13 @@ public synchronized EmitterSystem setEmitterIDNumber(byte pEmitterIDNumber)
 }
 /** Utility setter for {@link EmitterSystem#emitterIDNumber}
   * @param pEmitterIDNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EmitterSystem to permit progressive setters */
 public synchronized EmitterSystem setEmitterIDNumber(int pEmitterIDNumber){
     emitterIDNumber = (byte) pEmitterIDNumber;
     return this;
 }
 /** Getter for {@link EmitterSystem#emitterIDNumber}
-  * @return value of interest (getter #1) */
+  * @return this.emitterIDNumber (getter #1) */
 public byte getEmitterIDNumber()
 {
        return emitterIDNumber;

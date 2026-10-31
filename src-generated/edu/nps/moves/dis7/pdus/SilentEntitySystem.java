@@ -67,13 +67,13 @@ public synchronized SilentEntitySystem setNumberOfEntities(short pNumberOfEntiti
 }
 /** Utility setter for {@link SilentEntitySystem#numberOfEntities}
   * @param pNumberOfEntities new value of interest
-  * @return same object to permit progressive setters */
+  * @return SilentEntitySystem to permit progressive setters */
 public synchronized SilentEntitySystem setNumberOfEntities(int pNumberOfEntities){
     numberOfEntities = (short) pNumberOfEntities;
     return this;
 }
 /** Getter for {@link SilentEntitySystem#numberOfEntities}
-  * @return value of interest (getter #1) */
+  * @return this.numberOfEntities (getter #1) */
 public short getNumberOfEntities()
 {
        return numberOfEntities;
@@ -97,14 +97,14 @@ public EntityType getEntityType()
 
 /** Setter for {@link SilentEntitySystem#appearanceRecordList}
   * @param pAppearanceRecordList new value of interest
-  * @return same object to permit progressive setters */
+  * @return SilentEntitySystem to permit progressive setters */
 public synchronized SilentEntitySystem setAppearanceRecordList(int[] pAppearanceRecordList)
 {
     appearanceRecordList = pAppearanceRecordList;
     return this;
 }
 /** Getter for {@link SilentEntitySystem#appearanceRecordList}
-  * @return value of interest (getter #2) */
+  * @return this.appearanceRecordList (getter #2) */
 public int[] getAppearanceRecordList()
 {
     return appearanceRecordList; 

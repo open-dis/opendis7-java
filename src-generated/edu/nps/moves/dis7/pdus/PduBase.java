@@ -75,13 +75,13 @@ public synchronized PduBase setPadding(byte pPadding)
 }
 /** Utility setter for {@link PduBase#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return PduBase to permit progressive setters */
 public synchronized PduBase setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link PduBase#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

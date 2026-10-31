@@ -174,13 +174,13 @@ public synchronized MinefieldResponseNACKPdu setRequestID(byte pRequestID)
 }
 /** Utility setter for {@link MinefieldResponseNACKPdu#requestID}
   * @param pRequestID new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldResponseNACKPdu to permit progressive setters */
 public synchronized MinefieldResponseNACKPdu setRequestID(int pRequestID){
     requestID = (byte) pRequestID;
     return this;
 }
 /** Getter for {@link MinefieldResponseNACKPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public byte getRequestID()
 {
        return requestID;
@@ -188,14 +188,14 @@ public byte getRequestID()
 
 /** Setter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}
   * @param pMissingPduSequenceNumbers new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldResponseNACKPdu to permit progressive setters */
 public synchronized MinefieldResponseNACKPdu setMissingPduSequenceNumbers(byte[] pMissingPduSequenceNumbers)
 {
     missingPduSequenceNumbers = pMissingPduSequenceNumbers;
     return this;
 }
 /** Getter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}
-  * @return value of interest (getter #2) */
+  * @return this.missingPduSequenceNumbers (getter #2) */
 public byte[] getMissingPduSequenceNumbers()
 {
     return missingPduSequenceNumbers; 

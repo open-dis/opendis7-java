@@ -60,20 +60,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link Association#associationType}
   * @param pAssociationType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Association to permit progressive setters */
 public synchronized Association setAssociationType(EntityAssociationAssociationType pAssociationType)
 {
-    associationType = pAssociationType;
+    if (pAssociationType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationAssociationType pAssociationType == null, ignored by setting default enumeration...");
+        associationType = EntityAssociationAssociationType.values()[0];
+    } else
+        associationType = pAssociationType;
+
     return this;
 }
 /** Getter for {@link Association#associationType}
-  * @return value of interest (getter #4) */
+  * @return EntityAssociationAssociationType this.associationType (getter #4) */
 public EntityAssociationAssociationType getAssociationType()
 {
     if (associationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationAssociationType associationType == null, ignored by returning default enumeration EntityAssociationAssociationType.values()[0]=" + EntityAssociationAssociationType.values()[0]);
-        return EntityAssociationAssociationType.values()[0];
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationType == null, ignored by returning default enumeration...");
+        associationType = EntityAssociationAssociationType.values()[0];
     }
     return associationType; 
 }
@@ -88,13 +94,13 @@ public synchronized Association setPadding(byte pPadding)
 }
 /** Utility setter for {@link Association#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return Association to permit progressive setters */
 public synchronized Association setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link Association#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

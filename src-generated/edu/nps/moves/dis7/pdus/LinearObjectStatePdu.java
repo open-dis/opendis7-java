@@ -198,13 +198,13 @@ public synchronized LinearObjectStatePdu setUpdateNumber(short pUpdateNumber)
 }
 /** Utility setter for {@link LinearObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return LinearObjectStatePdu to permit progressive setters */
 public synchronized LinearObjectStatePdu setUpdateNumber(int pUpdateNumber){
     updateNumber = (short) pUpdateNumber;
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#updateNumber}
-  * @return value of interest (getter #1) */
+  * @return this.updateNumber (getter #1) */
 public short getUpdateNumber()
 {
        return updateNumber;
@@ -212,20 +212,26 @@ public short getUpdateNumber()
 
 /** Setter for {@link LinearObjectStatePdu#forceID}
   * @param pForceID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this LinearObjectStatePdu to permit progressive setters */
 public synchronized LinearObjectStatePdu setForceID(ForceID pForceID)
 {
-    forceID = pForceID;
+    if (pForceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        forceID = ForceID.values()[0];
+    } else
+        forceID = pForceID;
+
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#forceID}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceID (getter #4) */
 public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        forceID = ForceID.values()[0];
     }
     return forceID; 
 }
@@ -280,14 +286,14 @@ public ObjectType getObjectType()
 
 /** Setter for {@link LinearObjectStatePdu#linearSegmentParameters}
   * @param pLinearSegmentParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return LinearObjectStatePdu to permit progressive setters */
 public synchronized LinearObjectStatePdu setLinearSegmentParameters(List<LinearSegmentParameter> pLinearSegmentParameters)
 {
     linearSegmentParameters = pLinearSegmentParameters;
     return this;
 }
 /** Getter for {@link LinearObjectStatePdu#linearSegmentParameters}
-  * @return value of interest (getter #3) */
+  * @return this.linearSegmentParameters (getter #3) */
 public List<LinearSegmentParameter> getLinearSegmentParameters()
 {
     return linearSegmentParameters; 

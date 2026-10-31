@@ -74,13 +74,13 @@ public synchronized RadioCommsHeader setRadioNumber(short pRadioNumber)
 }
 /** Utility setter for {@link RadioCommsHeader#radioNumber}
   * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioCommsHeader to permit progressive setters */
 public synchronized RadioCommsHeader setRadioNumber(int pRadioNumber){
     radioNumber = (short) pRadioNumber;
     return this;
 }
 /** Getter for {@link RadioCommsHeader#radioNumber}
-  * @return value of interest (getter #1) */
+  * @return this.radioNumber (getter #1) */
 public short getRadioNumber()
 {
        return radioNumber;

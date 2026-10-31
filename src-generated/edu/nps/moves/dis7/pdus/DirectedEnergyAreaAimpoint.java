@@ -92,7 +92,7 @@ public synchronized DirectedEnergyAreaAimpoint setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -108,13 +108,13 @@ public synchronized DirectedEnergyAreaAimpoint setRecordLength(short pRecordLeng
 }
 /** Utility setter for {@link DirectedEnergyAreaAimpoint#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyAreaAimpoint to permit progressive setters */
 public synchronized DirectedEnergyAreaAimpoint setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -130,13 +130,13 @@ public synchronized DirectedEnergyAreaAimpoint setPadding(short pPadding)
 }
 /** Utility setter for {@link DirectedEnergyAreaAimpoint#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyAreaAimpoint to permit progressive setters */
 public synchronized DirectedEnergyAreaAimpoint setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -144,14 +144,14 @@ public short getPadding()
 
 /** Setter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}
   * @param pBeamAntennaParameterList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyAreaAimpoint to permit progressive setters */
 public synchronized DirectedEnergyAreaAimpoint setBeamAntennaParameterList(List<BeamAntennaPattern> pBeamAntennaParameterList)
 {
     beamAntennaParameterList = pBeamAntennaParameterList;
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}
-  * @return value of interest (getter #3) */
+  * @return this.beamAntennaParameterList (getter #3) */
 public List<BeamAntennaPattern> getBeamAntennaParameterList()
 {
     return beamAntennaParameterList; 
@@ -159,14 +159,14 @@ public List<BeamAntennaPattern> getBeamAntennaParameterList()
 
 /** Setter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}
   * @param pDirectedEnergyTargetEnergyDepositionRecordList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyAreaAimpoint to permit progressive setters */
 public synchronized DirectedEnergyAreaAimpoint setDirectedEnergyTargetEnergyDepositionRecordList(List<DirectedEnergyTargetEnergyDeposition> pDirectedEnergyTargetEnergyDepositionRecordList)
 {
     directedEnergyTargetEnergyDepositionRecordList = pDirectedEnergyTargetEnergyDepositionRecordList;
     return this;
 }
 /** Getter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}
-  * @return value of interest (getter #3) */
+  * @return this.directedEnergyTargetEnergyDepositionRecordList (getter #3) */
 public List<DirectedEnergyTargetEnergyDeposition> getDirectedEnergyTargetEnergyDepositionRecordList()
 {
     return directedEnergyTargetEnergyDepositionRecordList; 

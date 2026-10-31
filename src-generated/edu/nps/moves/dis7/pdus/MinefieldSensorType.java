@@ -53,13 +53,13 @@ public synchronized MinefieldSensorType setSensorType(short pSensorType)
 }
 /** Utility setter for {@link MinefieldSensorType#sensorType}
   * @param pSensorType new value of interest
-  * @return same object to permit progressive setters */
+  * @return MinefieldSensorType to permit progressive setters */
 public synchronized MinefieldSensorType setSensorType(int pSensorType){
     sensorType = (short) pSensorType;
     return this;
 }
 /** Getter for {@link MinefieldSensorType#sensorType}
-  * @return value of interest (getter #1) */
+  * @return this.sensorType (getter #1) */
 public short getSensorType()
 {
        return sensorType;

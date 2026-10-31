@@ -15,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
 import java.nio.ByteBuffer;
 
 /**
- * 7.6.4 Information about underwater acoustic emmissions. See 5.7.5.
+ * 7.6.4 Information about underwater acoustic emissions. See 5.7.5.
  * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols</a> 
  */
 public class UnderwaterAcousticPdu extends DistributedEmissionsRegenerationFamilyPdu implements Serializable
@@ -210,20 +210,26 @@ public EventIdentifier getEventID()
 
 /** Setter for {@link UnderwaterAcousticPdu#stateChangeIndicator}
   * @param pStateChangeIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeUpdateIndicator pStateChangeIndicator)
 {
-    stateChangeIndicator = pStateChangeIndicator;
+    if (pStateChangeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator pStateChangeIndicator == null, ignored by setting default enumeration...");
+        stateChangeIndicator = UAStateChangeUpdateIndicator.values()[0];
+    } else
+        stateChangeIndicator = pStateChangeIndicator;
+
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#stateChangeIndicator}
-  * @return value of interest (getter #4) */
+  * @return UAStateChangeUpdateIndicator this.stateChangeIndicator (getter #4) */
 public UAStateChangeUpdateIndicator getStateChangeIndicator()
 {
     if (stateChangeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration UAStateChangeUpdateIndicator.values()[0]=" + UAStateChangeUpdateIndicator.values()[0]);
-        return UAStateChangeUpdateIndicator.values()[0];
+        System.err.println("Error: enumtype UAStateChangeUpdateIndicator stateChangeIndicator == null, ignored by returning default enumeration...");
+        stateChangeIndicator = UAStateChangeUpdateIndicator.values()[0];
     }
     return stateChangeIndicator; 
 }
@@ -238,13 +244,13 @@ public synchronized UnderwaterAcousticPdu setPad(byte pPad)
 }
 /** Utility setter for {@link UnderwaterAcousticPdu#pad}
   * @param pPad new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setPad(int pPad){
     pad = (byte) pPad;
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#pad}
-  * @return value of interest (getter #1) */
+  * @return this.pad (getter #1) */
 public byte getPad()
 {
        return pad;
@@ -252,20 +258,26 @@ public byte getPad()
 
 /** Setter for {@link UnderwaterAcousticPdu#passiveParameterIndex}
   * @param pPassiveParameterIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return this UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setPassiveParameterIndex(UAPassiveParameterIndex pPassiveParameterIndex)
 {
-    passiveParameterIndex = pPassiveParameterIndex;
+    if (pPassiveParameterIndex == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAPassiveParameterIndex pPassiveParameterIndex == null, ignored by setting default enumeration...");
+        passiveParameterIndex = UAPassiveParameterIndex.values()[0];
+    } else
+        passiveParameterIndex = pPassiveParameterIndex;
+
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#passiveParameterIndex}
-  * @return value of interest (getter #4) */
+  * @return UAPassiveParameterIndex this.passiveParameterIndex (getter #4) */
 public UAPassiveParameterIndex getPassiveParameterIndex()
 {
     if (passiveParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration UAPassiveParameterIndex.values()[0]=" + UAPassiveParameterIndex.values()[0]);
-        return UAPassiveParameterIndex.values()[0];
+        System.err.println("Error: enumtype UAPassiveParameterIndex passiveParameterIndex == null, ignored by returning default enumeration...");
+        passiveParameterIndex = UAPassiveParameterIndex.values()[0];
     }
     return passiveParameterIndex; 
 }
@@ -280,13 +292,13 @@ public synchronized UnderwaterAcousticPdu setPropulsionPlantConfiguration(byte p
 }
 /** Utility setter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}
   * @param pPropulsionPlantConfiguration new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setPropulsionPlantConfiguration(int pPropulsionPlantConfiguration){
     propulsionPlantConfiguration = (byte) pPropulsionPlantConfiguration;
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}
-  * @return value of interest (getter #1) */
+  * @return this.propulsionPlantConfiguration (getter #1) */
 public byte getPropulsionPlantConfiguration()
 {
        return propulsionPlantConfiguration;
@@ -294,14 +306,14 @@ public byte getPropulsionPlantConfiguration()
 
 /** Setter for {@link UnderwaterAcousticPdu#shaftRPMs}
   * @param pShaftRPMs new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setShaftRPMs(List<ShaftRPM> pShaftRPMs)
 {
     shaftRPMs = pShaftRPMs;
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#shaftRPMs}
-  * @return value of interest (getter #3) */
+  * @return this.shaftRPMs (getter #3) */
 public List<ShaftRPM> getShaftRPMs()
 {
     return shaftRPMs; 
@@ -309,14 +321,14 @@ public List<ShaftRPM> getShaftRPMs()
 
 /** Setter for {@link UnderwaterAcousticPdu#apaData}
   * @param pApaData new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setApaData(List<APA> pApaData)
 {
     apaData = pApaData;
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#apaData}
-  * @return value of interest (getter #3) */
+  * @return this.apaData (getter #3) */
 public List<APA> getApaData()
 {
     return apaData; 
@@ -324,14 +336,14 @@ public List<APA> getApaData()
 
 /** Setter for {@link UnderwaterAcousticPdu#emitterSystems}
   * @param pEmitterSystems new value of interest
-  * @return same object to permit progressive setters */
+  * @return UnderwaterAcousticPdu to permit progressive setters */
 public synchronized UnderwaterAcousticPdu setEmitterSystems(List<UAEmitter> pEmitterSystems)
 {
     emitterSystems = pEmitterSystems;
     return this;
 }
 /** Getter for {@link UnderwaterAcousticPdu#emitterSystems}
-  * @return value of interest (getter #3) */
+  * @return this.emitterSystems (getter #3) */
 public List<UAEmitter> getEmitterSystems()
 {
     return emitterSystems; 

@@ -89,7 +89,7 @@ public synchronized MunitionReload setStation(int pStation)
     return this;
 }
 /** Getter for {@link MunitionReload#station}
-  * @return value of interest (getter #1) */
+  * @return this.station (getter #1) */
 public int getStation()
 {
        return station;
@@ -105,13 +105,13 @@ public synchronized MunitionReload setStandardQuantity(short pStandardQuantity)
 }
 /** Utility setter for {@link MunitionReload#standardQuantity}
   * @param pStandardQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return MunitionReload to permit progressive setters */
 public synchronized MunitionReload setStandardQuantity(int pStandardQuantity){
     standardQuantity = (short) pStandardQuantity;
     return this;
 }
 /** Getter for {@link MunitionReload#standardQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantity (getter #1) */
 public short getStandardQuantity()
 {
        return standardQuantity;
@@ -127,13 +127,13 @@ public synchronized MunitionReload setMaximumQuantity(short pMaximumQuantity)
 }
 /** Utility setter for {@link MunitionReload#maximumQuantity}
   * @param pMaximumQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return MunitionReload to permit progressive setters */
 public synchronized MunitionReload setMaximumQuantity(int pMaximumQuantity){
     maximumQuantity = (short) pMaximumQuantity;
     return this;
 }
 /** Getter for {@link MunitionReload#maximumQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantity (getter #1) */
 public short getMaximumQuantity()
 {
        return maximumQuantity;
@@ -148,7 +148,7 @@ public synchronized MunitionReload setStandardQuantityReloadTime(int pStandardQu
     return this;
 }
 /** Getter for {@link MunitionReload#standardQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantityReloadTime (getter #1) */
 public int getStandardQuantityReloadTime()
 {
        return standardQuantityReloadTime;
@@ -163,7 +163,7 @@ public synchronized MunitionReload setMaximumQuantityReloadTime(int pMaximumQuan
     return this;
 }
 /** Getter for {@link MunitionReload#maximumQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantityReloadTime (getter #1) */
 public int getMaximumQuantityReloadTime()
 {
        return maximumQuantityReloadTime;

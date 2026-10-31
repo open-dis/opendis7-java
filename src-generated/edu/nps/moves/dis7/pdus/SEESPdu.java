@@ -178,13 +178,13 @@ public synchronized SEESPdu setInfraredSignatureRepresentationIndex(short pInfra
 }
 /** Utility setter for {@link SEESPdu#infraredSignatureRepresentationIndex}
   * @param pInfraredSignatureRepresentationIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return SEESPdu to permit progressive setters */
 public synchronized SEESPdu setInfraredSignatureRepresentationIndex(int pInfraredSignatureRepresentationIndex){
     infraredSignatureRepresentationIndex = (short) pInfraredSignatureRepresentationIndex;
     return this;
 }
 /** Getter for {@link SEESPdu#infraredSignatureRepresentationIndex}
-  * @return value of interest (getter #1) */
+  * @return this.infraredSignatureRepresentationIndex (getter #1) */
 public short getInfraredSignatureRepresentationIndex()
 {
        return infraredSignatureRepresentationIndex;
@@ -200,13 +200,13 @@ public synchronized SEESPdu setAcousticSignatureRepresentationIndex(short pAcous
 }
 /** Utility setter for {@link SEESPdu#acousticSignatureRepresentationIndex}
   * @param pAcousticSignatureRepresentationIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return SEESPdu to permit progressive setters */
 public synchronized SEESPdu setAcousticSignatureRepresentationIndex(int pAcousticSignatureRepresentationIndex){
     acousticSignatureRepresentationIndex = (short) pAcousticSignatureRepresentationIndex;
     return this;
 }
 /** Getter for {@link SEESPdu#acousticSignatureRepresentationIndex}
-  * @return value of interest (getter #1) */
+  * @return this.acousticSignatureRepresentationIndex (getter #1) */
 public short getAcousticSignatureRepresentationIndex()
 {
        return acousticSignatureRepresentationIndex;
@@ -222,13 +222,13 @@ public synchronized SEESPdu setRadarCrossSectionSignatureRepresentationIndex(sho
 }
 /** Utility setter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
   * @param pRadarCrossSectionSignatureRepresentationIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return SEESPdu to permit progressive setters */
 public synchronized SEESPdu setRadarCrossSectionSignatureRepresentationIndex(int pRadarCrossSectionSignatureRepresentationIndex){
     radarCrossSectionSignatureRepresentationIndex = (short) pRadarCrossSectionSignatureRepresentationIndex;
     return this;
 }
 /** Getter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
-  * @return value of interest (getter #1) */
+  * @return this.radarCrossSectionSignatureRepresentationIndex (getter #1) */
 public short getRadarCrossSectionSignatureRepresentationIndex()
 {
        return radarCrossSectionSignatureRepresentationIndex;
@@ -236,14 +236,14 @@ public short getRadarCrossSectionSignatureRepresentationIndex()
 
 /** Setter for {@link SEESPdu#propulsionSystemData}
   * @param pPropulsionSystemData new value of interest
-  * @return same object to permit progressive setters */
+  * @return SEESPdu to permit progressive setters */
 public synchronized SEESPdu setPropulsionSystemData(List<PropulsionSystemData> pPropulsionSystemData)
 {
     propulsionSystemData = pPropulsionSystemData;
     return this;
 }
 /** Getter for {@link SEESPdu#propulsionSystemData}
-  * @return value of interest (getter #3) */
+  * @return this.propulsionSystemData (getter #3) */
 public List<PropulsionSystemData> getPropulsionSystemData()
 {
     return propulsionSystemData; 
@@ -251,14 +251,14 @@ public List<PropulsionSystemData> getPropulsionSystemData()
 
 /** Setter for {@link SEESPdu#vectoringSystemData}
   * @param pVectoringSystemData new value of interest
-  * @return same object to permit progressive setters */
+  * @return SEESPdu to permit progressive setters */
 public synchronized SEESPdu setVectoringSystemData(List<VectoringNozzleSystem> pVectoringSystemData)
 {
     vectoringSystemData = pVectoringSystemData;
     return this;
 }
 /** Getter for {@link SEESPdu#vectoringSystemData}
-  * @return value of interest (getter #3) */
+  * @return this.vectoringSystemData (getter #3) */
 public List<VectoringNozzleSystem> getVectoringSystemData()
 {
     return vectoringSystemData; 

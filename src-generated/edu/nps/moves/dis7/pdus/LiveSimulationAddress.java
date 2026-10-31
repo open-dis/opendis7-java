@@ -57,13 +57,13 @@ public synchronized LiveSimulationAddress setLiveSiteNumber(byte pLiveSiteNumber
 }
 /** Utility setter for {@link LiveSimulationAddress#liveSiteNumber}
   * @param pLiveSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveSimulationAddress to permit progressive setters */
 public synchronized LiveSimulationAddress setLiveSiteNumber(int pLiveSiteNumber){
     liveSiteNumber = (byte) pLiveSiteNumber;
     return this;
 }
 /** Getter for {@link LiveSimulationAddress#liveSiteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.liveSiteNumber (getter #1) */
 public byte getLiveSiteNumber()
 {
        return liveSiteNumber;
@@ -79,13 +79,13 @@ public synchronized LiveSimulationAddress setLiveApplicationNumber(byte pLiveApp
 }
 /** Utility setter for {@link LiveSimulationAddress#liveApplicationNumber}
   * @param pLiveApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveSimulationAddress to permit progressive setters */
 public synchronized LiveSimulationAddress setLiveApplicationNumber(int pLiveApplicationNumber){
     liveApplicationNumber = (byte) pLiveApplicationNumber;
     return this;
 }
 /** Getter for {@link LiveSimulationAddress#liveApplicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.liveApplicationNumber (getter #1) */
 public byte getLiveApplicationNumber()
 {
        return liveApplicationNumber;

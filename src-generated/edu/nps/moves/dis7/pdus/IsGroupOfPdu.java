@@ -162,20 +162,26 @@ public EntityID getGroupEntityID()
 
 /** Setter for {@link IsGroupOfPdu#groupedEntityCategory}
   * @param pGroupedEntityCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IsGroupOfPdu to permit progressive setters */
 public synchronized IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntityCategory pGroupedEntityCategory)
 {
-    groupedEntityCategory = pGroupedEntityCategory;
+    if (pGroupedEntityCategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory pGroupedEntityCategory == null, ignored by setting default enumeration...");
+        groupedEntityCategory = IsGroupOfGroupedEntityCategory.values()[0];
+    } else
+        groupedEntityCategory = pGroupedEntityCategory;
+
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#groupedEntityCategory}
-  * @return value of interest (getter #4) */
+  * @return IsGroupOfGroupedEntityCategory this.groupedEntityCategory (getter #4) */
 public IsGroupOfGroupedEntityCategory getGroupedEntityCategory()
 {
     if (groupedEntityCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory groupedEntityCategory == null, ignored by returning default enumeration IsGroupOfGroupedEntityCategory.values()[0]=" + IsGroupOfGroupedEntityCategory.values()[0]);
-        return IsGroupOfGroupedEntityCategory.values()[0];
+        System.err.println("Error: enumtype IsGroupOfGroupedEntityCategory groupedEntityCategory == null, ignored by returning default enumeration...");
+        groupedEntityCategory = IsGroupOfGroupedEntityCategory.values()[0];
     }
     return groupedEntityCategory; 
 }
@@ -189,7 +195,7 @@ public synchronized IsGroupOfPdu setPad(int pPad)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#pad}
-  * @return value of interest (getter #1) */
+  * @return this.pad (getter #1) */
 public int getPad()
 {
        return pad;
@@ -204,7 +210,7 @@ public synchronized IsGroupOfPdu setLatitude(double pLatitude)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#latitude}
-  * @return value of interest (getter #1) */
+  * @return this.latitude (getter #1) */
 public double getLatitude()
 {
        return latitude;
@@ -219,7 +225,7 @@ public synchronized IsGroupOfPdu setLongitude(double pLongitude)
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#longitude}
-  * @return value of interest (getter #1) */
+  * @return this.longitude (getter #1) */
 public double getLongitude()
 {
        return longitude;
@@ -227,14 +233,14 @@ public double getLongitude()
 
 /** Setter for {@link IsGroupOfPdu#groupedEntityDescriptions}
   * @param pGroupedEntityDescriptions new value of interest
-  * @return same object to permit progressive setters */
+  * @return IsGroupOfPdu to permit progressive setters */
 public synchronized IsGroupOfPdu setGroupedEntityDescriptions(List<VariableDatum> pGroupedEntityDescriptions)
 {
     groupedEntityDescriptions = pGroupedEntityDescriptions;
     return this;
 }
 /** Getter for {@link IsGroupOfPdu#groupedEntityDescriptions}
-  * @return value of interest (getter #3) */
+  * @return this.groupedEntityDescriptions (getter #3) */
 public List<VariableDatum> getGroupedEntityDescriptions()
 {
     return groupedEntityDescriptions; 

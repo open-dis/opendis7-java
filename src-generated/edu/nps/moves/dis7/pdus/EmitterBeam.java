@@ -104,13 +104,13 @@ public synchronized EmitterBeam setBeamDataLength(byte pBeamDataLength)
 }
 /** Utility setter for {@link EmitterBeam#beamDataLength}
   * @param pBeamDataLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setBeamDataLength(int pBeamDataLength){
     beamDataLength = (byte) pBeamDataLength;
     return this;
 }
 /** Getter for {@link EmitterBeam#beamDataLength}
-  * @return value of interest (getter #1) */
+  * @return this.beamDataLength (getter #1) */
 public byte getBeamDataLength()
 {
        return beamDataLength;
@@ -126,13 +126,13 @@ public synchronized EmitterBeam setBeamNumber(byte pBeamNumber)
 }
 /** Utility setter for {@link EmitterBeam#beamNumber}
   * @param pBeamNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
 /** Getter for {@link EmitterBeam#beamNumber}
-  * @return value of interest (getter #1) */
+  * @return this.beamNumber (getter #1) */
 public byte getBeamNumber()
 {
        return beamNumber;
@@ -148,13 +148,13 @@ public synchronized EmitterBeam setBeamParameterIndex(short pBeamParameterIndex)
 }
 /** Utility setter for {@link EmitterBeam#beamParameterIndex}
   * @param pBeamParameterIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setBeamParameterIndex(int pBeamParameterIndex){
     beamParameterIndex = (short) pBeamParameterIndex;
     return this;
 }
 /** Getter for {@link EmitterBeam#beamParameterIndex}
-  * @return value of interest (getter #1) */
+  * @return this.beamParameterIndex (getter #1) */
 public short getBeamParameterIndex()
 {
        return beamParameterIndex;
@@ -194,40 +194,52 @@ public BeamData getBeamData()
 
 /** Setter for {@link EmitterBeam#beamFunction}
   * @param pBeamFunction new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunction pBeamFunction)
 {
-    beamFunction = pBeamFunction;
+    if (pBeamFunction == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction pBeamFunction == null, ignored by setting default enumeration...");
+        beamFunction = ElectromagneticEmissionBeamFunction.values()[0];
+    } else
+        beamFunction = pBeamFunction;
+
     return this;
 }
 /** Getter for {@link EmitterBeam#beamFunction}
-  * @return value of interest (getter #4) */
+  * @return ElectromagneticEmissionBeamFunction this.beamFunction (getter #4) */
 public ElectromagneticEmissionBeamFunction getBeamFunction()
 {
     if (beamFunction == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration ElectromagneticEmissionBeamFunction.values()[0]=" + ElectromagneticEmissionBeamFunction.values()[0]);
-        return ElectromagneticEmissionBeamFunction.values()[0];
+        System.err.println("Error: enumtype ElectromagneticEmissionBeamFunction beamFunction == null, ignored by returning default enumeration...");
+        beamFunction = ElectromagneticEmissionBeamFunction.values()[0];
     }
     return beamFunction; 
 }
 
 /** Setter for {@link EmitterBeam#highDensityTrackJam}
   * @param pHighDensityTrackJam new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHighDensityTrackJam)
 {
-    highDensityTrackJam = pHighDensityTrackJam;
+    if (pHighDensityTrackJam == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype HighDensityTrackJam pHighDensityTrackJam == null, ignored by setting default enumeration...");
+        highDensityTrackJam = HighDensityTrackJam.values()[0];
+    } else
+        highDensityTrackJam = pHighDensityTrackJam;
+
     return this;
 }
 /** Getter for {@link EmitterBeam#highDensityTrackJam}
-  * @return value of interest (getter #4) */
+  * @return HighDensityTrackJam this.highDensityTrackJam (getter #4) */
 public HighDensityTrackJam getHighDensityTrackJam()
 {
     if (highDensityTrackJam == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration HighDensityTrackJam.values()[0]=" + HighDensityTrackJam.values()[0]);
-        return HighDensityTrackJam.values()[0];
+        System.err.println("Error: enumtype HighDensityTrackJam highDensityTrackJam == null, ignored by returning default enumeration...");
+        highDensityTrackJam = HighDensityTrackJam.values()[0];
     }
     return highDensityTrackJam; 
 }
@@ -266,14 +278,14 @@ public JammingTechnique getJammingTechnique()
 
 /** Setter for {@link EmitterBeam#trackJamData}
   * @param pTrackJamData new value of interest
-  * @return same object to permit progressive setters */
+  * @return EmitterBeam to permit progressive setters */
 public synchronized EmitterBeam setTrackJamData(List<TrackJamData> pTrackJamData)
 {
     trackJamData = pTrackJamData;
     return this;
 }
 /** Getter for {@link EmitterBeam#trackJamData}
-  * @return value of interest (getter #3) */
+  * @return this.trackJamData (getter #3) */
 public List<TrackJamData> getTrackJamData()
 {
     return trackJamData; 

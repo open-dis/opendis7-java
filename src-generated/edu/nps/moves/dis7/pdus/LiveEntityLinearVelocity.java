@@ -61,13 +61,13 @@ public synchronized LiveEntityLinearVelocity setXComponent(short pXComponent)
 }
 /** Utility setter for {@link LiveEntityLinearVelocity#xComponent}
   * @param pXComponent new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityLinearVelocity to permit progressive setters */
 public synchronized LiveEntityLinearVelocity setXComponent(int pXComponent){
     xComponent = (short) pXComponent;
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#xComponent}
-  * @return value of interest (getter #1) */
+  * @return this.xComponent (getter #1) */
 public short getXComponent()
 {
        return xComponent;
@@ -83,13 +83,13 @@ public synchronized LiveEntityLinearVelocity setYComponent(short pYComponent)
 }
 /** Utility setter for {@link LiveEntityLinearVelocity#yComponent}
   * @param pYComponent new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityLinearVelocity to permit progressive setters */
 public synchronized LiveEntityLinearVelocity setYComponent(int pYComponent){
     yComponent = (short) pYComponent;
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#yComponent}
-  * @return value of interest (getter #1) */
+  * @return this.yComponent (getter #1) */
 public short getYComponent()
 {
        return yComponent;
@@ -105,13 +105,13 @@ public synchronized LiveEntityLinearVelocity setZComponent(short pZComponent)
 }
 /** Utility setter for {@link LiveEntityLinearVelocity#zComponent}
   * @param pZComponent new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityLinearVelocity to permit progressive setters */
 public synchronized LiveEntityLinearVelocity setZComponent(int pZComponent){
     zComponent = (short) pZComponent;
     return this;
 }
 /** Getter for {@link LiveEntityLinearVelocity#zComponent}
-  * @return value of interest (getter #1) */
+  * @return this.zComponent (getter #1) */
 public short getZComponent()
 {
        return zComponent;

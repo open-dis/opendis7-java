@@ -74,60 +74,78 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link SeparationVP#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SeparationVP to permit progressive setters */
 public synchronized SeparationVP setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link SeparationVP#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link SeparationVP#reasonForSeparation}
   * @param pReasonForSeparation new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SeparationVP to permit progressive setters */
 public synchronized SeparationVP setReasonForSeparation(SeparationVPReasonforSeparation pReasonForSeparation)
 {
-    reasonForSeparation = pReasonForSeparation;
+    if (pReasonForSeparation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SeparationVPReasonforSeparation pReasonForSeparation == null, ignored by setting default enumeration...");
+        reasonForSeparation = SeparationVPReasonforSeparation.values()[0];
+    } else
+        reasonForSeparation = pReasonForSeparation;
+
     return this;
 }
 /** Getter for {@link SeparationVP#reasonForSeparation}
-  * @return value of interest (getter #4) */
+  * @return SeparationVPReasonforSeparation this.reasonForSeparation (getter #4) */
 public SeparationVPReasonforSeparation getReasonForSeparation()
 {
     if (reasonForSeparation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SeparationVPReasonforSeparation reasonForSeparation == null, ignored by returning default enumeration SeparationVPReasonforSeparation.values()[0]=" + SeparationVPReasonforSeparation.values()[0]);
-        return SeparationVPReasonforSeparation.values()[0];
+        System.err.println("Error: enumtype SeparationVPReasonforSeparation reasonForSeparation == null, ignored by returning default enumeration...");
+        reasonForSeparation = SeparationVPReasonforSeparation.values()[0];
     }
     return reasonForSeparation; 
 }
 
 /** Setter for {@link SeparationVP#preEntityIndicator}
   * @param pPreEntityIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SeparationVP to permit progressive setters */
 public synchronized SeparationVP setPreEntityIndicator(SeparationVPPreEntityIndicator pPreEntityIndicator)
 {
-    preEntityIndicator = pPreEntityIndicator;
+    if (pPreEntityIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SeparationVPPreEntityIndicator pPreEntityIndicator == null, ignored by setting default enumeration...");
+        preEntityIndicator = SeparationVPPreEntityIndicator.values()[0];
+    } else
+        preEntityIndicator = pPreEntityIndicator;
+
     return this;
 }
 /** Getter for {@link SeparationVP#preEntityIndicator}
-  * @return value of interest (getter #4) */
+  * @return SeparationVPPreEntityIndicator this.preEntityIndicator (getter #4) */
 public SeparationVPPreEntityIndicator getPreEntityIndicator()
 {
     if (preEntityIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SeparationVPPreEntityIndicator preEntityIndicator == null, ignored by returning default enumeration SeparationVPPreEntityIndicator.values()[0]=" + SeparationVPPreEntityIndicator.values()[0]);
-        return SeparationVPPreEntityIndicator.values()[0];
+        System.err.println("Error: enumtype SeparationVPPreEntityIndicator preEntityIndicator == null, ignored by returning default enumeration...");
+        preEntityIndicator = SeparationVPPreEntityIndicator.values()[0];
     }
     return preEntityIndicator; 
 }
@@ -142,13 +160,13 @@ public synchronized SeparationVP setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link SeparationVP#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SeparationVP to permit progressive setters */
 public synchronized SeparationVP setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link SeparationVP#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -180,13 +198,13 @@ public synchronized SeparationVP setPadding2(short pPadding2)
 }
 /** Utility setter for {@link SeparationVP#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SeparationVP to permit progressive setters */
 public synchronized SeparationVP setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link SeparationVP#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;

@@ -14,7 +14,7 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * Information for one or more acoustic beams that the system has, including: length of the beam data,  beam identification number for each beam, and fundamental parametric data used to define the entity’s active emissions.  This field defines the active  emission  parameter  index,  beam  scan  pattern,  orientation,  and beamwidth, which can vary dynamically during system operation.
+ * Information for one or more acoustic beams that the system has, including: length of the beam data, beam identification number for each beam, and fundamental parametric data used to define the entity’s active emissions. This field defines the active  emission  parameter  index,  beam  scan  pattern,  orientation,  and beamwidth, which can vary dynamically during system operation.
  * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols</a> 
  */
 public class UABeam extends Object implements Serializable
@@ -66,13 +66,13 @@ public synchronized UABeam setBeamDataLength(byte pBeamDataLength)
 }
 /** Utility setter for {@link UABeam#beamDataLength}
   * @param pBeamDataLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return UABeam to permit progressive setters */
 public synchronized UABeam setBeamDataLength(int pBeamDataLength){
     beamDataLength = (byte) pBeamDataLength;
     return this;
 }
 /** Getter for {@link UABeam#beamDataLength}
-  * @return value of interest (getter #1) */
+  * @return this.beamDataLength (getter #1) */
 public byte getBeamDataLength()
 {
        return beamDataLength;
@@ -88,13 +88,13 @@ public synchronized UABeam setBeamNumber(byte pBeamNumber)
 }
 /** Utility setter for {@link UABeam#beamNumber}
   * @param pBeamNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return UABeam to permit progressive setters */
 public synchronized UABeam setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
 /** Getter for {@link UABeam#beamNumber}
-  * @return value of interest (getter #1) */
+  * @return this.beamNumber (getter #1) */
 public byte getBeamNumber()
 {
        return beamNumber;
@@ -110,13 +110,13 @@ public synchronized UABeam setPadding(short pPadding)
 }
 /** Utility setter for {@link UABeam#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return UABeam to permit progressive setters */
 public synchronized UABeam setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link UABeam#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;

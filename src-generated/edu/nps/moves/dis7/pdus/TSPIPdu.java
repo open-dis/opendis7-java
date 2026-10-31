@@ -187,13 +187,13 @@ public synchronized TSPIPdu setTSPIFlag(byte pTSPIFlag)
 }
 /** Utility setter for {@link TSPIPdu#TSPIFlag}
   * @param pTSPIFlag new value of interest
-  * @return same object to permit progressive setters */
+  * @return TSPIPdu to permit progressive setters */
 public synchronized TSPIPdu setTSPIFlag(int pTSPIFlag){
     TSPIFlag = (byte) pTSPIFlag;
     return this;
 }
 /** Getter for {@link TSPIPdu#TSPIFlag}
-  * @return value of interest (getter #1) */
+  * @return this.TSPIFlag (getter #1) */
 public byte getTSPIFlag()
 {
        return TSPIFlag;
@@ -305,13 +305,13 @@ public synchronized TSPIPdu setMeasuredSpeed(short pMeasuredSpeed)
 }
 /** Utility setter for {@link TSPIPdu#measuredSpeed}
   * @param pMeasuredSpeed new value of interest
-  * @return same object to permit progressive setters */
+  * @return TSPIPdu to permit progressive setters */
 public synchronized TSPIPdu setMeasuredSpeed(int pMeasuredSpeed){
     measuredSpeed = (short) pMeasuredSpeed;
     return this;
 }
 /** Getter for {@link TSPIPdu#measuredSpeed}
-  * @return value of interest (getter #1) */
+  * @return this.measuredSpeed (getter #1) */
 public short getMeasuredSpeed()
 {
        return measuredSpeed;
@@ -319,14 +319,14 @@ public short getMeasuredSpeed()
 
 /** Setter for {@link TSPIPdu#systemSpecificData}
   * @param pSystemSpecificData new value of interest
-  * @return same object to permit progressive setters */
+  * @return TSPIPdu to permit progressive setters */
 public synchronized TSPIPdu setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
 }
 /** Getter for {@link TSPIPdu#systemSpecificData}
-  * @return value of interest (getter #2) */
+  * @return this.systemSpecificData (getter #2) */
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

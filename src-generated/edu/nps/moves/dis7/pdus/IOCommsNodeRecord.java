@@ -65,20 +65,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IOCommsNodeRecord#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOCommsNodeRecord to permit progressive setters */
 public synchronized IOCommsNodeRecord setRecordType(VariableRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.recordType (getter #4) */
 public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableRecordType.values()[0];
     }
     return recordType; 
 }
@@ -93,13 +99,13 @@ public synchronized IOCommsNodeRecord setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link IOCommsNodeRecord#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOCommsNodeRecord to permit progressive setters */
 public synchronized IOCommsNodeRecord setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -107,20 +113,26 @@ public short getRecordLength()
 
 /** Setter for {@link IOCommsNodeRecord#commsNodeType}
   * @param pCommsNodeType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOCommsNodeRecord to permit progressive setters */
 public synchronized IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNodeType pCommsNodeType)
 {
-    commsNodeType = pCommsNodeType;
+    if (pCommsNodeType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType pCommsNodeType == null, ignored by setting default enumeration...");
+        commsNodeType = IOCommsNodeRecordCommsNodeType.values()[0];
+    } else
+        commsNodeType = pCommsNodeType;
+
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#commsNodeType}
-  * @return value of interest (getter #4) */
+  * @return IOCommsNodeRecordCommsNodeType this.commsNodeType (getter #4) */
 public IOCommsNodeRecordCommsNodeType getCommsNodeType()
 {
     if (commsNodeType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType commsNodeType == null, ignored by returning default enumeration IOCommsNodeRecordCommsNodeType.values()[0]=" + IOCommsNodeRecordCommsNodeType.values()[0]);
-        return IOCommsNodeRecordCommsNodeType.values()[0];
+        System.err.println("Error: enumtype IOCommsNodeRecordCommsNodeType commsNodeType == null, ignored by returning default enumeration...");
+        commsNodeType = IOCommsNodeRecordCommsNodeType.values()[0];
     }
     return commsNodeType; 
 }
@@ -135,13 +147,13 @@ public synchronized IOCommsNodeRecord setPadding(byte pPadding)
 }
 /** Utility setter for {@link IOCommsNodeRecord#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOCommsNodeRecord to permit progressive setters */
 public synchronized IOCommsNodeRecord setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link IOCommsNodeRecord#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

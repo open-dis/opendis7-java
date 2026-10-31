@@ -162,20 +162,26 @@ public EntityID getRepairingEntityID()
 
 /** Setter for {@link RepairCompletePdu#repair}
   * @param pRepair new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RepairCompletePdu to permit progressive setters */
 public synchronized RepairCompletePdu setRepair(RepairCompleteRepair pRepair)
 {
-    repair = pRepair;
+    if (pRepair == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RepairCompleteRepair pRepair == null, ignored by setting default enumeration...");
+        repair = RepairCompleteRepair.values()[0];
+    } else
+        repair = pRepair;
+
     return this;
 }
 /** Getter for {@link RepairCompletePdu#repair}
-  * @return value of interest (getter #4) */
+  * @return RepairCompleteRepair this.repair (getter #4) */
 public RepairCompleteRepair getRepair()
 {
     if (repair == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairCompleteRepair repair == null, ignored by returning default enumeration RepairCompleteRepair.values()[0]=" + RepairCompleteRepair.values()[0]);
-        return RepairCompleteRepair.values()[0];
+        System.err.println("Error: enumtype RepairCompleteRepair repair == null, ignored by returning default enumeration...");
+        repair = RepairCompleteRepair.values()[0];
     }
     return repair; 
 }
@@ -190,13 +196,13 @@ public synchronized RepairCompletePdu setPadding4(short pPadding4)
 }
 /** Utility setter for {@link RepairCompletePdu#padding4}
   * @param pPadding4 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RepairCompletePdu to permit progressive setters */
 public synchronized RepairCompletePdu setPadding4(int pPadding4){
     padding4 = (short) pPadding4;
     return this;
 }
 /** Getter for {@link RepairCompletePdu#padding4}
-  * @return value of interest (getter #1) */
+  * @return this.padding4 (getter #1) */
 public short getPadding4()
 {
        return padding4;

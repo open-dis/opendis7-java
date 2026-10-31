@@ -57,13 +57,13 @@ public synchronized TotalRecordSets setTotalRecordSets(short pTotalRecordSets)
 }
 /** Utility setter for {@link TotalRecordSets#totalRecordSets}
   * @param pTotalRecordSets new value of interest
-  * @return same object to permit progressive setters */
+  * @return TotalRecordSets to permit progressive setters */
 public synchronized TotalRecordSets setTotalRecordSets(int pTotalRecordSets){
     totalRecordSets = (short) pTotalRecordSets;
     return this;
 }
 /** Getter for {@link TotalRecordSets#totalRecordSets}
-  * @return value of interest (getter #1) */
+  * @return this.totalRecordSets (getter #1) */
 public short getTotalRecordSets()
 {
        return totalRecordSets;
@@ -79,13 +79,13 @@ public synchronized TotalRecordSets setPadding(short pPadding)
 }
 /** Utility setter for {@link TotalRecordSets#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return TotalRecordSets to permit progressive setters */
 public synchronized TotalRecordSets setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link TotalRecordSets#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;

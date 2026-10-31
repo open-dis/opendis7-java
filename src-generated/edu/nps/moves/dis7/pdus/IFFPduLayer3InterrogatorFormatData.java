@@ -101,13 +101,13 @@ public synchronized IFFPduLayer3InterrogatorFormatData setSiteNumber(short pSite
 }
 /** Utility setter for {@link IFFPduLayer3InterrogatorFormatData#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer3InterrogatorFormatData to permit progressive setters */
 public synchronized IFFPduLayer3InterrogatorFormatData setSiteNumber(int pSiteNumber){
     siteNumber = (short) pSiteNumber;
     return this;
 }
 /** Getter for {@link IFFPduLayer3InterrogatorFormatData#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public short getSiteNumber()
 {
        return siteNumber;
@@ -123,13 +123,13 @@ public synchronized IFFPduLayer3InterrogatorFormatData setApplicationNumber(shor
 }
 /** Utility setter for {@link IFFPduLayer3InterrogatorFormatData#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer3InterrogatorFormatData to permit progressive setters */
 public synchronized IFFPduLayer3InterrogatorFormatData setApplicationNumber(int pApplicationNumber){
     applicationNumber = (short) pApplicationNumber;
     return this;
 }
 /** Getter for {@link IFFPduLayer3InterrogatorFormatData#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public short getApplicationNumber()
 {
        return applicationNumber;
@@ -161,13 +161,13 @@ public synchronized IFFPduLayer3InterrogatorFormatData setPadding(short pPadding
 }
 /** Utility setter for {@link IFFPduLayer3InterrogatorFormatData#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer3InterrogatorFormatData to permit progressive setters */
 public synchronized IFFPduLayer3InterrogatorFormatData setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link IFFPduLayer3InterrogatorFormatData#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -194,14 +194,14 @@ public synchronized IFFPduLayer3InterrogatorFormatData setNumberOfIFFFundamental
 
 /** Setter for {@link IFFPduLayer3InterrogatorFormatData#IFFFundamentalParameterDataRecord}
   * @param pIFFFundamentalParameterDataRecord new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer3InterrogatorFormatData to permit progressive setters */
 public synchronized IFFPduLayer3InterrogatorFormatData setIFFFundamentalParameterDataRecord(List<IFFDataSpecification> pIFFFundamentalParameterDataRecord)
 {
     IFFFundamentalParameterDataRecord = pIFFFundamentalParameterDataRecord;
     return this;
 }
 /** Getter for {@link IFFPduLayer3InterrogatorFormatData#IFFFundamentalParameterDataRecord}
-  * @return value of interest (getter #3) */
+  * @return this.IFFFundamentalParameterDataRecord (getter #3) */
 public List<IFFDataSpecification> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

@@ -60,7 +60,7 @@ public synchronized EulerAngles setPsi(float pPsi)
     return this;
 }
 /** Getter for {@link EulerAngles#psi}
-  * @return value of interest (getter #1) */
+  * @return this.psi (getter #1) */
 public float getPsi()
 {
        return psi;
@@ -75,7 +75,7 @@ public synchronized EulerAngles setTheta(float pTheta)
     return this;
 }
 /** Getter for {@link EulerAngles#theta}
-  * @return value of interest (getter #1) */
+  * @return this.theta (getter #1) */
 public float getTheta()
 {
        return theta;
@@ -90,7 +90,7 @@ public synchronized EulerAngles setPhi(float pPhi)
     return this;
 }
 /** Getter for {@link EulerAngles#phi}
-  * @return value of interest (getter #1) */
+  * @return this.phi (getter #1) */
 public float getPhi()
 {
        return phi;

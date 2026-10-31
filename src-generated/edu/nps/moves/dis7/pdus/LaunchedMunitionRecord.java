@@ -97,13 +97,13 @@ public synchronized LaunchedMunitionRecord setPadding(short pPadding)
 }
 /** Utility setter for {@link LaunchedMunitionRecord#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return LaunchedMunitionRecord to permit progressive setters */
 public synchronized LaunchedMunitionRecord setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -135,13 +135,13 @@ public synchronized LaunchedMunitionRecord setPadding2(short pPadding2)
 }
 /** Utility setter for {@link LaunchedMunitionRecord#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return LaunchedMunitionRecord to permit progressive setters */
 public synchronized LaunchedMunitionRecord setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -173,13 +173,13 @@ public synchronized LaunchedMunitionRecord setPadding3(short pPadding3)
 }
 /** Utility setter for {@link LaunchedMunitionRecord#padding3}
   * @param pPadding3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return LaunchedMunitionRecord to permit progressive setters */
 public synchronized LaunchedMunitionRecord setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
 /** Getter for {@link LaunchedMunitionRecord#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public short getPadding3()
 {
        return padding3;

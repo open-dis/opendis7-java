@@ -176,13 +176,13 @@ public synchronized EntityStateUpdatePdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link EntityStateUpdatePdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityStateUpdatePdu to permit progressive setters */
 public synchronized EntityStateUpdatePdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link EntityStateUpdatePdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -245,7 +245,7 @@ public synchronized EntityStateUpdatePdu setEntityAppearance(int pEntityAppearan
     return this;
 }
 /** Getter for {@link EntityStateUpdatePdu#entityAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.entityAppearance (getter #1) */
 public int getEntityAppearance()
 {
        return entityAppearance;
@@ -253,14 +253,14 @@ public int getEntityAppearance()
 
 /** Setter for {@link EntityStateUpdatePdu#variableParameters}
   * @param pVariableParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityStateUpdatePdu to permit progressive setters */
 public synchronized EntityStateUpdatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 /** Getter for {@link EntityStateUpdatePdu#variableParameters}
-  * @return value of interest (getter #3) */
+  * @return this.variableParameters (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

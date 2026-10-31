@@ -61,13 +61,13 @@ public synchronized LiveEntityOrientation setPsi(byte pPsi)
 }
 /** Utility setter for {@link LiveEntityOrientation#psi}
   * @param pPsi new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientation to permit progressive setters */
 public synchronized LiveEntityOrientation setPsi(int pPsi){
     psi = (byte) pPsi;
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#psi}
-  * @return value of interest (getter #1) */
+  * @return this.psi (getter #1) */
 public byte getPsi()
 {
        return psi;
@@ -83,13 +83,13 @@ public synchronized LiveEntityOrientation setTheta(byte pTheta)
 }
 /** Utility setter for {@link LiveEntityOrientation#theta}
   * @param pTheta new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientation to permit progressive setters */
 public synchronized LiveEntityOrientation setTheta(int pTheta){
     theta = (byte) pTheta;
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#theta}
-  * @return value of interest (getter #1) */
+  * @return this.theta (getter #1) */
 public byte getTheta()
 {
        return theta;
@@ -105,13 +105,13 @@ public synchronized LiveEntityOrientation setPhi(byte pPhi)
 }
 /** Utility setter for {@link LiveEntityOrientation#phi}
   * @param pPhi new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientation to permit progressive setters */
 public synchronized LiveEntityOrientation setPhi(int pPhi){
     phi = (byte) pPhi;
     return this;
 }
 /** Getter for {@link LiveEntityOrientation#phi}
-  * @return value of interest (getter #1) */
+  * @return this.phi (getter #1) */
 public byte getPhi()
 {
        return phi;

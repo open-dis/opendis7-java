@@ -78,13 +78,13 @@ public synchronized TrackJamData setEmitterNumber(byte pEmitterNumber)
 }
 /** Utility setter for {@link TrackJamData#emitterNumber}
   * @param pEmitterNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return TrackJamData to permit progressive setters */
 public synchronized TrackJamData setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
 /** Getter for {@link TrackJamData#emitterNumber}
-  * @return value of interest (getter #1) */
+  * @return this.emitterNumber (getter #1) */
 public byte getEmitterNumber()
 {
        return emitterNumber;
@@ -100,13 +100,13 @@ public synchronized TrackJamData setBeamNumber(byte pBeamNumber)
 }
 /** Utility setter for {@link TrackJamData#beamNumber}
   * @param pBeamNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return TrackJamData to permit progressive setters */
 public synchronized TrackJamData setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
 /** Getter for {@link TrackJamData#beamNumber}
-  * @return value of interest (getter #1) */
+  * @return this.beamNumber (getter #1) */
 public byte getBeamNumber()
 {
        return beamNumber;

@@ -156,40 +156,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link InformationOperationsReportPdu#ioSimSource}
   * @param pIoSimSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setIoSimSource(IOActionIOSimulationSource pIoSimSource)
 {
-    ioSimSource = pIoSimSource;
+    if (pIoSimSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOSimulationSource pIoSimSource == null, ignored by setting default enumeration...");
+        ioSimSource = IOActionIOSimulationSource.values()[0];
+    } else
+        ioSimSource = pIoSimSource;
+
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioSimSource}
-  * @return value of interest (getter #4) */
+  * @return IOActionIOSimulationSource this.ioSimSource (getter #4) */
 public IOActionIOSimulationSource getIoSimSource()
 {
     if (ioSimSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
-        return IOActionIOSimulationSource.values()[0];
+        System.err.println("Error: enumtype IOActionIOSimulationSource ioSimSource == null, ignored by returning default enumeration...");
+        ioSimSource = IOActionIOSimulationSource.values()[0];
     }
     return ioSimSource; 
 }
 
 /** Setter for {@link InformationOperationsReportPdu#ioReportType}
   * @param pIoReportType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setIoReportType(IOReportIOReportType pIoReportType)
 {
-    ioReportType = pIoReportType;
+    if (pIoReportType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOReportIOReportType pIoReportType == null, ignored by setting default enumeration...");
+        ioReportType = IOReportIOReportType.values()[0];
+    } else
+        ioReportType = pIoReportType;
+
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioReportType}
-  * @return value of interest (getter #4) */
+  * @return IOReportIOReportType this.ioReportType (getter #4) */
 public IOReportIOReportType getIoReportType()
 {
     if (ioReportType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration IOReportIOReportType.values()[0]=" + IOReportIOReportType.values()[0]);
-        return IOReportIOReportType.values()[0];
+        System.err.println("Error: enumtype IOReportIOReportType ioReportType == null, ignored by returning default enumeration...");
+        ioReportType = IOReportIOReportType.values()[0];
     }
     return ioReportType; 
 }
@@ -204,13 +216,13 @@ public synchronized InformationOperationsReportPdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link InformationOperationsReportPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -258,13 +270,13 @@ public synchronized InformationOperationsReportPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link InformationOperationsReportPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -280,13 +292,13 @@ public synchronized InformationOperationsReportPdu setPadding3(short pPadding3)
 }
 /** Utility setter for {@link InformationOperationsReportPdu#padding3}
   * @param pPadding3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public short getPadding3()
 {
        return padding3;
@@ -294,14 +306,14 @@ public short getPadding3()
 
 /** Setter for {@link InformationOperationsReportPdu#ioRecords}
   * @param pIoRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsReportPdu to permit progressive setters */
 public synchronized InformationOperationsReportPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
 }
 /** Getter for {@link InformationOperationsReportPdu#ioRecords}
-  * @return value of interest (getter #3) */
+  * @return this.ioRecords (getter #3) */
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

@@ -51,34 +51,40 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link VariableParameter#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this VariableParameter to permit progressive setters */
 public synchronized VariableParameter setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link VariableParameter#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link VariableParameter#recordSpecificFields}
   * @param pRecordSpecificFields new value of interest
-  * @return same object to permit progressive setters */
+  * @return VariableParameter to permit progressive setters */
 public synchronized VariableParameter setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = Arrays.copyOf(pRecordSpecificFields, recordSpecificFields.length);
     return this;
 }
 /** Getter for {@link VariableParameter#recordSpecificFields}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificFields (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

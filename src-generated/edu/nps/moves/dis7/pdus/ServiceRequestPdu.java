@@ -175,20 +175,26 @@ public EntityID getServicingEntityID()
 
 /** Setter for {@link ServiceRequestPdu#serviceTypeRequested}
   * @param pServiceTypeRequested new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ServiceRequestPdu to permit progressive setters */
 public synchronized ServiceRequestPdu setServiceTypeRequested(ServiceRequestServiceTypeRequested pServiceTypeRequested)
 {
-    serviceTypeRequested = pServiceTypeRequested;
+    if (pServiceTypeRequested == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested pServiceTypeRequested == null, ignored by setting default enumeration...");
+        serviceTypeRequested = ServiceRequestServiceTypeRequested.values()[0];
+    } else
+        serviceTypeRequested = pServiceTypeRequested;
+
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#serviceTypeRequested}
-  * @return value of interest (getter #4) */
+  * @return ServiceRequestServiceTypeRequested this.serviceTypeRequested (getter #4) */
 public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 {
     if (serviceTypeRequested == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration ServiceRequestServiceTypeRequested.values()[0]=" + ServiceRequestServiceTypeRequested.values()[0]);
-        return ServiceRequestServiceTypeRequested.values()[0];
+        System.err.println("Error: enumtype ServiceRequestServiceTypeRequested serviceTypeRequested == null, ignored by returning default enumeration...");
+        serviceTypeRequested = ServiceRequestServiceTypeRequested.values()[0];
     }
     return serviceTypeRequested; 
 }
@@ -203,13 +209,13 @@ public synchronized ServiceRequestPdu setPadding1(short pPadding1)
 }
 /** Utility setter for {@link ServiceRequestPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return ServiceRequestPdu to permit progressive setters */
 public synchronized ServiceRequestPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public short getPadding1()
 {
        return padding1;
@@ -217,14 +223,14 @@ public short getPadding1()
 
 /** Setter for {@link ServiceRequestPdu#supplies}
   * @param pSupplies new value of interest
-  * @return same object to permit progressive setters */
+  * @return ServiceRequestPdu to permit progressive setters */
 public synchronized ServiceRequestPdu setSupplies(List<SupplyQuantity> pSupplies)
 {
     supplies = pSupplies;
     return this;
 }
 /** Getter for {@link ServiceRequestPdu#supplies}
-  * @return value of interest (getter #3) */
+  * @return this.supplies (getter #3) */
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

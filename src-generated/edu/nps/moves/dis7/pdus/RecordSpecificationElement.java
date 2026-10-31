@@ -72,20 +72,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link RecordSpecificationElement#recordID}
   * @param pRecordID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RecordSpecificationElement to permit progressive setters */
 public synchronized RecordSpecificationElement setRecordID(VariableRecordType pRecordID)
 {
-    recordID = pRecordID;
+    if (pRecordID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pRecordID == null, ignored by setting default enumeration...");
+        recordID = VariableRecordType.values()[0];
+    } else
+        recordID = pRecordID;
+
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordID}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.recordID (getter #4) */
 public VariableRecordType getRecordID()
 {
     if (recordID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType recordID == null, ignored by returning default enumeration...");
+        recordID = VariableRecordType.values()[0];
     }
     return recordID; 
 }
@@ -99,7 +105,7 @@ public synchronized RecordSpecificationElement setRecordSetSerialNumber(int pRec
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordSetSerialNumber}
-  * @return value of interest (getter #1) */
+  * @return this.recordSetSerialNumber (getter #1) */
 public int getRecordSetSerialNumber()
 {
        return recordSetSerialNumber;
@@ -114,7 +120,7 @@ public synchronized RecordSpecificationElement setPadding(int pPadding)
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public int getPadding()
 {
        return padding;
@@ -130,13 +136,13 @@ public synchronized RecordSpecificationElement setRecordLength(short pRecordLeng
 }
 /** Utility setter for {@link RecordSpecificationElement#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordSpecificationElement to permit progressive setters */
 public synchronized RecordSpecificationElement setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -152,13 +158,13 @@ public synchronized RecordSpecificationElement setRecordCount(short pRecordCount
 }
 /** Utility setter for {@link RecordSpecificationElement#recordCount}
   * @param pRecordCount new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordSpecificationElement to permit progressive setters */
 public synchronized RecordSpecificationElement setRecordCount(int pRecordCount){
     recordCount = (short) pRecordCount;
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordCount}
-  * @return value of interest (getter #1) */
+  * @return this.recordCount (getter #1) */
 public short getRecordCount()
 {
        return recordCount;
@@ -166,14 +172,14 @@ public short getRecordCount()
 
 /** Setter for {@link RecordSpecificationElement#recordValues}
   * @param pRecordValues new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordSpecificationElement to permit progressive setters */
 public synchronized RecordSpecificationElement setRecordValues(byte[] pRecordValues)
 {
     recordValues = pRecordValues;
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#recordValues}
-  * @return value of interest (getter #2) */
+  * @return this.recordValues (getter #2) */
 public byte[] getRecordValues()
 {
     return recordValues; 
@@ -181,14 +187,14 @@ public byte[] getRecordValues()
 
 /** Setter for {@link RecordSpecificationElement#padTo64}
   * @param pPadTo64 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RecordSpecificationElement to permit progressive setters */
 public synchronized RecordSpecificationElement setPadTo64(byte[] pPadTo64)
 {
     padTo64 = pPadTo64;
     return this;
 }
 /** Getter for {@link RecordSpecificationElement#padTo64}
-  * @return value of interest (getter #2) */
+  * @return this.padTo64 (getter #2) */
 public byte[] getPadTo64()
 {
     return padTo64; 

@@ -64,7 +64,7 @@ public synchronized Appearance setVisual(int pVisual)
     return this;
 }
 /** Getter for {@link Appearance#visual}
-  * @return value of interest (getter #1) */
+  * @return this.visual (getter #1) */
 public int getVisual()
 {
        return visual;
@@ -79,7 +79,7 @@ public synchronized Appearance setIr(int pIr)
     return this;
 }
 /** Getter for {@link Appearance#ir}
-  * @return value of interest (getter #1) */
+  * @return this.ir (getter #1) */
 public int getIr()
 {
        return ir;
@@ -94,7 +94,7 @@ public synchronized Appearance setEm(int pEm)
     return this;
 }
 /** Getter for {@link Appearance#em}
-  * @return value of interest (getter #1) */
+  * @return this.em (getter #1) */
 public int getEm()
 {
        return em;
@@ -109,7 +109,7 @@ public synchronized Appearance setAudio(int pAudio)
     return this;
 }
 /** Getter for {@link Appearance#audio}
-  * @return value of interest (getter #1) */
+  * @return this.audio (getter #1) */
 public int getAudio()
 {
        return audio;

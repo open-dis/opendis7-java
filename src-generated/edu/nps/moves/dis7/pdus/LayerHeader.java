@@ -61,13 +61,13 @@ public synchronized LayerHeader setLayerNumber(byte pLayerNumber)
 }
 /** Utility setter for {@link LayerHeader#layerNumber}
   * @param pLayerNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return LayerHeader to permit progressive setters */
 public synchronized LayerHeader setLayerNumber(int pLayerNumber){
     layerNumber = (byte) pLayerNumber;
     return this;
 }
 /** Getter for {@link LayerHeader#layerNumber}
-  * @return value of interest (getter #1) */
+  * @return this.layerNumber (getter #1) */
 public byte getLayerNumber()
 {
        return layerNumber;
@@ -83,13 +83,13 @@ public synchronized LayerHeader setLayerSpecificInformation(byte pLayerSpecificI
 }
 /** Utility setter for {@link LayerHeader#layerSpecificInformation}
   * @param pLayerSpecificInformation new value of interest
-  * @return same object to permit progressive setters */
+  * @return LayerHeader to permit progressive setters */
 public synchronized LayerHeader setLayerSpecificInformation(int pLayerSpecificInformation){
     layerSpecificInformation = (byte) pLayerSpecificInformation;
     return this;
 }
 /** Getter for {@link LayerHeader#layerSpecificInformation}
-  * @return value of interest (getter #1) */
+  * @return this.layerSpecificInformation (getter #1) */
 public byte getLayerSpecificInformation()
 {
        return layerSpecificInformation;
@@ -105,13 +105,13 @@ public synchronized LayerHeader setLength(short pLength)
 }
 /** Utility setter for {@link LayerHeader#length}
   * @param pLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return LayerHeader to permit progressive setters */
 public synchronized LayerHeader setLength(int pLength){
     length = (short) pLength;
     return this;
 }
 /** Getter for {@link LayerHeader#length}
-  * @return value of interest (getter #1) */
+  * @return this.length (getter #1) */
 public short getLength()
 {
        return length;

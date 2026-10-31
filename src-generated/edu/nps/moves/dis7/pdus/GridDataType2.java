@@ -63,13 +63,13 @@ public synchronized GridDataType2 setPadding(short pPadding)
 }
 /** Utility setter for {@link GridDataType2#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridDataType2 to permit progressive setters */
 public synchronized GridDataType2 setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link GridDataType2#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -77,14 +77,14 @@ public short getPadding()
 
 /** Setter for {@link GridDataType2#dataValues}
   * @param pDataValues new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridDataType2 to permit progressive setters */
 public synchronized GridDataType2 setDataValues(float[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 /** Getter for {@link GridDataType2#dataValues}
-  * @return value of interest (getter #2) */
+  * @return this.dataValues (getter #2) */
 public float[] getDataValues()
 {
     return dataValues; 

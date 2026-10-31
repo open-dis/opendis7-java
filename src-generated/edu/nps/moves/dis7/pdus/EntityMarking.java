@@ -51,34 +51,40 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EntityMarking#characterSet}
   * @param pCharacterSet new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityMarking to permit progressive setters */
 public synchronized EntityMarking setCharacterSet(EntityMarkingCharacterSet pCharacterSet)
 {
-    characterSet = pCharacterSet;
+    if (pCharacterSet == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityMarkingCharacterSet pCharacterSet == null, ignored by setting default enumeration...");
+        characterSet = EntityMarkingCharacterSet.values()[0];
+    } else
+        characterSet = pCharacterSet;
+
     return this;
 }
 /** Getter for {@link EntityMarking#characterSet}
-  * @return value of interest (getter #4) */
+  * @return EntityMarkingCharacterSet this.characterSet (getter #4) */
 public EntityMarkingCharacterSet getCharacterSet()
 {
     if (characterSet == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityMarkingCharacterSet characterSet == null, ignored by returning default enumeration EntityMarkingCharacterSet.values()[0]=" + EntityMarkingCharacterSet.values()[0]);
-        return EntityMarkingCharacterSet.values()[0];
+        System.err.println("Error: enumtype EntityMarkingCharacterSet characterSet == null, ignored by returning default enumeration...");
+        characterSet = EntityMarkingCharacterSet.values()[0];
     }
     return characterSet; 
 }
 
 /** Setter for {@link EntityMarking#characters}
   * @param pCharacters new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityMarking to permit progressive setters */
 public synchronized EntityMarking setCharacters(byte[] pCharacters)
 {
     characters = Arrays.copyOf(pCharacters, characters.length);
     return this;
 }
 /** Getter for {@link EntityMarking#characters}
-  * @return value of interest (getter #2) */
+  * @return this.characters (getter #2) */
 public byte[] getCharacters()
 {
     return characters; 

@@ -61,13 +61,13 @@ public synchronized EventIdentifierLiveEntity setSiteNumber(byte pSiteNumber)
 }
 /** Utility setter for {@link EventIdentifierLiveEntity#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventIdentifierLiveEntity to permit progressive setters */
 public synchronized EventIdentifierLiveEntity setSiteNumber(int pSiteNumber){
     siteNumber = (byte) pSiteNumber;
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public byte getSiteNumber()
 {
        return siteNumber;
@@ -83,13 +83,13 @@ public synchronized EventIdentifierLiveEntity setApplicationNumber(byte pApplica
 }
 /** Utility setter for {@link EventIdentifierLiveEntity#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventIdentifierLiveEntity to permit progressive setters */
 public synchronized EventIdentifierLiveEntity setApplicationNumber(int pApplicationNumber){
     applicationNumber = (byte) pApplicationNumber;
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public byte getApplicationNumber()
 {
        return applicationNumber;
@@ -105,13 +105,13 @@ public synchronized EventIdentifierLiveEntity setEventNumber(short pEventNumber)
 }
 /** Utility setter for {@link EventIdentifierLiveEntity#eventNumber}
   * @param pEventNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventIdentifierLiveEntity to permit progressive setters */
 public synchronized EventIdentifierLiveEntity setEventNumber(int pEventNumber){
     eventNumber = (short) pEventNumber;
     return this;
 }
 /** Getter for {@link EventIdentifierLiveEntity#eventNumber}
-  * @return value of interest (getter #1) */
+  * @return this.eventNumber (getter #1) */
 public short getEventNumber()
 {
        return eventNumber;

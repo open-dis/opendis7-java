@@ -89,13 +89,13 @@ public synchronized FundamentalOperationalData setSystemStatus(byte pSystemStatu
 }
 /** Utility setter for {@link FundamentalOperationalData#systemStatus}
   * @param pSystemStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setSystemStatus(int pSystemStatus){
     systemStatus = (byte) pSystemStatus;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#systemStatus}
-  * @return value of interest (getter #1) */
+  * @return this.systemStatus (getter #1) */
 public byte getSystemStatus()
 {
        return systemStatus;
@@ -111,13 +111,13 @@ public synchronized FundamentalOperationalData setDataField1(byte pDataField1)
 }
 /** Utility setter for {@link FundamentalOperationalData#dataField1}
   * @param pDataField1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setDataField1(int pDataField1){
     dataField1 = (byte) pDataField1;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#dataField1}
-  * @return value of interest (getter #1) */
+  * @return this.dataField1 (getter #1) */
 public byte getDataField1()
 {
        return dataField1;
@@ -133,13 +133,13 @@ public synchronized FundamentalOperationalData setInformationLayers(byte pInform
 }
 /** Utility setter for {@link FundamentalOperationalData#informationLayers}
   * @param pInformationLayers new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setInformationLayers(int pInformationLayers){
     informationLayers = (byte) pInformationLayers;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#informationLayers}
-  * @return value of interest (getter #1) */
+  * @return this.informationLayers (getter #1) */
 public byte getInformationLayers()
 {
        return informationLayers;
@@ -155,13 +155,13 @@ public synchronized FundamentalOperationalData setDataField2(byte pDataField2)
 }
 /** Utility setter for {@link FundamentalOperationalData#dataField2}
   * @param pDataField2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setDataField2(int pDataField2){
     dataField2 = (byte) pDataField2;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#dataField2}
-  * @return value of interest (getter #1) */
+  * @return this.dataField2 (getter #1) */
 public byte getDataField2()
 {
        return dataField2;
@@ -177,13 +177,13 @@ public synchronized FundamentalOperationalData setParameter1(short pParameter1)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter1}
   * @param pParameter1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter1(int pParameter1){
     parameter1 = (short) pParameter1;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter1}
-  * @return value of interest (getter #1) */
+  * @return this.parameter1 (getter #1) */
 public short getParameter1()
 {
        return parameter1;
@@ -199,13 +199,13 @@ public synchronized FundamentalOperationalData setParameter2(short pParameter2)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter2}
   * @param pParameter2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter2(int pParameter2){
     parameter2 = (short) pParameter2;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter2}
-  * @return value of interest (getter #1) */
+  * @return this.parameter2 (getter #1) */
 public short getParameter2()
 {
        return parameter2;
@@ -221,13 +221,13 @@ public synchronized FundamentalOperationalData setParameter3(short pParameter3)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter3}
   * @param pParameter3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter3(int pParameter3){
     parameter3 = (short) pParameter3;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter3}
-  * @return value of interest (getter #1) */
+  * @return this.parameter3 (getter #1) */
 public short getParameter3()
 {
        return parameter3;
@@ -243,13 +243,13 @@ public synchronized FundamentalOperationalData setParameter4(short pParameter4)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter4}
   * @param pParameter4 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter4(int pParameter4){
     parameter4 = (short) pParameter4;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter4}
-  * @return value of interest (getter #1) */
+  * @return this.parameter4 (getter #1) */
 public short getParameter4()
 {
        return parameter4;
@@ -265,13 +265,13 @@ public synchronized FundamentalOperationalData setParameter5(short pParameter5)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter5}
   * @param pParameter5 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter5(int pParameter5){
     parameter5 = (short) pParameter5;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter5}
-  * @return value of interest (getter #1) */
+  * @return this.parameter5 (getter #1) */
 public short getParameter5()
 {
        return parameter5;
@@ -287,13 +287,13 @@ public synchronized FundamentalOperationalData setParameter6(short pParameter6)
 }
 /** Utility setter for {@link FundamentalOperationalData#parameter6}
   * @param pParameter6 new value of interest
-  * @return same object to permit progressive setters */
+  * @return FundamentalOperationalData to permit progressive setters */
 public synchronized FundamentalOperationalData setParameter6(int pParameter6){
     parameter6 = (short) pParameter6;
     return this;
 }
 /** Getter for {@link FundamentalOperationalData#parameter6}
-  * @return value of interest (getter #1) */
+  * @return this.parameter6 (getter #1) */
 public short getParameter6()
 {
        return parameter6;

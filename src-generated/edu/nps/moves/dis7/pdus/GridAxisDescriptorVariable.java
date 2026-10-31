@@ -77,13 +77,13 @@ public synchronized GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(short p
 }
 /** Utility setter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}
   * @param pNumberOfPointsOnXiAxis new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptorVariable to permit progressive setters */
 public synchronized GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(int pNumberOfPointsOnXiAxis){
     numberOfPointsOnXiAxis = (short) pNumberOfPointsOnXiAxis;
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}
-  * @return value of interest (getter #1) */
+  * @return this.numberOfPointsOnXiAxis (getter #1) */
 public short getNumberOfPointsOnXiAxis()
 {
        return numberOfPointsOnXiAxis;
@@ -99,13 +99,13 @@ public synchronized GridAxisDescriptorVariable setInitialIndex(short pInitialInd
 }
 /** Utility setter for {@link GridAxisDescriptorVariable#initialIndex}
   * @param pInitialIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptorVariable to permit progressive setters */
 public synchronized GridAxisDescriptorVariable setInitialIndex(int pInitialIndex){
     initialIndex = (short) pInitialIndex;
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#initialIndex}
-  * @return value of interest (getter #1) */
+  * @return this.initialIndex (getter #1) */
 public short getInitialIndex()
 {
        return initialIndex;
@@ -120,7 +120,7 @@ public synchronized GridAxisDescriptorVariable setCoordinateScaleXi(double pCoor
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#coordinateScaleXi}
-  * @return value of interest (getter #1) */
+  * @return this.coordinateScaleXi (getter #1) */
 public double getCoordinateScaleXi()
 {
        return coordinateScaleXi;
@@ -135,7 +135,7 @@ public synchronized GridAxisDescriptorVariable setCoordinateOffsetXi(double pCoo
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}
-  * @return value of interest (getter #1) */
+  * @return this.coordinateOffsetXi (getter #1) */
 public double getCoordinateOffsetXi()
 {
        return coordinateOffsetXi;
@@ -143,14 +143,14 @@ public double getCoordinateOffsetXi()
 
 /** Setter for {@link GridAxisDescriptorVariable#xiValues}
   * @param pXiValues new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptorVariable to permit progressive setters */
 public synchronized GridAxisDescriptorVariable setXiValues(short[] pXiValues)
 {
     xiValues = pXiValues;
     return this;
 }
 /** Getter for {@link GridAxisDescriptorVariable#xiValues}
-  * @return value of interest (getter #2) */
+  * @return this.xiValues (getter #2) */
 public short[] getXiValues()
 {
     return xiValues; 

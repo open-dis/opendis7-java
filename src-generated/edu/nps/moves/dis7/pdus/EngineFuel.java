@@ -71,7 +71,7 @@ public synchronized EngineFuel setFuelQuantity(int pFuelQuantity)
     return this;
 }
 /** Getter for {@link EngineFuel#fuelQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.fuelQuantity (getter #1) */
 public int getFuelQuantity()
 {
        return fuelQuantity;
@@ -79,60 +79,78 @@ public int getFuelQuantity()
 
 /** Setter for {@link EngineFuel#fuelMeasurementUnits}
   * @param pFuelMeasurementUnits new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EngineFuel to permit progressive setters */
 public synchronized EngineFuel setFuelMeasurementUnits(FuelMeasurementUnits pFuelMeasurementUnits)
 {
-    fuelMeasurementUnits = pFuelMeasurementUnits;
+    if (pFuelMeasurementUnits == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelMeasurementUnits pFuelMeasurementUnits == null, ignored by setting default enumeration...");
+        fuelMeasurementUnits = FuelMeasurementUnits.values()[0];
+    } else
+        fuelMeasurementUnits = pFuelMeasurementUnits;
+
     return this;
 }
 /** Getter for {@link EngineFuel#fuelMeasurementUnits}
-  * @return value of interest (getter #4) */
+  * @return FuelMeasurementUnits this.fuelMeasurementUnits (getter #4) */
 public FuelMeasurementUnits getFuelMeasurementUnits()
 {
     if (fuelMeasurementUnits == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurementUnits == null, ignored by returning default enumeration FuelMeasurementUnits.values()[0]=" + FuelMeasurementUnits.values()[0]);
-        return FuelMeasurementUnits.values()[0];
+        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurementUnits == null, ignored by returning default enumeration...");
+        fuelMeasurementUnits = FuelMeasurementUnits.values()[0];
     }
     return fuelMeasurementUnits; 
 }
 
 /** Setter for {@link EngineFuel#fuelType}
   * @param pFuelType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EngineFuel to permit progressive setters */
 public synchronized EngineFuel setFuelType(SupplyFuelType pFuelType)
 {
-    fuelType = pFuelType;
+    if (pFuelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SupplyFuelType pFuelType == null, ignored by setting default enumeration...");
+        fuelType = SupplyFuelType.values()[0];
+    } else
+        fuelType = pFuelType;
+
     return this;
 }
 /** Getter for {@link EngineFuel#fuelType}
-  * @return value of interest (getter #4) */
+  * @return SupplyFuelType this.fuelType (getter #4) */
 public SupplyFuelType getFuelType()
 {
     if (fuelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration SupplyFuelType.values()[0]=" + SupplyFuelType.values()[0]);
-        return SupplyFuelType.values()[0];
+        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration...");
+        fuelType = SupplyFuelType.values()[0];
     }
     return fuelType; 
 }
 
 /** Setter for {@link EngineFuel#fuelLocation}
   * @param pFuelLocation new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EngineFuel to permit progressive setters */
 public synchronized EngineFuel setFuelLocation(FuelLocation pFuelLocation)
 {
-    fuelLocation = pFuelLocation;
+    if (pFuelLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelLocation pFuelLocation == null, ignored by setting default enumeration...");
+        fuelLocation = FuelLocation.values()[0];
+    } else
+        fuelLocation = pFuelLocation;
+
     return this;
 }
 /** Getter for {@link EngineFuel#fuelLocation}
-  * @return value of interest (getter #4) */
+  * @return FuelLocation this.fuelLocation (getter #4) */
 public FuelLocation getFuelLocation()
 {
     if (fuelLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration FuelLocation.values()[0]=" + FuelLocation.values()[0]);
-        return FuelLocation.values()[0];
+        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration...");
+        fuelLocation = FuelLocation.values()[0];
     }
     return fuelLocation; 
 }
@@ -147,13 +165,13 @@ public synchronized EngineFuel setPadding(byte pPadding)
 }
 /** Utility setter for {@link EngineFuel#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return EngineFuel to permit progressive setters */
 public synchronized EngineFuel setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link EngineFuel#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

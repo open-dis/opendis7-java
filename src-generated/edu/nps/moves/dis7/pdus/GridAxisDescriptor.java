@@ -69,7 +69,7 @@ public synchronized GridAxisDescriptor setDomainInitialXi(double pDomainInitialX
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainInitialXi}
-  * @return value of interest (getter #1) */
+  * @return this.domainInitialXi (getter #1) */
 public double getDomainInitialXi()
 {
        return domainInitialXi;
@@ -84,7 +84,7 @@ public synchronized GridAxisDescriptor setDomainFinalXi(double pDomainFinalXi)
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainFinalXi}
-  * @return value of interest (getter #1) */
+  * @return this.domainFinalXi (getter #1) */
 public double getDomainFinalXi()
 {
        return domainFinalXi;
@@ -100,13 +100,13 @@ public synchronized GridAxisDescriptor setDomainPointsXi(short pDomainPointsXi)
 }
 /** Utility setter for {@link GridAxisDescriptor#domainPointsXi}
   * @param pDomainPointsXi new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptor to permit progressive setters */
 public synchronized GridAxisDescriptor setDomainPointsXi(int pDomainPointsXi){
     domainPointsXi = (short) pDomainPointsXi;
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#domainPointsXi}
-  * @return value of interest (getter #1) */
+  * @return this.domainPointsXi (getter #1) */
 public short getDomainPointsXi()
 {
        return domainPointsXi;
@@ -122,13 +122,13 @@ public synchronized GridAxisDescriptor setInterleafFactor(byte pInterleafFactor)
 }
 /** Utility setter for {@link GridAxisDescriptor#interleafFactor}
   * @param pInterleafFactor new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridAxisDescriptor to permit progressive setters */
 public synchronized GridAxisDescriptor setInterleafFactor(int pInterleafFactor){
     interleafFactor = (byte) pInterleafFactor;
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#interleafFactor}
-  * @return value of interest (getter #1) */
+  * @return this.interleafFactor (getter #1) */
 public byte getInterleafFactor()
 {
        return interleafFactor;
@@ -136,20 +136,26 @@ public byte getInterleafFactor()
 
 /** Setter for {@link GridAxisDescriptor#axisType}
   * @param pAxisType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this GridAxisDescriptor to permit progressive setters */
 public synchronized GridAxisDescriptor setAxisType(GridAxisDescriptorAxisType pAxisType)
 {
-    axisType = pAxisType;
+    if (pAxisType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType pAxisType == null, ignored by setting default enumeration...");
+        axisType = GridAxisDescriptorAxisType.values()[0];
+    } else
+        axisType = pAxisType;
+
     return this;
 }
 /** Getter for {@link GridAxisDescriptor#axisType}
-  * @return value of interest (getter #4) */
+  * @return GridAxisDescriptorAxisType this.axisType (getter #4) */
 public GridAxisDescriptorAxisType getAxisType()
 {
     if (axisType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration GridAxisDescriptorAxisType.values()[0]=" + GridAxisDescriptorAxisType.values()[0]);
-        return GridAxisDescriptorAxisType.values()[0];
+        System.err.println("Error: enumtype GridAxisDescriptorAxisType axisType == null, ignored by returning default enumeration...");
+        axisType = GridAxisDescriptorAxisType.values()[0];
     }
     return axisType; 
 }

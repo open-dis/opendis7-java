@@ -80,40 +80,52 @@ public EntityType getMunitionType()
 
 /** Setter for {@link MunitionDescriptor#warhead}
   * @param pWarhead new value of interest
-  * @return same object to permit progressive setters */
+  * @return this MunitionDescriptor to permit progressive setters */
 public synchronized MunitionDescriptor setWarhead(MunitionDescriptorWarhead pWarhead)
 {
-    warhead = pWarhead;
+    if (pWarhead == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionDescriptorWarhead pWarhead == null, ignored by setting default enumeration...");
+        warhead = MunitionDescriptorWarhead.values()[0];
+    } else
+        warhead = pWarhead;
+
     return this;
 }
 /** Getter for {@link MunitionDescriptor#warhead}
-  * @return value of interest (getter #4) */
+  * @return MunitionDescriptorWarhead this.warhead (getter #4) */
 public MunitionDescriptorWarhead getWarhead()
 {
     if (warhead == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration MunitionDescriptorWarhead.values()[0]=" + MunitionDescriptorWarhead.values()[0]);
-        return MunitionDescriptorWarhead.values()[0];
+        System.err.println("Error: enumtype MunitionDescriptorWarhead warhead == null, ignored by returning default enumeration...");
+        warhead = MunitionDescriptorWarhead.values()[0];
     }
     return warhead; 
 }
 
 /** Setter for {@link MunitionDescriptor#fuse}
   * @param pFuse new value of interest
-  * @return same object to permit progressive setters */
+  * @return this MunitionDescriptor to permit progressive setters */
 public synchronized MunitionDescriptor setFuse(MunitionDescriptorFuse pFuse)
 {
-    fuse = pFuse;
+    if (pFuse == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionDescriptorFuse pFuse == null, ignored by setting default enumeration...");
+        fuse = MunitionDescriptorFuse.values()[0];
+    } else
+        fuse = pFuse;
+
     return this;
 }
 /** Getter for {@link MunitionDescriptor#fuse}
-  * @return value of interest (getter #4) */
+  * @return MunitionDescriptorFuse this.fuse (getter #4) */
 public MunitionDescriptorFuse getFuse()
 {
     if (fuse == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration MunitionDescriptorFuse.values()[0]=" + MunitionDescriptorFuse.values()[0]);
-        return MunitionDescriptorFuse.values()[0];
+        System.err.println("Error: enumtype MunitionDescriptorFuse fuse == null, ignored by returning default enumeration...");
+        fuse = MunitionDescriptorFuse.values()[0];
     }
     return fuse; 
 }
@@ -128,13 +140,13 @@ public synchronized MunitionDescriptor setQuantity(short pQuantity)
 }
 /** Utility setter for {@link MunitionDescriptor#quantity}
   * @param pQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return MunitionDescriptor to permit progressive setters */
 public synchronized MunitionDescriptor setQuantity(int pQuantity){
     quantity = (short) pQuantity;
     return this;
 }
 /** Getter for {@link MunitionDescriptor#quantity}
-  * @return value of interest (getter #1) */
+  * @return this.quantity (getter #1) */
 public short getQuantity()
 {
        return quantity;
@@ -150,13 +162,13 @@ public synchronized MunitionDescriptor setRate(short pRate)
 }
 /** Utility setter for {@link MunitionDescriptor#rate}
   * @param pRate new value of interest
-  * @return same object to permit progressive setters */
+  * @return MunitionDescriptor to permit progressive setters */
 public synchronized MunitionDescriptor setRate(int pRate){
     rate = (short) pRate;
     return this;
 }
 /** Getter for {@link MunitionDescriptor#rate}
-  * @return value of interest (getter #1) */
+  * @return this.rate (getter #1) */
 public short getRate()
 {
        return rate;

@@ -61,13 +61,13 @@ public synchronized LiveEntityOrientationError setAzimuthError(short pAzimuthErr
 }
 /** Utility setter for {@link LiveEntityOrientationError#azimuthError}
   * @param pAzimuthError new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientationError to permit progressive setters */
 public synchronized LiveEntityOrientationError setAzimuthError(int pAzimuthError){
     azimuthError = (short) pAzimuthError;
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#azimuthError}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthError (getter #1) */
 public short getAzimuthError()
 {
        return azimuthError;
@@ -83,13 +83,13 @@ public synchronized LiveEntityOrientationError setElevationError(short pElevatio
 }
 /** Utility setter for {@link LiveEntityOrientationError#elevationError}
   * @param pElevationError new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientationError to permit progressive setters */
 public synchronized LiveEntityOrientationError setElevationError(int pElevationError){
     elevationError = (short) pElevationError;
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#elevationError}
-  * @return value of interest (getter #1) */
+  * @return this.elevationError (getter #1) */
 public short getElevationError()
 {
        return elevationError;
@@ -105,13 +105,13 @@ public synchronized LiveEntityOrientationError setRotationError(short pRotationE
 }
 /** Utility setter for {@link LiveEntityOrientationError#rotationError}
   * @param pRotationError new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityOrientationError to permit progressive setters */
 public synchronized LiveEntityOrientationError setRotationError(int pRotationError){
     rotationError = (short) pRotationError;
     return this;
 }
 /** Getter for {@link LiveEntityOrientationError#rotationError}
-  * @return value of interest (getter #1) */
+  * @return this.rotationError (getter #1) */
 public short getRotationError()
 {
        return rotationError;

@@ -74,60 +74,78 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link AggregateType#aggregateKind}
   * @param pAggregateKind new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AggregateType to permit progressive setters */
 public synchronized AggregateType setAggregateKind(AggregateStateAggregateKind pAggregateKind)
 {
-    aggregateKind = pAggregateKind;
+    if (pAggregateKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateAggregateKind pAggregateKind == null, ignored by setting default enumeration...");
+        aggregateKind = AggregateStateAggregateKind.values()[0];
+    } else
+        aggregateKind = pAggregateKind;
+
     return this;
 }
 /** Getter for {@link AggregateType#aggregateKind}
-  * @return value of interest (getter #4) */
+  * @return AggregateStateAggregateKind this.aggregateKind (getter #4) */
 public AggregateStateAggregateKind getAggregateKind()
 {
     if (aggregateKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateAggregateKind aggregateKind == null, ignored by returning default enumeration AggregateStateAggregateKind.values()[0]=" + AggregateStateAggregateKind.values()[0]);
-        return AggregateStateAggregateKind.values()[0];
+        System.err.println("Error: enumtype AggregateStateAggregateKind aggregateKind == null, ignored by returning default enumeration...");
+        aggregateKind = AggregateStateAggregateKind.values()[0];
     }
     return aggregateKind; 
 }
 
 /** Setter for {@link AggregateType#domain}
   * @param pDomain new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AggregateType to permit progressive setters */
 public synchronized AggregateType setDomain(PlatformDomain pDomain)
 {
-    domain = pDomain;
+    if (pDomain == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype PlatformDomain pDomain == null, ignored by setting default enumeration...");
+        domain = PlatformDomain.values()[0];
+    } else
+        domain = pDomain;
+
     return this;
 }
 /** Getter for {@link AggregateType#domain}
-  * @return value of interest (getter #4) */
+  * @return PlatformDomain this.domain (getter #4) */
 public PlatformDomain getDomain()
 {
     if (domain == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration PlatformDomain.values()[0]=" + PlatformDomain.values()[0]);
-        return PlatformDomain.values()[0];
+        System.err.println("Error: enumtype PlatformDomain domain == null, ignored by returning default enumeration...");
+        domain = PlatformDomain.values()[0];
     }
     return domain; 
 }
 
 /** Setter for {@link AggregateType#country}
   * @param pCountry new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AggregateType to permit progressive setters */
 public synchronized AggregateType setCountry(Country pCountry)
 {
-    country = pCountry;
+    if (pCountry == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country pCountry == null, ignored by setting default enumeration...");
+        country = Country.values()[0];
+    } else
+        country = pCountry;
+
     return this;
 }
 /** Getter for {@link AggregateType#country}
-  * @return value of interest (getter #4) */
+  * @return Country this.country (getter #4) */
 public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
-        return Country.values()[0];
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        country = Country.values()[0];
     }
     return country; 
 }
@@ -142,13 +160,13 @@ public synchronized AggregateType setCategory(byte pCategory)
 }
 /** Utility setter for {@link AggregateType#category}
   * @param pCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return AggregateType to permit progressive setters */
 public synchronized AggregateType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
 /** Getter for {@link AggregateType#category}
-  * @return value of interest (getter #1) */
+  * @return this.category (getter #1) */
 public byte getCategory()
 {
        return category;
@@ -156,40 +174,52 @@ public byte getCategory()
 
 /** Setter for {@link AggregateType#subcategory}
   * @param pSubcategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AggregateType to permit progressive setters */
 public synchronized AggregateType setSubcategory(AggregateStateSubcategory pSubcategory)
 {
-    subcategory = pSubcategory;
+    if (pSubcategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateSubcategory pSubcategory == null, ignored by setting default enumeration...");
+        subcategory = AggregateStateSubcategory.values()[0];
+    } else
+        subcategory = pSubcategory;
+
     return this;
 }
 /** Getter for {@link AggregateType#subcategory}
-  * @return value of interest (getter #4) */
+  * @return AggregateStateSubcategory this.subcategory (getter #4) */
 public AggregateStateSubcategory getSubcategory()
 {
     if (subcategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateSubcategory subcategory == null, ignored by returning default enumeration AggregateStateSubcategory.values()[0]=" + AggregateStateSubcategory.values()[0]);
-        return AggregateStateSubcategory.values()[0];
+        System.err.println("Error: enumtype AggregateStateSubcategory subcategory == null, ignored by returning default enumeration...");
+        subcategory = AggregateStateSubcategory.values()[0];
     }
     return subcategory; 
 }
 
 /** Setter for {@link AggregateType#specificInfo}
   * @param pSpecificInfo new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AggregateType to permit progressive setters */
 public synchronized AggregateType setSpecificInfo(AggregateStateSpecific pSpecificInfo)
 {
-    specificInfo = pSpecificInfo;
+    if (pSpecificInfo == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype AggregateStateSpecific pSpecificInfo == null, ignored by setting default enumeration...");
+        specificInfo = AggregateStateSpecific.values()[0];
+    } else
+        specificInfo = pSpecificInfo;
+
     return this;
 }
 /** Getter for {@link AggregateType#specificInfo}
-  * @return value of interest (getter #4) */
+  * @return AggregateStateSpecific this.specificInfo (getter #4) */
 public AggregateStateSpecific getSpecificInfo()
 {
     if (specificInfo == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype AggregateStateSpecific specificInfo == null, ignored by returning default enumeration AggregateStateSpecific.values()[0]=" + AggregateStateSpecific.values()[0]);
-        return AggregateStateSpecific.values()[0];
+        System.err.println("Error: enumtype AggregateStateSpecific specificInfo == null, ignored by returning default enumeration...");
+        specificInfo = AggregateStateSpecific.values()[0];
     }
     return specificInfo; 
 }
@@ -204,13 +234,13 @@ public synchronized AggregateType setExtra(byte pExtra)
 }
 /** Utility setter for {@link AggregateType#extra}
   * @param pExtra new value of interest
-  * @return same object to permit progressive setters */
+  * @return AggregateType to permit progressive setters */
 public synchronized AggregateType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
 /** Getter for {@link AggregateType#extra}
-  * @return value of interest (getter #1) */
+  * @return this.extra (getter #1) */
 public byte getExtra()
 {
        return extra;

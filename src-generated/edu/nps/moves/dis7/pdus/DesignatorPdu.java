@@ -183,20 +183,26 @@ public EntityID getDesignatingEntityID()
 
 /** Setter for {@link DesignatorPdu#codeName}
   * @param pCodeName new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DesignatorPdu to permit progressive setters */
 public synchronized DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
 {
-    codeName = pCodeName;
+    if (pCodeName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DesignatorSystemName pCodeName == null, ignored by setting default enumeration...");
+        codeName = DesignatorSystemName.values()[0];
+    } else
+        codeName = pCodeName;
+
     return this;
 }
 /** Getter for {@link DesignatorPdu#codeName}
-  * @return value of interest (getter #4) */
+  * @return DesignatorSystemName this.codeName (getter #4) */
 public DesignatorSystemName getCodeName()
 {
     if (codeName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration DesignatorSystemName.values()[0]=" + DesignatorSystemName.values()[0]);
-        return DesignatorSystemName.values()[0];
+        System.err.println("Error: enumtype DesignatorSystemName codeName == null, ignored by returning default enumeration...");
+        codeName = DesignatorSystemName.values()[0];
     }
     return codeName; 
 }
@@ -219,20 +225,26 @@ public EntityID getDesignatedEntityID()
 
 /** Setter for {@link DesignatorPdu#designatorCode}
   * @param pDesignatorCode new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DesignatorPdu to permit progressive setters */
 public synchronized DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDesignatorCode)
 {
-    designatorCode = pDesignatorCode;
+    if (pDesignatorCode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DesignatorDesignatorCode pDesignatorCode == null, ignored by setting default enumeration...");
+        designatorCode = DesignatorDesignatorCode.values()[0];
+    } else
+        designatorCode = pDesignatorCode;
+
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorCode}
-  * @return value of interest (getter #4) */
+  * @return DesignatorDesignatorCode this.designatorCode (getter #4) */
 public DesignatorDesignatorCode getDesignatorCode()
 {
     if (designatorCode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration DesignatorDesignatorCode.values()[0]=" + DesignatorDesignatorCode.values()[0]);
-        return DesignatorDesignatorCode.values()[0];
+        System.err.println("Error: enumtype DesignatorDesignatorCode designatorCode == null, ignored by returning default enumeration...");
+        designatorCode = DesignatorDesignatorCode.values()[0];
     }
     return designatorCode; 
 }
@@ -246,7 +258,7 @@ public synchronized DesignatorPdu setDesignatorPower(float pDesignatorPower)
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorPower}
-  * @return value of interest (getter #1) */
+  * @return this.designatorPower (getter #1) */
 public float getDesignatorPower()
 {
        return designatorPower;
@@ -261,7 +273,7 @@ public synchronized DesignatorPdu setDesignatorWavelength(float pDesignatorWavel
     return this;
 }
 /** Getter for {@link DesignatorPdu#designatorWavelength}
-  * @return value of interest (getter #1) */
+  * @return this.designatorWavelength (getter #1) */
 public float getDesignatorWavelength()
 {
        return designatorWavelength;
@@ -301,20 +313,26 @@ public Vector3Double getDesignatorSpotLocation()
 
 /** Setter for {@link DesignatorPdu#deadReckoningAlgorithm}
   * @param pDeadReckoningAlgorithm new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DesignatorPdu to permit progressive setters */
 public synchronized DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
-    deadReckoningAlgorithm = pDeadReckoningAlgorithm;
+    if (pDeadReckoningAlgorithm == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration...");
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
+    } else
+        deadReckoningAlgorithm = pDeadReckoningAlgorithm;
+
     return this;
 }
 /** Getter for {@link DesignatorPdu#deadReckoningAlgorithm}
-  * @return value of interest (getter #4) */
+  * @return DeadReckoningAlgorithm this.deadReckoningAlgorithm (getter #4) */
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
-        return DeadReckoningAlgorithm.values()[0];
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     }
     return deadReckoningAlgorithm; 
 }
@@ -329,13 +347,13 @@ public synchronized DesignatorPdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link DesignatorPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return DesignatorPdu to permit progressive setters */
 public synchronized DesignatorPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link DesignatorPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -351,13 +369,13 @@ public synchronized DesignatorPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link DesignatorPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return DesignatorPdu to permit progressive setters */
 public synchronized DesignatorPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link DesignatorPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;

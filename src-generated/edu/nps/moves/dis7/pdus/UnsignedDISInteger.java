@@ -52,7 +52,7 @@ public synchronized UnsignedDISInteger setVal(int pVal)
     return this;
 }
 /** Getter for {@link UnsignedDISInteger#val}
-  * @return value of interest (getter #1) */
+  * @return this.val (getter #1) */
 public int getVal()
 {
        return val;

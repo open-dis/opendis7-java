@@ -56,7 +56,7 @@ public synchronized VectoringNozzleSystem setHorizontalDeflectionAngle(float pHo
     return this;
 }
 /** Getter for {@link VectoringNozzleSystem#horizontalDeflectionAngle}
-  * @return value of interest (getter #1) */
+  * @return this.horizontalDeflectionAngle (getter #1) */
 public float getHorizontalDeflectionAngle()
 {
        return horizontalDeflectionAngle;
@@ -71,7 +71,7 @@ public synchronized VectoringNozzleSystem setVerticalDeflectionAngle(float pVert
     return this;
 }
 /** Getter for {@link VectoringNozzleSystem#verticalDeflectionAngle}
-  * @return value of interest (getter #1) */
+  * @return this.verticalDeflectionAngle (getter #1) */
 public float getVerticalDeflectionAngle()
 {
        return verticalDeflectionAngle;

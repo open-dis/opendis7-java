@@ -85,80 +85,104 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EntityAssociationVP#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link EntityAssociationVP#changeIndicator}
   * @param pChangeIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
-    changeIndicator = pChangeIndicator;
+    if (pChangeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator pChangeIndicator == null, ignored by setting default enumeration...");
+        changeIndicator = EntityVPRecordChangeIndicator.values()[0];
+    } else
+        changeIndicator = pChangeIndicator;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#changeIndicator}
-  * @return value of interest (getter #4) */
+  * @return EntityVPRecordChangeIndicator this.changeIndicator (getter #4) */
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     if (changeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration EntityVPRecordChangeIndicator.values()[0]=" + EntityVPRecordChangeIndicator.values()[0]);
-        return EntityVPRecordChangeIndicator.values()[0];
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        changeIndicator = EntityVPRecordChangeIndicator.values()[0];
     }
     return changeIndicator; 
 }
 
 /** Setter for {@link EntityAssociationVP#associationStatus}
   * @param pAssociationStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setAssociationStatus(EntityAssociationAssociationType pAssociationStatus)
 {
-    associationStatus = pAssociationStatus;
+    if (pAssociationStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationAssociationType pAssociationStatus == null, ignored by setting default enumeration...");
+        associationStatus = EntityAssociationAssociationType.values()[0];
+    } else
+        associationStatus = pAssociationStatus;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#associationStatus}
-  * @return value of interest (getter #4) */
+  * @return EntityAssociationAssociationType this.associationStatus (getter #4) */
 public EntityAssociationAssociationType getAssociationStatus()
 {
     if (associationStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationAssociationType associationStatus == null, ignored by returning default enumeration EntityAssociationAssociationType.values()[0]=" + EntityAssociationAssociationType.values()[0]);
-        return EntityAssociationAssociationType.values()[0];
+        System.err.println("Error: enumtype EntityAssociationAssociationType associationStatus == null, ignored by returning default enumeration...");
+        associationStatus = EntityAssociationAssociationType.values()[0];
     }
     return associationStatus; 
 }
 
 /** Setter for {@link EntityAssociationVP#associationType}
   * @param pAssociationType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setAssociationType(EntityAssociationPhysicalAssociationType pAssociationType)
 {
-    associationType = pAssociationType;
+    if (pAssociationType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType pAssociationType == null, ignored by setting default enumeration...");
+        associationType = EntityAssociationPhysicalAssociationType.values()[0];
+    } else
+        associationType = pAssociationType;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#associationType}
-  * @return value of interest (getter #4) */
+  * @return EntityAssociationPhysicalAssociationType this.associationType (getter #4) */
 public EntityAssociationPhysicalAssociationType getAssociationType()
 {
     if (associationType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType associationType == null, ignored by returning default enumeration EntityAssociationPhysicalAssociationType.values()[0]=" + EntityAssociationPhysicalAssociationType.values()[0]);
-        return EntityAssociationPhysicalAssociationType.values()[0];
+        System.err.println("Error: enumtype EntityAssociationPhysicalAssociationType associationType == null, ignored by returning default enumeration...");
+        associationType = EntityAssociationPhysicalAssociationType.values()[0];
     }
     return associationType; 
 }
@@ -181,60 +205,78 @@ public EntityID getEntityID()
 
 /** Setter for {@link EntityAssociationVP#ownStationLocation}
   * @param pOwnStationLocation new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setOwnStationLocation(IsPartOfStationName pOwnStationLocation)
 {
-    ownStationLocation = pOwnStationLocation;
+    if (pOwnStationLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfStationName pOwnStationLocation == null, ignored by setting default enumeration...");
+        ownStationLocation = IsPartOfStationName.values()[0];
+    } else
+        ownStationLocation = pOwnStationLocation;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#ownStationLocation}
-  * @return value of interest (getter #4) */
+  * @return IsPartOfStationName this.ownStationLocation (getter #4) */
 public IsPartOfStationName getOwnStationLocation()
 {
     if (ownStationLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfStationName ownStationLocation == null, ignored by returning default enumeration IsPartOfStationName.values()[0]=" + IsPartOfStationName.values()[0]);
-        return IsPartOfStationName.values()[0];
+        System.err.println("Error: enumtype IsPartOfStationName ownStationLocation == null, ignored by returning default enumeration...");
+        ownStationLocation = IsPartOfStationName.values()[0];
     }
     return ownStationLocation; 
 }
 
 /** Setter for {@link EntityAssociationVP#physicalConnectionType}
   * @param pPhysicalConnectionType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setPhysicalConnectionType(EntityAssociationPhysicalConnectionType pPhysicalConnectionType)
 {
-    physicalConnectionType = pPhysicalConnectionType;
+    if (pPhysicalConnectionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType pPhysicalConnectionType == null, ignored by setting default enumeration...");
+        physicalConnectionType = EntityAssociationPhysicalConnectionType.values()[0];
+    } else
+        physicalConnectionType = pPhysicalConnectionType;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#physicalConnectionType}
-  * @return value of interest (getter #4) */
+  * @return EntityAssociationPhysicalConnectionType this.physicalConnectionType (getter #4) */
 public EntityAssociationPhysicalConnectionType getPhysicalConnectionType()
 {
     if (physicalConnectionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType physicalConnectionType == null, ignored by returning default enumeration EntityAssociationPhysicalConnectionType.values()[0]=" + EntityAssociationPhysicalConnectionType.values()[0]);
-        return EntityAssociationPhysicalConnectionType.values()[0];
+        System.err.println("Error: enumtype EntityAssociationPhysicalConnectionType physicalConnectionType == null, ignored by returning default enumeration...");
+        physicalConnectionType = EntityAssociationPhysicalConnectionType.values()[0];
     }
     return physicalConnectionType; 
 }
 
 /** Setter for {@link EntityAssociationVP#groupMemberType}
   * @param pGroupMemberType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setGroupMemberType(EntityAssociationGroupMemberType pGroupMemberType)
 {
-    groupMemberType = pGroupMemberType;
+    if (pGroupMemberType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityAssociationGroupMemberType pGroupMemberType == null, ignored by setting default enumeration...");
+        groupMemberType = EntityAssociationGroupMemberType.values()[0];
+    } else
+        groupMemberType = pGroupMemberType;
+
     return this;
 }
 /** Getter for {@link EntityAssociationVP#groupMemberType}
-  * @return value of interest (getter #4) */
+  * @return EntityAssociationGroupMemberType this.groupMemberType (getter #4) */
 public EntityAssociationGroupMemberType getGroupMemberType()
 {
     if (groupMemberType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityAssociationGroupMemberType groupMemberType == null, ignored by returning default enumeration EntityAssociationGroupMemberType.values()[0]=" + EntityAssociationGroupMemberType.values()[0]);
-        return EntityAssociationGroupMemberType.values()[0];
+        System.err.println("Error: enumtype EntityAssociationGroupMemberType groupMemberType == null, ignored by returning default enumeration...");
+        groupMemberType = EntityAssociationGroupMemberType.values()[0];
     }
     return groupMemberType; 
 }
@@ -249,13 +291,13 @@ public synchronized EntityAssociationVP setGroupNumber(short pGroupNumber)
 }
 /** Utility setter for {@link EntityAssociationVP#groupNumber}
   * @param pGroupNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityAssociationVP to permit progressive setters */
 public synchronized EntityAssociationVP setGroupNumber(int pGroupNumber){
     groupNumber = (short) pGroupNumber;
     return this;
 }
 /** Getter for {@link EntityAssociationVP#groupNumber}
-  * @return value of interest (getter #1) */
+  * @return this.groupNumber (getter #1) */
 public short getGroupNumber()
 {
        return groupNumber;

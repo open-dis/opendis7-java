@@ -56,7 +56,7 @@ public synchronized Vector2Float setX(float pX)
     return this;
 }
 /** Getter for {@link Vector2Float#x}
-  * @return value of interest (getter #1) */
+  * @return this.x (getter #1) */
 public float getX()
 {
        return x;
@@ -71,7 +71,7 @@ public synchronized Vector2Float setY(float pY)
     return this;
 }
 /** Getter for {@link Vector2Float#y}
-  * @return value of interest (getter #1) */
+  * @return this.y (getter #1) */
 public float getY()
 {
        return y;

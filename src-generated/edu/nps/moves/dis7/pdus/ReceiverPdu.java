@@ -154,20 +154,26 @@ public RadioCommsHeader getHeader()
 
 /** Setter for {@link ReceiverPdu#receiverState}
   * @param pReceiverState new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ReceiverPdu to permit progressive setters */
 public synchronized ReceiverPdu setReceiverState(ReceiverReceiverState pReceiverState)
 {
-    receiverState = pReceiverState;
+    if (pReceiverState == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ReceiverReceiverState pReceiverState == null, ignored by setting default enumeration...");
+        receiverState = ReceiverReceiverState.values()[0];
+    } else
+        receiverState = pReceiverState;
+
     return this;
 }
 /** Getter for {@link ReceiverPdu#receiverState}
-  * @return value of interest (getter #4) */
+  * @return ReceiverReceiverState this.receiverState (getter #4) */
 public ReceiverReceiverState getReceiverState()
 {
     if (receiverState == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ReceiverReceiverState receiverState == null, ignored by returning default enumeration ReceiverReceiverState.values()[0]=" + ReceiverReceiverState.values()[0]);
-        return ReceiverReceiverState.values()[0];
+        System.err.println("Error: enumtype ReceiverReceiverState receiverState == null, ignored by returning default enumeration...");
+        receiverState = ReceiverReceiverState.values()[0];
     }
     return receiverState; 
 }
@@ -182,13 +188,13 @@ public synchronized ReceiverPdu setPadding1(short pPadding1)
 }
 /** Utility setter for {@link ReceiverPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return ReceiverPdu to permit progressive setters */
 public synchronized ReceiverPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
 /** Getter for {@link ReceiverPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public short getPadding1()
 {
        return padding1;
@@ -203,7 +209,7 @@ public synchronized ReceiverPdu setReceivedPower(float pReceivedPower)
     return this;
 }
 /** Getter for {@link ReceiverPdu#receivedPower}
-  * @return value of interest (getter #1) */
+  * @return this.receivedPower (getter #1) */
 public float getReceivedPower()
 {
        return receivedPower;
@@ -235,13 +241,13 @@ public synchronized ReceiverPdu setTransmitterRadioId(short pTransmitterRadioId)
 }
 /** Utility setter for {@link ReceiverPdu#transmitterRadioId}
   * @param pTransmitterRadioId new value of interest
-  * @return same object to permit progressive setters */
+  * @return ReceiverPdu to permit progressive setters */
 public synchronized ReceiverPdu setTransmitterRadioId(int pTransmitterRadioId){
     transmitterRadioId = (short) pTransmitterRadioId;
     return this;
 }
 /** Getter for {@link ReceiverPdu#transmitterRadioId}
-  * @return value of interest (getter #1) */
+  * @return this.transmitterRadioId (getter #1) */
 public short getTransmitterRadioId()
 {
        return transmitterRadioId;

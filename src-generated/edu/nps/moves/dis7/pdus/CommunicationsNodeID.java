@@ -74,13 +74,13 @@ public synchronized CommunicationsNodeID setElementID(short pElementID)
 }
 /** Utility setter for {@link CommunicationsNodeID#elementID}
   * @param pElementID new value of interest
-  * @return same object to permit progressive setters */
+  * @return CommunicationsNodeID to permit progressive setters */
 public synchronized CommunicationsNodeID setElementID(int pElementID){
     elementID = (short) pElementID;
     return this;
 }
 /** Getter for {@link CommunicationsNodeID#elementID}
-  * @return value of interest (getter #1) */
+  * @return this.elementID (getter #1) */
 public short getElementID()
 {
        return elementID;

@@ -194,7 +194,7 @@ public synchronized InformationOperationsActionPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -202,80 +202,104 @@ public int getRequestID()
 
 /** Setter for {@link InformationOperationsActionPdu#IOWarfareType}
   * @param pIOWarfareType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setIOWarfareType(IOActionIOWarfareType pIOWarfareType)
 {
-    IOWarfareType = pIOWarfareType;
+    if (pIOWarfareType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOWarfareType pIOWarfareType == null, ignored by setting default enumeration...");
+        IOWarfareType = IOActionIOWarfareType.values()[0];
+    } else
+        IOWarfareType = pIOWarfareType;
+
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOWarfareType}
-  * @return value of interest (getter #4) */
+  * @return IOActionIOWarfareType this.IOWarfareType (getter #4) */
 public IOActionIOWarfareType getIOWarfareType()
 {
     if (IOWarfareType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration IOActionIOWarfareType.values()[0]=" + IOActionIOWarfareType.values()[0]);
-        return IOActionIOWarfareType.values()[0];
+        System.err.println("Error: enumtype IOActionIOWarfareType IOWarfareType == null, ignored by returning default enumeration...");
+        IOWarfareType = IOActionIOWarfareType.values()[0];
     }
     return IOWarfareType; 
 }
 
 /** Setter for {@link InformationOperationsActionPdu#IOSimulationSource}
   * @param pIOSimulationSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setIOSimulationSource(IOActionIOSimulationSource pIOSimulationSource)
 {
-    IOSimulationSource = pIOSimulationSource;
+    if (pIOSimulationSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOSimulationSource pIOSimulationSource == null, ignored by setting default enumeration...");
+        IOSimulationSource = IOActionIOSimulationSource.values()[0];
+    } else
+        IOSimulationSource = pIOSimulationSource;
+
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOSimulationSource}
-  * @return value of interest (getter #4) */
+  * @return IOActionIOSimulationSource this.IOSimulationSource (getter #4) */
 public IOActionIOSimulationSource getIOSimulationSource()
 {
     if (IOSimulationSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration IOActionIOSimulationSource.values()[0]=" + IOActionIOSimulationSource.values()[0]);
-        return IOActionIOSimulationSource.values()[0];
+        System.err.println("Error: enumtype IOActionIOSimulationSource IOSimulationSource == null, ignored by returning default enumeration...");
+        IOSimulationSource = IOActionIOSimulationSource.values()[0];
     }
     return IOSimulationSource; 
 }
 
 /** Setter for {@link InformationOperationsActionPdu#IOActionType}
   * @param pIOActionType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setIOActionType(IOActionIOActionType pIOActionType)
 {
-    IOActionType = pIOActionType;
+    if (pIOActionType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOActionType pIOActionType == null, ignored by setting default enumeration...");
+        IOActionType = IOActionIOActionType.values()[0];
+    } else
+        IOActionType = pIOActionType;
+
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOActionType}
-  * @return value of interest (getter #4) */
+  * @return IOActionIOActionType this.IOActionType (getter #4) */
 public IOActionIOActionType getIOActionType()
 {
     if (IOActionType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration IOActionIOActionType.values()[0]=" + IOActionIOActionType.values()[0]);
-        return IOActionIOActionType.values()[0];
+        System.err.println("Error: enumtype IOActionIOActionType IOActionType == null, ignored by returning default enumeration...");
+        IOActionType = IOActionIOActionType.values()[0];
     }
     return IOActionType; 
 }
 
 /** Setter for {@link InformationOperationsActionPdu#IOActionPhase}
   * @param pIOActionPhase new value of interest
-  * @return same object to permit progressive setters */
+  * @return this InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setIOActionPhase(IOActionIOActionPhase pIOActionPhase)
 {
-    IOActionPhase = pIOActionPhase;
+    if (pIOActionPhase == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOActionIOActionPhase pIOActionPhase == null, ignored by setting default enumeration...");
+        IOActionPhase = IOActionIOActionPhase.values()[0];
+    } else
+        IOActionPhase = pIOActionPhase;
+
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#IOActionPhase}
-  * @return value of interest (getter #4) */
+  * @return IOActionIOActionPhase this.IOActionPhase (getter #4) */
 public IOActionIOActionPhase getIOActionPhase()
 {
     if (IOActionPhase == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration IOActionIOActionPhase.values()[0]=" + IOActionIOActionPhase.values()[0]);
-        return IOActionIOActionPhase.values()[0];
+        System.err.println("Error: enumtype IOActionIOActionPhase IOActionPhase == null, ignored by returning default enumeration...");
+        IOActionPhase = IOActionIOActionPhase.values()[0];
     }
     return IOActionPhase; 
 }
@@ -289,7 +313,7 @@ public synchronized InformationOperationsActionPdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public int getPadding1()
 {
        return padding1;
@@ -337,13 +361,13 @@ public synchronized InformationOperationsActionPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link InformationOperationsActionPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -351,14 +375,14 @@ public short getPadding2()
 
 /** Setter for {@link InformationOperationsActionPdu#ioRecords}
   * @param pIoRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return InformationOperationsActionPdu to permit progressive setters */
 public synchronized InformationOperationsActionPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
 }
 /** Getter for {@link InformationOperationsActionPdu#ioRecords}
-  * @return value of interest (getter #3) */
+  * @return this.ioRecords (getter #3) */
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

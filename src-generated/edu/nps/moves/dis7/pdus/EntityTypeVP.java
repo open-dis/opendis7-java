@@ -64,40 +64,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EntityTypeVP#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityTypeVP to permit progressive setters */
 public synchronized EntityTypeVP setRecordType(VariableParameterRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableParameterRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link EntityTypeVP#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableParameterRecordType this.recordType (getter #4) */
 public VariableParameterRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration VariableParameterRecordType.values()[0]=" + VariableParameterRecordType.values()[0]);
-        return VariableParameterRecordType.values()[0];
+        System.err.println("Error: enumtype VariableParameterRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableParameterRecordType.values()[0];
     }
     return recordType; 
 }
 
 /** Setter for {@link EntityTypeVP#changeIndicator}
   * @param pChangeIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityTypeVP to permit progressive setters */
 public synchronized EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
-    changeIndicator = pChangeIndicator;
+    if (pChangeIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator pChangeIndicator == null, ignored by setting default enumeration...");
+        changeIndicator = EntityVPRecordChangeIndicator.values()[0];
+    } else
+        changeIndicator = pChangeIndicator;
+
     return this;
 }
 /** Getter for {@link EntityTypeVP#changeIndicator}
-  * @return value of interest (getter #4) */
+  * @return EntityVPRecordChangeIndicator this.changeIndicator (getter #4) */
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     if (changeIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration EntityVPRecordChangeIndicator.values()[0]=" + EntityVPRecordChangeIndicator.values()[0]);
-        return EntityVPRecordChangeIndicator.values()[0];
+        System.err.println("Error: enumtype EntityVPRecordChangeIndicator changeIndicator == null, ignored by returning default enumeration...");
+        changeIndicator = EntityVPRecordChangeIndicator.values()[0];
     }
     return changeIndicator; 
 }
@@ -128,13 +140,13 @@ public synchronized EntityTypeVP setPadding(short pPadding)
 }
 /** Utility setter for {@link EntityTypeVP#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityTypeVP to permit progressive setters */
 public synchronized EntityTypeVP setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link EntityTypeVP#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -149,7 +161,7 @@ public synchronized EntityTypeVP setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link EntityTypeVP#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public int getPadding1()
 {
        return padding1;

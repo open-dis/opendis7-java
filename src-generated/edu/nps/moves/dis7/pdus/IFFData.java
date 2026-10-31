@@ -61,20 +61,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IFFData#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IFFData to permit progressive setters */
 public synchronized IFFData setRecordType(VariableRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link IFFData#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.recordType (getter #4) */
 public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableRecordType.values()[0];
     }
     return recordType; 
 }
@@ -89,13 +95,13 @@ public synchronized IFFData setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link IFFData#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFData to permit progressive setters */
 public synchronized IFFData setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link IFFData#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -103,14 +109,14 @@ public short getRecordLength()
 
 /** Setter for {@link IFFData#recordSpecificFields}
   * @param pRecordSpecificFields new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFData to permit progressive setters */
 public synchronized IFFData setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 /** Getter for {@link IFFData#recordSpecificFields}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificFields (getter #2) */
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

@@ -128,14 +128,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link CommentRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return CommentRPdu to permit progressive setters */
 public synchronized CommentRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 /** Getter for {@link CommentRPdu#variableDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumRecords (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

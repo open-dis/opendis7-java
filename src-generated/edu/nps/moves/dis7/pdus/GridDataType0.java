@@ -57,14 +57,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link GridDataType0#dataValues}
   * @param pDataValues new value of interest
-  * @return same object to permit progressive setters */
+  * @return GridDataType0 to permit progressive setters */
 public synchronized GridDataType0 setDataValues(byte[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 /** Getter for {@link GridDataType0#dataValues}
-  * @return value of interest (getter #2) */
+  * @return this.dataValues (getter #2) */
 public byte[] getDataValues()
 {
     return dataValues; 

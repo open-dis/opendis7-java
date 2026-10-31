@@ -86,7 +86,7 @@ public synchronized Expendable setStation(int pStation)
     return this;
 }
 /** Getter for {@link Expendable#station}
-  * @return value of interest (getter #1) */
+  * @return this.station (getter #1) */
 public int getStation()
 {
        return station;
@@ -102,13 +102,13 @@ public synchronized Expendable setQuantity(short pQuantity)
 }
 /** Utility setter for {@link Expendable#quantity}
   * @param pQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return Expendable to permit progressive setters */
 public synchronized Expendable setQuantity(int pQuantity){
     quantity = (short) pQuantity;
     return this;
 }
 /** Getter for {@link Expendable#quantity}
-  * @return value of interest (getter #1) */
+  * @return this.quantity (getter #1) */
 public short getQuantity()
 {
        return quantity;
@@ -116,20 +116,26 @@ public short getQuantity()
 
 /** Setter for {@link Expendable#expendableStatus}
   * @param pExpendableStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Expendable to permit progressive setters */
 public synchronized Expendable setExpendableStatus(MunitionExpendableStatus pExpendableStatus)
 {
-    expendableStatus = pExpendableStatus;
+    if (pExpendableStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype MunitionExpendableStatus pExpendableStatus == null, ignored by setting default enumeration...");
+        expendableStatus = MunitionExpendableStatus.values()[0];
+    } else
+        expendableStatus = pExpendableStatus;
+
     return this;
 }
 /** Getter for {@link Expendable#expendableStatus}
-  * @return value of interest (getter #4) */
+  * @return MunitionExpendableStatus this.expendableStatus (getter #4) */
 public MunitionExpendableStatus getExpendableStatus()
 {
     if (expendableStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype MunitionExpendableStatus expendableStatus == null, ignored by returning default enumeration MunitionExpendableStatus.values()[0]=" + MunitionExpendableStatus.values()[0]);
-        return MunitionExpendableStatus.values()[0];
+        System.err.println("Error: enumtype MunitionExpendableStatus expendableStatus == null, ignored by returning default enumeration...");
+        expendableStatus = MunitionExpendableStatus.values()[0];
     }
     return expendableStatus; 
 }
@@ -144,13 +150,13 @@ public synchronized Expendable setPadding(byte pPadding)
 }
 /** Utility setter for {@link Expendable#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return Expendable to permit progressive setters */
 public synchronized Expendable setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link Expendable#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

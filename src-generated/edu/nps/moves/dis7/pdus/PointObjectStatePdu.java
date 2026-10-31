@@ -216,7 +216,7 @@ public synchronized PointObjectStatePdu setUpdateNumber(int pUpdateNumber)
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#updateNumber}
-  * @return value of interest (getter #1) */
+  * @return this.updateNumber (getter #1) */
 public int getUpdateNumber()
 {
        return updateNumber;
@@ -224,20 +224,26 @@ public int getUpdateNumber()
 
 /** Setter for {@link PointObjectStatePdu#forceID}
   * @param pForceID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this PointObjectStatePdu to permit progressive setters */
 public synchronized PointObjectStatePdu setForceID(ForceID pForceID)
 {
-    forceID = pForceID;
+    if (pForceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        forceID = ForceID.values()[0];
+    } else
+        forceID = pForceID;
+
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#forceID}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceID (getter #4) */
 public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        forceID = ForceID.values()[0];
     }
     return forceID; 
 }
@@ -256,7 +262,7 @@ public ObjectStateModificationPointObject getModifications()
 {
     if (modifications == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateModificationPointObject modifications == null, ignored by returning default bitfieldtype new ObjectStateModificationPointObject()=" + new ObjectStateModificationPointObject());
+        System.err.println("Error: bitfieldtype ObjectStateModificationPointObject modifications == null, ignored by returning default bitfieldtype...");
         return new ObjectStateModificationPointObject();
     }
     return modifications; 
@@ -319,7 +325,7 @@ public synchronized PointObjectStatePdu setSpecificObjectAppearance(int pSpecifi
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#specificObjectAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.specificObjectAppearance (getter #1) */
 public int getSpecificObjectAppearance()
 {
        return specificObjectAppearance;
@@ -339,7 +345,7 @@ public ObjectStateAppearanceGeneral getGenerObjectAppearance()
 {
     if (generObjectAppearance == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generObjectAppearance == null, ignored by returning default bitfieldtype new ObjectStateAppearanceGeneral()=" + new ObjectStateAppearanceGeneral());
+        System.err.println("Error: bitfieldtype ObjectStateAppearanceGeneral generObjectAppearance == null, ignored by returning default bitfieldtype...");
         return new ObjectStateAppearanceGeneral();
     }
     return generObjectAppearance; 
@@ -355,13 +361,13 @@ public synchronized PointObjectStatePdu setPadding1(short pPadding1)
 }
 /** Utility setter for {@link PointObjectStatePdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return PointObjectStatePdu to permit progressive setters */
 public synchronized PointObjectStatePdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public short getPadding1()
 {
        return padding1;
@@ -408,7 +414,7 @@ public synchronized PointObjectStatePdu setPad2(int pPad2)
     return this;
 }
 /** Getter for {@link PointObjectStatePdu#pad2}
-  * @return value of interest (getter #1) */
+  * @return this.pad2 (getter #1) */
 public int getPad2()
 {
        return pad2;

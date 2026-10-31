@@ -65,13 +65,13 @@ public synchronized LiveEntityRelativeWorldCoordinates setReferencePoint(short p
 }
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}
   * @param pReferencePoint new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityRelativeWorldCoordinates to permit progressive setters */
 public synchronized LiveEntityRelativeWorldCoordinates setReferencePoint(int pReferencePoint){
     referencePoint = (short) pReferencePoint;
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}
-  * @return value of interest (getter #1) */
+  * @return this.referencePoint (getter #1) */
 public short getReferencePoint()
 {
        return referencePoint;
@@ -87,13 +87,13 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaX(short pDeltaX)
 }
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
   * @param pDeltaX new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityRelativeWorldCoordinates to permit progressive setters */
 public synchronized LiveEntityRelativeWorldCoordinates setDeltaX(int pDeltaX){
     deltaX = (short) pDeltaX;
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
-  * @return value of interest (getter #1) */
+  * @return this.deltaX (getter #1) */
 public short getDeltaX()
 {
        return deltaX;
@@ -109,13 +109,13 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaY(short pDeltaY)
 }
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
   * @param pDeltaY new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityRelativeWorldCoordinates to permit progressive setters */
 public synchronized LiveEntityRelativeWorldCoordinates setDeltaY(int pDeltaY){
     deltaY = (short) pDeltaY;
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
-  * @return value of interest (getter #1) */
+  * @return this.deltaY (getter #1) */
 public short getDeltaY()
 {
        return deltaY;
@@ -131,13 +131,13 @@ public synchronized LiveEntityRelativeWorldCoordinates setDeltaZ(short pDeltaZ)
 }
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
   * @param pDeltaZ new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityRelativeWorldCoordinates to permit progressive setters */
 public synchronized LiveEntityRelativeWorldCoordinates setDeltaZ(int pDeltaZ){
     deltaZ = (short) pDeltaZ;
     return this;
 }
 /** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
-  * @return value of interest (getter #1) */
+  * @return this.deltaZ (getter #1) */
 public short getDeltaZ()
 {
        return deltaZ;

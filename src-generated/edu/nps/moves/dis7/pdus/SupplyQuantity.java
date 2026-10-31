@@ -73,7 +73,7 @@ public synchronized SupplyQuantity setQuantity(float pQuantity)
     return this;
 }
 /** Getter for {@link SupplyQuantity#quantity}
-  * @return value of interest (getter #1) */
+  * @return this.quantity (getter #1) */
 public float getQuantity()
 {
        return quantity;

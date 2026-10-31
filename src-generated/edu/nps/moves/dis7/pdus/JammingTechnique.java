@@ -65,13 +65,13 @@ public synchronized JammingTechnique setKind(byte pKind)
 }
 /** Utility setter for {@link JammingTechnique#kind}
   * @param pKind new value of interest
-  * @return same object to permit progressive setters */
+  * @return JammingTechnique to permit progressive setters */
 public synchronized JammingTechnique setKind(int pKind){
     kind = (byte) pKind;
     return this;
 }
 /** Getter for {@link JammingTechnique#kind}
-  * @return value of interest (getter #1) */
+  * @return this.kind (getter #1) */
 public byte getKind()
 {
        return kind;
@@ -87,13 +87,13 @@ public synchronized JammingTechnique setCategory(byte pCategory)
 }
 /** Utility setter for {@link JammingTechnique#category}
   * @param pCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return JammingTechnique to permit progressive setters */
 public synchronized JammingTechnique setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
 /** Getter for {@link JammingTechnique#category}
-  * @return value of interest (getter #1) */
+  * @return this.category (getter #1) */
 public byte getCategory()
 {
        return category;
@@ -109,13 +109,13 @@ public synchronized JammingTechnique setSubCategory(byte pSubCategory)
 }
 /** Utility setter for {@link JammingTechnique#subCategory}
   * @param pSubCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return JammingTechnique to permit progressive setters */
 public synchronized JammingTechnique setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
 /** Getter for {@link JammingTechnique#subCategory}
-  * @return value of interest (getter #1) */
+  * @return this.subCategory (getter #1) */
 public byte getSubCategory()
 {
        return subCategory;
@@ -131,13 +131,13 @@ public synchronized JammingTechnique setSpecific(byte pSpecific)
 }
 /** Utility setter for {@link JammingTechnique#specific}
   * @param pSpecific new value of interest
-  * @return same object to permit progressive setters */
+  * @return JammingTechnique to permit progressive setters */
 public synchronized JammingTechnique setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
 /** Getter for {@link JammingTechnique#specific}
-  * @return value of interest (getter #1) */
+  * @return this.specific (getter #1) */
 public byte getSpecific()
 {
        return specific;

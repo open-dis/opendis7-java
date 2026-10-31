@@ -215,13 +215,13 @@ public synchronized GriddedDataPdu setFieldNumber(short pFieldNumber)
 }
 /** Utility setter for {@link GriddedDataPdu#fieldNumber}
   * @param pFieldNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setFieldNumber(int pFieldNumber){
     fieldNumber = (short) pFieldNumber;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#fieldNumber}
-  * @return value of interest (getter #1) */
+  * @return this.fieldNumber (getter #1) */
 public short getFieldNumber()
 {
        return fieldNumber;
@@ -237,13 +237,13 @@ public synchronized GriddedDataPdu setPduNumber(short pPduNumber)
 }
 /** Utility setter for {@link GriddedDataPdu#pduNumber}
   * @param pPduNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setPduNumber(int pPduNumber){
     pduNumber = (short) pPduNumber;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#pduNumber}
-  * @return value of interest (getter #1) */
+  * @return this.pduNumber (getter #1) */
 public short getPduNumber()
 {
        return pduNumber;
@@ -259,13 +259,13 @@ public synchronized GriddedDataPdu setPduTotal(short pPduTotal)
 }
 /** Utility setter for {@link GriddedDataPdu#pduTotal}
   * @param pPduTotal new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setPduTotal(int pPduTotal){
     pduTotal = (short) pPduTotal;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#pduTotal}
-  * @return value of interest (getter #1) */
+  * @return this.pduTotal (getter #1) */
 public short getPduTotal()
 {
        return pduTotal;
@@ -273,40 +273,52 @@ public short getPduTotal()
 
 /** Setter for {@link GriddedDataPdu#coordinateSystem}
   * @param pCoordinateSystem new value of interest
-  * @return same object to permit progressive setters */
+  * @return this GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setCoordinateSystem(GriddedDataCoordinateSystem pCoordinateSystem)
 {
-    coordinateSystem = pCoordinateSystem;
+    if (pCoordinateSystem == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataCoordinateSystem pCoordinateSystem == null, ignored by setting default enumeration...");
+        coordinateSystem = GriddedDataCoordinateSystem.values()[0];
+    } else
+        coordinateSystem = pCoordinateSystem;
+
     return this;
 }
 /** Getter for {@link GriddedDataPdu#coordinateSystem}
-  * @return value of interest (getter #4) */
+  * @return GriddedDataCoordinateSystem this.coordinateSystem (getter #4) */
 public GriddedDataCoordinateSystem getCoordinateSystem()
 {
     if (coordinateSystem == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataCoordinateSystem coordinateSystem == null, ignored by returning default enumeration GriddedDataCoordinateSystem.values()[0]=" + GriddedDataCoordinateSystem.values()[0]);
-        return GriddedDataCoordinateSystem.values()[0];
+        System.err.println("Error: enumtype GriddedDataCoordinateSystem coordinateSystem == null, ignored by returning default enumeration...");
+        coordinateSystem = GriddedDataCoordinateSystem.values()[0];
     }
     return coordinateSystem; 
 }
 
 /** Setter for {@link GriddedDataPdu#constantGrid}
   * @param pConstantGrid new value of interest
-  * @return same object to permit progressive setters */
+  * @return this GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setConstantGrid(GriddedDataConstantGrid pConstantGrid)
 {
-    constantGrid = pConstantGrid;
+    if (pConstantGrid == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype GriddedDataConstantGrid pConstantGrid == null, ignored by setting default enumeration...");
+        constantGrid = GriddedDataConstantGrid.values()[0];
+    } else
+        constantGrid = pConstantGrid;
+
     return this;
 }
 /** Getter for {@link GriddedDataPdu#constantGrid}
-  * @return value of interest (getter #4) */
+  * @return GriddedDataConstantGrid this.constantGrid (getter #4) */
 public GriddedDataConstantGrid getConstantGrid()
 {
     if (constantGrid == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype GriddedDataConstantGrid constantGrid == null, ignored by returning default enumeration GriddedDataConstantGrid.values()[0]=" + GriddedDataConstantGrid.values()[0]);
-        return GriddedDataConstantGrid.values()[0];
+        System.err.println("Error: enumtype GriddedDataConstantGrid constantGrid == null, ignored by returning default enumeration...");
+        constantGrid = GriddedDataConstantGrid.values()[0];
     }
     return constantGrid; 
 }
@@ -368,7 +380,7 @@ public synchronized GriddedDataPdu setTotalValues(int pTotalValues)
     return this;
 }
 /** Getter for {@link GriddedDataPdu#totalValues}
-  * @return value of interest (getter #1) */
+  * @return this.totalValues (getter #1) */
 public int getTotalValues()
 {
        return totalValues;
@@ -384,13 +396,13 @@ public synchronized GriddedDataPdu setVectorDimension(byte pVectorDimension)
 }
 /** Utility setter for {@link GriddedDataPdu#vectorDimension}
   * @param pVectorDimension new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setVectorDimension(int pVectorDimension){
     vectorDimension = (byte) pVectorDimension;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#vectorDimension}
-  * @return value of interest (getter #1) */
+  * @return this.vectorDimension (getter #1) */
 public byte getVectorDimension()
 {
        return vectorDimension;
@@ -406,13 +418,13 @@ public synchronized GriddedDataPdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link GriddedDataPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -428,13 +440,13 @@ public synchronized GriddedDataPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link GriddedDataPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -442,14 +454,14 @@ public short getPadding2()
 
 /** Setter for {@link GriddedDataPdu#gridAxisDescriptors}
   * @param pGridAxisDescriptors new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setGridAxisDescriptors(List<GridAxisDescriptor> pGridAxisDescriptors)
 {
     gridAxisDescriptors = pGridAxisDescriptors;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#gridAxisDescriptors}
-  * @return value of interest (getter #3) */
+  * @return this.gridAxisDescriptors (getter #3) */
 public List<GridAxisDescriptor> getGridAxisDescriptors()
 {
     return gridAxisDescriptors; 
@@ -457,14 +469,14 @@ public List<GridAxisDescriptor> getGridAxisDescriptors()
 
 /** Setter for {@link GriddedDataPdu#gridDataRecords}
   * @param pGridDataRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return GriddedDataPdu to permit progressive setters */
 public synchronized GriddedDataPdu setGridDataRecords(List<GridData> pGridDataRecords)
 {
     gridDataRecords = pGridDataRecords;
     return this;
 }
 /** Getter for {@link GriddedDataPdu#gridDataRecords}
-  * @return value of interest (getter #3) */
+  * @return this.gridDataRecords (getter #3) */
 public List<GridData> getGridDataRecords()
 {
     return gridDataRecords; 

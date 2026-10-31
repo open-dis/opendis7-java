@@ -67,14 +67,14 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link DatumSpecification#fixedDatumIDList}
   * @param pFixedDatumIDList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DatumSpecification to permit progressive setters */
 public synchronized DatumSpecification setFixedDatumIDList(List<FixedDatum> pFixedDatumIDList)
 {
     fixedDatumIDList = pFixedDatumIDList;
     return this;
 }
 /** Getter for {@link DatumSpecification#fixedDatumIDList}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatumIDList (getter #3) */
 public List<FixedDatum> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
@@ -82,14 +82,14 @@ public List<FixedDatum> getFixedDatumIDList()
 
 /** Setter for {@link DatumSpecification#variableDatumIDList}
   * @param pVariableDatumIDList new value of interest
-  * @return same object to permit progressive setters */
+  * @return DatumSpecification to permit progressive setters */
 public synchronized DatumSpecification setVariableDatumIDList(List<VariableDatum> pVariableDatumIDList)
 {
     variableDatumIDList = pVariableDatumIDList;
     return this;
 }
 /** Getter for {@link DatumSpecification#variableDatumIDList}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumIDList (getter #3) */
 public List<VariableDatum> getVariableDatumIDList()
 {
     return variableDatumIDList; 

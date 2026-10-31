@@ -109,13 +109,13 @@ public synchronized IFFPduLayer5Data setSiteNumber(short pSiteNumber)
 }
 /** Utility setter for {@link IFFPduLayer5Data#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setSiteNumber(int pSiteNumber){
     siteNumber = (short) pSiteNumber;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public short getSiteNumber()
 {
        return siteNumber;
@@ -131,13 +131,13 @@ public synchronized IFFPduLayer5Data setApplicationNumber(short pApplicationNumb
 }
 /** Utility setter for {@link IFFPduLayer5Data#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setApplicationNumber(int pApplicationNumber){
     applicationNumber = (short) pApplicationNumber;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public short getApplicationNumber()
 {
        return applicationNumber;
@@ -153,13 +153,13 @@ public synchronized IFFPduLayer5Data setPadding(short pPadding)
 }
 /** Utility setter for {@link IFFPduLayer5Data#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -175,13 +175,13 @@ public synchronized IFFPduLayer5Data setApplicableLayers(byte pApplicableLayers)
 }
 /** Utility setter for {@link IFFPduLayer5Data#applicableLayers}
   * @param pApplicableLayers new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setApplicableLayers(int pApplicableLayers){
     applicableLayers = (byte) pApplicableLayers;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#applicableLayers}
-  * @return value of interest (getter #1) */
+  * @return this.applicableLayers (getter #1) */
 public byte getApplicableLayers()
 {
        return applicableLayers;
@@ -189,20 +189,26 @@ public byte getApplicableLayers()
 
 /** Setter for {@link IFFPduLayer5Data#dataCategory}
   * @param pDataCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setDataCategory(DataCategory pDataCategory)
 {
-    dataCategory = pDataCategory;
+    if (pDataCategory == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DataCategory pDataCategory == null, ignored by setting default enumeration...");
+        dataCategory = DataCategory.values()[0];
+    } else
+        dataCategory = pDataCategory;
+
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#dataCategory}
-  * @return value of interest (getter #4) */
+  * @return DataCategory this.dataCategory (getter #4) */
 public DataCategory getDataCategory()
 {
     if (dataCategory == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration DataCategory.values()[0]=" + DataCategory.values()[0]);
-        return DataCategory.values()[0];
+        System.err.println("Error: enumtype DataCategory dataCategory == null, ignored by returning default enumeration...");
+        dataCategory = DataCategory.values()[0];
     }
     return dataCategory; 
 }
@@ -217,13 +223,13 @@ public synchronized IFFPduLayer5Data setPadding2(short pPadding2)
 }
 /** Utility setter for {@link IFFPduLayer5Data#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -250,14 +256,14 @@ public synchronized IFFPduLayer5Data setNumberOfIFFFundamentalParameterDataRecor
 
 /** Setter for {@link IFFPduLayer5Data#IFFFundamentalParameterDataRecord}
   * @param pIFFFundamentalParameterDataRecord new value of interest
-  * @return same object to permit progressive setters */
+  * @return IFFPduLayer5Data to permit progressive setters */
 public synchronized IFFPduLayer5Data setIFFFundamentalParameterDataRecord(List<IFFDataSpecification> pIFFFundamentalParameterDataRecord)
 {
     IFFFundamentalParameterDataRecord = pIFFFundamentalParameterDataRecord;
     return this;
 }
 /** Getter for {@link IFFPduLayer5Data#IFFFundamentalParameterDataRecord}
-  * @return value of interest (getter #3) */
+  * @return this.IFFFundamentalParameterDataRecord (getter #3) */
 public List<IFFDataSpecification> getIFFFundamentalParameterDataRecord()
 {
     return IFFFundamentalParameterDataRecord; 

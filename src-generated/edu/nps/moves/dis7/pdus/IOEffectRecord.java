@@ -83,20 +83,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IOEffectRecord#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setRecordType(VariableRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype VariableRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = VariableRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link IOEffectRecord#recordType}
-  * @return value of interest (getter #4) */
+  * @return VariableRecordType this.recordType (getter #4) */
 public VariableRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration VariableRecordType.values()[0]=" + VariableRecordType.values()[0]);
-        return VariableRecordType.values()[0];
+        System.err.println("Error: enumtype VariableRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = VariableRecordType.values()[0];
     }
     return recordType; 
 }
@@ -111,13 +117,13 @@ public synchronized IOEffectRecord setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link IOEffectRecord#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link IOEffectRecord#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -125,60 +131,78 @@ public short getRecordLength()
 
 /** Setter for {@link IOEffectRecord#ioStatus}
   * @param pIoStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoStatus(IOEffectsRecordIOStatus pIoStatus)
 {
-    ioStatus = pIoStatus;
+    if (pIoStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOStatus pIoStatus == null, ignored by setting default enumeration...");
+        ioStatus = IOEffectsRecordIOStatus.values()[0];
+    } else
+        ioStatus = pIoStatus;
+
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioStatus}
-  * @return value of interest (getter #4) */
+  * @return IOEffectsRecordIOStatus this.ioStatus (getter #4) */
 public IOEffectsRecordIOStatus getIoStatus()
 {
     if (ioStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOStatus ioStatus == null, ignored by returning default enumeration IOEffectsRecordIOStatus.values()[0]=" + IOEffectsRecordIOStatus.values()[0]);
-        return IOEffectsRecordIOStatus.values()[0];
+        System.err.println("Error: enumtype IOEffectsRecordIOStatus ioStatus == null, ignored by returning default enumeration...");
+        ioStatus = IOEffectsRecordIOStatus.values()[0];
     }
     return ioStatus; 
 }
 
 /** Setter for {@link IOEffectRecord#ioLinkType}
   * @param pIoLinkType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoLinkType(IOEffectsRecordIOLinkType pIoLinkType)
 {
-    ioLinkType = pIoLinkType;
+    if (pIoLinkType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOLinkType pIoLinkType == null, ignored by setting default enumeration...");
+        ioLinkType = IOEffectsRecordIOLinkType.values()[0];
+    } else
+        ioLinkType = pIoLinkType;
+
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioLinkType}
-  * @return value of interest (getter #4) */
+  * @return IOEffectsRecordIOLinkType this.ioLinkType (getter #4) */
 public IOEffectsRecordIOLinkType getIoLinkType()
 {
     if (ioLinkType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOLinkType ioLinkType == null, ignored by returning default enumeration IOEffectsRecordIOLinkType.values()[0]=" + IOEffectsRecordIOLinkType.values()[0]);
-        return IOEffectsRecordIOLinkType.values()[0];
+        System.err.println("Error: enumtype IOEffectsRecordIOLinkType ioLinkType == null, ignored by returning default enumeration...");
+        ioLinkType = IOEffectsRecordIOLinkType.values()[0];
     }
     return ioLinkType; 
 }
 
 /** Setter for {@link IOEffectRecord#ioEffect}
   * @param pIoEffect new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoEffect(IOEffectsRecordIOEffect pIoEffect)
 {
-    ioEffect = pIoEffect;
+    if (pIoEffect == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOEffect pIoEffect == null, ignored by setting default enumeration...");
+        ioEffect = IOEffectsRecordIOEffect.values()[0];
+    } else
+        ioEffect = pIoEffect;
+
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffect}
-  * @return value of interest (getter #4) */
+  * @return IOEffectsRecordIOEffect this.ioEffect (getter #4) */
 public IOEffectsRecordIOEffect getIoEffect()
 {
     if (ioEffect == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOEffect ioEffect == null, ignored by returning default enumeration IOEffectsRecordIOEffect.values()[0]=" + IOEffectsRecordIOEffect.values()[0]);
-        return IOEffectsRecordIOEffect.values()[0];
+        System.err.println("Error: enumtype IOEffectsRecordIOEffect ioEffect == null, ignored by returning default enumeration...");
+        ioEffect = IOEffectsRecordIOEffect.values()[0];
     }
     return ioEffect; 
 }
@@ -193,13 +217,13 @@ public synchronized IOEffectRecord setIoEffectDutyCycle(byte pIoEffectDutyCycle)
 }
 /** Utility setter for {@link IOEffectRecord#ioEffectDutyCycle}
   * @param pIoEffectDutyCycle new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoEffectDutyCycle(int pIoEffectDutyCycle){
     ioEffectDutyCycle = (byte) pIoEffectDutyCycle;
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffectDutyCycle}
-  * @return value of interest (getter #1) */
+  * @return this.ioEffectDutyCycle (getter #1) */
 public byte getIoEffectDutyCycle()
 {
        return ioEffectDutyCycle;
@@ -215,13 +239,13 @@ public synchronized IOEffectRecord setIoEffectDuration(short pIoEffectDuration)
 }
 /** Utility setter for {@link IOEffectRecord#ioEffectDuration}
   * @param pIoEffectDuration new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoEffectDuration(int pIoEffectDuration){
     ioEffectDuration = (short) pIoEffectDuration;
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioEffectDuration}
-  * @return value of interest (getter #1) */
+  * @return this.ioEffectDuration (getter #1) */
 public short getIoEffectDuration()
 {
        return ioEffectDuration;
@@ -229,20 +253,26 @@ public short getIoEffectDuration()
 
 /** Setter for {@link IOEffectRecord#ioProcess}
   * @param pIoProcess new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setIoProcess(IOEffectsRecordIOProcess pIoProcess)
 {
-    ioProcess = pIoProcess;
+    if (pIoProcess == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IOEffectsRecordIOProcess pIoProcess == null, ignored by setting default enumeration...");
+        ioProcess = IOEffectsRecordIOProcess.values()[0];
+    } else
+        ioProcess = pIoProcess;
+
     return this;
 }
 /** Getter for {@link IOEffectRecord#ioProcess}
-  * @return value of interest (getter #4) */
+  * @return IOEffectsRecordIOProcess this.ioProcess (getter #4) */
 public IOEffectsRecordIOProcess getIoProcess()
 {
     if (ioProcess == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IOEffectsRecordIOProcess ioProcess == null, ignored by returning default enumeration IOEffectsRecordIOProcess.values()[0]=" + IOEffectsRecordIOProcess.values()[0]);
-        return IOEffectsRecordIOProcess.values()[0];
+        System.err.println("Error: enumtype IOEffectsRecordIOProcess ioProcess == null, ignored by returning default enumeration...");
+        ioProcess = IOEffectsRecordIOProcess.values()[0];
     }
     return ioProcess; 
 }
@@ -257,13 +287,13 @@ public synchronized IOEffectRecord setPadding(short pPadding)
 }
 /** Utility setter for {@link IOEffectRecord#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return IOEffectRecord to permit progressive setters */
 public synchronized IOEffectRecord setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link IOEffectRecord#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;

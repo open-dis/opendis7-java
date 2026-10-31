@@ -113,7 +113,7 @@ public synchronized AngleDeception setRecordType(int pRecordType)
     return this;
 }
 /** Getter for {@link AngleDeception#recordType}
-  * @return value of interest (getter #1) */
+  * @return this.recordType (getter #1) */
 public int getRecordType()
 {
        return recordType;
@@ -129,13 +129,13 @@ public synchronized AngleDeception setRecordLength(short pRecordLength)
 }
 /** Utility setter for {@link AngleDeception#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return AngleDeception to permit progressive setters */
 public synchronized AngleDeception setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link AngleDeception#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -151,13 +151,13 @@ public synchronized AngleDeception setPadding(short pPadding)
 }
 /** Utility setter for {@link AngleDeception#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return AngleDeception to permit progressive setters */
 public synchronized AngleDeception setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link AngleDeception#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;
@@ -173,13 +173,13 @@ public synchronized AngleDeception setEmitterNumber(byte pEmitterNumber)
 }
 /** Utility setter for {@link AngleDeception#emitterNumber}
   * @param pEmitterNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return AngleDeception to permit progressive setters */
 public synchronized AngleDeception setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
 /** Getter for {@link AngleDeception#emitterNumber}
-  * @return value of interest (getter #1) */
+  * @return this.emitterNumber (getter #1) */
 public byte getEmitterNumber()
 {
        return emitterNumber;
@@ -195,13 +195,13 @@ public synchronized AngleDeception setBeamNumber(byte pBeamNumber)
 }
 /** Utility setter for {@link AngleDeception#beamNumber}
   * @param pBeamNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return AngleDeception to permit progressive setters */
 public synchronized AngleDeception setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
 /** Getter for {@link AngleDeception#beamNumber}
-  * @return value of interest (getter #1) */
+  * @return this.beamNumber (getter #1) */
 public byte getBeamNumber()
 {
        return beamNumber;
@@ -209,20 +209,26 @@ public byte getBeamNumber()
 
 /** Setter for {@link AngleDeception#stateIndicator}
   * @param pStateIndicator new value of interest
-  * @return same object to permit progressive setters */
+  * @return this AngleDeception to permit progressive setters */
 public synchronized AngleDeception setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
-    stateIndicator = pStateIndicator;
+    if (pStateIndicator == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EEAttributeStateIndicator pStateIndicator == null, ignored by setting default enumeration...");
+        stateIndicator = EEAttributeStateIndicator.values()[0];
+    } else
+        stateIndicator = pStateIndicator;
+
     return this;
 }
 /** Getter for {@link AngleDeception#stateIndicator}
-  * @return value of interest (getter #4) */
+  * @return EEAttributeStateIndicator this.stateIndicator (getter #4) */
 public EEAttributeStateIndicator getStateIndicator()
 {
     if (stateIndicator == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration EEAttributeStateIndicator.values()[0]=" + EEAttributeStateIndicator.values()[0]);
-        return EEAttributeStateIndicator.values()[0];
+        System.err.println("Error: enumtype EEAttributeStateIndicator stateIndicator == null, ignored by returning default enumeration...");
+        stateIndicator = EEAttributeStateIndicator.values()[0];
     }
     return stateIndicator; 
 }
@@ -237,13 +243,13 @@ public synchronized AngleDeception setPadding2(byte pPadding2)
 }
 /** Utility setter for {@link AngleDeception#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return AngleDeception to permit progressive setters */
 public synchronized AngleDeception setPadding2(int pPadding2){
     padding2 = (byte) pPadding2;
     return this;
 }
 /** Getter for {@link AngleDeception#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public byte getPadding2()
 {
        return padding2;
@@ -258,7 +264,7 @@ public synchronized AngleDeception setAzimuthOffset(float pAzimuthOffset)
     return this;
 }
 /** Getter for {@link AngleDeception#azimuthOffset}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthOffset (getter #1) */
 public float getAzimuthOffset()
 {
        return azimuthOffset;
@@ -273,7 +279,7 @@ public synchronized AngleDeception setAzimuthWidth(float pAzimuthWidth)
     return this;
 }
 /** Getter for {@link AngleDeception#azimuthWidth}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthWidth (getter #1) */
 public float getAzimuthWidth()
 {
        return azimuthWidth;
@@ -288,7 +294,7 @@ public synchronized AngleDeception setAzimuthPullRate(float pAzimuthPullRate)
     return this;
 }
 /** Getter for {@link AngleDeception#azimuthPullRate}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthPullRate (getter #1) */
 public float getAzimuthPullRate()
 {
        return azimuthPullRate;
@@ -303,7 +309,7 @@ public synchronized AngleDeception setAzimuthPullAcceleration(float pAzimuthPull
     return this;
 }
 /** Getter for {@link AngleDeception#azimuthPullAcceleration}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthPullAcceleration (getter #1) */
 public float getAzimuthPullAcceleration()
 {
        return azimuthPullAcceleration;
@@ -318,7 +324,7 @@ public synchronized AngleDeception setElevationOffset(float pElevationOffset)
     return this;
 }
 /** Getter for {@link AngleDeception#elevationOffset}
-  * @return value of interest (getter #1) */
+  * @return this.elevationOffset (getter #1) */
 public float getElevationOffset()
 {
        return elevationOffset;
@@ -333,7 +339,7 @@ public synchronized AngleDeception setElevationWidth(float pElevationWidth)
     return this;
 }
 /** Getter for {@link AngleDeception#elevationWidth}
-  * @return value of interest (getter #1) */
+  * @return this.elevationWidth (getter #1) */
 public float getElevationWidth()
 {
        return elevationWidth;
@@ -348,7 +354,7 @@ public synchronized AngleDeception setElevationPullRate(float pElevationPullRate
     return this;
 }
 /** Getter for {@link AngleDeception#elevationPullRate}
-  * @return value of interest (getter #1) */
+  * @return this.elevationPullRate (getter #1) */
 public float getElevationPullRate()
 {
        return elevationPullRate;
@@ -363,7 +369,7 @@ public synchronized AngleDeception setElevationPullAcceleration(float pElevation
     return this;
 }
 /** Getter for {@link AngleDeception#elevationPullAcceleration}
-  * @return value of interest (getter #1) */
+  * @return this.elevationPullAcceleration (getter #1) */
 public float getElevationPullAcceleration()
 {
        return elevationPullAcceleration;
@@ -378,7 +384,7 @@ public synchronized AngleDeception setPadding3(int pPadding3)
     return this;
 }
 /** Getter for {@link AngleDeception#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public int getPadding3()
 {
        return padding3;

@@ -74,13 +74,13 @@ public synchronized MineEntityIdentifier setMineEntityNumber(short pMineEntityNu
 }
 /** Utility setter for {@link MineEntityIdentifier#mineEntityNumber}
   * @param pMineEntityNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return MineEntityIdentifier to permit progressive setters */
 public synchronized MineEntityIdentifier setMineEntityNumber(int pMineEntityNumber){
     mineEntityNumber = (short) pMineEntityNumber;
     return this;
 }
 /** Getter for {@link MineEntityIdentifier#mineEntityNumber}
-  * @return value of interest (getter #1) */
+  * @return this.mineEntityNumber (getter #1) */
 public short getMineEntityNumber()
 {
        return mineEntityNumber;

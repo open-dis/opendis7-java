@@ -161,13 +161,13 @@ public synchronized EntityDamageStatusPdu setPadding1(short pPadding1)
 }
 /** Utility setter for {@link EntityDamageStatusPdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityDamageStatusPdu to permit progressive setters */
 public synchronized EntityDamageStatusPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public short getPadding1()
 {
        return padding1;
@@ -183,13 +183,13 @@ public synchronized EntityDamageStatusPdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link EntityDamageStatusPdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityDamageStatusPdu to permit progressive setters */
 public synchronized EntityDamageStatusPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -197,14 +197,14 @@ public short getPadding2()
 
 /** Setter for {@link EntityDamageStatusPdu#damageDescriptionRecords}
   * @param pDamageDescriptionRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityDamageStatusPdu to permit progressive setters */
 public synchronized EntityDamageStatusPdu setDamageDescriptionRecords(List<DirectedEnergyDamage> pDamageDescriptionRecords)
 {
     damageDescriptionRecords = pDamageDescriptionRecords;
     return this;
 }
 /** Getter for {@link EntityDamageStatusPdu#damageDescriptionRecords}
-  * @return value of interest (getter #3) */
+  * @return this.damageDescriptionRecords (getter #3) */
 public List<DirectedEnergyDamage> getDamageDescriptionRecords()
 {
     return damageDescriptionRecords; 

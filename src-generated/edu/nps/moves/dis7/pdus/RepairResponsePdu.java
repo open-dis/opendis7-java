@@ -166,20 +166,26 @@ public EntityID getRepairingEntityID()
 
 /** Setter for {@link RepairResponsePdu#repairResult}
   * @param pRepairResult new value of interest
-  * @return same object to permit progressive setters */
+  * @return this RepairResponsePdu to permit progressive setters */
 public synchronized RepairResponsePdu setRepairResult(RepairResponseRepairResult pRepairResult)
 {
-    repairResult = pRepairResult;
+    if (pRepairResult == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype RepairResponseRepairResult pRepairResult == null, ignored by setting default enumeration...");
+        repairResult = RepairResponseRepairResult.values()[0];
+    } else
+        repairResult = pRepairResult;
+
     return this;
 }
 /** Getter for {@link RepairResponsePdu#repairResult}
-  * @return value of interest (getter #4) */
+  * @return RepairResponseRepairResult this.repairResult (getter #4) */
 public RepairResponseRepairResult getRepairResult()
 {
     if (repairResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration RepairResponseRepairResult.values()[0]=" + RepairResponseRepairResult.values()[0]);
-        return RepairResponseRepairResult.values()[0];
+        System.err.println("Error: enumtype RepairResponseRepairResult repairResult == null, ignored by returning default enumeration...");
+        repairResult = RepairResponseRepairResult.values()[0];
     }
     return repairResult; 
 }
@@ -194,13 +200,13 @@ public synchronized RepairResponsePdu setPadding1(byte pPadding1)
 }
 /** Utility setter for {@link RepairResponsePdu#padding1}
   * @param pPadding1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RepairResponsePdu to permit progressive setters */
 public synchronized RepairResponsePdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
 /** Getter for {@link RepairResponsePdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public byte getPadding1()
 {
        return padding1;
@@ -216,13 +222,13 @@ public synchronized RepairResponsePdu setPadding2(short pPadding2)
 }
 /** Utility setter for {@link RepairResponsePdu#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return RepairResponsePdu to permit progressive setters */
 public synchronized RepairResponsePdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link RepairResponsePdu#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;

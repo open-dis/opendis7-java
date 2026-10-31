@@ -152,7 +152,7 @@ public synchronized DataQueryPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link DataQueryPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -167,7 +167,7 @@ public synchronized DataQueryPdu setTimeInterval(int pTimeInterval)
     return this;
 }
 /** Getter for {@link DataQueryPdu#timeInterval}
-  * @return value of interest (getter #1) */
+  * @return this.timeInterval (getter #1) */
 public int getTimeInterval()
 {
        return timeInterval;
@@ -175,14 +175,14 @@ public int getTimeInterval()
 
 /** Setter for {@link DataQueryPdu#fixedDatums}
   * @param pFixedDatums new value of interest
-  * @return same object to permit progressive setters */
+  * @return DataQueryPdu to permit progressive setters */
 public synchronized DataQueryPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 /** Getter for {@link DataQueryPdu#fixedDatums}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatums (getter #3) */
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
@@ -190,14 +190,14 @@ public List<FixedDatum> getFixedDatums()
 
 /** Setter for {@link DataQueryPdu#variableDatums}
   * @param pVariableDatums new value of interest
-  * @return same object to permit progressive setters */
+  * @return DataQueryPdu to permit progressive setters */
 public synchronized DataQueryPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 /** Getter for {@link DataQueryPdu#variableDatums}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatums (getter #3) */
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

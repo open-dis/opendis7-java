@@ -146,20 +146,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EventReportRPdu#eventType}
   * @param pEventType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EventReportRPdu to permit progressive setters */
 public synchronized EventReportRPdu setEventType(EventReportEventType pEventType)
 {
-    eventType = pEventType;
+    if (pEventType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EventReportEventType pEventType == null, ignored by setting default enumeration...");
+        eventType = EventReportEventType.values()[0];
+    } else
+        eventType = pEventType;
+
     return this;
 }
 /** Getter for {@link EventReportRPdu#eventType}
-  * @return value of interest (getter #4) */
+  * @return EventReportEventType this.eventType (getter #4) */
 public EventReportEventType getEventType()
 {
     if (eventType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration EventReportEventType.values()[0]=" + EventReportEventType.values()[0]);
-        return EventReportEventType.values()[0];
+        System.err.println("Error: enumtype EventReportEventType eventType == null, ignored by returning default enumeration...");
+        eventType = EventReportEventType.values()[0];
     }
     return eventType; 
 }
@@ -173,7 +179,7 @@ public synchronized EventReportRPdu setPad1(int pPad1)
     return this;
 }
 /** Getter for {@link EventReportRPdu#pad1}
-  * @return value of interest (getter #1) */
+  * @return this.pad1 (getter #1) */
 public int getPad1()
 {
        return pad1;
@@ -181,14 +187,14 @@ public int getPad1()
 
 /** Setter for {@link EventReportRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventReportRPdu to permit progressive setters */
 public synchronized EventReportRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 /** Getter for {@link EventReportRPdu#fixedDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatumRecords (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -196,14 +202,14 @@ public List<FixedDatum> getFixedDatumRecords()
 
 /** Setter for {@link EventReportRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return EventReportRPdu to permit progressive setters */
 public synchronized EventReportRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 /** Getter for {@link EventReportRPdu#variableDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumRecords (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

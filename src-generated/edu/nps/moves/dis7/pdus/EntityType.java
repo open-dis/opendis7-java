@@ -72,20 +72,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link EntityType#entityKind}
   * @param pEntityKind new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityType to permit progressive setters */
 public synchronized EntityType setEntityKind(EntityKind pEntityKind)
 {
-    entityKind = pEntityKind;
+    if (pEntityKind == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype EntityKind pEntityKind == null, ignored by setting default enumeration...");
+        entityKind = EntityKind.values()[0];
+    } else
+        entityKind = pEntityKind;
+
     return this;
 }
 /** Getter for {@link EntityType#entityKind}
-  * @return value of interest (getter #4) */
+  * @return EntityKind this.entityKind (getter #4) */
 public EntityKind getEntityKind()
 {
     if (entityKind == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration EntityKind.values()[0]=" + EntityKind.values()[0]);
-        return EntityKind.values()[0];
+        System.err.println("Error: enumtype EntityKind entityKind == null, ignored by returning default enumeration...");
+        entityKind = EntityKind.values()[0];
     }
     return entityKind; 
 }
@@ -108,20 +114,26 @@ public Domain getDomain()
 
 /** Setter for {@link EntityType#country}
   * @param pCountry new value of interest
-  * @return same object to permit progressive setters */
+  * @return this EntityType to permit progressive setters */
 public synchronized EntityType setCountry(Country pCountry)
 {
-    country = pCountry;
+    if (pCountry == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype Country pCountry == null, ignored by setting default enumeration...");
+        country = Country.values()[0];
+    } else
+        country = pCountry;
+
     return this;
 }
 /** Getter for {@link EntityType#country}
-  * @return value of interest (getter #4) */
+  * @return Country this.country (getter #4) */
 public Country getCountry()
 {
     if (country == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration Country.values()[0]=" + Country.values()[0]);
-        return Country.values()[0];
+        System.err.println("Error: enumtype Country country == null, ignored by returning default enumeration...");
+        country = Country.values()[0];
     }
     return country; 
 }
@@ -136,13 +148,13 @@ public synchronized EntityType setCategory(byte pCategory)
 }
 /** Utility setter for {@link EntityType#category}
   * @param pCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityType to permit progressive setters */
 public synchronized EntityType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
 /** Getter for {@link EntityType#category}
-  * @return value of interest (getter #1) */
+  * @return this.category (getter #1) */
 public byte getCategory()
 {
        return category;
@@ -158,13 +170,13 @@ public synchronized EntityType setSubCategory(byte pSubCategory)
 }
 /** Utility setter for {@link EntityType#subCategory}
   * @param pSubCategory new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityType to permit progressive setters */
 public synchronized EntityType setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
 /** Getter for {@link EntityType#subCategory}
-  * @return value of interest (getter #1) */
+  * @return this.subCategory (getter #1) */
 public byte getSubCategory()
 {
        return subCategory;
@@ -180,13 +192,13 @@ public synchronized EntityType setSpecific(byte pSpecific)
 }
 /** Utility setter for {@link EntityType#specific}
   * @param pSpecific new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityType to permit progressive setters */
 public synchronized EntityType setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
 /** Getter for {@link EntityType#specific}
-  * @return value of interest (getter #1) */
+  * @return this.specific (getter #1) */
 public byte getSpecific()
 {
        return specific;
@@ -202,13 +214,13 @@ public synchronized EntityType setExtra(byte pExtra)
 }
 /** Utility setter for {@link EntityType#extra}
   * @param pExtra new value of interest
-  * @return same object to permit progressive setters */
+  * @return EntityType to permit progressive setters */
 public synchronized EntityType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
 /** Getter for {@link EntityType#extra}
-  * @return value of interest (getter #1) */
+  * @return this.extra (getter #1) */
 public byte getExtra()
 {
        return extra;

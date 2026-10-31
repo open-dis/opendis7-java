@@ -61,20 +61,26 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link IntercomCommunicationsParameters#recordType}
   * @param pRecordType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this IntercomCommunicationsParameters to permit progressive setters */
 public synchronized IntercomCommunicationsParameters setRecordType(IntercomControlRecordType pRecordType)
 {
-    recordType = pRecordType;
+    if (pRecordType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IntercomControlRecordType pRecordType == null, ignored by setting default enumeration...");
+        recordType = IntercomControlRecordType.values()[0];
+    } else
+        recordType = pRecordType;
+
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordType}
-  * @return value of interest (getter #4) */
+  * @return IntercomControlRecordType this.recordType (getter #4) */
 public IntercomControlRecordType getRecordType()
 {
     if (recordType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration IntercomControlRecordType.values()[0]=" + IntercomControlRecordType.values()[0]);
-        return IntercomControlRecordType.values()[0];
+        System.err.println("Error: enumtype IntercomControlRecordType recordType == null, ignored by returning default enumeration...");
+        recordType = IntercomControlRecordType.values()[0];
     }
     return recordType; 
 }
@@ -89,13 +95,13 @@ public synchronized IntercomCommunicationsParameters setRecordLength(short pReco
 }
 /** Utility setter for {@link IntercomCommunicationsParameters#recordLength}
   * @param pRecordLength new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomCommunicationsParameters to permit progressive setters */
 public synchronized IntercomCommunicationsParameters setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordLength}
-  * @return value of interest (getter #1) */
+  * @return this.recordLength (getter #1) */
 public short getRecordLength()
 {
        return recordLength;
@@ -103,14 +109,14 @@ public short getRecordLength()
 
 /** Setter for {@link IntercomCommunicationsParameters#recordSpecificField}
   * @param pRecordSpecificField new value of interest
-  * @return same object to permit progressive setters */
+  * @return IntercomCommunicationsParameters to permit progressive setters */
 public synchronized IntercomCommunicationsParameters setRecordSpecificField(byte[] pRecordSpecificField)
 {
     recordSpecificField = pRecordSpecificField;
     return this;
 }
 /** Getter for {@link IntercomCommunicationsParameters#recordSpecificField}
-  * @return value of interest (getter #2) */
+  * @return this.recordSpecificField (getter #2) */
 public byte[] getRecordSpecificField()
 {
     return recordSpecificField; 

@@ -301,20 +301,26 @@ public Vector3Float getLocationOfEntityCoordinates()
 
 /** Setter for {@link DetonationPdu#detonationResult}
   * @param pDetonationResult new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DetonationPdu to permit progressive setters */
 public synchronized DetonationPdu setDetonationResult(DetonationResult pDetonationResult)
 {
-    detonationResult = pDetonationResult;
+    if (pDetonationResult == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DetonationResult pDetonationResult == null, ignored by setting default enumeration...");
+        detonationResult = DetonationResult.values()[0];
+    } else
+        detonationResult = pDetonationResult;
+
     return this;
 }
 /** Getter for {@link DetonationPdu#detonationResult}
-  * @return value of interest (getter #4) */
+  * @return DetonationResult this.detonationResult (getter #4) */
 public DetonationResult getDetonationResult()
 {
     if (detonationResult == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration DetonationResult.values()[0]=" + DetonationResult.values()[0]);
-        return DetonationResult.values()[0];
+        System.err.println("Error: enumtype DetonationResult detonationResult == null, ignored by returning default enumeration...");
+        detonationResult = DetonationResult.values()[0];
     }
     return detonationResult; 
 }
@@ -329,13 +335,13 @@ public synchronized DetonationPdu setPad(short pPad)
 }
 /** Utility setter for {@link DetonationPdu#pad}
   * @param pPad new value of interest
-  * @return same object to permit progressive setters */
+  * @return DetonationPdu to permit progressive setters */
 public synchronized DetonationPdu setPad(int pPad){
     pad = (short) pPad;
     return this;
 }
 /** Getter for {@link DetonationPdu#pad}
-  * @return value of interest (getter #1) */
+  * @return this.pad (getter #1) */
 public short getPad()
 {
        return pad;
@@ -343,14 +349,14 @@ public short getPad()
 
 /** Setter for {@link DetonationPdu#variableParameters}
   * @param pVariableParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return DetonationPdu to permit progressive setters */
 public synchronized DetonationPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 /** Getter for {@link DetonationPdu#variableParameters}
-  * @return value of interest (getter #3) */
+  * @return this.variableParameters (getter #3) */
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

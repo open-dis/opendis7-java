@@ -65,13 +65,13 @@ public synchronized RadioIdentifier setSiteNumber(short pSiteNumber)
 }
 /** Utility setter for {@link RadioIdentifier#siteNumber}
   * @param pSiteNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioIdentifier to permit progressive setters */
 public synchronized RadioIdentifier setSiteNumber(int pSiteNumber){
     siteNumber = (short) pSiteNumber;
     return this;
 }
 /** Getter for {@link RadioIdentifier#siteNumber}
-  * @return value of interest (getter #1) */
+  * @return this.siteNumber (getter #1) */
 public short getSiteNumber()
 {
        return siteNumber;
@@ -87,13 +87,13 @@ public synchronized RadioIdentifier setApplicationNumber(short pApplicationNumbe
 }
 /** Utility setter for {@link RadioIdentifier#applicationNumber}
   * @param pApplicationNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioIdentifier to permit progressive setters */
 public synchronized RadioIdentifier setApplicationNumber(int pApplicationNumber){
     applicationNumber = (short) pApplicationNumber;
     return this;
 }
 /** Getter for {@link RadioIdentifier#applicationNumber}
-  * @return value of interest (getter #1) */
+  * @return this.applicationNumber (getter #1) */
 public short getApplicationNumber()
 {
        return applicationNumber;
@@ -109,13 +109,13 @@ public synchronized RadioIdentifier setReferenceNumber(short pReferenceNumber)
 }
 /** Utility setter for {@link RadioIdentifier#referenceNumber}
   * @param pReferenceNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioIdentifier to permit progressive setters */
 public synchronized RadioIdentifier setReferenceNumber(int pReferenceNumber){
     referenceNumber = (short) pReferenceNumber;
     return this;
 }
 /** Getter for {@link RadioIdentifier#referenceNumber}
-  * @return value of interest (getter #1) */
+  * @return this.referenceNumber (getter #1) */
 public short getReferenceNumber()
 {
        return referenceNumber;
@@ -131,13 +131,13 @@ public synchronized RadioIdentifier setRadioNumber(short pRadioNumber)
 }
 /** Utility setter for {@link RadioIdentifier#radioNumber}
   * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return RadioIdentifier to permit progressive setters */
 public synchronized RadioIdentifier setRadioNumber(int pRadioNumber){
     radioNumber = (short) pRadioNumber;
     return this;
 }
 /** Getter for {@link RadioIdentifier#radioNumber}
-  * @return value of interest (getter #1) */
+  * @return this.radioNumber (getter #1) */
 public short getRadioNumber()
 {
        return radioNumber;

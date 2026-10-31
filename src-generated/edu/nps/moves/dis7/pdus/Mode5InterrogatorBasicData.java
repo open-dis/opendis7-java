@@ -74,13 +74,13 @@ public synchronized Mode5InterrogatorBasicData setMode5InterrogatorStatus(byte p
 }
 /** Utility setter for {@link Mode5InterrogatorBasicData#mode5InterrogatorStatus}
   * @param pMode5InterrogatorStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5InterrogatorBasicData to permit progressive setters */
 public synchronized Mode5InterrogatorBasicData setMode5InterrogatorStatus(int pMode5InterrogatorStatus){
     mode5InterrogatorStatus = (byte) pMode5InterrogatorStatus;
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#mode5InterrogatorStatus}
-  * @return value of interest (getter #1) */
+  * @return this.mode5InterrogatorStatus (getter #1) */
 public byte getMode5InterrogatorStatus()
 {
        return mode5InterrogatorStatus;
@@ -96,13 +96,13 @@ public synchronized Mode5InterrogatorBasicData setPadding(byte pPadding)
 }
 /** Utility setter for {@link Mode5InterrogatorBasicData#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5InterrogatorBasicData to permit progressive setters */
 public synchronized Mode5InterrogatorBasicData setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;
@@ -118,13 +118,13 @@ public synchronized Mode5InterrogatorBasicData setPadding2(short pPadding2)
 }
 /** Utility setter for {@link Mode5InterrogatorBasicData#padding2}
   * @param pPadding2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5InterrogatorBasicData to permit progressive setters */
 public synchronized Mode5InterrogatorBasicData setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding2}
-  * @return value of interest (getter #1) */
+  * @return this.padding2 (getter #1) */
 public short getPadding2()
 {
        return padding2;
@@ -139,7 +139,7 @@ public synchronized Mode5InterrogatorBasicData setMode5MessageFormatsPresent(int
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#mode5MessageFormatsPresent}
-  * @return value of interest (getter #1) */
+  * @return this.mode5MessageFormatsPresent (getter #1) */
 public int getMode5MessageFormatsPresent()
 {
        return mode5MessageFormatsPresent;
@@ -171,13 +171,13 @@ public synchronized Mode5InterrogatorBasicData setPadding3(short pPadding3)
 }
 /** Utility setter for {@link Mode5InterrogatorBasicData#padding3}
   * @param pPadding3 new value of interest
-  * @return same object to permit progressive setters */
+  * @return Mode5InterrogatorBasicData to permit progressive setters */
 public synchronized Mode5InterrogatorBasicData setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
 /** Getter for {@link Mode5InterrogatorBasicData#padding3}
-  * @return value of interest (getter #1) */
+  * @return this.padding3 (getter #1) */
 public short getPadding3()
 {
        return padding3;

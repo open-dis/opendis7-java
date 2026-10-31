@@ -61,60 +61,78 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link SystemIdentifier#systemType}
   * @param pSystemType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SystemIdentifier to permit progressive setters */
 public synchronized SystemIdentifier setSystemType(IFFSystemType pSystemType)
 {
-    systemType = pSystemType;
+    if (pSystemType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemType pSystemType == null, ignored by setting default enumeration...");
+        systemType = IFFSystemType.values()[0];
+    } else
+        systemType = pSystemType;
+
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemType}
-  * @return value of interest (getter #4) */
+  * @return IFFSystemType this.systemType (getter #4) */
 public IFFSystemType getSystemType()
 {
     if (systemType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemType systemType == null, ignored by returning default enumeration IFFSystemType.values()[0]=" + IFFSystemType.values()[0]);
-        return IFFSystemType.values()[0];
+        System.err.println("Error: enumtype IFFSystemType systemType == null, ignored by returning default enumeration...");
+        systemType = IFFSystemType.values()[0];
     }
     return systemType; 
 }
 
 /** Setter for {@link SystemIdentifier#systemName}
   * @param pSystemName new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SystemIdentifier to permit progressive setters */
 public synchronized SystemIdentifier setSystemName(IFFSystemName pSystemName)
 {
-    systemName = pSystemName;
+    if (pSystemName == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemName pSystemName == null, ignored by setting default enumeration...");
+        systemName = IFFSystemName.values()[0];
+    } else
+        systemName = pSystemName;
+
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemName}
-  * @return value of interest (getter #4) */
+  * @return IFFSystemName this.systemName (getter #4) */
 public IFFSystemName getSystemName()
 {
     if (systemName == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemName systemName == null, ignored by returning default enumeration IFFSystemName.values()[0]=" + IFFSystemName.values()[0]);
-        return IFFSystemName.values()[0];
+        System.err.println("Error: enumtype IFFSystemName systemName == null, ignored by returning default enumeration...");
+        systemName = IFFSystemName.values()[0];
     }
     return systemName; 
 }
 
 /** Setter for {@link SystemIdentifier#systemMode}
   * @param pSystemMode new value of interest
-  * @return same object to permit progressive setters */
+  * @return this SystemIdentifier to permit progressive setters */
 public synchronized SystemIdentifier setSystemMode(IFFSystemMode pSystemMode)
 {
-    systemMode = pSystemMode;
+    if (pSystemMode == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IFFSystemMode pSystemMode == null, ignored by setting default enumeration...");
+        systemMode = IFFSystemMode.values()[0];
+    } else
+        systemMode = pSystemMode;
+
     return this;
 }
 /** Getter for {@link SystemIdentifier#systemMode}
-  * @return value of interest (getter #4) */
+  * @return IFFSystemMode this.systemMode (getter #4) */
 public IFFSystemMode getSystemMode()
 {
     if (systemMode == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IFFSystemMode systemMode == null, ignored by returning default enumeration IFFSystemMode.values()[0]=" + IFFSystemMode.values()[0]);
-        return IFFSystemMode.values()[0];
+        System.err.println("Error: enumtype IFFSystemMode systemMode == null, ignored by returning default enumeration...");
+        systemMode = IFFSystemMode.values()[0];
     }
     return systemMode; 
 }

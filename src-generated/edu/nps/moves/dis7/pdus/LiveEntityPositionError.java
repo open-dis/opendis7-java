@@ -57,13 +57,13 @@ public synchronized LiveEntityPositionError setHorizontalError(short pHorizontal
 }
 /** Utility setter for {@link LiveEntityPositionError#horizontalError}
   * @param pHorizontalError new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityPositionError to permit progressive setters */
 public synchronized LiveEntityPositionError setHorizontalError(int pHorizontalError){
     horizontalError = (short) pHorizontalError;
     return this;
 }
 /** Getter for {@link LiveEntityPositionError#horizontalError}
-  * @return value of interest (getter #1) */
+  * @return this.horizontalError (getter #1) */
 public short getHorizontalError()
 {
        return horizontalError;
@@ -79,13 +79,13 @@ public synchronized LiveEntityPositionError setVerticalError(short pVerticalErro
 }
 /** Utility setter for {@link LiveEntityPositionError#verticalError}
   * @param pVerticalError new value of interest
-  * @return same object to permit progressive setters */
+  * @return LiveEntityPositionError to permit progressive setters */
 public synchronized LiveEntityPositionError setVerticalError(int pVerticalError){
     verticalError = (short) pVerticalError;
     return this;
 }
 /** Getter for {@link LiveEntityPositionError#verticalError}
-  * @return value of interest (getter #1) */
+  * @return this.verticalError (getter #1) */
 public short getVerticalError()
 {
        return verticalError;

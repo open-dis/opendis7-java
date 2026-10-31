@@ -61,13 +61,13 @@ public synchronized ShaftRPM setCurrentRPM(short pCurrentRPM)
 }
 /** Utility setter for {@link ShaftRPM#currentRPM}
   * @param pCurrentRPM new value of interest
-  * @return same object to permit progressive setters */
+  * @return ShaftRPM to permit progressive setters */
 public synchronized ShaftRPM setCurrentRPM(int pCurrentRPM){
     currentRPM = (short) pCurrentRPM;
     return this;
 }
 /** Getter for {@link ShaftRPM#currentRPM}
-  * @return value of interest (getter #1) */
+  * @return this.currentRPM (getter #1) */
 public short getCurrentRPM()
 {
        return currentRPM;
@@ -83,13 +83,13 @@ public synchronized ShaftRPM setOrderedRPM(short pOrderedRPM)
 }
 /** Utility setter for {@link ShaftRPM#orderedRPM}
   * @param pOrderedRPM new value of interest
-  * @return same object to permit progressive setters */
+  * @return ShaftRPM to permit progressive setters */
 public synchronized ShaftRPM setOrderedRPM(int pOrderedRPM){
     orderedRPM = (short) pOrderedRPM;
     return this;
 }
 /** Getter for {@link ShaftRPM#orderedRPM}
-  * @return value of interest (getter #1) */
+  * @return this.orderedRPM (getter #1) */
 public short getOrderedRPM()
 {
        return orderedRPM;
@@ -104,7 +104,7 @@ public synchronized ShaftRPM setRPMrateOfChange(int pRPMrateOfChange)
     return this;
 }
 /** Getter for {@link ShaftRPM#RPMrateOfChange}
-  * @return value of interest (getter #1) */
+  * @return this.RPMrateOfChange (getter #1) */
 public int getRPMrateOfChange()
 {
        return RPMrateOfChange;

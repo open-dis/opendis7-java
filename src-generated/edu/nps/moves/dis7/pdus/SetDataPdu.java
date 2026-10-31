@@ -152,7 +152,7 @@ public synchronized SetDataPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link SetDataPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -167,7 +167,7 @@ public synchronized SetDataPdu setPadding1(int pPadding1)
     return this;
 }
 /** Getter for {@link SetDataPdu#padding1}
-  * @return value of interest (getter #1) */
+  * @return this.padding1 (getter #1) */
 public int getPadding1()
 {
        return padding1;
@@ -175,14 +175,14 @@ public int getPadding1()
 
 /** Setter for {@link SetDataPdu#fixedDatums}
   * @param pFixedDatums new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataPdu to permit progressive setters */
 public synchronized SetDataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 /** Getter for {@link SetDataPdu#fixedDatums}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatums (getter #3) */
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
@@ -190,14 +190,14 @@ public List<FixedDatum> getFixedDatums()
 
 /** Setter for {@link SetDataPdu#variableDatums}
   * @param pVariableDatums new value of interest
-  * @return same object to permit progressive setters */
+  * @return SetDataPdu to permit progressive setters */
 public synchronized SetDataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 /** Getter for {@link SetDataPdu#variableDatums}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatums (getter #3) */
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

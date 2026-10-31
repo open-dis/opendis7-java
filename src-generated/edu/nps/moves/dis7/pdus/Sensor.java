@@ -67,40 +67,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link Sensor#sensorTypeSource}
   * @param pSensorTypeSource new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Sensor to permit progressive setters */
 public synchronized Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSource)
 {
-    sensorTypeSource = pSensorTypeSource;
+    if (pSensorTypeSource == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SensorTypeSource pSensorTypeSource == null, ignored by setting default enumeration...");
+        sensorTypeSource = SensorTypeSource.values()[0];
+    } else
+        sensorTypeSource = pSensorTypeSource;
+
     return this;
 }
 /** Getter for {@link Sensor#sensorTypeSource}
-  * @return value of interest (getter #4) */
+  * @return SensorTypeSource this.sensorTypeSource (getter #4) */
 public SensorTypeSource getSensorTypeSource()
 {
     if (sensorTypeSource == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorTypeSource sensorTypeSource == null, ignored by returning default enumeration SensorTypeSource.values()[0]=" + SensorTypeSource.values()[0]);
-        return SensorTypeSource.values()[0];
+        System.err.println("Error: enumtype SensorTypeSource sensorTypeSource == null, ignored by returning default enumeration...");
+        sensorTypeSource = SensorTypeSource.values()[0];
     }
     return sensorTypeSource; 
 }
 
 /** Setter for {@link Sensor#sensorOnOffStatus}
   * @param pSensorOnOffStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Sensor to permit progressive setters */
 public synchronized Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffStatus)
 {
-    sensorOnOffStatus = pSensorOnOffStatus;
+    if (pSensorOnOffStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SensorOnOffStatus pSensorOnOffStatus == null, ignored by setting default enumeration...");
+        sensorOnOffStatus = SensorOnOffStatus.values()[0];
+    } else
+        sensorOnOffStatus = pSensorOnOffStatus;
+
     return this;
 }
 /** Getter for {@link Sensor#sensorOnOffStatus}
-  * @return value of interest (getter #4) */
+  * @return SensorOnOffStatus this.sensorOnOffStatus (getter #4) */
 public SensorOnOffStatus getSensorOnOffStatus()
 {
     if (sensorOnOffStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SensorOnOffStatus sensorOnOffStatus == null, ignored by returning default enumeration SensorOnOffStatus.values()[0]=" + SensorOnOffStatus.values()[0]);
-        return SensorOnOffStatus.values()[0];
+        System.err.println("Error: enumtype SensorOnOffStatus sensorOnOffStatus == null, ignored by returning default enumeration...");
+        sensorOnOffStatus = SensorOnOffStatus.values()[0];
     }
     return sensorOnOffStatus; 
 }
@@ -115,13 +127,13 @@ public synchronized Sensor setSensorType(short pSensorType)
 }
 /** Utility setter for {@link Sensor#sensorType}
   * @param pSensorType new value of interest
-  * @return same object to permit progressive setters */
+  * @return Sensor to permit progressive setters */
 public synchronized Sensor setSensorType(int pSensorType){
     sensorType = (short) pSensorType;
     return this;
 }
 /** Getter for {@link Sensor#sensorType}
-  * @return value of interest (getter #1) */
+  * @return this.sensorType (getter #1) */
 public short getSensorType()
 {
        return sensorType;
@@ -136,7 +148,7 @@ public synchronized Sensor setStation(int pStation)
     return this;
 }
 /** Getter for {@link Sensor#station}
-  * @return value of interest (getter #1) */
+  * @return this.station (getter #1) */
 public int getStation()
 {
        return station;
@@ -152,13 +164,13 @@ public synchronized Sensor setQuantity(short pQuantity)
 }
 /** Utility setter for {@link Sensor#quantity}
   * @param pQuantity new value of interest
-  * @return same object to permit progressive setters */
+  * @return Sensor to permit progressive setters */
 public synchronized Sensor setQuantity(int pQuantity){
     quantity = (short) pQuantity;
     return this;
 }
 /** Getter for {@link Sensor#quantity}
-  * @return value of interest (getter #1) */
+  * @return this.quantity (getter #1) */
 public short getQuantity()
 {
        return quantity;
@@ -174,13 +186,13 @@ public synchronized Sensor setPadding(short pPadding)
 }
 /** Utility setter for {@link Sensor#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return Sensor to permit progressive setters */
 public synchronized Sensor setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
 /** Getter for {@link Sensor#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public short getPadding()
 {
        return padding;

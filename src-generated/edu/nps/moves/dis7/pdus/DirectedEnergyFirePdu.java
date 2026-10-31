@@ -266,7 +266,7 @@ public synchronized DirectedEnergyFirePdu setCommulativeShotTime(float pCommulat
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#commulativeShotTime}
-  * @return value of interest (getter #1) */
+  * @return this.commulativeShotTime (getter #1) */
 public float getCommulativeShotTime()
 {
        return commulativeShotTime;
@@ -297,7 +297,7 @@ public synchronized DirectedEnergyFirePdu setApertureDiameter(float pApertureDia
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#apertureDiameter}
-  * @return value of interest (getter #1) */
+  * @return this.apertureDiameter (getter #1) */
 public float getApertureDiameter()
 {
        return apertureDiameter;
@@ -312,7 +312,7 @@ public synchronized DirectedEnergyFirePdu setWavelength(float pWavelength)
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#wavelength}
-  * @return value of interest (getter #1) */
+  * @return this.wavelength (getter #1) */
 public float getWavelength()
 {
        return wavelength;
@@ -327,7 +327,7 @@ public synchronized DirectedEnergyFirePdu setPad1(int pPad1)
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pad1}
-  * @return value of interest (getter #1) */
+  * @return this.pad1 (getter #1) */
 public int getPad1()
 {
        return pad1;
@@ -342,7 +342,7 @@ public synchronized DirectedEnergyFirePdu setPulseRepititionFrequency(float pPul
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pulseRepititionFrequency}
-  * @return value of interest (getter #1) */
+  * @return this.pulseRepititionFrequency (getter #1) */
 public float getPulseRepititionFrequency()
 {
        return pulseRepititionFrequency;
@@ -357,7 +357,7 @@ public synchronized DirectedEnergyFirePdu setPulseWidth(float pPulseWidth)
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pulseWidth}
-  * @return value of interest (getter #1) */
+  * @return this.pulseWidth (getter #1) */
 public float getPulseWidth()
 {
        return pulseWidth;
@@ -377,7 +377,7 @@ public DEFireFlags getFlags()
 {
     if (flags == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype DEFireFlags flags == null, ignored by returning default bitfieldtype new DEFireFlags()=" + new DEFireFlags());
+        System.err.println("Error: bitfieldtype DEFireFlags flags == null, ignored by returning default bitfieldtype...");
         return new DEFireFlags();
     }
     return flags; 
@@ -385,20 +385,26 @@ public DEFireFlags getFlags()
 
 /** Setter for {@link DirectedEnergyFirePdu#pulseShape}
   * @param pPulseShape new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DirectedEnergyFirePdu to permit progressive setters */
 public synchronized DirectedEnergyFirePdu setPulseShape(DEFirePulseShape pPulseShape)
 {
-    pulseShape = pPulseShape;
+    if (pPulseShape == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DEFirePulseShape pPulseShape == null, ignored by setting default enumeration...");
+        pulseShape = DEFirePulseShape.values()[0];
+    } else
+        pulseShape = pPulseShape;
+
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pulseShape}
-  * @return value of interest (getter #4) */
+  * @return DEFirePulseShape this.pulseShape (getter #4) */
 public DEFirePulseShape getPulseShape()
 {
     if (pulseShape == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration DEFirePulseShape.values()[0]=" + DEFirePulseShape.values()[0]);
-        return DEFirePulseShape.values()[0];
+        System.err.println("Error: enumtype DEFirePulseShape pulseShape == null, ignored by returning default enumeration...");
+        pulseShape = DEFirePulseShape.values()[0];
     }
     return pulseShape; 
 }
@@ -413,13 +419,13 @@ public synchronized DirectedEnergyFirePdu setPad2(byte pPad2)
 }
 /** Utility setter for {@link DirectedEnergyFirePdu#pad2}
   * @param pPad2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyFirePdu to permit progressive setters */
 public synchronized DirectedEnergyFirePdu setPad2(int pPad2){
     pad2 = (byte) pPad2;
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pad2}
-  * @return value of interest (getter #1) */
+  * @return this.pad2 (getter #1) */
 public byte getPad2()
 {
        return pad2;
@@ -434,7 +440,7 @@ public synchronized DirectedEnergyFirePdu setPad3(int pPad3)
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pad3}
-  * @return value of interest (getter #1) */
+  * @return this.pad3 (getter #1) */
 public int getPad3()
 {
        return pad3;
@@ -450,13 +456,13 @@ public synchronized DirectedEnergyFirePdu setPad4(short pPad4)
 }
 /** Utility setter for {@link DirectedEnergyFirePdu#pad4}
   * @param pPad4 new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyFirePdu to permit progressive setters */
 public synchronized DirectedEnergyFirePdu setPad4(int pPad4){
     pad4 = (short) pPad4;
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#pad4}
-  * @return value of interest (getter #1) */
+  * @return this.pad4 (getter #1) */
 public short getPad4()
 {
        return pad4;
@@ -464,14 +470,14 @@ public short getPad4()
 
 /** Setter for {@link DirectedEnergyFirePdu#dERecords}
   * @param pDERecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return DirectedEnergyFirePdu to permit progressive setters */
 public synchronized DirectedEnergyFirePdu setDERecords(List<StandardVariableSpecification> pDERecords)
 {
     dERecords = pDERecords;
     return this;
 }
 /** Getter for {@link DirectedEnergyFirePdu#dERecords}
-  * @return value of interest (getter #3) */
+  * @return this.dERecords (getter #3) */
 public List<StandardVariableSpecification> getDERecords()
 {
     return dERecords; 

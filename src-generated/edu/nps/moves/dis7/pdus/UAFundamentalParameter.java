@@ -67,40 +67,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link UAFundamentalParameter#activeEmissionParameterIndex}
   * @param pActiveEmissionParameterIndex new value of interest
-  * @return same object to permit progressive setters */
+  * @return this UAFundamentalParameter to permit progressive setters */
 public synchronized UAFundamentalParameter setActiveEmissionParameterIndex(UAActiveEmissionParameterIndex pActiveEmissionParameterIndex)
 {
-    activeEmissionParameterIndex = pActiveEmissionParameterIndex;
+    if (pActiveEmissionParameterIndex == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex pActiveEmissionParameterIndex == null, ignored by setting default enumeration...");
+        activeEmissionParameterIndex = UAActiveEmissionParameterIndex.values()[0];
+    } else
+        activeEmissionParameterIndex = pActiveEmissionParameterIndex;
+
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#activeEmissionParameterIndex}
-  * @return value of interest (getter #4) */
+  * @return UAActiveEmissionParameterIndex this.activeEmissionParameterIndex (getter #4) */
 public UAActiveEmissionParameterIndex getActiveEmissionParameterIndex()
 {
     if (activeEmissionParameterIndex == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration UAActiveEmissionParameterIndex.values()[0]=" + UAActiveEmissionParameterIndex.values()[0]);
-        return UAActiveEmissionParameterIndex.values()[0];
+        System.err.println("Error: enumtype UAActiveEmissionParameterIndex activeEmissionParameterIndex == null, ignored by returning default enumeration...");
+        activeEmissionParameterIndex = UAActiveEmissionParameterIndex.values()[0];
     }
     return activeEmissionParameterIndex; 
 }
 
 /** Setter for {@link UAFundamentalParameter#scanPattern}
   * @param pScanPattern new value of interest
-  * @return same object to permit progressive setters */
+  * @return this UAFundamentalParameter to permit progressive setters */
 public synchronized UAFundamentalParameter setScanPattern(UAScanPattern pScanPattern)
 {
-    scanPattern = pScanPattern;
+    if (pScanPattern == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype UAScanPattern pScanPattern == null, ignored by setting default enumeration...");
+        scanPattern = UAScanPattern.values()[0];
+    } else
+        scanPattern = pScanPattern;
+
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#scanPattern}
-  * @return value of interest (getter #4) */
+  * @return UAScanPattern this.scanPattern (getter #4) */
 public UAScanPattern getScanPattern()
 {
     if (scanPattern == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration UAScanPattern.values()[0]=" + UAScanPattern.values()[0]);
-        return UAScanPattern.values()[0];
+        System.err.println("Error: enumtype UAScanPattern scanPattern == null, ignored by returning default enumeration...");
+        scanPattern = UAScanPattern.values()[0];
     }
     return scanPattern; 
 }
@@ -114,7 +126,7 @@ public synchronized UAFundamentalParameter setBeamCenterAzimuthHorizontal(float 
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#beamCenterAzimuthHorizontal}
-  * @return value of interest (getter #1) */
+  * @return this.beamCenterAzimuthHorizontal (getter #1) */
 public float getBeamCenterAzimuthHorizontal()
 {
        return beamCenterAzimuthHorizontal;
@@ -129,7 +141,7 @@ public synchronized UAFundamentalParameter setAzimuthalBeamwidthHorizontal(float
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#azimuthalBeamwidthHorizontal}
-  * @return value of interest (getter #1) */
+  * @return this.azimuthalBeamwidthHorizontal (getter #1) */
 public float getAzimuthalBeamwidthHorizontal()
 {
        return azimuthalBeamwidthHorizontal;
@@ -144,7 +156,7 @@ public synchronized UAFundamentalParameter setBeamCenterDepressionElevation(floa
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#beamCenterDepressionElevation}
-  * @return value of interest (getter #1) */
+  * @return this.beamCenterDepressionElevation (getter #1) */
 public float getBeamCenterDepressionElevation()
 {
        return beamCenterDepressionElevation;
@@ -159,7 +171,7 @@ public synchronized UAFundamentalParameter setDepressionElevationBeamWidth(float
     return this;
 }
 /** Getter for {@link UAFundamentalParameter#depressionElevationBeamWidth}
-  * @return value of interest (getter #1) */
+  * @return this.depressionElevationBeamWidth (getter #1) */
 public float getDepressionElevationBeamWidth()
 {
        return depressionElevationBeamWidth;

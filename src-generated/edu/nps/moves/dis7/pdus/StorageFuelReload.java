@@ -83,7 +83,7 @@ public synchronized StorageFuelReload setStandardQuantity(int pStandardQuantity)
     return this;
 }
 /** Getter for {@link StorageFuelReload#standardQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantity (getter #1) */
 public int getStandardQuantity()
 {
        return standardQuantity;
@@ -98,7 +98,7 @@ public synchronized StorageFuelReload setMaximumQuantity(int pMaximumQuantity)
     return this;
 }
 /** Getter for {@link StorageFuelReload#maximumQuantity}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantity (getter #1) */
 public int getMaximumQuantity()
 {
        return maximumQuantity;
@@ -113,7 +113,7 @@ public synchronized StorageFuelReload setStandardQuantityReloadTime(int pStandar
     return this;
 }
 /** Getter for {@link StorageFuelReload#standardQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.standardQuantityReloadTime (getter #1) */
 public int getStandardQuantityReloadTime()
 {
        return standardQuantityReloadTime;
@@ -128,7 +128,7 @@ public synchronized StorageFuelReload setMaximumQuantityReloadTime(int pMaximumQ
     return this;
 }
 /** Getter for {@link StorageFuelReload#maximumQuantityReloadTime}
-  * @return value of interest (getter #1) */
+  * @return this.maximumQuantityReloadTime (getter #1) */
 public int getMaximumQuantityReloadTime()
 {
        return maximumQuantityReloadTime;
@@ -136,60 +136,78 @@ public int getMaximumQuantityReloadTime()
 
 /** Setter for {@link StorageFuelReload#fuelMeasurementUnits}
   * @param pFuelMeasurementUnits new value of interest
-  * @return same object to permit progressive setters */
+  * @return this StorageFuelReload to permit progressive setters */
 public synchronized StorageFuelReload setFuelMeasurementUnits(FuelMeasurementUnits pFuelMeasurementUnits)
 {
-    fuelMeasurementUnits = pFuelMeasurementUnits;
+    if (pFuelMeasurementUnits == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelMeasurementUnits pFuelMeasurementUnits == null, ignored by setting default enumeration...");
+        fuelMeasurementUnits = FuelMeasurementUnits.values()[0];
+    } else
+        fuelMeasurementUnits = pFuelMeasurementUnits;
+
     return this;
 }
 /** Getter for {@link StorageFuelReload#fuelMeasurementUnits}
-  * @return value of interest (getter #4) */
+  * @return FuelMeasurementUnits this.fuelMeasurementUnits (getter #4) */
 public FuelMeasurementUnits getFuelMeasurementUnits()
 {
     if (fuelMeasurementUnits == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurementUnits == null, ignored by returning default enumeration FuelMeasurementUnits.values()[0]=" + FuelMeasurementUnits.values()[0]);
-        return FuelMeasurementUnits.values()[0];
+        System.err.println("Error: enumtype FuelMeasurementUnits fuelMeasurementUnits == null, ignored by returning default enumeration...");
+        fuelMeasurementUnits = FuelMeasurementUnits.values()[0];
     }
     return fuelMeasurementUnits; 
 }
 
 /** Setter for {@link StorageFuelReload#fuelType}
   * @param pFuelType new value of interest
-  * @return same object to permit progressive setters */
+  * @return this StorageFuelReload to permit progressive setters */
 public synchronized StorageFuelReload setFuelType(SupplyFuelType pFuelType)
 {
-    fuelType = pFuelType;
+    if (pFuelType == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype SupplyFuelType pFuelType == null, ignored by setting default enumeration...");
+        fuelType = SupplyFuelType.values()[0];
+    } else
+        fuelType = pFuelType;
+
     return this;
 }
 /** Getter for {@link StorageFuelReload#fuelType}
-  * @return value of interest (getter #4) */
+  * @return SupplyFuelType this.fuelType (getter #4) */
 public SupplyFuelType getFuelType()
 {
     if (fuelType == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration SupplyFuelType.values()[0]=" + SupplyFuelType.values()[0]);
-        return SupplyFuelType.values()[0];
+        System.err.println("Error: enumtype SupplyFuelType fuelType == null, ignored by returning default enumeration...");
+        fuelType = SupplyFuelType.values()[0];
     }
     return fuelType; 
 }
 
 /** Setter for {@link StorageFuelReload#fuelLocation}
   * @param pFuelLocation new value of interest
-  * @return same object to permit progressive setters */
+  * @return this StorageFuelReload to permit progressive setters */
 public synchronized StorageFuelReload setFuelLocation(FuelLocation pFuelLocation)
 {
-    fuelLocation = pFuelLocation;
+    if (pFuelLocation == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype FuelLocation pFuelLocation == null, ignored by setting default enumeration...");
+        fuelLocation = FuelLocation.values()[0];
+    } else
+        fuelLocation = pFuelLocation;
+
     return this;
 }
 /** Getter for {@link StorageFuelReload#fuelLocation}
-  * @return value of interest (getter #4) */
+  * @return FuelLocation this.fuelLocation (getter #4) */
 public FuelLocation getFuelLocation()
 {
     if (fuelLocation == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration FuelLocation.values()[0]=" + FuelLocation.values()[0]);
-        return FuelLocation.values()[0];
+        System.err.println("Error: enumtype FuelLocation fuelLocation == null, ignored by returning default enumeration...");
+        fuelLocation = FuelLocation.values()[0];
     }
     return fuelLocation; 
 }
@@ -204,13 +222,13 @@ public synchronized StorageFuelReload setPadding(byte pPadding)
 }
 /** Utility setter for {@link StorageFuelReload#padding}
   * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
+  * @return StorageFuelReload to permit progressive setters */
 public synchronized StorageFuelReload setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
 /** Getter for {@link StorageFuelReload#padding}
-  * @return value of interest (getter #1) */
+  * @return this.padding (getter #1) */
 public byte getPadding()
 {
        return padding;

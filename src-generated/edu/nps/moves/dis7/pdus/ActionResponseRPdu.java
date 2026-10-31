@@ -153,7 +153,7 @@ public synchronized ActionResponseRPdu setRequestID(int pRequestID)
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#requestID}
-  * @return value of interest (getter #1) */
+  * @return this.requestID (getter #1) */
 public int getRequestID()
 {
        return requestID;
@@ -161,34 +161,40 @@ public int getRequestID()
 
 /** Setter for {@link ActionResponseRPdu#responseStatus}
   * @param pResponseStatus new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ActionResponseRPdu to permit progressive setters */
 public synchronized ActionResponseRPdu setResponseStatus(ActionResponseRequestStatus pResponseStatus)
 {
-    responseStatus = pResponseStatus;
+    if (pResponseStatus == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ActionResponseRequestStatus pResponseStatus == null, ignored by setting default enumeration...");
+        responseStatus = ActionResponseRequestStatus.values()[0];
+    } else
+        responseStatus = pResponseStatus;
+
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#responseStatus}
-  * @return value of interest (getter #4) */
+  * @return ActionResponseRequestStatus this.responseStatus (getter #4) */
 public ActionResponseRequestStatus getResponseStatus()
 {
     if (responseStatus == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ActionResponseRequestStatus responseStatus == null, ignored by returning default enumeration ActionResponseRequestStatus.values()[0]=" + ActionResponseRequestStatus.values()[0]);
-        return ActionResponseRequestStatus.values()[0];
+        System.err.println("Error: enumtype ActionResponseRequestStatus responseStatus == null, ignored by returning default enumeration...");
+        responseStatus = ActionResponseRequestStatus.values()[0];
     }
     return responseStatus; 
 }
 
 /** Setter for {@link ActionResponseRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return ActionResponseRPdu to permit progressive setters */
 public synchronized ActionResponseRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#fixedDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.fixedDatumRecords (getter #3) */
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
@@ -196,14 +202,14 @@ public List<FixedDatum> getFixedDatumRecords()
 
 /** Setter for {@link ActionResponseRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return ActionResponseRPdu to permit progressive setters */
 public synchronized ActionResponseRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 /** Getter for {@link ActionResponseRPdu#variableDatumRecords}
-  * @return value of interest (getter #3) */
+  * @return this.variableDatumRecords (getter #3) */
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

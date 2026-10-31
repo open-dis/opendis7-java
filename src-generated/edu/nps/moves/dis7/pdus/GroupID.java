@@ -74,13 +74,13 @@ public synchronized GroupID setGroupNumber(short pGroupNumber)
 }
 /** Utility setter for {@link GroupID#groupNumber}
   * @param pGroupNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return GroupID to permit progressive setters */
 public synchronized GroupID setGroupNumber(int pGroupNumber){
     groupNumber = (short) pGroupNumber;
     return this;
 }
 /** Getter for {@link GroupID#groupNumber}
-  * @return value of interest (getter #1) */
+  * @return this.groupNumber (getter #1) */
 public short getGroupNumber()
 {
        return groupNumber;

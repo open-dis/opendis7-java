@@ -61,34 +61,40 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link DeadReckoningParameters#deadReckoningAlgorithm}
   * @param pDeadReckoningAlgorithm new value of interest
-  * @return same object to permit progressive setters */
+  * @return this DeadReckoningParameters to permit progressive setters */
 public synchronized DeadReckoningParameters setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
-    deadReckoningAlgorithm = pDeadReckoningAlgorithm;
+    if (pDeadReckoningAlgorithm == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype DeadReckoningAlgorithm pDeadReckoningAlgorithm == null, ignored by setting default enumeration...");
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
+    } else
+        deadReckoningAlgorithm = pDeadReckoningAlgorithm;
+
     return this;
 }
 /** Getter for {@link DeadReckoningParameters#deadReckoningAlgorithm}
-  * @return value of interest (getter #4) */
+  * @return DeadReckoningAlgorithm this.deadReckoningAlgorithm (getter #4) */
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     if (deadReckoningAlgorithm == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration DeadReckoningAlgorithm.values()[0]=" + DeadReckoningAlgorithm.values()[0]);
-        return DeadReckoningAlgorithm.values()[0];
+        System.err.println("Error: enumtype DeadReckoningAlgorithm deadReckoningAlgorithm == null, ignored by returning default enumeration...");
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.values()[0];
     }
     return deadReckoningAlgorithm; 
 }
 
 /** Setter for {@link DeadReckoningParameters#parameters}
   * @param pParameters new value of interest
-  * @return same object to permit progressive setters */
+  * @return DeadReckoningParameters to permit progressive setters */
 public synchronized DeadReckoningParameters setParameters(byte[] pParameters)
 {
     parameters = Arrays.copyOf(pParameters, parameters.length);
     return this;
 }
 /** Getter for {@link DeadReckoningParameters#parameters}
-  * @return value of interest (getter #2) */
+  * @return this.parameters (getter #2) */
 public byte[] getParameters()
 {
     return parameters; 

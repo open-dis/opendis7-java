@@ -74,13 +74,13 @@ public synchronized AggregateIdentifier setAggregateID(short pAggregateID)
 }
 /** Utility setter for {@link AggregateIdentifier#aggregateID}
   * @param pAggregateID new value of interest
-  * @return same object to permit progressive setters */
+  * @return AggregateIdentifier to permit progressive setters */
 public synchronized AggregateIdentifier setAggregateID(int pAggregateID){
     aggregateID = (short) pAggregateID;
     return this;
 }
 /** Getter for {@link AggregateIdentifier#aggregateID}
-  * @return value of interest (getter #1) */
+  * @return this.aggregateID (getter #1) */
 public short getAggregateID()
 {
        return aggregateID;

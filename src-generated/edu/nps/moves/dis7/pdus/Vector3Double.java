@@ -60,7 +60,7 @@ public synchronized Vector3Double setX(double pX)
     return this;
 }
 /** Getter for {@link Vector3Double#x}
-  * @return value of interest (getter #1) */
+  * @return this.x (getter #1) */
 public double getX()
 {
        return x;
@@ -75,7 +75,7 @@ public synchronized Vector3Double setY(double pY)
     return this;
 }
 /** Getter for {@link Vector3Double#y}
-  * @return value of interest (getter #1) */
+  * @return this.y (getter #1) */
 public double getY()
 {
        return y;
@@ -90,7 +90,7 @@ public synchronized Vector3Double setZ(double pZ)
     return this;
 }
 /** Getter for {@link Vector3Double#z}
-  * @return value of interest (getter #1) */
+  * @return this.z (getter #1) */
 public double getZ()
 {
        return z;

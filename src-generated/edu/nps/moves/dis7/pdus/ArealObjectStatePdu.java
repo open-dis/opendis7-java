@@ -211,13 +211,13 @@ public synchronized ArealObjectStatePdu setUpdateNumber(short pUpdateNumber)
 }
 /** Utility setter for {@link ArealObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArealObjectStatePdu to permit progressive setters */
 public synchronized ArealObjectStatePdu setUpdateNumber(int pUpdateNumber){
     updateNumber = (short) pUpdateNumber;
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#updateNumber}
-  * @return value of interest (getter #1) */
+  * @return this.updateNumber (getter #1) */
 public short getUpdateNumber()
 {
        return updateNumber;
@@ -225,20 +225,26 @@ public short getUpdateNumber()
 
 /** Setter for {@link ArealObjectStatePdu#forceID}
   * @param pForceID new value of interest
-  * @return same object to permit progressive setters */
+  * @return this ArealObjectStatePdu to permit progressive setters */
 public synchronized ArealObjectStatePdu setForceID(ForceID pForceID)
 {
-    forceID = pForceID;
+    if (pForceID == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype ForceID pForceID == null, ignored by setting default enumeration...");
+        forceID = ForceID.values()[0];
+    } else
+        forceID = pForceID;
+
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#forceID}
-  * @return value of interest (getter #4) */
+  * @return ForceID this.forceID (getter #4) */
 public ForceID getForceID()
 {
     if (forceID == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration ForceID.values()[0]=" + ForceID.values()[0]);
-        return ForceID.values()[0];
+        System.err.println("Error: enumtype ForceID forceID == null, ignored by returning default enumeration...");
+        forceID = ForceID.values()[0];
     }
     return forceID; 
 }
@@ -257,7 +263,7 @@ public ObjectStateModificationArealObject getModifications()
 {
     if (modifications == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: bitfieldtype ObjectStateModificationArealObject modifications == null, ignored by returning default bitfieldtype new ObjectStateModificationArealObject()=" + new ObjectStateModificationArealObject());
+        System.err.println("Error: bitfieldtype ObjectStateModificationArealObject modifications == null, ignored by returning default bitfieldtype...");
         return new ObjectStateModificationArealObject();
     }
     return modifications; 
@@ -288,7 +294,7 @@ public synchronized ArealObjectStatePdu setSpecificObjectAppearance(int pSpecifi
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#specificObjectAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.specificObjectAppearance (getter #1) */
 public int getSpecificObjectAppearance()
 {
        return specificObjectAppearance;
@@ -304,13 +310,13 @@ public synchronized ArealObjectStatePdu setGeneralObjectAppearance(short pGenera
 }
 /** Utility setter for {@link ArealObjectStatePdu#generalObjectAppearance}
   * @param pGeneralObjectAppearance new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArealObjectStatePdu to permit progressive setters */
 public synchronized ArealObjectStatePdu setGeneralObjectAppearance(int pGeneralObjectAppearance){
     generalObjectAppearance = (short) pGeneralObjectAppearance;
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#generalObjectAppearance}
-  * @return value of interest (getter #1) */
+  * @return this.generalObjectAppearance (getter #1) */
 public short getGeneralObjectAppearance()
 {
        return generalObjectAppearance;
@@ -350,14 +356,14 @@ public SimulationAddress getReceivingID()
 
 /** Setter for {@link ArealObjectStatePdu#objectLocation}
   * @param pObjectLocation new value of interest
-  * @return same object to permit progressive setters */
+  * @return ArealObjectStatePdu to permit progressive setters */
 public synchronized ArealObjectStatePdu setObjectLocation(List<Vector3Double> pObjectLocation)
 {
     objectLocation = pObjectLocation;
     return this;
 }
 /** Getter for {@link ArealObjectStatePdu#objectLocation}
-  * @return value of interest (getter #3) */
+  * @return this.objectLocation (getter #3) */
 public List<Vector3Double> getObjectLocation()
 {
     return objectLocation; 

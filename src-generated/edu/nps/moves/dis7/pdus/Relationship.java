@@ -51,40 +51,52 @@ public synchronized int getMarshalledSize()
 
 /** Setter for {@link Relationship#nature}
   * @param pNature new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Relationship to permit progressive setters */
 public synchronized Relationship setNature(IsPartOfNature pNature)
 {
-    nature = pNature;
+    if (pNature == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfNature pNature == null, ignored by setting default enumeration...");
+        nature = IsPartOfNature.values()[0];
+    } else
+        nature = pNature;
+
     return this;
 }
 /** Getter for {@link Relationship#nature}
-  * @return value of interest (getter #4) */
+  * @return IsPartOfNature this.nature (getter #4) */
 public IsPartOfNature getNature()
 {
     if (nature == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration IsPartOfNature.values()[0]=" + IsPartOfNature.values()[0]);
-        return IsPartOfNature.values()[0];
+        System.err.println("Error: enumtype IsPartOfNature nature == null, ignored by returning default enumeration...");
+        nature = IsPartOfNature.values()[0];
     }
     return nature; 
 }
 
 /** Setter for {@link Relationship#position}
   * @param pPosition new value of interest
-  * @return same object to permit progressive setters */
+  * @return this Relationship to permit progressive setters */
 public synchronized Relationship setPosition(IsPartOfPosition pPosition)
 {
-    position = pPosition;
+    if (pPosition == null) // avoid NPE, issue 45
+    {
+        System.err.println("Error: enumtype IsPartOfPosition pPosition == null, ignored by setting default enumeration...");
+        position = IsPartOfPosition.values()[0];
+    } else
+        position = pPosition;
+
     return this;
 }
 /** Getter for {@link Relationship#position}
-  * @return value of interest (getter #4) */
+  * @return IsPartOfPosition this.position (getter #4) */
 public IsPartOfPosition getPosition()
 {
     if (position == null) // avoid NPE, issue 45
     {
-        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration IsPartOfPosition.values()[0]=" + IsPartOfPosition.values()[0]);
-        return IsPartOfPosition.values()[0];
+        System.err.println("Error: enumtype IsPartOfPosition position == null, ignored by returning default enumeration...");
+        position = IsPartOfPosition.values()[0];
     }
     return position; 
 }

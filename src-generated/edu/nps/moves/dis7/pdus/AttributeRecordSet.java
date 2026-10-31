@@ -75,14 +75,14 @@ public EntityID getEntityId()
 
 /** Setter for {@link AttributeRecordSet#attributeRecords}
   * @param pAttributeRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return AttributeRecordSet to permit progressive setters */
 public synchronized AttributeRecordSet setAttributeRecords(List<Attribute> pAttributeRecords)
 {
     attributeRecords = pAttributeRecords;
     return this;
 }
 /** Getter for {@link AttributeRecordSet#attributeRecords}
-  * @return value of interest (getter #3) */
+  * @return this.attributeRecords (getter #3) */
 public List<Attribute> getAttributeRecords()
 {
     return attributeRecords; 

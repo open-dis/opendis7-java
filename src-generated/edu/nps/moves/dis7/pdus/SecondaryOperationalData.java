@@ -61,13 +61,13 @@ public synchronized SecondaryOperationalData setOperationalData1(byte pOperation
 }
 /** Utility setter for {@link SecondaryOperationalData#operationalData1}
   * @param pOperationalData1 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SecondaryOperationalData to permit progressive setters */
 public synchronized SecondaryOperationalData setOperationalData1(int pOperationalData1){
     operationalData1 = (byte) pOperationalData1;
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#operationalData1}
-  * @return value of interest (getter #1) */
+  * @return this.operationalData1 (getter #1) */
 public byte getOperationalData1()
 {
        return operationalData1;
@@ -83,13 +83,13 @@ public synchronized SecondaryOperationalData setOperationalData2(byte pOperation
 }
 /** Utility setter for {@link SecondaryOperationalData#operationalData2}
   * @param pOperationalData2 new value of interest
-  * @return same object to permit progressive setters */
+  * @return SecondaryOperationalData to permit progressive setters */
 public synchronized SecondaryOperationalData setOperationalData2(int pOperationalData2){
     operationalData2 = (byte) pOperationalData2;
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#operationalData2}
-  * @return value of interest (getter #1) */
+  * @return this.operationalData2 (getter #1) */
 public byte getOperationalData2()
 {
        return operationalData2;
@@ -105,13 +105,13 @@ public synchronized SecondaryOperationalData setNumberOfIFFFundamentalParameterR
 }
 /** Utility setter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
   * @param pNumberOfIFFFundamentalParameterRecords new value of interest
-  * @return same object to permit progressive setters */
+  * @return SecondaryOperationalData to permit progressive setters */
 public synchronized SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(int pNumberOfIFFFundamentalParameterRecords){
     numberOfIFFFundamentalParameterRecords = (short) pNumberOfIFFFundamentalParameterRecords;
     return this;
 }
 /** Getter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
-  * @return value of interest (getter #1) */
+  * @return this.numberOfIFFFundamentalParameterRecords (getter #1) */
 public short getNumberOfIFFFundamentalParameterRecords()
 {
        return numberOfIFFFundamentalParameterRecords;
