@@ -23,6 +23,7 @@ public class EventIdentifierTest
     /** default constructor */
     public EventIdentifierTest() {}
 
+    /** preparation **/
     @BeforeAll
     public static void setUpClass()
     {
@@ -30,6 +31,7 @@ public class EventIdentifierTest
             System.out.println("*** EventIdentifierTest setUpClass(), test starting...");
     }
 
+    /** completion **/
     @AfterAll
     public static void tearDownClass()
     {
@@ -40,6 +42,7 @@ public class EventIdentifierTest
         }
     }
 
+    /** constructor test **/
     @Test
     public void testDefaultConstructor()
     {
@@ -69,6 +72,7 @@ public class EventIdentifierTest
         assertEquals(42, ei.getEventNumber(), "mismatched eventNumber");
     }
 
+    /** size test **/
     @Test
     public void testMarshalledSize()
     {
@@ -127,6 +131,7 @@ public class EventIdentifierTest
         assertEquals(original.getEventNumber(), restored.getEventNumber(), "mismatched eventNumber after ByteBuffer unmarshal");
     }
 
+    /** functionality test **/
     @Test
     public void testEquality()
     {
@@ -154,7 +159,7 @@ public class EventIdentifierTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
-     * @throws java.lang.Exception
+     * @throws java.lang.Exception unexpected exception
      */
     public static void main(String[] args) throws Exception
     {
